@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C624E67415C7E3DF00A8DD94 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464915C7AE580066E94B /* Default.png */; };
+		C624E67715C7E3E400A8DD94 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C624E67615C7E3E400A8DD94 /* Default@2x.png */; };
+		C6357CF215C7A5690074E722 /* sawtooth_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CED15C7A5690074E722 /* sawtooth_256x256.png */; };
+		C6357CF315C7A5690074E722 /* sine_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEE15C7A5690074E722 /* sine_256x256.png */; };
+		C6357CF415C7A5690074E722 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEF15C7A5690074E722 /* square_256x256.png */; };
+		C6357CF515C7A5690074E722 /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CF015C7A5690074E722 /* triangle_256x256.png */; };
+		C6357CF615C7A5690074E722 /* waveforms.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CF115C7A5690074E722 /* waveforms.png */; };
+		C64ABC1C15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C64ABC1B15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.m */; };
+		C65B857715C6587200A9F764 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65B857615C6587200A9F764 /* CoreMotion.framework */; };
+		C66F465115C7B7EF0066E94B /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */; };
+		C66F465215C7B7F70066E94B /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */; };
+		C66F465315C7B82A0066E94B /* Icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464115C7AD990066E94B /* Icon_57x57.png */; };
+		C66F465415C7B8300066E94B /* Icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464315C7AD9F0066E94B /* Icon_114x114.png */; };
+		C66F465515C7B83A0066E94B /* Icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464715C7ADD40066E94B /* Icon_72x72.png */; };
+		C66F465615C7B8430066E94B /* Icon_144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F463F15C7AD880066E94B /* Icon_144x144.png */; };
+		C688BC6015C7620700EB145F /* VWW_ThereminMotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C688BC5F15C7620700EB145F /* VWW_ThereminMotionViewController.m */; };
+		C6ADD65615C8896900EF706E /* VWW_ThereminSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65515C8896900EF706E /* VWW_ThereminSettingsViewController.mm */; };
+		C6ADD65A15C88A2400EF706E /* VWW_ThereminHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65915C88A2300EF706E /* VWW_ThereminHelpViewController.m */; };
+		C6ADD65E15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65D15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm */; };
+		C6F7537715C6313C00911E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537615C6313C00911E59 /* UIKit.framework */; };
+		C6F7537915C6313C00911E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537815C6313C00911E59 /* Foundation.framework */; };
+		C6F7537B15C6313C00911E59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537A15C6313C00911E59 /* CoreGraphics.framework */; };
+		C6F7538115C6313C00911E59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6F7537F15C6313C00911E59 /* InfoPlist.strings */; };
+		C6F7538315C6313C00911E59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F7538215C6313C00911E59 /* main.m */; };
+		C6F7538715C6313C00911E59 /* VWW_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F7538615C6313C00911E59 /* VWW_AppDelegate.m */; };
+		C6F7538A15C6313C00911E59 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F7538815C6313C00911E59 /* MainStoryboard_iPhone.storyboard */; };
+		C6F7538D15C6313C00911E59 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6F7538B15C6313C00911E59 /* MainStoryboard_iPad.storyboard */; };
+		C6F7539015C6313C00911E59 /* VWW_ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F7538F15C6313C00911E59 /* VWW_ViewController.mm */; };
+		C6F7539815C6313C00911E59 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7539715C6313C00911E59 /* SenTestingKit.framework */; };
+		C6F7539915C6313C00911E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537615C6313C00911E59 /* UIKit.framework */; };
+		C6F7539A15C6313C00911E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537815C6313C00911E59 /* Foundation.framework */; };
+		C6F753A215C6313C00911E59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6F753A015C6313C00911E59 /* InfoPlist.strings */; };
+		C6F753A515C6313C00911E59 /* ThereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F753A415C6313C00911E59 /* ThereminTests.m */; };
+		C6F753B015C6316600911E59 /* VWW_ThereminSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F753AF15C6316600911E59 /* VWW_ThereminSynthesizer.mm */; };
+		C6F753B215C6335000911E59 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F753B115C6335000911E59 /* AudioToolbox.framework */; };
+		C6F753C715C6399200911E59 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6F753C515C6399200911E59 /* CAStreamBasicDescription.cpp */; };
+		C6F753C915C63A6400911E59 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F753C815C63A6400911E59 /* CoreAudio.framework */; };
+		C6F753D915C6440D00911E59 /* VWW_ThereminInstrumentView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F753D815C6440D00911E59 /* VWW_ThereminInstrumentView.mm */; };
+		C6F8E9AF15D7547700135EA4 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6F8E9AE15D7547700135EA4 /* todo.txt */; };
+		C6F8E9B315D826E800135EA4 /* VWW_ThereminNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F8E9B215D826E700135EA4 /* VWW_ThereminNotes.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6F7539B15C6313C00911E59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6F7536915C6313C00911E59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6F7537115C6313C00911E59;
+			remoteInfo = Theremin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C624E67615C7E3E400A8DD94 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C6357CED15C7A5690074E722 /* sawtooth_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sawtooth_256x256.png; path = images/sawtooth_256x256.png; sourceTree = "<group>"; };
+		C6357CEE15C7A5690074E722 /* sine_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sine_256x256.png; path = images/sine_256x256.png; sourceTree = "<group>"; };
+		C6357CEF15C7A5690074E722 /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_256x256.png; path = images/square_256x256.png; sourceTree = "<group>"; };
+		C6357CF015C7A5690074E722 /* triangle_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle_256x256.png; path = images/triangle_256x256.png; sourceTree = "<group>"; };
+		C6357CF115C7A5690074E722 /* waveforms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = waveforms.png; path = images/waveforms.png; sourceTree = "<group>"; };
+		C64ABC1A15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminMotionMonitor.h; sourceTree = "<group>"; };
+		C64ABC1B15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ThereminMotionMonitor.m; sourceTree = "<group>"; };
+		C65B857615C6587200A9F764 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = ../../../../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = "<group>"; };
+		C66F463F15C7AD880066E94B /* Icon_144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_144x144.png; path = ../Icon_144x144.png; sourceTree = "<group>"; };
+		C66F464115C7AD990066E94B /* Icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_57x57.png; path = ../Icon_57x57.png; sourceTree = "<group>"; };
+		C66F464315C7AD9F0066E94B /* Icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_114x114.png; path = ../Icon_114x114.png; sourceTree = "<group>"; };
+		C66F464715C7ADD40066E94B /* Icon_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_72x72.png; path = ../Icon_72x72.png; sourceTree = "<group>"; };
+		C66F464915C7AE580066E94B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		C688BC5E15C7620700EB145F /* VWW_ThereminMotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminMotionViewController.h; sourceTree = "<group>"; };
+		C688BC5F15C7620700EB145F /* VWW_ThereminMotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ThereminMotionViewController.m; sourceTree = "<group>"; };
+		C6ADD65415C8896900EF706E /* VWW_ThereminSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminSettingsViewController.h; sourceTree = "<group>"; };
+		C6ADD65515C8896900EF706E /* VWW_ThereminSettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWW_ThereminSettingsViewController.mm; sourceTree = "<group>"; };
+		C6ADD65815C88A2300EF706E /* VWW_ThereminHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminHelpViewController.h; sourceTree = "<group>"; };
+		C6ADD65915C88A2300EF706E /* VWW_ThereminHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ThereminHelpViewController.m; sourceTree = "<group>"; };
+		C6ADD65C15C8923100EF706E /* VWW_ThereminSynthesizerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminSynthesizerSettings.h; sourceTree = "<group>"; };
+		C6ADD65D15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWW_ThereminSynthesizerSettings.mm; sourceTree = "<group>"; };
+		C6F7537215C6313C00911E59 /* Theremin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theremin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F7537615C6313C00911E59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C6F7537815C6313C00911E59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C6F7537A15C6313C00911E59 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C6F7537E15C6313C00911E59 /* Theremin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Theremin-Info.plist"; sourceTree = "<group>"; };
+		C6F7538015C6313C00911E59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6F7538215C6313C00911E59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C6F7538415C6313C00911E59 /* Theremin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Theremin-Prefix.pch"; sourceTree = "<group>"; };
+		C6F7538515C6313C00911E59 /* VWW_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWW_AppDelegate.h; sourceTree = "<group>"; };
+		C6F7538615C6313C00911E59 /* VWW_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWW_AppDelegate.m; sourceTree = "<group>"; };
+		C6F7538915C6313C00911E59 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C6F7538C15C6313C00911E59 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		C6F7538E15C6313C00911E59 /* VWW_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWW_ViewController.h; sourceTree = "<group>"; };
+		C6F7538F15C6313C00911E59 /* VWW_ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VWW_ViewController.mm; sourceTree = "<group>"; };
+		C6F7539615C6313C00911E59 /* ThereminTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThereminTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F7539715C6313C00911E59 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C6F7539F15C6313C00911E59 /* ThereminTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThereminTests-Info.plist"; sourceTree = "<group>"; };
+		C6F753A115C6313C00911E59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6F753A315C6313C00911E59 /* ThereminTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThereminTests.h; sourceTree = "<group>"; };
+		C6F753A415C6313C00911E59 /* ThereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThereminTests.m; sourceTree = "<group>"; };
+		C6F753AE15C6316600911E59 /* VWW_ThereminSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminSynthesizer.h; sourceTree = "<group>"; };
+		C6F753AF15C6316600911E59 /* VWW_ThereminSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWW_ThereminSynthesizer.mm; sourceTree = "<group>"; };
+		C6F753B115C6335000911E59 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = ../../../../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<group>"; };
+		C6F753C115C6399200911E59 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = ../../../../../../../../../Developer/Extras/CoreAudio/PublicUtility/CADebugMacros.h; sourceTree = "<group>"; };
+		C6F753C215C6399200911E59 /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugPrintf.h; path = ../../../../../../../../../Developer/Extras/CoreAudio/PublicUtility/CADebugPrintf.h; sourceTree = "<group>"; };
+		C6F753C315C6399200911E59 /* CAException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAException.h; path = ../../../../../../../../../Developer/Extras/CoreAudio/PublicUtility/CAException.h; sourceTree = "<group>"; };
+		C6F753C415C6399200911E59 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAMath.h; path = ../../../../../../../../../Developer/Extras/CoreAudio/PublicUtility/CAMath.h; sourceTree = "<group>"; };
+		C6F753C515C6399200911E59 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAStreamBasicDescription.cpp; path = ../../../../../../../../../Developer/Extras/CoreAudio/PublicUtility/CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		C6F753C615C6399200911E59 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = ../../../../../../../../../Developer/Extras/CoreAudio/PublicUtility/CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		C6F753C815C63A6400911E59 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = ../../../../../../../../Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = "<group>"; };
+		C6F753D715C6440D00911E59 /* VWW_ThereminInstrumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminInstrumentView.h; sourceTree = "<group>"; };
+		C6F753D815C6440D00911E59 /* VWW_ThereminInstrumentView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWW_ThereminInstrumentView.mm; sourceTree = "<group>"; };
+		C6F8E9AE15D7547700135EA4 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
+		C6F8E9B115D826E700135EA4 /* VWW_ThereminNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminNotes.h; sourceTree = "<group>"; };
+		C6F8E9B215D826E700135EA4 /* VWW_ThereminNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ThereminNotes.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6F7536F15C6313C00911E59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F7537715C6313C00911E59 /* UIKit.framework in Frameworks */,
+				C6F7537915C6313C00911E59 /* Foundation.framework in Frameworks */,
+				C6F7537B15C6313C00911E59 /* CoreGraphics.framework in Frameworks */,
+				C6F753B215C6335000911E59 /* AudioToolbox.framework in Frameworks */,
+				C6F753C915C63A6400911E59 /* CoreAudio.framework in Frameworks */,
+				C65B857715C6587200A9F764 /* CoreMotion.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F7539215C6313C00911E59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F7539815C6313C00911E59 /* SenTestingKit.framework in Frameworks */,
+				C6F7539915C6313C00911E59 /* UIKit.framework in Frameworks */,
+				C6F7539A15C6313C00911E59 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6357CEB15C7A55C0074E722 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */,
+				C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */,
+				C66F464915C7AE580066E94B /* Default.png */,
+				C66F464715C7ADD40066E94B /* Icon_72x72.png */,
+				C66F464315C7AD9F0066E94B /* Icon_114x114.png */,
+				C66F464115C7AD990066E94B /* Icon_57x57.png */,
+				C66F463F15C7AD880066E94B /* Icon_144x144.png */,
+				C66F464F15C7AEEF0066E94B /* source_folder */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		C65B857315C64D0E00A9F764 /* Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				C6ADD65C15C8923100EF706E /* VWW_ThereminSynthesizerSettings.h */,
+				C6ADD65D15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm */,
+				C6F753AE15C6316600911E59 /* VWW_ThereminSynthesizer.h */,
+				C6F753AF15C6316600911E59 /* VWW_ThereminSynthesizer.mm */,
+				C6F8E9B115D826E700135EA4 /* VWW_ThereminNotes.h */,
+				C6F8E9B215D826E700135EA4 /* VWW_ThereminNotes.m */,
+			);
+			name = Synthesizer;
+			sourceTree = "<group>";
+		};
+		C65B857515C64D3800A9F764 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C6F7538E15C6313C00911E59 /* VWW_ViewController.h */,
+				C6F7538F15C6313C00911E59 /* VWW_ViewController.mm */,
+				C6F753D715C6440D00911E59 /* VWW_ThereminInstrumentView.h */,
+				C6F753D815C6440D00911E59 /* VWW_ThereminInstrumentView.mm */,
+				C6ADD65415C8896900EF706E /* VWW_ThereminSettingsViewController.h */,
+				C6ADD65515C8896900EF706E /* VWW_ThereminSettingsViewController.mm */,
+				C6ADD65815C88A2300EF706E /* VWW_ThereminHelpViewController.h */,
+				C6ADD65915C88A2300EF706E /* VWW_ThereminHelpViewController.m */,
+				C688BC5E15C7620700EB145F /* VWW_ThereminMotionViewController.h */,
+				C688BC5F15C7620700EB145F /* VWW_ThereminMotionViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C66F464F15C7AEEF0066E94B /* source_folder */ = {
+			isa = PBXGroup;
+			children = (
+				C6357CED15C7A5690074E722 /* sawtooth_256x256.png */,
+				C6357CEE15C7A5690074E722 /* sine_256x256.png */,
+				C6357CEF15C7A5690074E722 /* square_256x256.png */,
+				C6357CF015C7A5690074E722 /* triangle_256x256.png */,
+				C6357CF115C7A5690074E722 /* waveforms.png */,
+			);
+			name = source_folder;
+			sourceTree = "<group>";
+		};
+		C6F7536715C6313C00911E59 = {
+			isa = PBXGroup;
+			children = (
+				C624E67615C7E3E400A8DD94 /* Default@2x.png */,
+				C6F7537C15C6313C00911E59 /* Theremin */,
+				C6F7539D15C6313C00911E59 /* ThereminTests */,
+				C6F753B315C633BA00911E59 /* Apple CA Helpers */,
+				C6F7537515C6313C00911E59 /* Frameworks */,
+				C6F7537315C6313C00911E59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6F7537315C6313C00911E59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6F7537215C6313C00911E59 /* Theremin.app */,
+				C6F7539615C6313C00911E59 /* ThereminTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6F7537515C6313C00911E59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C65B857615C6587200A9F764 /* CoreMotion.framework */,
+				C6F753C815C63A6400911E59 /* CoreAudio.framework */,
+				C6F753B115C6335000911E59 /* AudioToolbox.framework */,
+				C6F7537615C6313C00911E59 /* UIKit.framework */,
+				C6F7537815C6313C00911E59 /* Foundation.framework */,
+				C6F7537A15C6313C00911E59 /* CoreGraphics.framework */,
+				C6F7539715C6313C00911E59 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6F7537C15C6313C00911E59 /* Theremin */ = {
+			isa = PBXGroup;
+			children = (
+				C6F8E9AE15D7547700135EA4 /* todo.txt */,
+				C6F7538515C6313C00911E59 /* VWW_AppDelegate.h */,
+				C6F7538615C6313C00911E59 /* VWW_AppDelegate.m */,
+				C65B857515C64D3800A9F764 /* ViewControllers */,
+				C6F8E9B415D83C9800135EA4 /* Motion */,
+				C65B857315C64D0E00A9F764 /* Synthesizer */,
+				C6F753CA15C63B7200911E59 /* Storyboards */,
+				C6357CEB15C7A55C0074E722 /* images */,
+				C6F7537D15C6313C00911E59 /* Supporting Files */,
+			);
+			path = Theremin;
+			sourceTree = "<group>";
+		};
+		C6F7537D15C6313C00911E59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6F7537E15C6313C00911E59 /* Theremin-Info.plist */,
+				C6F7537F15C6313C00911E59 /* InfoPlist.strings */,
+				C6F7538215C6313C00911E59 /* main.m */,
+				C6F7538415C6313C00911E59 /* Theremin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6F7539D15C6313C00911E59 /* ThereminTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6F753A315C6313C00911E59 /* ThereminTests.h */,
+				C6F753A415C6313C00911E59 /* ThereminTests.m */,
+				C6F7539E15C6313C00911E59 /* Supporting Files */,
+			);
+			path = ThereminTests;
+			sourceTree = "<group>";
+		};
+		C6F7539E15C6313C00911E59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6F7539F15C6313C00911E59 /* ThereminTests-Info.plist */,
+				C6F753A015C6313C00911E59 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6F753B315C633BA00911E59 /* Apple CA Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C6F753C115C6399200911E59 /* CADebugMacros.h */,
+				C6F753C215C6399200911E59 /* CADebugPrintf.h */,
+				C6F753C315C6399200911E59 /* CAException.h */,
+				C6F753C415C6399200911E59 /* CAMath.h */,
+				C6F753C515C6399200911E59 /* CAStreamBasicDescription.cpp */,
+				C6F753C615C6399200911E59 /* CAStreamBasicDescription.h */,
+			);
+			name = "Apple CA Helpers";
+			path = Theremin;
+			sourceTree = "<group>";
+		};
+		C6F753CA15C63B7200911E59 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C6F7538815C6313C00911E59 /* MainStoryboard_iPhone.storyboard */,
+				C6F7538B15C6313C00911E59 /* MainStoryboard_iPad.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C6F8E9B415D83C9800135EA4 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				C64ABC1A15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.h */,
+				C64ABC1B15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.m */,
+			);
+			name = Motion;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6F7537115C6313C00911E59 /* Theremin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F753A815C6313C00911E59 /* Build configuration list for PBXNativeTarget "Theremin" */;
+			buildPhases = (
+				C6F7536E15C6313C00911E59 /* Sources */,
+				C6F7536F15C6313C00911E59 /* Frameworks */,
+				C6F7537015C6313C00911E59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Theremin;
+			productName = Theremin;
+			productReference = C6F7537215C6313C00911E59 /* Theremin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C6F7539515C6313C00911E59 /* ThereminTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F753AB15C6313C00911E59 /* Build configuration list for PBXNativeTarget "ThereminTests" */;
+			buildPhases = (
+				C6F7539115C6313C00911E59 /* Sources */,
+				C6F7539215C6313C00911E59 /* Frameworks */,
+				C6F7539315C6313C00911E59 /* Resources */,
+				C6F7539415C6313C00911E59 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6F7539C15C6313C00911E59 /* PBXTargetDependency */,
+			);
+			name = ThereminTests;
+			productName = ThereminTests;
+			productReference = C6F7539615C6313C00911E59 /* ThereminTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6F7536915C6313C00911E59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VWW_;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Zakk Hoyt";
+			};
+			buildConfigurationList = C6F7536C15C6313C00911E59 /* Build configuration list for PBXProject "Theremin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C6F7536715C6313C00911E59;
+			productRefGroup = C6F7537315C6313C00911E59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6F7537115C6313C00911E59 /* Theremin */,
+				C6F7539515C6313C00911E59 /* ThereminTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C6F7537015C6313C00911E59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F7538115C6313C00911E59 /* InfoPlist.strings in Resources */,
+				C6F7538A15C6313C00911E59 /* MainStoryboard_iPhone.storyboard in Resources */,
+				C6F7538D15C6313C00911E59 /* MainStoryboard_iPad.storyboard in Resources */,
+				C6357CF215C7A5690074E722 /* sawtooth_256x256.png in Resources */,
+				C6357CF315C7A5690074E722 /* sine_256x256.png in Resources */,
+				C6357CF415C7A5690074E722 /* square_256x256.png in Resources */,
+				C6357CF515C7A5690074E722 /* triangle_256x256.png in Resources */,
+				C6357CF615C7A5690074E722 /* waveforms.png in Resources */,
+				C66F465115C7B7EF0066E94B /* Default-Portrait~ipad.png in Resources */,
+				C66F465215C7B7F70066E94B /* Default-Portrait@2x~ipad.png in Resources */,
+				C66F465315C7B82A0066E94B /* Icon_57x57.png in Resources */,
+				C66F465415C7B8300066E94B /* Icon_114x114.png in Resources */,
+				C66F465515C7B83A0066E94B /* Icon_72x72.png in Resources */,
+				C66F465615C7B8430066E94B /* Icon_144x144.png in Resources */,
+				C624E67415C7E3DF00A8DD94 /* Default.png in Resources */,
+				C624E67715C7E3E400A8DD94 /* Default@2x.png in Resources */,
+				C6F8E9AF15D7547700135EA4 /* todo.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F7539315C6313C00911E59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F753A215C6313C00911E59 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6F7539415C6313C00911E59 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6F7536E15C6313C00911E59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F7538315C6313C00911E59 /* main.m in Sources */,
+				C6F7538715C6313C00911E59 /* VWW_AppDelegate.m in Sources */,
+				C6F7539015C6313C00911E59 /* VWW_ViewController.mm in Sources */,
+				C6F753B015C6316600911E59 /* VWW_ThereminSynthesizer.mm in Sources */,
+				C6F753C715C6399200911E59 /* CAStreamBasicDescription.cpp in Sources */,
+				C6F753D915C6440D00911E59 /* VWW_ThereminInstrumentView.mm in Sources */,
+				C688BC6015C7620700EB145F /* VWW_ThereminMotionViewController.m in Sources */,
+				C6ADD65615C8896900EF706E /* VWW_ThereminSettingsViewController.mm in Sources */,
+				C6ADD65A15C88A2400EF706E /* VWW_ThereminHelpViewController.m in Sources */,
+				C6ADD65E15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm in Sources */,
+				C64ABC1C15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.m in Sources */,
+				C6F8E9B315D826E800135EA4 /* VWW_ThereminNotes.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F7539115C6313C00911E59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F753A515C6313C00911E59 /* ThereminTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6F7539C15C6313C00911E59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6F7537115C6313C00911E59 /* Theremin */;
+			targetProxy = C6F7539B15C6313C00911E59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C6F7537F15C6313C00911E59 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6F7538015C6313C00911E59 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C6F7538815C6313C00911E59 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6F7538915C6313C00911E59 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C6F7538B15C6313C00911E59 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6F7538C15C6313C00911E59 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C6F753A015C6313C00911E59 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6F753A115C6313C00911E59 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C6F753A615C6313C00911E59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C6F753A715C6313C00911E59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C6F753A915C6313C00911E59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
+				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C6F753AA15C6313C00911E59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
+				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C6F753AC15C6313C00911E59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Theremin.app/Theremin";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
+				INFOPLIST_FILE = "ThereminTests/ThereminTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C6F753AD15C6313C00911E59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Theremin.app/Theremin";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
+				INFOPLIST_FILE = "ThereminTests/ThereminTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6F7536C15C6313C00911E59 /* Build configuration list for PBXProject "Theremin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F753A615C6313C00911E59 /* Debug */,
+				C6F753A715C6313C00911E59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F753A815C6313C00911E59 /* Build configuration list for PBXNativeTarget "Theremin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F753A915C6313C00911E59 /* Debug */,
+				C6F753AA15C6313C00911E59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6F753AB15C6313C00911E59 /* Build configuration list for PBXNativeTarget "ThereminTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F753AC15C6313C00911E59 /* Debug */,
+				C6F753AD15C6313C00911E59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6F7536915C6313C00911E59 /* Project object */;
+}

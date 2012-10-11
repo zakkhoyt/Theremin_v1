@@ -1,0 +1,13 @@
+* Change all instances of "Gyros" to "Gyro"
+
+* Remove iVar declarations for those that have synthesizers
+
+
+
+
+
+
+
+
+
+* nonatomic vs atomic

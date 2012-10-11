@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2829" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1914"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <viewController id="2" customClass="VWW_ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="jl6-pt-RVB" customClass="VWW_ThereminInstrumentView">
+                                <rect key="frame" x="0.0" y="-5" width="768" height="1009"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" text="Accelerometer" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" preferredMaxLayoutWidth="216" id="sSR-nl-xK5">
+                                        <rect key="frame" x="40" y="63" width="216" height="176"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" text="Magnetometer" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" preferredMaxLayoutWidth="216" id="nV3-OX-iLQ">
+                                        <rect key="frame" x="512" y="63" width="216" height="176"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" text="Gyro" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" preferredMaxLayoutWidth="216" id="Lvi-ns-OoX">
+                                        <rect key="frame" x="276" y="63" width="216" height="176"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HDW-Pk-DOF">
+                                <rect key="frame" x="630" y="0.0" width="138" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butSettings:" destination="2" eventType="touchUpInside" id="Bwz-ge-uu8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GaG-4c-pHM">
+                                <rect key="frame" x="0.0" y="0.0" width="138" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Help">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butHelp:" destination="2" eventType="touchUpInside" id="Og2-CH-A3Z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="instrumentView" destination="jl6-pt-RVB" id="1Ue-8h-Ycl"/>
+                        <outlet property="lblAccelerometer" destination="sSR-nl-xK5" id="a5O-AV-2vJ"/>
+                        <outlet property="lblGyros" destination="Lvi-ns-OoX" id="chZ-Lc-vKk"/>
+                        <outlet property="lblMagnetometer" destination="nV3-OX-iLQ" id="KS5-00-Wex"/>
+                        <segue destination="5xy-FZ-RTJ" kind="modal" identifier="segue_VWW_ThereminSettingsViewController" modalPresentationStyle="formSheet" id="fgn-xx-pJD"/>
+                        <segue destination="qsW-P5-705" kind="modal" identifier="segue_VWW_ThereminHelpViewController" modalPresentationStyle="formSheet" id="gVM-L7-vNL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="-297"/>
+        </scene>
+        <!--Theremin Settings View Controller - Synthesizer Settings-->
+        <scene sceneID="deK-cs-oMp">
+            <objects>
+                <viewController id="Ht2-wo-Scw" customClass="VWW_ThereminSettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqh-3Z-asy">
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8vw-17-jKt">
+                                <rect key="frame" x="271" y="104" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="prev">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butFrequencyPrevious:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="QGe-gL-cKG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MIg-Q3-bA5">
+                                <rect key="frame" x="272" y="159" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="double">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butFrequencyDouble:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="OIg-Jo-IfO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hlv-Uy-DeK">
+                                <rect key="frame" x="271" y="210" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="half">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butFrequencyHalf:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="g0f-yu-u2O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kwr-dA-3yD">
+                                <rect key="frame" x="271" y="49" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="next">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butFrequencyNext:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="N0W-af-dg8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cZ1-UZ-5e2">
+                                <rect key="frame" x="397" y="104" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="TODO">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s9v-qZ-6S7">
+                                <rect key="frame" x="398" y="159" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="TODO">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1lt-Ks-EUu">
+                                <rect key="frame" x="397" y="210" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Off">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butEffectNone:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="Sm8-kS-o37"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bfj-Qb-a0h">
+                                <rect key="frame" x="397" y="49" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Autotune">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butEffectAutotune:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="q8w-Mj-SWe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Znz-Ba-A86">
+                                <rect key="frame" x="20" y="49" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butCommandStart:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="sys-8y-FNT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JGz-IX-saR">
+                                <rect key="frame" x="20" y="104" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butCommandStop:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="uIa-pV-oPC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="3P9-kB-7en">
+                                <rect key="frame" x="19" y="210" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butCommandRestart:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="Qtu-8Q-AfJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Igo-yp-Bhx">
+                                <rect key="frame" x="20" y="340" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Magnetometer">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butInputMagnetometer:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="egw-mR-Q98"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bKJ-r6-ZJJ">
+                                <rect key="frame" x="20" y="391" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Accelerometer">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butInputAccelerometer:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="Kbb-bd-MGM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t6s-Z6-32C">
+                                <rect key="frame" x="21" y="442" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Gyros">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butInputGyros:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="LJe-MI-cAV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kCX-Ha-dMs">
+                                <rect key="frame" x="20" y="493" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Touch">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butInputTouch:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="rJA-hL-ru1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XzT-D0-dnF">
+                                <rect key="frame" x="145" y="49" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <size key="titleShadowOffset" width="8" height="6"/>
+                                <state key="normal" title="Sine" image="sine_256x256.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butWaveformSine:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="Uaj-Ew-R8d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Tx0-Nh-Ixf">
+                                <rect key="frame" x="145" y="104" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Square" image="square_256x256.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butWaveformSquare:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="mqm-qh-iVH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZzR-vR-dkw">
+                                <rect key="frame" x="146" y="159" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Triangle" image="triangle_256x256.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butWaveformTriangle:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="zwM-jX-iMs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZtW-Jm-Rm2">
+                                <rect key="frame" x="145" y="210" width="117" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <state key="normal" title="Sawtooth" image="sawtooth_256x256.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handle_butWaveformSawtooth:" destination="Ht2-wo-Scw" eventType="touchUpInside" id="1Pg-Sr-X9D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Inputs" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="8wx-ql-h4g">
+                                <rect key="frame" x="20" y="302" width="117" height="21"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Waveform" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="AON-TT-lWh">
+                                <rect key="frame" x="145" y="20" width="117" height="21"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Commands" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="8Py-5t-gmb">
+                                <rect key="frame" x="19" y="20" width="117" height="21"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Frequency" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="I5j-EK-wfB">
+                                <rect key="frame" x="271" y="20" width="117" height="21"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Effects" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="8sj-D0-LgD">
+                                <rect key="frame" x="397" y="20" width="117" height="21"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" value="0.5" minValue="0.0" maxValue="1" id="Azu-hs-NUV">
+                                <rect key="frame" x="144" y="351" width="378" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="handle_sldMagnetometer:" destination="Ht2-wo-Scw" eventType="valueChanged" id="naD-vB-cc2"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" value="0.5" minValue="0.0" maxValue="1" id="A6c-eD-lAX">
+                                <rect key="frame" x="144" y="402" width="378" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="handle_sldAccelerometer:" destination="Ht2-wo-Scw" eventType="valueChanged" id="DIa-Qs-3rN"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" value="0.5" minValue="0.0" maxValue="1" id="Kbf-ex-iMC">
+                                <rect key="frame" x="144" y="453" width="378" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="handle_sldGyros:" destination="Ht2-wo-Scw" eventType="valueChanged" id="WKd-Ri-ysJ"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Sensitivity" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="ft9-Y5-zJg">
+                                <rect key="frame" x="146" y="302" width="374" height="21"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </label>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" value="0.5" minValue="0.0" maxValue="1" id="71h-uc-wr4">
+                                <rect key="frame" x="144" y="504" width="378" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="minimumTrackTintColor" red="0.062495960509999997" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="handle_sldTouch:" destination="Ht2-wo-Scw" eventType="valueChanged" id="lyy-TN-Jhv"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16474184782608692" green="0.16474184782608692" blue="0.16474184782608692" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Synthesizer Settings" id="FYk-A9-e4t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fdn-fO-peM">
+                            <connections>
+                                <action selector="handle_butDone:" destination="Ht2-wo-Scw" id="vSX-Pf-rvH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="butCommandRestart" destination="3P9-kB-7en" id="DhP-Jm-8xu"/>
+                        <outlet property="butCommandStart" destination="Znz-Ba-A86" id="qXX-Cy-XzN"/>
+                        <outlet property="butCommandStop" destination="JGz-IX-saR" id="VSW-tf-tq4"/>
+                        <outlet property="butEffectAutotune" destination="bfj-Qb-a0h" id="AHD-BC-f0b"/>
+                        <outlet property="butEffectNone" destination="1lt-Ks-EUu" id="AKY-fp-5fm"/>
+                        <outlet property="butFrequencyDouble" destination="MIg-Q3-bA5" id="7TB-7M-iXR"/>
+                        <outlet property="butFrequencyHalf" destination="hlv-Uy-DeK" id="g3J-55-5oQ"/>
+                        <outlet property="butFrequencyNext" destination="Kwr-dA-3yD" id="zFJ-mN-szu"/>
+                        <outlet property="butFrequencyPrevious" destination="8vw-17-jKt" id="6bZ-Ha-dbg"/>
+                        <outlet property="butInputAccelerometer" destination="bKJ-r6-ZJJ" id="IId-rK-6JT"/>
+                        <outlet property="butInputGyros" destination="t6s-Z6-32C" id="Qqz-1d-L16"/>
+                        <outlet property="butInputMagnetometer" destination="Igo-yp-Bhx" id="NG3-ht-be1"/>
+                        <outlet property="butInputTouch" destination="kCX-Ha-dMs" id="UGA-SY-JRY"/>
+                        <outlet property="butWaveformSawtooth" destination="ZtW-Jm-Rm2" id="KIs-Tg-fJ1"/>
+                        <outlet property="butWaveformSine" destination="XzT-D0-dnF" id="QyM-7V-lmi"/>
+                        <outlet property="butWaveformSquare" destination="Tx0-Nh-Ixf" id="BTc-Zv-6m3"/>
+                        <outlet property="butWaveformTriangle" destination="ZzR-vR-dkw" id="hqP-Xi-8FP"/>
+                        <outlet property="sldAccelerometer" destination="A6c-eD-lAX" id="YVH-EZ-hr1"/>
+                        <outlet property="sldGyros" destination="Kbf-ex-iMC" id="viG-lc-bIz"/>
+                        <outlet property="sldMagnetometer" destination="Azu-hs-NUV" id="cKR-Mb-G5w"/>
+                        <outlet property="sldTouch" destination="71h-uc-wr4" id="e5u-oo-V3W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zlb-Wo-ExJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773" y="-297"/>
+        </scene>
+        <!--Theremin Help View Controller-->
+        <scene sceneID="u2k-Ya-0dq">
+            <objects>
+                <viewController id="7XE-DS-YyK" customClass="VWW_ThereminHelpViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5fq-LK-XXA">
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" text="Help text goes here. Load from file? Get from webservice?" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" preferredMaxLayoutWidth="500" id="iK0-3u-hfl">
+                                <rect key="frame" x="20" y="20" width="500" height="324"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="highlightedColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YWd-RN-Toi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="TvO-OO-NRc">
+                            <connections>
+                                <action selector="handle_butDone:" destination="7XE-DS-YyK" id="wrQ-B7-oDW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hxo-It-b7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2099" y="869"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hui-jM-Brz">
+            <objects>
+                <navigationController id="5xy-FZ-RTJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5dY-8K-jNI">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ht2-wo-Scw" kind="relationship" relationship="rootViewController" id="TfK-pa-pmm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wYk-cm-STQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="-297"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Fq-Z9-RxN">
+            <objects>
+                <navigationController id="qsW-P5-705" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="orr-Nr-YcK">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7XE-DS-YyK" kind="relationship" relationship="rootViewController" id="zOr-Iq-1AD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Tb-CE-4jk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949" y="869"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sawtooth_256x256.png" width="256" height="256"/>
+        <image name="sine_256x256.png" width="256" height="256"/>
+        <image name="square_256x256.png" width="256" height="256"/>
+        <image name="triangle_256x256.png" width="256" height="256"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

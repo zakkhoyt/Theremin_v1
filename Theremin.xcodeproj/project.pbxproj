@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C624E67415C7E3DF00A8DD94 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464915C7AE580066E94B /* Default.png */; };
-		C624E67715C7E3E400A8DD94 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C624E67615C7E3E400A8DD94 /* Default@2x.png */; };
 		C6357CF215C7A5690074E722 /* sawtooth_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CED15C7A5690074E722 /* sawtooth_256x256.png */; };
 		C6357CF315C7A5690074E722 /* sine_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEE15C7A5690074E722 /* sine_256x256.png */; };
 		C6357CF415C7A5690074E722 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEF15C7A5690074E722 /* square_256x256.png */; };
@@ -17,11 +15,13 @@
 		C64ABC1C15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C64ABC1B15C8A4A500FC80B7 /* VWW_ThereminMotionMonitor.m */; };
 		C66F465115C7B7EF0066E94B /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */; };
 		C66F465215C7B7F70066E94B /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */; };
-		C66F465315C7B82A0066E94B /* Icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464115C7AD990066E94B /* Icon_57x57.png */; };
-		C66F465415C7B8300066E94B /* Icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464315C7AD9F0066E94B /* Icon_114x114.png */; };
-		C66F465515C7B83A0066E94B /* Icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464715C7ADD40066E94B /* Icon_72x72.png */; };
-		C66F465615C7B8430066E94B /* Icon_144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F463F15C7AD880066E94B /* Icon_144x144.png */; };
 		C688BC6015C7620700EB145F /* VWW_ThereminMotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C688BC5F15C7620700EB145F /* VWW_ThereminMotionViewController.m */; };
+		C693B5BD1628E154008CB1B1 /* Icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464115C7AD990066E94B /* Icon_57x57.png */; };
+		C693B5BE1628E15A008CB1B1 /* Icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464315C7AD9F0066E94B /* Icon_114x114.png */; };
+		C693B5BF1628E164008CB1B1 /* Icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464715C7ADD40066E94B /* Icon_72x72.png */; };
+		C693B5C01628E16B008CB1B1 /* Icon_144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F463F15C7AD880066E94B /* Icon_144x144.png */; };
+		C693B5C11628E191008CB1B1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464915C7AE580066E94B /* Default.png */; };
+		C693B5C21628E198008CB1B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C624E67615C7E3E400A8DD94 /* Default@2x.png */; };
 		C6ADD65615C8896900EF706E /* VWW_ThereminSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65515C8896900EF706E /* VWW_ThereminSettingsViewController.mm */; };
 		C6ADD65A15C88A2400EF706E /* VWW_ThereminHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65915C88A2300EF706E /* VWW_ThereminHelpViewController.m */; };
 		C6ADD65E15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65D15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm */; };
@@ -215,9 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				C6F829B31628C72100C79CAA /* Default-568h@2x.png */,
-				C6F829AC1628C6E900C79CAA /* AudioToolbox.framework */,
-				C6F829AD1628C6E900C79CAA /* CoreAudio.framework */,
-				C6F829AE1628C6E900C79CAA /* CoreMotion.framework */,
 				C624E67615C7E3E400A8DD94 /* Default@2x.png */,
 				C6F7537C15C6313C00911E59 /* Theremin */,
 				C6F7539D15C6313C00911E59 /* ThereminTests */,
@@ -238,6 +235,9 @@
 		C6F7537515C6313C00911E59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6F829AC1628C6E900C79CAA /* AudioToolbox.framework */,
+				C6F829AD1628C6E900C79CAA /* CoreAudio.framework */,
+				C6F829AE1628C6E900C79CAA /* CoreMotion.framework */,
 				C6F7537615C6313C00911E59 /* UIKit.framework */,
 				C6F7537815C6313C00911E59 /* Foundation.framework */,
 				C6F7537A15C6313C00911E59 /* CoreGraphics.framework */,
@@ -408,14 +408,14 @@
 				C6357CF615C7A5690074E722 /* waveforms.png in Resources */,
 				C66F465115C7B7EF0066E94B /* Default-Portrait~ipad.png in Resources */,
 				C66F465215C7B7F70066E94B /* Default-Portrait@2x~ipad.png in Resources */,
-				C66F465315C7B82A0066E94B /* Icon_57x57.png in Resources */,
-				C66F465415C7B8300066E94B /* Icon_114x114.png in Resources */,
-				C66F465515C7B83A0066E94B /* Icon_72x72.png in Resources */,
-				C66F465615C7B8430066E94B /* Icon_144x144.png in Resources */,
-				C624E67415C7E3DF00A8DD94 /* Default.png in Resources */,
-				C624E67715C7E3E400A8DD94 /* Default@2x.png in Resources */,
 				C6F8E9AF15D7547700135EA4 /* todo.txt in Resources */,
 				C6F829B41628C72100C79CAA /* Default-568h@2x.png in Resources */,
+				C693B5BD1628E154008CB1B1 /* Icon_57x57.png in Resources */,
+				C693B5BE1628E15A008CB1B1 /* Icon_114x114.png in Resources */,
+				C693B5BF1628E164008CB1B1 /* Icon_72x72.png in Resources */,
+				C693B5C01628E16B008CB1B1 /* Icon_144x144.png in Resources */,
+				C693B5C11628E191008CB1B1 /* Default.png in Resources */,
+				C693B5C21628E198008CB1B1 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

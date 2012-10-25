@@ -8,6 +8,8 @@
 
 #import "VWW_ThereminInstrumentView.h"
 
+
+
 @interface VWW_ThereminInstrumentView ()
 @property CGPoint selectedPixel;
 @end
@@ -99,6 +101,7 @@
 //    if(self.delegate){
 ////        [self.delegate touchBegan];
 //    }
+    [self.delegate vww_ThereminInstrumentView:self touchesBegan:touches withEvent:event];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{

@@ -19,6 +19,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *lblAccelerometer;
 @property (retain, nonatomic) IBOutlet UILabel *lblGyros;
 @property (retain, nonatomic) IBOutlet UILabel *lblMagnetometer;
+@property (retain, nonatomic) IBOutlet UILabel *lblInfo;
 
 // custom methods
 -(void)initializeClass;
@@ -76,6 +77,7 @@
     [_lblAccelerometer release];
     [_lblGyros release];
     [_lblMagnetometer release];
+    [_lblInfo release];
     [super dealloc];
 }
 
@@ -206,6 +208,11 @@
 - (IBAction)handle_butHelp:(id)sender{
     [self performSegueWithIdentifier:@"segue_VWW_ThereminHelpViewController" sender:self];
     
+}
+
+#pragma  mark - Implements VWW_ThereminInstrumentViewDelegate
+-(void)vww_ThereminInstrumentView:(VWW_ThereminInstrumentView*)sender touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    self.lblInfo.hidden = YES;
 }
 
 @end

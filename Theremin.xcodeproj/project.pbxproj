@@ -25,6 +25,8 @@
 		C6ADD65615C8896900EF706E /* VWW_ThereminSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65515C8896900EF706E /* VWW_ThereminSettingsViewController.mm */; };
 		C6ADD65A15C88A2400EF706E /* VWW_ThereminHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65915C88A2300EF706E /* VWW_ThereminHelpViewController.m */; };
 		C6ADD65E15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6ADD65D15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm */; };
+		C6D3E1A21639B4B10032D2F3 /* button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E1A11639B4B10032D2F3 /* button_background.png */; };
+		C6D3E1A41639B5580032D2F3 /* button_background_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */; };
 		C6F7537715C6313C00911E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537615C6313C00911E59 /* UIKit.framework */; };
 		C6F7537915C6313C00911E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537815C6313C00911E59 /* Foundation.framework */; };
 		C6F7537B15C6313C00911E59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537A15C6313C00911E59 /* CoreGraphics.framework */; };
@@ -86,6 +88,8 @@
 		C6ADD65915C88A2300EF706E /* VWW_ThereminHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWW_ThereminHelpViewController.m; sourceTree = "<group>"; };
 		C6ADD65C15C8923100EF706E /* VWW_ThereminSynthesizerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW_ThereminSynthesizerSettings.h; sourceTree = "<group>"; };
 		C6ADD65D15C8923100EF706E /* VWW_ThereminSynthesizerSettings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWW_ThereminSynthesizerSettings.mm; sourceTree = "<group>"; };
+		C6D3E1A11639B4B10032D2F3 /* button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_background.png; path = images/button_background.png; sourceTree = SOURCE_ROOT; };
+		C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_background_pressed.png; path = images/button_background_pressed.png; sourceTree = SOURCE_ROOT; };
 		C6F7537215C6313C00911E59 /* Theremin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theremin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F7537615C6313C00911E59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6F7537815C6313C00911E59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +161,8 @@
 		C6357CEB15C7A55C0074E722 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */,
+				C6D3E1A11639B4B10032D2F3 /* button_background.png */,
 				C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */,
 				C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */,
 				C66F464915C7AE580066E94B /* Default.png */,
@@ -216,6 +222,7 @@
 			children = (
 				C6F829B31628C72100C79CAA /* Default-568h@2x.png */,
 				C624E67615C7E3E400A8DD94 /* Default@2x.png */,
+				C6F753CA15C63B7200911E59 /* Storyboards */,
 				C6F7537C15C6313C00911E59 /* Theremin */,
 				C6F7539D15C6313C00911E59 /* ThereminTests */,
 				C6F7537515C6313C00911E59 /* Frameworks */,
@@ -256,7 +263,6 @@
 				C65B857515C64D3800A9F764 /* ViewControllers */,
 				C6F8E9B415D83C9800135EA4 /* Motion */,
 				C65B857315C64D0E00A9F764 /* Synthesizer */,
-				C6F753CA15C63B7200911E59 /* Storyboards */,
 				C6357CEB15C7A55C0074E722 /* images */,
 				C6F7537D15C6313C00911E59 /* Supporting Files */,
 			);
@@ -300,6 +306,7 @@
 				C6F7538B15C6313C00911E59 /* MainStoryboard_iPad.storyboard */,
 			);
 			name = Storyboards;
+			path = Theremin;
 			sourceTree = "<group>";
 		};
 		C6F829B51628C80B00C79CAA /* Apple CA Helpers */ = {
@@ -416,6 +423,8 @@
 				C693B5C01628E16B008CB1B1 /* Icon_144x144.png in Resources */,
 				C693B5C11628E191008CB1B1 /* Default.png in Resources */,
 				C693B5C21628E198008CB1B1 /* Default@2x.png in Resources */,
+				C6D3E1A21639B4B10032D2F3 /* button_background.png in Resources */,
+				C6D3E1A41639B5580032D2F3 /* button_background_pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,7 +537,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -542,6 +552,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PROVISIONING_PROFILE = "00C13604-DB92-4521-B760-FAB1911D10FA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00C13604-DB92-4521-B760-FAB1911D10FA";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -554,7 +566,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -562,6 +575,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "00C13604-DB92-4521-B760-FAB1911D10FA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00C13604-DB92-4521-B760-FAB1911D10FA";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -575,7 +590,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
@@ -594,7 +608,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";

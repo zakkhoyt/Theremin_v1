@@ -201,12 +201,17 @@
 
 #pragma mark Handlers for input buttons
 - (IBAction)handle_butInputMagnetometer:(id)sender{
+//    UIButton* button = (UIButton*)sender;
     if((self.settings.inputType & kInputMagnetometer) == kInputMagnetometer){
+//        UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
+//        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.motion stopMagnetometer];
         [self.settings clearInputType:kInputMagnetometer];
         if(self.delegate) [self.delegate userSetMagnetometerInput:NO];
     }
     else{
+//        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
+//        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.motion startMagnetometer];
         [self.settings setInputType:kInputMagnetometer];
         if(self.delegate) [self.delegate userSetMagnetometerInput:YES];

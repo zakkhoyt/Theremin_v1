@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "VWW_ThereminSynthesizerSettings.h"
 
-@protocol VWW_ThereminInstrumentViewDelegate <NSObject>
-//-(void)touchBegan;
-//-(void)touchEnded;
+@class VWW_ThereminInstrumentView;
+
+@protocol VWW_ThereminInstrumentViewDelegate
+-(void)vww_ThereminInstrumentView:(VWW_ThereminInstrumentView*)sender touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 @end
 
 @interface VWW_ThereminInstrumentView : UIView

@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="jl6-pt-RVB" customClass="VWW_ThereminInstrumentView">
-                                <rect key="frame" x="0.0" y="-5" width="768" height="1009"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1018"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Accelerometer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sSR-nl-xK5">
                                         <rect key="frame" x="40" y="63" width="216" height="176"/>
@@ -561,12 +561,46 @@
         </class>
         <class className="VWW_ThereminSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ThereminSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handle_butCancel:"/>
+                <relationship kind="action" name="handle_butCommandRestart:"/>
+                <relationship kind="action" name="handle_butCommandStart:"/>
+                <relationship kind="action" name="handle_butCommandStop:"/>
+                <relationship kind="action" name="handle_butDone:"/>
+                <relationship kind="action" name="handle_butEffectAutotune:"/>
+                <relationship kind="action" name="handle_butEffectNone:"/>
+                <relationship kind="action" name="handle_butFrequencyDouble:"/>
+                <relationship kind="action" name="handle_butFrequencyHalf:"/>
+                <relationship kind="action" name="handle_butFrequencyNext:"/>
+                <relationship kind="action" name="handle_butFrequencyPrevious:"/>
+                <relationship kind="action" name="handle_butInputAccelerometer:"/>
+                <relationship kind="action" name="handle_butInputGyros:"/>
+                <relationship kind="action" name="handle_butInputMagnetometer:"/>
+                <relationship kind="action" name="handle_butInputTouch:"/>
+                <relationship kind="action" name="handle_butWaveformSawtooth:"/>
+                <relationship kind="action" name="handle_butWaveformSine:"/>
+                <relationship kind="action" name="handle_butWaveformSquare:"/>
+                <relationship kind="action" name="handle_butWaveformTriangle:"/>
+                <relationship kind="action" name="handle_sldAccelerometer:"/>
+                <relationship kind="action" name="handle_sldGyros:"/>
+                <relationship kind="action" name="handle_sldMagnetometer:"/>
+                <relationship kind="action" name="handle_sldTouch:"/>
+                <relationship kind="outlet" name="sldAccelerometer" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sldGyros" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sldMagnetometer" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="sldTouch" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="VWW_ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="handle_butHelp:"/>
                 <relationship kind="action" name="handle_butSettings:"/>
+                <relationship kind="outlet" name="instrumentView" candidateClass="VWW_ThereminInstrumentView"/>
+                <relationship kind="outlet" name="lblAccelerometer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblGyros" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblMagnetometer" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

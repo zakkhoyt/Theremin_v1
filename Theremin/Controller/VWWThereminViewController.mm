@@ -18,12 +18,18 @@
 #import "VWWMotionMonitor.h"
 #import "VWWThereminSynthesizerSettings.h"
 #import "VWWThereminInstrumentView.h"
+#import "VWWThereminSettingsViewController.h"
+#import "VWWThereminHelpViewController.h"
 
 const CGFloat kRotateXSensitivity = 0.25f;
 const CGFloat kRotateYSensitivity = 0.25f;
 const CGFloat kRotateZSensitivity = 0.25f;
 
-@interface VWWThereminViewController () <GLKViewControllerDelegate, VWWMotionMonitorDelegate, VWWThereminInstrumentViewDelegate>{
+@interface VWWThereminViewController () <GLKViewControllerDelegate,
+    VWWMotionMonitorDelegate,
+    VWWThereminInstrumentViewDelegate,
+    VWWThereminHelpViewControllerDelegate,
+    VWWThereminSettingsViewControllerDelegate>{
 }
 @property (nonatomic, retain) VWWThereminSynthesizerSettings* settings;
 @property (nonatomic, retain) EAGLContext * context;
@@ -41,6 +47,9 @@ const CGFloat kRotateZSensitivity = 0.25f;
 @property (retain, nonatomic) IBOutlet UILabel *lblGyros;
 @property (retain, nonatomic) IBOutlet UILabel *lblMagnetometer;
 @property (retain, nonatomic) IBOutlet UILabel *lblInfo;
+
+- (IBAction)settingsButtonHandler:(id)sender;
+
 
 @end
 
@@ -96,6 +105,25 @@ const CGFloat kRotateZSensitivity = 0.25f;
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // A segue is about to be performed. This is our chance to send data to the
+    // view controller that will be loaded.
+	if ([segue.identifier isEqualToString:@"segueThereminToSettings"])
+	{
+		UINavigationController* navigationController = segue.destinationViewController;
+		VWWThereminSettingsViewController* viewController = [[navigationController viewControllers]objectAtIndex:0];
+		viewController.delegate = self;
+        viewController.settings = self.settings;
+        viewController.motion = self.motionMonitor;
+	}
+    else if ([segue.identifier isEqualToString:@"segue_VWWThereminHelpViewController"]){
+		UINavigationController* navigationController = segue.destinationViewController;
+		VWWThereminHelpViewController* viewController = [[navigationController viewControllers]objectAtIndex:0];
+		viewController.delegate = self;
+    }
 }
 
 
@@ -160,7 +188,7 @@ const CGFloat kRotateZSensitivity = 0.25f;
 
     float cubeWidth = 4.0;
     float z = 1;
-    VWWCubeScene* cubes[28] = {};
+    VWWCubeScene* cubes[1] = {};
 
     
     
@@ -169,44 +197,7 @@ const CGFloat kRotateZSensitivity = 0.25f;
     [self.cubes addObject:cubes[0]];
 
     
-    
-//    cubes[0] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[0].translate = GLKVector3Make(-cubeWidth, cubeWidth, z);
-//    [self.cubes addObject:cubes[0]];
-//
-//    cubes[1] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[1].translate = GLKVector3Make(0, cubeWidth, z);
-//    [self.cubes addObject:cubes[1]];
-//    
-//    cubes[2] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[2].translate = GLKVector3Make(cubeWidth, cubeWidth, z);
-//    [self.cubes addObject:cubes[2]];
-//    
-//    cubes[3] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[3].translate = GLKVector3Make(-cubeWidth, 0, z);
-//    [self.cubes addObject:cubes[3]];
-//    
-//    cubes[4] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[4].translate = GLKVector3Make(0, 0, z);
-//    [self.cubes addObject:cubes[4]];
-//    
-//    cubes[5] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[5].translate = GLKVector3Make(cubeWidth, 0, z);
-//    [self.cubes addObject:cubes[5]];
-//    
-//    cubes[6] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[6].translate = GLKVector3Make(-cubeWidth, -cubeWidth, z);
-//    [self.cubes addObject:cubes[6]];
-//    
-//    cubes[7] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[7].translate = GLKVector3Make(0, -cubeWidth, z);
-//    [self.cubes addObject:cubes[7]];
-//    
-//    cubes[8] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
-//    cubes[8].translate = GLKVector3Make(cubeWidth, -cubeWidth, z);
-//    [self.cubes addObject:cubes[8]];
-
-
+  
     
 }
 
@@ -241,18 +232,93 @@ const CGFloat kRotateZSensitivity = 0.25f;
 }
 
 
+
+- (IBAction)settingsButtonHandler:(id)sender {
+    [self performSegueWithIdentifier:@"segueThereminToSettings" sender:self];
+}
+
 #pragma mark = Implements VWWMotionMonitorDelegate
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device{
- //   NSLog(@"%@", [self.motionMonitor description:device]);
-//    self.translateZ = device.z.current * 2;
+    self.settings.accelerometerValue = device.x.currentNormalized;
+    self.lblAccelerometer.text = [NSString stringWithFormat:@"Accelerometer\n"
+                                  "(min, current, max):\n"
+                                  "X; %f < %f < %f\n"
+                                  "Y; %f < %f < %f\n"
+                                  "Z; %f < %f < %f\n",
+                                  device.x.min,
+                                  device.x.current,
+                                  device.x.max,
+                                  device.y.min,
+                                  device.y.current,
+                                  device.y.max,
+                                  device.z.min,
+                                  device.z.current,
+                                  device.z.max];
 }
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
+    self.settings.magnetometerValue = device.x.currentNormalized;
+    self.lblMagnetometer.text = [NSString stringWithFormat:@"Magnetometer\n"
+                                 "(min, current, max):\n"
+                                 "X; %f < %f < %f\n"
+                                 "Y; %f < %f < %f\n"
+                                 "Z; %f < %f < %f\n",
+                                 device.x.min,
+                                 device.x.current,
+                                 device.x.max,
+                                 device.y.min,
+                                 device.y.current,
+                                 device.y.max,
+                                 device.z.min,
+                                 device.z.current,
+                                 device.z.max];
 }
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device{
+    self.settings.gyroValue = device.x.currentNormalized;
+    self.lblGyros.text = [NSString stringWithFormat:@"Gyro\n"
+                          "(min, current, max):\n"
+                          "X; %f < %f < %f\n"
+                          "Y; %f < %f < %f\n"
+                          "Z; %f < %f < %f\n",
+                          device.x.min,
+                          device.x.current,
+                          device.x.max,
+                          device.y.min,
+                          device.y.current,
+                          device.y.max,
+                          device.z.min,
+                          device.z.current,
+                          device.z.max];
 }
 
 #pragma  mark - Implements VWWThereminInstrumentViewDelegate
 -(void)VWWThereminInstrumentView:(VWWThereminInstrumentView*)sender touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     self.lblInfo.hidden = YES;
+}
+
+#pragma mark - Implements VWWThereminHelpViewControllerDelegate
+-(void)userIsDoneWithHelp{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Implements VWWThereminSettingsViewControllerDelegate
+-(void)userIsDoneWithSettings{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)userIsCancelledSettings{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)userSetAccelerometerInput:(bool)enabled{
+    self.lblAccelerometer.hidden = !enabled;
+}
+-(void)userSetMagnetometerInput:(bool)enabled{
+    self.lblMagnetometer.hidden = !enabled;
+}
+-(void)userSetGyroInput:(bool)enabled{
+    self.lblGyros.hidden = !enabled;
+}
+-(void)userSetTouchInput:(bool)enabled{
+    // TODO: implement touch blocking?
 }
 @end

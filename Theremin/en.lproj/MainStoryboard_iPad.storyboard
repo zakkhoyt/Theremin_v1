@@ -87,7 +87,7 @@
                         <outlet property="lblGyros" destination="Lvi-ns-OoX" id="chZ-Lc-vKk"/>
                         <outlet property="lblInfo" destination="KHF-9C-1dE" id="huu-Ce-yLO"/>
                         <outlet property="lblMagnetometer" destination="nV3-OX-iLQ" id="KS5-00-Wex"/>
-                        <segue destination="5xy-FZ-RTJ" kind="modal" identifier="segue_VWW_ThereminSettingsViewController" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="fgn-xx-pJD"/>
+                        <segue destination="5xy-FZ-RTJ" kind="modal" identifier="segue_VWW_ThereminSettingsViewController" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="fgn-xx-pJD"/>
                         <segue destination="qsW-P5-705" kind="modal" identifier="segue_VWW_ThereminHelpViewController" modalPresentationStyle="formSheet" id="gVM-L7-vNL"/>
                     </connections>
                 </viewController>
@@ -135,6 +135,21 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ovl-Bc-Ihi">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Settings" backgroundImage="button_background.png">
+                                            <color key="titleColor" red="0.32184964230000002" green="1" blue="0.19402185399999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="button_background_pressed.png">
+                                            <color key="titleColor" red="1" green="0.044120462989999998" blue="0.030343670119999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handle_butSettings:" destination="2" eventType="touchUpInside" id="O7c-2h-m7Z"/>
+                                            <action selector="settingsButtonHandler:" destination="tmj-n2-FZO" eventType="touchUpInside" id="6XM-Ms-iy6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -149,6 +164,7 @@
                         <outlet property="lblGyros" destination="dVV-5Y-uF0" id="kAw-1C-tcZ"/>
                         <outlet property="lblInfo" destination="pcb-gq-URU" id="GR7-HO-hov"/>
                         <outlet property="lblMagnetometer" destination="rXG-4C-dKt" id="AxX-kn-bu3"/>
+                        <segue destination="5xy-FZ-RTJ" kind="modal" identifier="segueThereminToSettings" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="jJw-fo-ddx"/>
                     </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlG-5i-2xN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,7 +174,7 @@
         <!--Theremin Settings View Controller - Synthesizer Settings-->
         <scene sceneID="deK-cs-oMp">
             <objects>
-                <viewController id="Ht2-wo-Scw" customClass="VWW_ThereminSettingsViewController" sceneMemberID="viewController">
+                <viewController id="Ht2-wo-Scw" customClass="VWWThereminSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eqh-3Z-asy">
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -537,7 +553,7 @@
         <!--Theremin Help View Controller-->
         <scene sceneID="u2k-Ya-0dq">
             <objects>
-                <viewController id="7XE-DS-YyK" customClass="VWW_ThereminHelpViewController" sceneMemberID="viewController">
+                <viewController id="7XE-DS-YyK" customClass="VWWThereminHelpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fq-LK-XXA">
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -569,6 +585,7 @@
             <objects>
                 <navigationController id="5xy-FZ-RTJ" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="16c-hb-tDZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5dY-8K-jNI">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -610,12 +627,27 @@
         <image name="triangle_256x256.png" width="256" height="256"/>
     </resources>
     <classes>
+        <class className="VWWThereminHelpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminHelpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handle_butDone:"/>
+            </relationships>
+        </class>
         <class className="VWWThereminInstrumentView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminInstrumentView.h"/>
+        </class>
+        <class className="VWWThereminSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsViewController.h"/>
         </class>
         <class className="VWWThereminViewController" superclassName="GLKViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminViewController.h"/>
             <relationships>
+                <relationship kind="action" name="settingsButtonHandler:"/>
+                <relationship kind="outlet" name="instrumentView" candidateClass="VWWThereminInstrumentView"/>
+                <relationship kind="outlet" name="lblAccelerometer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblGyros" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblInfo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblMagnetometer" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="view" candidateClass="GLKView"/>
             </relationships>
         </class>
@@ -625,4 +657,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="jJw-fo-ddx"/>
+    </inferredMetricsTieBreakers>
 </document>

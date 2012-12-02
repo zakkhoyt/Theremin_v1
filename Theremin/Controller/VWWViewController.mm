@@ -152,7 +152,8 @@
                                   device.y.max,
                                   device.z.min,
                                   device.z.current,
-                                  device.z.max];}
+                                  device.z.max];
+}
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
     self.settings.magnetometerValue = device.x.currentNormalized;
     self.lblMagnetometer.text = [NSString stringWithFormat:@"Magnetometer\n"

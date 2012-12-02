@@ -7,7 +7,7 @@
 //
 
 #import "ThereminTests.h"
-#import "VWW_ThereminNotes.h"
+#import "VWWThereminNotes.h"
 
 @implementation ThereminTests
 
@@ -28,7 +28,7 @@
 - (void)testExample
 {
     STFail(@"Unit tests are not implemented yet in ThereminTests");
-    VWW_ThereminNotes* notes = [[VWW_ThereminNotes alloc]init];
+    VWWThereminNotes* notes = [[VWWThereminNotes alloc]init];
     
     float frequency = 121.3;
     float nearest = [notes getClosestNote:frequency];

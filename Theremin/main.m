@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "VWW_AppDelegate.h"
+#import "VWWAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([VWW_AppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([VWWAppDelegate class]));
     }
 }

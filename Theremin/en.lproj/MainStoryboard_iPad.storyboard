@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="tmj-n2-FZO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -94,6 +94,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-273" y="151"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="Ymi-vK-IlY">
+            <objects>
+                <glkViewController autoresizesArchivedViewToFullSize="NO" preferredFramesPerSecond="30" id="tmj-n2-FZO" customClass="VWWThereminViewController" sceneMemberID="viewController">
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Q4G-mf-Wqx">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="ncS-Qs-9Dh" customClass="VWWThereminInstrumentView">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="539"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Accelerometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y70-ed-Lv7">
+                                        <rect key="frame" x="97" y="0.0" width="186" height="246"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gyros" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dVV-5Y-uF0">
+                                        <rect key="frame" x="291" y="0.0" width="186" height="246"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Magnetometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rXG-4C-dKt">
+                                        <rect key="frame" x="485" y="0.0" width="186" height="246"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pcb-gq-URU">
+                                        <rect key="frame" x="118" y="254" width="532" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <connections>
+                            <outlet property="delegate" destination="tmj-n2-FZO" id="ILb-iE-pzS"/>
+                        </connections>
+                    </glkView>
+                    <connections>
+                        <outlet property="instrumentView" destination="ncS-Qs-9Dh" id="f9l-yO-p0R"/>
+                        <outlet property="lblAccelerometer" destination="y70-ed-Lv7" id="s3e-1K-YLL"/>
+                        <outlet property="lblGyros" destination="dVV-5Y-uF0" id="kAw-1C-tcZ"/>
+                        <outlet property="lblInfo" destination="pcb-gq-URU" id="GR7-HO-hov"/>
+                        <outlet property="lblMagnetometer" destination="rXG-4C-dKt" id="AxX-kn-bu3"/>
+                    </connections>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlG-5i-2xN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-273" y="1298"/>
         </scene>
         <!--Theremin Settings View Controller - Synthesizer Settings-->
         <scene sceneID="deK-cs-oMp">
@@ -550,57 +610,13 @@
         <image name="triangle_256x256.png" width="256" height="256"/>
     </resources>
     <classes>
-        <class className="VWW_ThereminHelpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ThereminHelpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handle_butDone:"/>
-            </relationships>
+        <class className="VWWThereminInstrumentView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminInstrumentView.h"/>
         </class>
-        <class className="VWW_ThereminInstrumentView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ThereminInstrumentView.h"/>
-        </class>
-        <class className="VWW_ThereminSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ThereminSettingsViewController.h"/>
+        <class className="VWWThereminViewController" superclassName="GLKViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminViewController.h"/>
             <relationships>
-                <relationship kind="action" name="handle_butCancel:"/>
-                <relationship kind="action" name="handle_butCommandRestart:"/>
-                <relationship kind="action" name="handle_butCommandStart:"/>
-                <relationship kind="action" name="handle_butCommandStop:"/>
-                <relationship kind="action" name="handle_butDone:"/>
-                <relationship kind="action" name="handle_butEffectAutotune:"/>
-                <relationship kind="action" name="handle_butEffectNone:"/>
-                <relationship kind="action" name="handle_butFrequencyDouble:"/>
-                <relationship kind="action" name="handle_butFrequencyHalf:"/>
-                <relationship kind="action" name="handle_butFrequencyNext:"/>
-                <relationship kind="action" name="handle_butFrequencyPrevious:"/>
-                <relationship kind="action" name="handle_butInputAccelerometer:"/>
-                <relationship kind="action" name="handle_butInputGyros:"/>
-                <relationship kind="action" name="handle_butInputMagnetometer:"/>
-                <relationship kind="action" name="handle_butInputTouch:"/>
-                <relationship kind="action" name="handle_butWaveformSawtooth:"/>
-                <relationship kind="action" name="handle_butWaveformSine:"/>
-                <relationship kind="action" name="handle_butWaveformSquare:"/>
-                <relationship kind="action" name="handle_butWaveformTriangle:"/>
-                <relationship kind="action" name="handle_sldAccelerometer:"/>
-                <relationship kind="action" name="handle_sldGyros:"/>
-                <relationship kind="action" name="handle_sldMagnetometer:"/>
-                <relationship kind="action" name="handle_sldTouch:"/>
-                <relationship kind="outlet" name="sldAccelerometer" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sldGyros" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sldMagnetometer" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="sldTouch" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="VWW_ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWW_ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handle_butHelp:"/>
-                <relationship kind="action" name="handle_butSettings:"/>
-                <relationship kind="outlet" name="instrumentView" candidateClass="VWW_ThereminInstrumentView"/>
-                <relationship kind="outlet" name="lblAccelerometer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblGyros" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblInfo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblMagnetometer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="view" candidateClass="GLKView"/>
             </relationships>
         </class>
     </classes>

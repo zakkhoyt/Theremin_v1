@@ -1,5 +1,5 @@
 //
-//  VWW_AppDelegate.h
+//  VWWAppDelegate.h
 //  Theremin
 //
 //  Created by Zakk Hoyt on 7/29/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VWW_AppDelegate : UIResponder <UIApplicationDelegate>
+@interface VWWAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

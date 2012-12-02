@@ -1,14 +1,14 @@
 //
-//  VWW_AppDelegate.m
+//  VWWAppDelegate.m
 //  Theremin
 //
 //  Created by Zakk Hoyt on 7/29/12.
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWW_AppDelegate.h"
+#import "VWWAppDelegate.h"
 
-@implementation VWW_AppDelegate
+@implementation VWWAppDelegate
 
 - (void)dealloc
 {

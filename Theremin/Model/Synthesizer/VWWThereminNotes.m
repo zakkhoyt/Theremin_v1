@@ -18,7 +18,6 @@
 @end
 
 @implementation VWWThereminNotes
-@synthesize notes = _notes;
 
 -(id)init{
     self = [super init];
@@ -30,7 +29,7 @@
 }
 
 -(float)getClosestNote:(float)frequency{
-    // Since our notes are sorted ascending, use binary search
+    // Since our notes are sorted ascending, use binary search pattern
     
     int min = 0;
     int max = self.notes.count;

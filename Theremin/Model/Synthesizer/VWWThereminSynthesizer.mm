@@ -102,7 +102,7 @@ static OSStatus renderInput(void *inRefCon,
     //	float phase = THIS->sinPhase;
     float phase = THIS.sinPhase;
 	float sinSignal;
-	// Loop through the callback buffer, generating samples for a sine wave
+	// Loop through the callback buffer, generating samples for a wave form
 	for (UInt32 i = 0; i < inNumberFrames; ++i) {
         switch(THIS.waveType){
             case kWaveSin:{
@@ -160,14 +160,6 @@ static OSStatus renderInput(void *inRefCon,
 
 
 @implementation VWWThereminSynthesizer
-@synthesize isRunning = _isRunning;
-@synthesize volume = _volume;
-@synthesize frequency = _frequency;
-@synthesize mGraph = _mGraph;
-@synthesize mMixer = _mMixer;
-@synthesize outputCASBD = _outputCASBD;
-@synthesize sinPhase = _sinPhase;
-@synthesize waveType = _waveType;
 
 -(id)initWithVolume:(float)volume andFrequency:(float)frequency{
     self = [super init];

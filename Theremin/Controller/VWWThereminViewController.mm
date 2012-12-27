@@ -14,10 +14,9 @@
 #import <OpenGLES/ES2/gl.h>
 #import "VWWCubeScene.h"
 #import "VWWThereminViewController.h"
-#import "VWWCubeModel.h"
+//#import "VWWCubeModel.h"
 #import "VWWMotionMonitor.h"
 #import "VWWThereminSynthesizerSettings.h"
-#import "VWWThereminInstrumentView.h"
 #import "VWWThereminSettingsViewController.h"
 #import "VWWThereminHelpViewController.h"
 
@@ -27,7 +26,6 @@ const CGFloat kRotateZSensitivity = 0.25f;
 
 @interface VWWThereminViewController () <GLKViewControllerDelegate,
     VWWMotionMonitorDelegate,
-    VWWThereminInstrumentViewDelegate,
     VWWThereminHelpViewControllerDelegate,
     VWWThereminSettingsViewControllerDelegate>{
 }
@@ -41,14 +39,17 @@ const CGFloat kRotateZSensitivity = 0.25f;
 @property (nonatomic, retain) NSTimer* rotateTimer;
 @property (nonatomic, retain) NSMutableArray* cubes;
 
+@property CGPoint selectedPixel;
+
 // UI components
-@property (nonatomic, retain) IBOutlet VWWThereminInstrumentView* instrumentView;
+
 @property (retain, nonatomic) IBOutlet UILabel *lblAccelerometer;
 @property (retain, nonatomic) IBOutlet UILabel *lblGyros;
 @property (retain, nonatomic) IBOutlet UILabel *lblMagnetometer;
 @property (retain, nonatomic) IBOutlet UILabel *lblInfo;
 
 - (IBAction)settingsButtonHandler:(id)sender;
+- (IBAction)aboutButtonHandler:(id)sender;
 
 
 @end
@@ -71,26 +72,13 @@ const CGFloat kRotateZSensitivity = 0.25f;
     [self createGLView];
     [self createCubeScene];
     [self.cubes makeObjectsPerformSelector:@selector(setupGL)];
-    [self.motionMonitor startAccelerometer];
-    [self.motionMonitor startGyros];
-    [self.motionMonitor startMagnetometer];
-    
-    
+
     
     // Theremin stuff
-    self.instrumentView.backgroundColor = [UIColor blackColor];
     UIColor* textColor = [UIColor greenColor];
-    self.instrumentView.crosshairColor = textColor;
     self.lblAccelerometer.textColor = textColor;
     self.lblGyros.textColor = textColor;
     self.lblMagnetometer.textColor = textColor;
-    
-    
-    // Register for touch event callbacks
-    self.instrumentView.delegate = self;
-
-    // share settings with instrument view
-    self.instrumentView.settings = self.settings;
 }
 
 
@@ -104,7 +92,7 @@ const CGFloat kRotateZSensitivity = 0.25f;
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // TODO: Implement
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -114,27 +102,42 @@ const CGFloat kRotateZSensitivity = 0.25f;
 	if ([segue.identifier isEqualToString:@"segueThereminToSettings"])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminSettingsViewController* viewController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminSettingsViewController* viewController = (VWWThereminSettingsViewController*)[[navigationController viewControllers]objectAtIndex:0];
 		viewController.delegate = self;
         viewController.settings = self.settings;
         viewController.motion = self.motionMonitor;
 	}
     else if ([segue.identifier isEqualToString:@"segue_VWWThereminHelpViewController"]){
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminHelpViewController* viewController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminHelpViewController* viewController = (VWWThereminHelpViewController*)[[navigationController viewControllers]objectAtIndex:0];
 		viewController.delegate = self;
     }
 }
 
 
+
+
+
 #pragma mark - UIResponder touch events
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    // OpenGL
     [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
     NSArray *touchesArray = [touches allObjects];
     UITouch* touch = [touchesArray objectAtIndex:0];
     self.touchBegan = [touch locationInView:nil];
     
+
+    // Synth
+    if(touch.tapCount == 2){
+        // double tap
+    }
+    else if(touch.tapCount == 1){
+        [self touchEvent:touches withEvent:event];
+    }
+    
+    [self.settings start];
 }
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
     NSArray *touchesArray = [touches allObjects];
@@ -145,12 +148,40 @@ const CGFloat kRotateZSensitivity = 0.25f;
     for(VWWCubeScene* cube in self.cubes){
         cube.rotate = GLKVector3Make(rotateX, rotateY, 0);
     }
+    
+    // Synth
+    if(touch.tapCount == 2){
+        // double tap
+    }
+    else if(touch.tapCount == 1){
+        [self touchEvent:touches withEvent:event];
+    }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
+    
+    // Synth
+    self.selectedPixel = CGPointMake(0, 0);
 }
+
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
+}
+
+
+- (void)touchEvent:(NSSet *)touches withEvent:(UIEvent *)event{
+    for(UITouch* touch in [event allTouches]){
+        CGPoint point = [touch locationInView:self.view];
+        
+        // This will catch if the user dragged their finger out of bounds of the UIImageView
+        if (!CGRectContainsPoint(self.view.bounds, point)){
+            return;
+        }
+        
+        self.selectedPixel = point;
+        float newTouchValue = (self.view.bounds.size.height - point.y) / self.view.bounds.size.height;
+        self.settings.touchValue = newTouchValue;
+    }
 }
 
 -(void)printMethod:(char*)method withTouches:(NSSet*)touches withEvent:(UIEvent*)event{
@@ -177,7 +208,6 @@ const CGFloat kRotateZSensitivity = 0.25f;
     // Occasionally shared with other controllers
     self.settings = [[VWWThereminSynthesizerSettings alloc]init];
     
-    
     self.motionMonitor = [[VWWMotionMonitor alloc]init];
     self.motionMonitor.delegate = self;
 }
@@ -186,11 +216,10 @@ const CGFloat kRotateZSensitivity = 0.25f;
     
     self.cubes = [[NSMutableArray alloc] init];
 
-    float cubeWidth = 4.0;
-    float z = 1;
+//    float cubeWidth = 4.0;
+//    float z = 1;
     VWWCubeScene* cubes[1] = {};
 
-    
     
     cubes[0] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
     cubes[0].translate = GLKVector3Make(0, 0, 13);
@@ -235,6 +264,9 @@ const CGFloat kRotateZSensitivity = 0.25f;
 
 - (IBAction)settingsButtonHandler:(id)sender {
     [self performSegueWithIdentifier:@"segueThereminToSettings" sender:self];
+}
+
+- (IBAction)aboutButtonHandler:(id)sender {
 }
 
 #pragma mark = Implements VWWMotionMonitorDelegate
@@ -288,11 +320,6 @@ const CGFloat kRotateZSensitivity = 0.25f;
                           device.z.min,
                           device.z.current,
                           device.z.max];
-}
-
-#pragma  mark - Implements VWWThereminInstrumentViewDelegate
--(void)VWWThereminInstrumentView:(VWWThereminInstrumentView*)sender touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    self.lblInfo.hidden = YES;
 }
 
 #pragma mark - Implements VWWThereminHelpViewControllerDelegate

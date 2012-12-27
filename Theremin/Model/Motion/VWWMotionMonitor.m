@@ -27,8 +27,6 @@ const float kMagnetometerZMax = 30.0f;
 @end
 
 @implementation VWWMotionMonitor
-@synthesize motion = _motion;
-@synthesize devices = _devices;
 
 -(id)init{
     self = [super init];

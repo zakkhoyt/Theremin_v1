@@ -4,97 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="4">
-            <objects>
-                <viewController id="2" customClass="VWW_ViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="jl6-pt-RVB" customClass="VWW_ThereminInstrumentView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1018"/>
-                                <subviews>
-                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Accelerometer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sSR-nl-xK5">
-                                        <rect key="frame" x="40" y="63" width="216" height="176"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <color key="highlightedColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Magnetometer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nV3-OX-iLQ">
-                                        <rect key="frame" x="512" y="63" width="216" height="176"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <color key="highlightedColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gyro" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lvi-ns-OoX">
-                                        <rect key="frame" x="276" y="63" width="216" height="176"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <color key="highlightedColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap me to start making noise! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UcU-p9-GFK">
-                                        <rect key="frame" x="244" y="542" width="280" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GaG-4c-pHM">
-                                        <rect key="frame" x="268" y="12" width="138" height="44"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Help">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handle_butHelp:" destination="2" eventType="touchUpInside" id="Og2-CH-A3Z"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HDW-Pk-DOF">
-                                        <rect key="frame" x="0.0" y="12" width="138" height="44"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Settings" backgroundImage="button_background.png">
-                                            <color key="titleColor" red="0.32184964229092072" green="1" blue="0.19402185399785332" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" backgroundImage="button_background_pressed.png">
-                                            <color key="titleColor" red="1" green="0.044120462989999998" blue="0.030343670119999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handle_butSettings:" destination="2" eventType="touchUpInside" id="Bwz-ge-uu8"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap me to start making noise! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KHF-9C-1dE">
-                                        <rect key="frame" x="244" y="324" width="280" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="instrumentView" destination="jl6-pt-RVB" id="1Ue-8h-Ycl"/>
-                        <outlet property="lblAccelerometer" destination="sSR-nl-xK5" id="a5O-AV-2vJ"/>
-                        <outlet property="lblGyros" destination="Lvi-ns-OoX" id="chZ-Lc-vKk"/>
-                        <outlet property="lblInfo" destination="KHF-9C-1dE" id="huu-Ce-yLO"/>
-                        <outlet property="lblMagnetometer" destination="nV3-OX-iLQ" id="KS5-00-Wex"/>
-                        <segue destination="5xy-FZ-RTJ" kind="modal" identifier="segue_VWW_ThereminSettingsViewController" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="fgn-xx-pJD"/>
-                        <segue destination="qsW-P5-705" kind="modal" identifier="segue_VWW_ThereminHelpViewController" modalPresentationStyle="formSheet" id="gVM-L7-vNL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-273" y="151"/>
-        </scene>
         <!--GLKit View Controller-->
         <scene sceneID="Ymi-vK-IlY">
             <objects>
@@ -104,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ncS-Qs-9Dh" customClass="VWWThereminInstrumentView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="539"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Accelerometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y70-ed-Lv7">
@@ -128,7 +37,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pcb-gq-URU">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Touch me to start making noise!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pcb-gq-URU">
                                         <rect key="frame" x="118" y="254" width="532" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -146,7 +55,6 @@
                                             <color key="titleColor" red="1" green="0.044120462989999998" blue="0.030343670119999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="handle_butSettings:" destination="2" eventType="touchUpInside" id="O7c-2h-m7Z"/>
                                             <action selector="settingsButtonHandler:" destination="tmj-n2-FZO" eventType="touchUpInside" id="6XM-Ms-iy6"/>
                                         </connections>
                                     </button>
@@ -165,11 +73,12 @@
                         <outlet property="lblInfo" destination="pcb-gq-URU" id="GR7-HO-hov"/>
                         <outlet property="lblMagnetometer" destination="rXG-4C-dKt" id="AxX-kn-bu3"/>
                         <segue destination="5xy-FZ-RTJ" kind="modal" identifier="segueThereminToSettings" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="jJw-fo-ddx"/>
+                        <segue destination="qsW-P5-705" kind="modal" identifier="segueThereminToAbout" modalPresentationStyle="formSheet" id="bCp-0J-HZa"/>
                     </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlG-5i-2xN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-273" y="1298"/>
+            <point key="canvasLocation" x="-279" y="132"/>
         </scene>
         <!--Theremin Settings View Controller - Synthesizer Settings-->
         <scene sceneID="deK-cs-oMp">
@@ -550,10 +459,10 @@
             </objects>
             <point key="canvasLocation" x="1773" y="-297"/>
         </scene>
-        <!--Theremin Help View Controller-->
+        <!--Theremin About View Controller-->
         <scene sceneID="u2k-Ya-0dq">
             <objects>
-                <viewController id="7XE-DS-YyK" customClass="VWWThereminHelpViewController" sceneMemberID="viewController">
+                <viewController id="7XE-DS-YyK" customClass="VWWThereminAboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fq-LK-XXA">
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -604,6 +513,7 @@
             <objects>
                 <navigationController id="qsW-P5-705" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6Z6-kM-tbO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="orr-Nr-YcK">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -626,38 +536,9 @@
         <image name="square_256x256.png" width="256" height="256"/>
         <image name="triangle_256x256.png" width="256" height="256"/>
     </resources>
-    <classes>
-        <class className="VWWThereminHelpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminHelpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handle_butDone:"/>
-            </relationships>
-        </class>
-        <class className="VWWThereminInstrumentView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminInstrumentView.h"/>
-        </class>
-        <class className="VWWThereminSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsViewController.h"/>
-        </class>
-        <class className="VWWThereminViewController" superclassName="GLKViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="settingsButtonHandler:"/>
-                <relationship kind="outlet" name="instrumentView" candidateClass="VWWThereminInstrumentView"/>
-                <relationship kind="outlet" name="lblAccelerometer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblGyros" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblInfo" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblMagnetometer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="view" candidateClass="GLKView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="jJw-fo-ddx"/>
-    </inferredMetricsTieBreakers>
 </document>

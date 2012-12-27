@@ -20,27 +20,14 @@
 
 
 @implementation VWWThereminSynthesizerSettings
-// private vars
-@synthesize synthesizer = _synthesizer;
-@synthesize notes = _notes;
 
-// public vars
-@synthesize running = _running;
++(VWWThereminSynthesizerSettings *)sharedInstance{
+    static VWWThereminSynthesizerSettings* instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{ instance = [[VWWThereminSynthesizerSettings alloc]init]; });
+    return instance;
+}
 
-@synthesize frequencyMin = _frequencyMin;
-@synthesize frequencyMax = _frequencyMax;
-@synthesize volumeMin = _volumeMin;
-@synthesize volumeMax = _volumeMax;
-
-@synthesize touchValue = _touchValue;
-@synthesize accelerometerValue = _accelerometerValue;
-@synthesize magnetometerValue = _magnetometerValue;
-@synthesize gyroValue = _gyroValue;
-
-@synthesize touchSensitivity = _touchSensitivity;
-@synthesize accelerometerSensitivity = _accelerometerSensitivity;
-@synthesize magnetometerSensitivity = _magnetometerSensitivity;
-@synthesize gyroSensitivity = _gyroSensitivity;
 
 -(id)init{
     self = [super init];
@@ -48,6 +35,7 @@
         [self initializeClass];
         [NSThread detachNewThreadSelector:@selector(monitorFrequencyThread) toTarget:self withObject:nil];
     }
+    
     return self;
 }
 

@@ -36,12 +36,12 @@
 }
 
 - (void)setupGL{
-    NSLog(@"ERROR! Child child class to implement");
+    NSLog(@"ERROR! Child class to implement");
     assert(NO);
 }
 
 - (void)tearDownGL{
-    NSLog(@"ERROR! Child child class to implement");
+    NSLog(@"ERROR! Child class to implement");
     assert(NO);
 }
 

@@ -15,9 +15,9 @@
 @end
 
 @implementation VWWThereminInstrumentView
-@synthesize settings = _settings;
-@synthesize selectedPixel = _selectedPixel;
-@synthesize crosshairColor = _crosshairColor;
+//@synthesize settings = _settings;
+//@synthesize selectedPixel = _selectedPixel;
+//@synthesize crosshairColor = _crosshairColor;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -98,9 +98,6 @@
     }
     
     [self.settings start];
-//    if(self.delegate){
-////        [self.delegate touchBegan];
-//    }
     [self.delegate VWWThereminInstrumentView:self touchesBegan:touches withEvent:event];
 }
 
@@ -146,11 +143,11 @@
         self.selectedPixel = point;
         [self setNeedsDisplay];
         
-        if(self.delegate){
-            float newTouchValue = (self.bounds.size.height - point.y) / self.bounds.size.height;
-            self.settings.touchValue = newTouchValue;
-//            NSLog(@"s.s.tv=%f ntv=%f", self.settings.touchValue, newTouchValue);
-        }
+
+        float newTouchValue = (self.bounds.size.height - point.y) / self.bounds.size.height;
+        self.settings.touchValue = newTouchValue;
+//        NSLog(@"s.s.tv=%f ntv=%f", self.settings.touchValue, newTouchValue);
+
     }
 }
 

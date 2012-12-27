@@ -7,8 +7,11 @@
 //
 
 #import "VWWThereminSettingsViewController.h"
+#import "VWWThereminConfigSensor.h"
 
-@interface VWWThereminSettingsViewController ()
+static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
+@interface VWWThereminSettingsViewController () <VWWThereminConfigSensorDelegate>
+
 
 /// Command buttons
 @property (retain, nonatomic) IBOutlet UIButton *butCommandStart;
@@ -27,6 +30,9 @@
 - (IBAction)handle_butInputAccelerometer:(id)sender;
 - (IBAction)handle_butInputTouch:(id)sender;
 - (IBAction)handle_butInputGyros:(id)sender;
+- (IBAction)handle_butConfigAccelerometer:(id)sender;
+
+
 
 // Input sliders
 @property (retain, nonatomic) IBOutlet UISlider *sldMagnetometer;
@@ -78,31 +84,6 @@
 
 @implementation VWWThereminSettingsViewController
 
-// Public
-@synthesize settings = _settings;
-
-// Private 
-@synthesize butCommandStart = _butCommandStart;
-@synthesize butCommandStop = _butCommandStop;
-@synthesize butCommandRestart = _butCommandRestart;
-
-@synthesize butInputMagnetometer = _butInputMagnetometer;
-@synthesize butInputAccelerometer = _butInputAccelerometer;
-@synthesize butInputTouch = _butInputTouch;
-@synthesize butInputGyros = _butInputGyros;
-
-@synthesize butWaveformSine = _butWaveformSine;
-@synthesize butWaveformSquare = _butWaveformSquare;
-@synthesize butWaveformTriangle = _butWaveformTriangle;
-@synthesize butWaveformSawtooth = _butWaveformSawtooth;
-
-@synthesize butFrequencyNext = _butFrequencyNext;
-@synthesize butFrequencyPrevious = _butFrequencyPrevious;
-@synthesize butFrequencyDouble = _butFrequencyDouble;
-@synthesize butFrequencyHalf = _butFrequencyHalf;
-
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -151,6 +132,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+
 -(void)initializeClass{
     self.sldAccelerometer.minimumValue = 0.1;
     self.sldAccelerometer.maximumValue = 2.0;
@@ -168,6 +152,23 @@
     self.sldTouch.maximumValue = 2.0;
     self.sldTouch.value = 1.0;
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // A segue is about to be performed. This is our chance to send data to the
+    // view controller that will be loaded.
+	if ([segue.identifier isEqualToString:kSegueSettingsToConfigSensor])
+	{
+		UINavigationController* navigationController = segue.destinationViewController;
+		VWWThereminConfigSensor* configSensorController = [[navigationController viewControllers]objectAtIndex:0];
+		configSensorController.delegate = self;
+//        configSensorController.settings = self.settings;
+//        configSensorController.motion = self.motionMonitor;
+	}
+}
+
+
 
 - (IBAction)handle_butDone:(id)sender {
     if(self.delegate){
@@ -257,6 +258,10 @@
     }
 }
 
+- (IBAction)handle_butConfigAccelerometer:(id)sender {
+    [self performSegueWithIdentifier:kSegueSettingsToConfigSensor sender:self];
+}
+
 #pragma mark Handlers for hardware slider sensitivity
 - (IBAction)handle_sldMagnetometer:(id)sender {
     UISlider* slider = (UISlider*)sender;
@@ -325,5 +330,13 @@
 
 - (IBAction)handle_butEffectNone:(id)sender {
     self.settings.effectType = kEffectNone;
+}
+
+#pragma mark - Implements VWWThereminConfigSensorDelegate
+-(void)vwwThereminConfigSensorUserIsDone:(VWWThereminConfigSensor *)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)vwwThereminConfigSensorUserDidCancel:(VWWThereminConfigSensor*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

@@ -68,19 +68,12 @@ typedef enum{
 @property float magnetometerSensitivity;
 @property float gyroSensitivity;
 
++(VWWThereminSynthesizerSettings *)sharedInstance;
+
 // Actions
 -(void)restart;
 -(void)start;
 -(void)stop;
-
-
-// Setter/getters
-//-(float)volume;
-//-(void)setVolume:(float)newVolume;
-//
-//-(float)frequency;
-//-(void)setFrequency:(float)newFrequency;
-//
 
 -(WaveType)waveType;
 -(void)setWaveType:(WaveType)newWaveType;
@@ -88,23 +81,5 @@ typedef enum{
 -(u_int32_t)inputType;
 -(void)setInputType:(InputType)newInputType;
 -(void)clearInputType:(InputType)newInputType;
-
-
-
-//-(EffectType)effectType;
-//-(void)setEffectType:(EffectType)newEffect;
-
-
-//-(void)setTouchValue:(float)newTouchValue;
-//-(float)touchValue;
-
-//-(float)touchValue;
-//-(void)setTouchValue:(float)newValue;
-//-(float)accelerometerValue;
-//-(void)setAccelerometerValue:(float)newValue;
-//-(float)magnetometerValue;
-//-(void)setMagnetometerhValue:(float)newValue;
-//-(float)gyroValue;
-//-(void)setGyroValue:(float)newValue;
 
 @end

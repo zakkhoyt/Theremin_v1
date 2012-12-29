@@ -34,15 +34,15 @@ static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
 
 
 
-// Input sliders
-@property (retain, nonatomic) IBOutlet UISlider *sldMagnetometer;
-@property (retain, nonatomic) IBOutlet UISlider *sldAccelerometer;
-@property (retain, nonatomic) IBOutlet UISlider *sldGyros;
-@property (retain, nonatomic) IBOutlet UISlider *sldTouch;
-- (IBAction)handle_sldMagnetometer:(id)sender;
-- (IBAction)handle_sldAccelerometer:(id)sender;
-- (IBAction)handle_sldGyros:(id)sender;
-- (IBAction)handle_sldTouch:(id)sender;
+//// Input sliders
+//@property (retain, nonatomic) IBOutlet UISlider *sldMagnetometer;
+//@property (retain, nonatomic) IBOutlet UISlider *sldAccelerometer;
+//@property (retain, nonatomic) IBOutlet UISlider *sldGyros;
+//@property (retain, nonatomic) IBOutlet UISlider *sldTouch;
+//- (IBAction)handle_sldMagnetometer:(id)sender;
+//- (IBAction)handle_sldAccelerometer:(id)sender;
+//- (IBAction)handle_sldGyros:(id)sender;
+//- (IBAction)handle_sldTouch:(id)sender;
 
 
 
@@ -110,10 +110,10 @@ static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
     [_butFrequencyPrevious release];
     [_butFrequencyDouble release];
     [_butFrequencyHalf release];
-    [_sldMagnetometer release];
-    [_sldAccelerometer release];
-    [_sldGyros release];
-    [_sldTouch release];
+//    [_sldMagnetometer release];
+//    [_sldAccelerometer release];
+//    [_sldGyros release];
+//    [_sldTouch release];
     [_butEffectAutotune release];
     [_butEffectNone release];
     [super dealloc];
@@ -136,21 +136,21 @@ static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
 
 
 -(void)initializeClass{
-    self.sldAccelerometer.minimumValue = 0.1;
-    self.sldAccelerometer.maximumValue = 2.0;
-    self.sldAccelerometer.value = 1.0;
-    
-    self.sldMagnetometer.minimumValue = 0.1;
-    self.sldMagnetometer.maximumValue = 2.0;
-    self.sldMagnetometer.value = 1.0;
-    
-    self.sldGyros.minimumValue = 0.1;
-    self.sldGyros.maximumValue = 2.0;
-    self.sldGyros.value = 1.0;
-    
-    self.sldTouch.minimumValue = 0.1;
-    self.sldTouch.maximumValue = 2.0;
-    self.sldTouch.value = 1.0;
+//    self.sldAccelerometer.minimumValue = 0.1;
+//    self.sldAccelerometer.maximumValue = 2.0;
+//    self.sldAccelerometer.value = 1.0;
+//    
+//    self.sldMagnetometer.minimumValue = 0.1;
+//    self.sldMagnetometer.maximumValue = 2.0;
+//    self.sldMagnetometer.value = 1.0;
+//    
+//    self.sldGyros.minimumValue = 0.1;
+//    self.sldGyros.maximumValue = 2.0;
+//    self.sldGyros.value = 1.0;
+//    
+//    self.sldTouch.minimumValue = 0.1;
+//    self.sldTouch.maximumValue = 2.0;
+//    self.sldTouch.value = 1.0;
 }
 
 
@@ -262,26 +262,26 @@ static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
     [self performSegueWithIdentifier:kSegueSettingsToConfigSensor sender:self];
 }
 
-#pragma mark Handlers for hardware slider sensitivity
-- (IBAction)handle_sldMagnetometer:(id)sender {
-    UISlider* slider = (UISlider*)sender;
-    [self.settings setMagnetometerSensitivity:slider.value];
-}
-
-- (IBAction)handle_sldAccelerometer:(id)sender {
-    UISlider* slider = (UISlider*)sender;
-    [self.settings setAccelerometerSensitivity:slider.value];
-}
-
-- (IBAction)handle_sldGyros:(id)sender {
-    UISlider* slider = (UISlider*)sender;
-    [self.settings setGyroSensitivity:slider.value];
-}
-
-- (IBAction)handle_sldTouch:(id)sender {
-    UISlider* slider = (UISlider*)sender;
-    [self.settings setTouchSensitivity:slider.value];
-}
+//#pragma mark Handlers for hardware slider sensitivity
+//- (IBAction)handle_sldMagnetometer:(id)sender {
+//    UISlider* slider = (UISlider*)sender;
+//    [self.settings setMagnetometerSensitivity:slider.value];
+//}
+//
+//- (IBAction)handle_sldAccelerometer:(id)sender {
+//    UISlider* slider = (UISlider*)sender;
+//    [self.settings setAccelerometerSensitivity:slider.value];
+//}
+//
+//- (IBAction)handle_sldGyros:(id)sender {
+//    UISlider* slider = (UISlider*)sender;
+//    [self.settings setGyroSensitivity:slider.value];
+//}
+//
+//- (IBAction)handle_sldTouch:(id)sender {
+//    UISlider* slider = (UISlider*)sender;
+//    [self.settings setTouchSensitivity:slider.value];
+//}
 
 
 #pragma mark Handlers for waveform buttons

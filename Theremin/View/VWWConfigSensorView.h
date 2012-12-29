@@ -10,8 +10,7 @@
 #import "VWWAxisFrequencies.h"
 
 @interface VWWConfigSensorView : UIView
-@property (nonatomic, retain) VWWAxisFrequencies* lineFrequenciesMax;
-@property (nonatomic, retain) VWWAxisFrequencies* lineFrequenciesMin;
+@property (nonatomic, retain) VWWAxisFrequencies* lineFrequencies;
 @property (nonatomic, retain) VWWAxisFrequencies* lineXMax;
 @property (nonatomic, retain) VWWAxisFrequencies* lineXMin;
 @property (nonatomic, retain) VWWAxisFrequencies* lineYMax;

@@ -45,7 +45,7 @@
     VWWAxisFrequencies* frequenciesLine = [[VWWAxisFrequencies alloc]
                                            initWithBegin:begin
                                            andEnd:end];
-    [self.configView setLineFrequenciesMax:frequenciesLine];
+    [self.configView setLineFrequencies:frequenciesLine];
     // TODO: axisFreq
     
 }
@@ -114,7 +114,7 @@
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
+//    [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
 }
 
 

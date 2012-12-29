@@ -57,31 +57,36 @@
     CGFloat color[4] = {red, green, blue, alpha};        // r,g,b,a
     CGContextSetStrokeColor(cgContext, color);
     CGContextBeginPath(cgContext);
-    CGContextSetLineWidth(cgContext, 5.0f);
+    CGContextSetLineWidth(cgContext, 2.0f);
     
-    CGPoint frequencyLineBegin = self.lineFrequenciesMax.begin;
-    CGPoint frequencyLineEnd = self.lineFrequenciesMax.end;
     
-    // draw horiontal hair
-    CGContextMoveToPoint(cgContext,
-                         frequencyLineBegin.x,
-                         frequencyLineBegin.y);
+    [self drawLineWithContext:cgContext
+                    fromPoint:self.lineFrequencies.begin
+                      toPoint:self.lineFrequencies.end];
+
+//    [self drawLineWithContext:cgContext
+//                    fromPoint:self.lineFrequenciesMax.begin
+//                      toPoint:self.lineFrequenciesMax.end];
+
     
-    CGContextAddLineToPoint(cgContext,
-                            frequencyLineEnd.x,
-                            frequencyLineEnd.y);
-    //
-    //    // draw vertical hair
-    //    CGContextMoveToPoint(cgContext,
-    //                         self.selectedPixel.x,
-    //                         startY);
-    //    CGContextAddLineToPoint(cgContext,
-    //                            self.selectedPixel.x,
-    //                            finishY);
+    
+    
+    
+    
     
     CGContextStrokePath(cgContext);
 }
 
+
+-(void)drawLineWithContext:(CGContextRef)cgContext fromPoint:(CGPoint)begin toPoint:(CGPoint)end{
+    CGContextMoveToPoint(cgContext,
+                         begin.x,
+                         begin.y);
+    
+    CGContextAddLineToPoint(cgContext,
+                            end.x,
+                            end.y);
+}
 
 
 @end

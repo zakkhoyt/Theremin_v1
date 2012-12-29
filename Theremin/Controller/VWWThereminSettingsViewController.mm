@@ -7,10 +7,10 @@
 //
 
 #import "VWWThereminSettingsViewController.h"
-#import "VWWThereminConfigSensor.h"
+#import "VWWThereminConfigInputFrequencyViewController.h"
 
-static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
-@interface VWWThereminSettingsViewController () <VWWThereminConfigSensorDelegate>
+static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
+@interface VWWThereminSettingsViewController () <VWWThereminConfigInputFrequencyViewControllerDelegate>
 
 
 /// Command buttons
@@ -158,10 +158,10 @@ static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
 {
     // A segue is about to be performed. This is our chance to send data to the
     // view controller that will be loaded.
-	if ([segue.identifier isEqualToString:kSegueSettingsToConfigSensor])
+	if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputFrequency])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigSensor* configSensorController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminConfigInputFrequencyViewController* configSensorController = [[navigationController viewControllers]objectAtIndex:0];
 		configSensorController.delegate = self;
 //        configSensorController.settings = self.settings;
 //        configSensorController.motion = self.motionMonitor;
@@ -259,7 +259,7 @@ static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
 }
 
 - (IBAction)handle_butConfigAccelerometer:(id)sender {
-    [self performSegueWithIdentifier:kSegueSettingsToConfigSensor sender:self];
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputFrequency sender:self];
 }
 
 //#pragma mark Handlers for hardware slider sensitivity
@@ -332,11 +332,11 @@ static NSString* kSegueSettingsToConfigSensor = @"segueSettingsToConfigSensor";
     self.settings.effectType = kEffectNone;
 }
 
-#pragma mark - Implements VWWThereminConfigSensorDelegate
--(void)vwwThereminConfigSensorUserIsDone:(VWWThereminConfigSensor *)sender{
+#pragma mark - Implements VWWThereminConfigInputFrequencyViewControllerDelegate
+-(void)VWWThereminConfigInputFrequencyViewControllerUserIsDone:(VWWThereminConfigInputFrequencyViewController *)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
--(void)vwwThereminConfigSensorUserDidCancel:(VWWThereminConfigSensor*)sender{
+-(void)VWWThereminConfigInputFrequencyViewControllerUserDidCancel:(VWWThereminConfigInputFrequencyViewController*)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

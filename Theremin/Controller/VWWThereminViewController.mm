@@ -38,8 +38,8 @@ const CGFloat kRotateZSensitivity = 0.25f;
 @property (nonatomic) CGPoint touchEnded;
 @property (nonatomic, retain) NSTimer* rotateTimer;
 @property (nonatomic, retain) NSMutableArray* cubes;
-
 @property CGPoint selectedPixel;
+
 
 // UI components
 

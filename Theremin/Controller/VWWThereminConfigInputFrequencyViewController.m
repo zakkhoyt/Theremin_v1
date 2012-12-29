@@ -1,12 +1,12 @@
 //
-//  VWWThereminConfigSensor.m
+//  VWWThereminConfigInputFrequencyViewController.m
 //  Theremin
-//
+//// VWWThereminConfigInputFrequencyViewController
 //  Created by Zakk Hoyt on 12/26/12.
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWThereminConfigSensor.h"
+#import "VWWThereminConfigInputFrequencyViewController.h"
 #import "VWWConfigSensorView.h"
 
 const NSUInteger kEndzoneWidth = 30;
@@ -28,7 +28,8 @@ static NSString* kYMinLabelPrefix = @"Y Min";
 static NSString* kZMaxLabelPrefix = @"Z Max";
 static NSString* kZMinLabelPrefix = @"Z Min";
 
-@interface VWWThereminConfigSensor ()
+@interface VWWThereminConfigInputFrequencyViewController ()
+//@property (retain, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (nonatomic, retain) IBOutlet UIView* infoView;
 @property (retain, nonatomic) IBOutlet VWWConfigSensorView *configView;
 @property (retain, nonatomic) IBOutlet UILabel *frequencyMaxLabel;
@@ -45,11 +46,12 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 @property (nonatomic) CGRect frequencyEndzone;
 
 
+- (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 @end
 
-@implementation VWWThereminConfigSensor
+@implementation VWWThereminConfigInputFrequencyViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -68,9 +70,31 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 {
     [super viewDidLoad];
     
+#if defined(VWW_SHOW_INFO_SCREENS)
     [self.view addSubview:self.infoView];
     [self.infoView setFrame:self.view.frame];
     [self.infoView setHidden:NO];
+#endif
+    
+    // Set nav bar title
+    switch(self.sensorType){
+        case kVWWSensorTypeAccelerometer:
+            self.navigationItem.title = @"Accelerometer";
+            break;
+        case kVWWSensorTypeGyro:
+            self.navigationItem.title = @"Gyroscopes";
+            break;
+        case kVWWSensorTypeMagnetometer:
+            self.navigationItem.title = @"Magnetometers";
+            break;
+        case kVWWSensorTypeTouch:
+            self.navigationItem.title = @"Touch Screen";
+            break;
+        case kVWWSensorTypeNone:
+            self.navigationItem.title = @"Invalid Input";
+        default:
+            break;
+    }
     
     self.frequencyMaxLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MAX];
     self.frequencyMinLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MIN];
@@ -293,11 +317,19 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 }
 
 
+- (IBAction)dismissInfoViewButton:(id)sender {
+    [UIView animateWithDuration:1.0 animations:^{
+        self.infoView.alpha = 0.0;
+    } completion:^(BOOL finished){
+        [self.infoView removeFromSuperview];
+    }];
+}
+
 - (IBAction)cancelButtonHandler:(id)sender {
-    [self.delegate vwwThereminConfigSensorUserDidCancel:self];
+    [self.delegate VWWThereminConfigInputFrequencyViewControllerUserDidCancel:self];
 }
 
 - (IBAction)doneButtonHandler:(id)sender {
-    [self.delegate vwwThereminConfigSensorUserIsDone:self];
+    [self.delegate VWWThereminConfigInputFrequencyViewControllerUserIsDone:self];
 }
 @end

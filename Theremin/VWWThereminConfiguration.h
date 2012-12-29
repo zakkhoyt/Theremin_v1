@@ -14,4 +14,5 @@
 #define VWW_FREQUENCY_MAX   2500.0
 #define VWW_FREQUENCY_MIN   20.0
 
+#define VWW_SHOW_INFO_SCREENS 1
 #endif

@@ -1,4 +1,4 @@
-* Create branch for release
+* Create branch for release 
 * Change all instances of "Gyros" to "Gyro"
 
 * Remove iVar declarations for those that have synthesizers

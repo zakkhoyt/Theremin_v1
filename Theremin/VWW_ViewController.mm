@@ -1,11 +1,11 @@
-//
+//  VaporWareWolf
 //  VWW_ViewController.m
 //  Theremin
 //
 //  Created by Zakk Hoyt on 7/29/12.
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
-//
-
+//  
+// 
 
 #import "VWW_ViewController.h"
 #import "VWW_ThereminInstrumentView.h"

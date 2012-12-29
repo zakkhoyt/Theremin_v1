@@ -34,6 +34,9 @@
 		C693B5C11628E191008CB1B1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464915C7AE580066E94B /* Default.png */; };
 		C693B5C21628E198008CB1B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C624E67615C7E3E400A8DD94 /* Default@2x.png */; };
 		C6B3E963168BFBB100298AF5 /* VWWConfigSensorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B3E962168BFBB100298AF5 /* VWWConfigSensorView.m */; };
+		C6CE37A9168EBB9A000F2A48 /* VWWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37A8168EBB9A000F2A48 /* VWWUserDefaults.m */; };
+		C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */; };
+		C6CE37B2168EC804000F2A48 /* VWWThereminInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37B1168EC804000F2A48 /* VWWThereminInput.mm */; };
 		C6D3E1A21639B4B10032D2F3 /* button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E1A11639B4B10032D2F3 /* button_background.png */; };
 		C6D3E1A41639B5580032D2F3 /* button_background_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */; };
 		C6E34B80166AE52800D0AB2C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E34B7E166AE52700D0AB2C /* GLKit.framework */; };
@@ -123,6 +126,13 @@
 		C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		C6B3E961168BFBB100298AF5 /* VWWConfigSensorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigSensorView.h; sourceTree = "<group>"; };
 		C6B3E962168BFBB100298AF5 /* VWWConfigSensorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigSensorView.m; sourceTree = "<group>"; };
+		C6CE37A6168EBAE3000F2A48 /* VWWThereminConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWThereminConfiguration.h; sourceTree = "<group>"; };
+		C6CE37A7168EBB9A000F2A48 /* VWWUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUserDefaults.h; sourceTree = "<group>"; };
+		C6CE37A8168EBB9A000F2A48 /* VWWUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUserDefaults.m; sourceTree = "<group>"; };
+		C6CE37AB168EC640000F2A48 /* VWWThereminInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInput.h; sourceTree = "<group>"; };
+		C6CE37AE168EC67C000F2A48 /* VWWThereminInputAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInputAxis.h; sourceTree = "<group>"; };
+		C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminInputAxis.mm; sourceTree = "<group>"; };
+		C6CE37B1168EC804000F2A48 /* VWWThereminInput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminInput.mm; sourceTree = "<group>"; };
 		C6D3E1A11639B4B10032D2F3 /* button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_background.png; path = images/button_background.png; sourceTree = SOURCE_ROOT; };
 		C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_background_pressed.png; path = images/button_background_pressed.png; sourceTree = SOURCE_ROOT; };
 		C6E34B7E166AE52700D0AB2C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -138,12 +148,6 @@
 		C6EB8889168B975600DD1F3E /* VWWThereminAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminAboutViewController.m; sourceTree = "<group>"; };
 		C6EB88AA168BF2A100DD1F3E /* VWWThereminConfigSensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminConfigSensor.h; sourceTree = "<group>"; };
 		C6EB88AB168BF2A100DD1F3E /* VWWThereminConfigSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminConfigSensor.m; sourceTree = "<group>"; };
-		C6EB88AE168BF51200DD1F3E /* VWWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWWViewController.h; path = Controller/VWWViewController.h; sourceTree = "<group>"; };
-		C6EB88AF168BF51200DD1F3E /* VWWViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWViewController.mm; path = Controller/VWWViewController.mm; sourceTree = "<group>"; };
-		C6EB8949168BF58A00DD1F3E /* VWWScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VWWScene.h; path = Model/Scenes/VWWScene.h; sourceTree = "<group>"; };
-		C6EB894A168BF58A00DD1F3E /* VWWScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VWWScene.m; path = Model/Scenes/VWWScene.m; sourceTree = "<group>"; };
-		C6EB894B168BF58A00DD1F3E /* VWWThereminInstrumentView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminInstrumentView.mm; path = View/VWWThereminInstrumentView.mm; sourceTree = "<group>"; };
-		C6EB894C168BF58A00DD1F3E /* VWWThereminViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminViewController.mm; path = Controller/VWWThereminViewController.mm; sourceTree = "<group>"; };
 		C6EB894D168BF7AC00DD1F3E /* VWWAxisFrequencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWAxisFrequencies.h; path = Theremin/VWWAxisFrequencies.h; sourceTree = SOURCE_ROOT; };
 		C6EB894E168BF7AC00DD1F3E /* VWWAxisFrequencies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWAxisFrequencies.m; path = Theremin/VWWAxisFrequencies.m; sourceTree = SOURCE_ROOT; };
 		C6F7537215C6313C00911E59 /* Theremin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theremin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,11 +245,14 @@
 		C606D294166AE1E500FA7B70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6CE37B3168EC870000F2A48 /* Input */,
 				C6EB8880168B921900DD1F3E /* OpenGL */,
 				C606D295166AE1E500FA7B70 /* Motion */,
 				C606D298166AE1E500FA7B70 /* Synthesizer */,
 				C6EB894D168BF7AC00DD1F3E /* VWWAxisFrequencies.h */,
 				C6EB894E168BF7AC00DD1F3E /* VWWAxisFrequencies.m */,
+				C6CE37A7168EBB9A000F2A48 /* VWWUserDefaults.h */,
+				C6CE37A8168EBB9A000F2A48 /* VWWUserDefaults.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +342,17 @@
 			name = source_folder;
 			sourceTree = "<group>";
 		};
+		C6CE37B3168EC870000F2A48 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				C6CE37AB168EC640000F2A48 /* VWWThereminInput.h */,
+				C6CE37B1168EC804000F2A48 /* VWWThereminInput.mm */,
+				C6CE37AE168EC67C000F2A48 /* VWWThereminInputAxis.h */,
+				C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */,
+			);
+			name = Input;
+			sourceTree = "<group>";
+		};
 		C6E34B8F166AE82000D0AB2C /* GLtextures */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,19 +374,6 @@
 				C606D2BB166AE3A200FA7B70 /* Scenes */,
 			);
 			name = OpenGL;
-			sourceTree = "<group>";
-		};
-		C6EB88AD168BF4ED00DD1F3E /* Reference (not compiled) */ = {
-			isa = PBXGroup;
-			children = (
-				C6EB8949168BF58A00DD1F3E /* VWWScene.h */,
-				C6EB894A168BF58A00DD1F3E /* VWWScene.m */,
-				C6EB894B168BF58A00DD1F3E /* VWWThereminInstrumentView.mm */,
-				C6EB894C168BF58A00DD1F3E /* VWWThereminViewController.mm */,
-				C6EB88AE168BF51200DD1F3E /* VWWViewController.h */,
-				C6EB88AF168BF51200DD1F3E /* VWWViewController.mm */,
-			);
-			name = "Reference (not compiled)";
 			sourceTree = "<group>";
 		};
 		C6F7536715C6313C00911E59 = {
@@ -409,10 +414,9 @@
 		C6F7537C15C6313C00911E59 /* Theremin */ = {
 			isa = PBXGroup;
 			children = (
-				C6EB88AD168BF4ED00DD1F3E /* Reference (not compiled) */,
+				C606D292166AE1E500FA7B70 /* Documents */,
 				C6F753CA15C63B7200911E59 /* Storyboards */,
 				C606D289166AE1E500FA7B70 /* Controller */,
-				C606D292166AE1E500FA7B70 /* Documents */,
 				C606D294166AE1E500FA7B70 /* Model */,
 				C606D29F166AE1E500FA7B70 /* View */,
 				C6F7537D15C6313C00911E59 /* Supporting Files */,
@@ -424,13 +428,14 @@
 		C6F7537D15C6313C00911E59 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C6CE37A6168EBAE3000F2A48 /* VWWThereminConfiguration.h */,
 				C606D2AC166AE20C00FA7B70 /* main.m */,
 				C606D2AD166AE20C00FA7B70 /* Theremin-Info.plist */,
 				C606D2AE166AE20C00FA7B70 /* Theremin-Prefix.pch */,
 				C606D2AF166AE20C00FA7B70 /* VWWAppDelegate.h */,
 				C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.m */,
-				C6F829B51628C80B00C79CAA /* Apple CA Helpers */,
 				C6F7537F15C6313C00911E59 /* InfoPlist.strings */,
+				C6F829B51628C80B00C79CAA /* Apple CA Helpers */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -630,6 +635,9 @@
 				C6EB88AC168BF2A100DD1F3E /* VWWThereminConfigSensor.m in Sources */,
 				C6EB894F168BF7AC00DD1F3E /* VWWAxisFrequencies.m in Sources */,
 				C6B3E963168BFBB100298AF5 /* VWWConfigSensorView.m in Sources */,
+				C6CE37A9168EBB9A000F2A48 /* VWWUserDefaults.m in Sources */,
+				C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */,
+				C6CE37B2168EC804000F2A48 /* VWWThereminInput.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

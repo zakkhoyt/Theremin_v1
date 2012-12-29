@@ -1,13 +1,18 @@
-* Change all instances of "Gyros" to "Gyro"
+* Change all instances of "Gyros" or "Gyro" to Gyroscope
 
-* Remove iVar declarations for those that have synthesizers
+* Configure each channel. 
+  * A channel can be assigned to an axis of one of the input devices
+  * A channel has a min and max frequency
+  * A channel has a wave form
+  * A channel can have an effect
+
+* Configure input devices
+  * input device has a sensitivity
+
+
+* Convert from threads to queues
 
 
 
 
 
-
-
-
-
-* nonatomic vs atomic

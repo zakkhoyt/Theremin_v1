@@ -61,8 +61,8 @@
     
     _running = NO;
     
-    _frequencyMin = 30.0;
-    _frequencyMax = 2500.0;
+    _frequencyMin = VWW_FREQUENCY_MIN;
+    _frequencyMax = VWW_FREQUENCY_MAX;
     _volumeMin = 0.0;
     _volumeMax = 1.0;
     

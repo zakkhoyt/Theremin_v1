@@ -9,10 +9,34 @@
 #import "VWWThereminConfigSensor.h"
 #import "VWWConfigSensorView.h"
 
+const NSUInteger kEndzoneWidth = 30;
+
+typedef enum{
+    kLineTypeNone = 0,
+    kLineTypeXMax,
+    kLineTypeXMin,
+    kLineTypeYMax,
+    kLineTypeYMin,
+    kLineTypeZMax,
+    kLineTypeZMin,
+} LineType;
+
+
 @interface VWWThereminConfigSensor ()
 @property (retain, nonatomic) IBOutlet VWWConfigSensorView *configView;
 @property (retain, nonatomic) IBOutlet UILabel *frequencyMaxLabel;
 @property (retain, nonatomic) IBOutlet UILabel *frequencyMinLabel;
+@property (retain, nonatomic) IBOutlet UILabel *xMaxLabel;
+@property (retain, nonatomic) IBOutlet UILabel *xMinLabel;
+@property (retain, nonatomic) IBOutlet UILabel *yMaxLabel;
+@property (retain, nonatomic) IBOutlet UILabel *yMinLabel;
+@property (retain, nonatomic) IBOutlet UILabel *zMaxLabel;
+@property (retain, nonatomic) IBOutlet UILabel *zMinLabel;
+@property (nonatomic) LineType lineType;
+@property (nonatomic) CGPoint begin;
+@property (nonatomic) CGPoint end;
+@property (nonatomic) CGRect frequencyEndzone;
+
 - (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 @end
@@ -46,7 +70,14 @@
                                            initWithBegin:begin
                                            andEnd:end];
     [self.configView setLineFrequencies:frequenciesLine];
-    // TODO: axisFreq
+    
+
+    self.frequencyEndzone = CGRectMake(begin.x - kEndzoneWidth/2.0,
+                                       begin.y,
+                                       kEndzoneWidth,
+                                       end.y - begin.y);
+//    NSLog(@"_frequencyEndzone = %@", NSStringFromCGRect(self.frequencyEndzone));
+
     
 }
 
@@ -61,6 +92,12 @@
 - (void)dealloc {
     [_frequencyMaxLabel release];
     [_frequencyMinLabel release];
+    [_xMaxLabel release];
+    [_xMinLabel release];
+    [_yMaxLabel release];
+    [_yMinLabel release];
+    [_zMaxLabel release];
+    [_zMinLabel release];
     [super dealloc];
 }
 
@@ -68,71 +105,117 @@
 
 #pragma mark - UIResponder touch events
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    // OpenGL
-//    [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
-//    NSArray *touchesArray = [touches allObjects];
-//    UITouch* touch = [touchesArray objectAtIndex:0];
-//    self.touchBegan = [touch locationInView:nil];
-//    
-//    
-//    // Synth
-//    if(touch.tapCount == 2){
-//        // double tap
-//    }
-//    else if(touch.tapCount == 1){
-//        [self touchEvent:touches withEvent:event];
-//    }
-//    
-//    [self.settings start];
+    NSArray *touchesArray = [touches allObjects];
+    UITouch* touch = [touchesArray objectAtIndex:0];
+    CGPoint begin = [touch locationInView:self.configView];
+//    NSLog(@"%@", NSStringFromCGPoint(begin));
+//    NSLog(@"%@", NSStringFromCGRect(self.xMaxLabel.frame));
+    
+    if(CGRectContainsPoint(self.xMaxLabel.frame, begin)){
+        self.lineType = kLineTypeXMax;
+        self.begin = CGPointMake(self.xMaxLabel.center.x + self.xMaxLabel.frame.size.width/2.0,
+                                 self.xMaxLabel.center.y);
+    }
+    else if(CGRectContainsPoint(self.xMinLabel.frame, begin)){
+        self.lineType = kLineTypeXMin;
+        self.begin = CGPointMake(self.xMinLabel.center.x + self.xMinLabel.frame.size.width/2.0,
+                                 self.xMinLabel.center.y);
+    }
+    else if(CGRectContainsPoint(self.yMaxLabel.frame, begin)){
+        self.lineType = kLineTypeYMax;
+        self.begin = CGPointMake(self.yMaxLabel.center.x + self.yMaxLabel.frame.size.width/2.0,
+                                 self.yMaxLabel.center.y);
+    }
+    else if(CGRectContainsPoint(self.yMinLabel.frame, begin)){
+        self.lineType = kLineTypeYMin;
+        self.begin = CGPointMake(self.yMinLabel.center.x + self.yMinLabel.frame.size.width/2.0,
+                                 self.yMinLabel.center.y);
+    }
+    else if(CGRectContainsPoint(self.zMaxLabel.frame, begin)){
+        self.lineType = kLineTypeZMax;
+        self.begin = CGPointMake(self.zMaxLabel.center.x + self.zMaxLabel.frame.size.width/2.0,
+                                 self.zMaxLabel.center.y);
+    }
+    else if(CGRectContainsPoint(self.zMinLabel.frame, begin)){
+        self.lineType = kLineTypeZMin;
+        self.begin = CGPointMake(self.zMinLabel.center.x + self.zMinLabel.frame.size.width/2.0,
+                                 self.zMinLabel.center.y);
+    }
+    else{
+        self.lineType = kLineTypeNone;
+        return;
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self.configView setNeedsDisplay];
-//    [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
-//    NSArray *touchesArray = [touches allObjects];
-//    UITouch* touch = [touchesArray objectAtIndex:0];
-//    self.touchMoved = [touch locationInView:nil];
-//    CGFloat rotateX = self.touchBegan.x - self.touchMoved.x;
-//    CGFloat rotateY = self.touchBegan.y - self.touchMoved.y;
-//    for(VWWCubeScene* cube in self.cubes){
-//        cube.rotate = GLKVector3Make(rotateX, rotateY, 0);
-//    }
-//    
-//    // Synth
-//    if(touch.tapCount == 2){
-//        // double tap
-//    }
-//    else if(touch.tapCount == 1){
-//        [self touchEvent:touches withEvent:event];
-//    }
+    // We don't want to draw a line if we didnt' start from an appropriate location
+    if(self.lineType == kLineTypeNone){
+        return;
+    }
+    
+    NSArray *touchesArray = [touches allObjects];
+    UITouch* touch = [touchesArray objectAtIndex:0];
+    self.end = [touch locationInView:self.configView];
+    
+    if(CGRectContainsPoint(self.frequencyEndzone, self.end)){
+        [self updateConfigViewLinesValid:YES];
+    }
+    else{
+        [self updateConfigViewLinesValid:NO];
+    }
 }
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-//    [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
-//    
-//    // Synth
-//    self.selectedPixel = CGPointMake(0, 0);
+    // We don't want to draw a line if we didnt' start from an appropriate location
+    if(self.lineType == kLineTypeNone){
+        return;
+    }
+        
+    NSArray *touchesArray = [touches allObjects];
+    UITouch* touch = [touchesArray objectAtIndex:0];
+    CGPoint end = [touch locationInView:self.configView];
+
+    if(CGRectContainsPoint(self.frequencyEndzone, end)){
+        self.end = CGPointMake(self.frequencyEndzone.origin.x + self.frequencyEndzone.size.width/2.0, end.y);
+        [self updateConfigViewLinesValid:YES];
+    }
+    else{
+        // Setting these points to 0 will cause it not to be drawn
+        self.begin = CGPointMake(0, 0);
+        self.end = CGPointMake(0, 0);
+        [self updateConfigViewLinesValid:NO];
+    }
 }
 
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
-//    [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
+
+-(void)updateConfigViewLinesValid:(bool)valid{
+    VWWAxisFrequencies* line = [[VWWAxisFrequencies alloc]initWithBegin:self.begin andEnd:self.end];
+    switch(self.lineType){
+        case kLineTypeXMax:
+            [self.configView setLineXMax:line valid:valid];
+            break;
+        case kLineTypeXMin:
+            [self.configView setLineXMin:line valid:valid];
+            break;
+        case kLineTypeYMax:
+            [self.configView setLineYMax:line valid:valid];
+            break;
+        case kLineTypeYMin:
+            [self.configView setLineYMin:line valid:valid];
+            break;
+        case kLineTypeZMax:
+            [self.configView setLineZMax:line valid:valid];
+            break;
+        case kLineTypeZMin:
+            [self.configView setLineZMin:line valid:valid];
+            break;
+        default:
+            return;
+            
+    }
+    [line release];
+    [self.configView setNeedsDisplay];
 }
-
-
-- (void)touchEvent:(NSSet *)touches withEvent:(UIEvent *)event{
-//    for(UITouch* touch in [event allTouches]){
-//        CGPoint point = [touch locationInView:self.view];
-//        
-//        // This will catch if the user dragged their finger out of bounds of the UIImageView
-//        if (!CGRectContainsPoint(self.view.bounds, point)){
-//            return;
-//        }
-//        
-//        self.selectedPixel = point;
-//        float newTouchValue = (self.view.bounds.size.height - point.y) / self.view.bounds.size.height;
-//        self.settings.touchValue = newTouchValue;
-//    }
-}
-
 
 
 - (IBAction)cancelButtonHandler:(id)sender {

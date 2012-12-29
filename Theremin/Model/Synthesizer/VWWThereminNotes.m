@@ -23,7 +23,7 @@
     self = [super init];
     if(self){
         [self initializeClass];
-        NSLog(@"Loaded %d notes", self.notes.count);
+//        NSLog(@"Loaded %d notes", self.notes.count);
     }
     return self;
 }

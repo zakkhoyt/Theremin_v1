@@ -9,13 +9,13 @@
 #import "VWWConfigSensorView.h"
 
 @interface VWWConfigSensorView ()
-@property (nonatomic, retain) VWWAxisFrequencies* lineFrequencies;
-@property (nonatomic, retain) VWWAxisFrequencies* lineXMax;
-@property (nonatomic, retain) VWWAxisFrequencies* lineXMin;
-@property (nonatomic, retain) VWWAxisFrequencies* lineYMax;
-@property (nonatomic, retain) VWWAxisFrequencies* lineYMin;
-@property (nonatomic, retain) VWWAxisFrequencies* lineZMax;
-@property (nonatomic, retain) VWWAxisFrequencies* lineZMin;
+@property (nonatomic, retain) VWWLine* lineFrequencies;
+@property (nonatomic, retain) VWWLine* lineXMax;
+@property (nonatomic, retain) VWWLine* lineXMin;
+@property (nonatomic, retain) VWWLine* lineYMax;
+@property (nonatomic, retain) VWWLine* lineYMin;
+@property (nonatomic, retain) VWWLine* lineZMax;
+@property (nonatomic, retain) VWWLine* lineZMin;
 @property (nonatomic) bool lineXMaxValid;
 @property (nonatomic) bool lineXMinValid;
 @property (nonatomic) bool lineYMaxValid;
@@ -49,11 +49,12 @@
 
     CGContextBeginPath(cgContext);
     CGContextSetLineWidth(cgContext, 2.0f);
-
+    
     CGFloat greenColor[4] = {0.0, 1.0, 0.0, 1.0};
+    CGFloat yellowColor[4] = {1.0, 1.0, 0.0, 1.0};
     CGFloat redColor[4] = {1.0, 0.0, 0.0, 1.0};
     
-    CGContextSetStrokeColor(cgContext, greenColor);
+    CGContextSetStrokeColor(cgContext, yellowColor);
     [self drawLineWithContext:cgContext
                     fromPoint:self.lineFrequencies.begin
                       toPoint:self.lineFrequencies.end];
@@ -115,36 +116,36 @@
 }
 
 
--(void)setLineFrequencies:(VWWAxisFrequencies *)line{
+-(void)setLineFrequencies:(VWWLine *)line{
     if(_lineFrequencies)[_lineFrequencies release];
     _lineFrequencies = [line retain];
 }
--(void)setLineXMax:(VWWAxisFrequencies *)line valid:(bool)valid{
+-(void)setLineXMax:(VWWLine *)line valid:(bool)valid{
     if(_lineXMax)[_lineXMax release];
     _lineXMax = [line retain];
     _lineXMaxValid = valid;
 }
--(void)setLineXMin:(VWWAxisFrequencies *)line valid:(bool)valid{
+-(void)setLineXMin:(VWWLine *)line valid:(bool)valid{
     if(_lineXMin)[_lineXMin release];
     _lineXMin = [line retain];
     _lineXMinValid = valid;
 }
--(void)setLineYMax:(VWWAxisFrequencies *)line valid:(bool)valid{
+-(void)setLineYMax:(VWWLine *)line valid:(bool)valid{
     if(_lineYMax)[_lineYMax release];
     _lineYMax = [line retain];
     _lineYMaxValid = valid;
 }
--(void)setLineYMin:(VWWAxisFrequencies *)line valid:(bool)valid{
+-(void)setLineYMin:(VWWLine *)line valid:(bool)valid{
     if(_lineYMin)[_lineYMin release];
     _lineYMin = [line retain];
     _lineYMinValid = valid;
 }
--(void)setLineZMax:(VWWAxisFrequencies *)line valid:(bool)valid{
+-(void)setLineZMax:(VWWLine *)line valid:(bool)valid{
     if(_lineZMax)[_lineZMax release];
     _lineZMax = [line retain];
     _lineZMaxValid = valid;
 }
--(void)setLineZMin:(VWWAxisFrequencies *)line valid:(bool)valid{
+-(void)setLineZMin:(VWWLine *)line valid:(bool)valid{
     if(_lineZMin)[_lineZMin release];
     _lineZMin = [line retain];
     _lineZMinValid = valid;

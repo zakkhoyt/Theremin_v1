@@ -191,7 +191,9 @@ static OSStatus renderInput(void *inRefCon,
 	// Start the AUGraph
 	OSStatus result = AUGraphStart(_mGraph);
 	// Print the result
-	if (result) { printf("AUGraphStart result %d %08X %4.4s\n", (int)result, (int)result, (char*)&result); return; }
+	if (result) {
+        printf("AUGraphStart result %d %08X %4.4s\n", (int)result, (int)result, (char*)&result); return;
+    }
 }
 
 // stops render

@@ -1,18 +1,16 @@
+
+
+Feature implementations
+* Move our one and only channel from directly mapping into the synth so that it resides on an axis of an input device. 
+* Then recode the synth classes to be able to run multiple channels
+* Find an easier way to make the synth stop. Currnetly you need to go into the settings to turn it off. 
+
+Improvements
+* Convert from threads to queues
 * Change all instances of "Gyros" or "Gyro" to Gyroscope
 
-* Configure each channel. 
-  * A channel can be assigned to an axis of one of the input devices
-  * A channel has a min and max frequency
-  * A channel has a wave form
-  * A channel can have an effect
-
-* Configure input devices
-  * input device has a sensitivity
-
-
-* Convert from threads to queues
-
-
+Bug fixes
+* Get rid of the pop associated with the synth sample looping around
 
 
 

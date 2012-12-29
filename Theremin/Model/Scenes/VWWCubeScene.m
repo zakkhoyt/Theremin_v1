@@ -394,7 +394,7 @@ const GLubyte Indices[] = {
 }
 
 -(void)update {
-    static bool hasRun = NO;
+//    static bool hasRun = NO;
     for(int x = 0; x < kVersiciesSize; x++){
         // normalize x variable to x coord -1 .. 1
         Vertex v = Vertices[x];
@@ -402,11 +402,11 @@ const GLubyte Indices[] = {
         v.Position[1] = cos(x);
         v.Position[2] = 0;
         Vertices[x] = v;
-        if(!hasRun){
-            NSLog(@"x=%d, x=%f y=%f z=%f", x,  v.Position[0], v.Position[1], v.Position[2]);
-        }
+//        if(!hasRun){
+//            NSLog(@"x=%d, x=%f y=%f z=%f", x,  v.Position[0], v.Position[1], v.Position[2]);
+//        }
     }
-    hasRun = YES;
+//    hasRun = YES;
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -20.0);

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VWWAxisFrequencies.h"
+#import "VWWLine.h"
 
 typedef enum{
     kVWWSensorTypeNone = 0,
@@ -26,8 +26,8 @@ typedef enum{
 
 @interface VWWThereminConfigSensor : UIViewController
 @property (nonatomic) VWWSensorType sensorType;
-@property (nonatomic, retain) VWWAxisFrequencies* axisFrequenciesX;
-@property (nonatomic, retain) VWWAxisFrequencies* axisFrequenciesY;
-@property (nonatomic, retain) VWWAxisFrequencies* axisFrequenciesZ;
+@property (nonatomic, retain) VWWLine* axisFrequenciesX;
+@property (nonatomic, retain) VWWLine* axisFrequenciesY;
+@property (nonatomic, retain) VWWLine* axisFrequenciesZ;
 @property (nonatomic, assign) id <VWWThereminConfigSensorDelegate> delegate;
 @end

@@ -10,7 +10,8 @@
 #ifndef Theremin_VWWThereminConfiguration_h
 #define Theremin_VWWThereminConfiguration_h
 
-#define VWW_FREQUENCY_MAX 2500.0
-#define VWW_FREQUENCY_MIN 20.0
+#define VWW_MAX_CHANNELS    1
+#define VWW_FREQUENCY_MAX   2500.0
+#define VWW_FREQUENCY_MIN   20.0
 
 #endif

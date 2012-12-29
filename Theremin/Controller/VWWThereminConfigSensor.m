@@ -21,8 +21,15 @@ typedef enum{
     kLineTypeZMin,
 } LineType;
 
+static NSString* kXMaxLabelPrefix = @"X Max";
+static NSString* kXMinLabelPrefix = @"X Min";
+static NSString* kYMaxLabelPrefix = @"Y Max";
+static NSString* kYMinLabelPrefix = @"Y Min";
+static NSString* kZMaxLabelPrefix = @"Z Max";
+static NSString* kZMinLabelPrefix = @"Z Min";
 
 @interface VWWThereminConfigSensor ()
+@property (nonatomic, retain) IBOutlet UIView* infoView;
 @property (retain, nonatomic) IBOutlet VWWConfigSensorView *configView;
 @property (retain, nonatomic) IBOutlet UILabel *frequencyMaxLabel;
 @property (retain, nonatomic) IBOutlet UILabel *frequencyMinLabel;
@@ -36,6 +43,7 @@ typedef enum{
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
 @property (nonatomic) CGRect frequencyEndzone;
+
 
 - (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
@@ -60,17 +68,25 @@ typedef enum{
 {
     [super viewDidLoad];
     
+    [self.view addSubview:self.infoView];
+    [self.infoView setFrame:self.view.frame];
+    [self.infoView setHidden:NO];
+    
+    self.frequencyMaxLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MAX];
+    self.frequencyMinLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MIN];
+    
     CGPoint begin = self.frequencyMaxLabel.center;
     begin.y += self.frequencyMaxLabel.frame.size.height/2.0;
     
     CGPoint end = self.frequencyMinLabel.center;
+    NSLog(@"%@", NSStringFromCGPoint(end));
     end.y -= self.frequencyMinLabel.frame.size.height/2.0;
     
-    VWWAxisFrequencies* frequenciesLine = [[VWWAxisFrequencies alloc]
+    VWWLine* frequenciesLine = [[VWWLine alloc]
                                            initWithBegin:begin
                                            andEnd:end];
     [self.configView setLineFrequencies:frequenciesLine];
-    
+    [frequenciesLine release];
 
     self.frequencyEndzone = CGRectMake(begin.x - kEndzoneWidth/2.0,
                                        begin.y,
@@ -158,9 +174,19 @@ typedef enum{
     self.end = [touch locationInView:self.configView];
     
     if(CGRectContainsPoint(self.frequencyEndzone, self.end)){
+        
+        // Calculate frequcency
+        float endzonePoint = self.frequencyEndzone.origin.y + self.frequencyEndzone.size.height - self.end.y;
+        float endzoneHeight = self.frequencyEndzone.size.height;
+        float ratio = endzonePoint/endzoneHeight;
+        float frequency = ((VWW_FREQUENCY_MAX - VWW_FREQUENCY_MIN) * ratio) + VWW_FREQUENCY_MIN;
+        NSString* frequencyString = [self stringFromFrequency:frequency];
+        [self updateAxisLabelsWithFrequency:frequencyString];
+        
         [self updateConfigViewLinesValid:YES];
     }
     else{
+        [self updateAxisLabelsWithFrequency:@""];
         [self updateConfigViewLinesValid:NO];
     }
 }
@@ -177,6 +203,15 @@ typedef enum{
 
     if(CGRectContainsPoint(self.frequencyEndzone, end)){
         self.end = CGPointMake(self.frequencyEndzone.origin.x + self.frequencyEndzone.size.width/2.0, end.y);
+        
+        // Calculate frequcency
+        float endzonePoint = self.frequencyEndzone.origin.y + self.frequencyEndzone.size.height - end.y;
+        float endzoneHeight = self.frequencyEndzone.size.height;
+        float ratio = endzonePoint/endzoneHeight;
+        float frequency = ((VWW_FREQUENCY_MAX - VWW_FREQUENCY_MIN) * ratio) + VWW_FREQUENCY_MIN;
+        NSString* frequencyString = [self stringFromFrequency:frequency];
+        [self updateAxisLabelsWithFrequency:frequencyString];
+        
         [self updateConfigViewLinesValid:YES];
     }
     else{
@@ -187,9 +222,49 @@ typedef enum{
     }
 }
 
+-(NSString*)stringFromFrequency:(float)frequency{
+    if(frequency < 1000){
+        return [NSString stringWithFormat:@"%d Hz", (int)frequency];
+    }
+    float significand = frequency / 1000;
+    return [NSString stringWithFormat:@"%.2f kHz", significand];
+}
+
+
+
+
+-(void)updateAxisLabelsWithFrequency:(NSString*)frequency{
+    switch(self.lineType){
+        case kLineTypeXMax:
+            self.xMaxLabel.text = [NSString stringWithFormat:@"%@\n%@", kXMaxLabelPrefix, frequency];
+            break;
+        case kLineTypeXMin:
+            self.xMinLabel.text = [NSString stringWithFormat:@"%@\n%@", kXMinLabelPrefix, frequency];
+            break;
+        case kLineTypeYMax:
+            self.yMaxLabel.text = [NSString stringWithFormat:@"%@\n%@", kYMaxLabelPrefix, frequency];
+            break;
+        case kLineTypeYMin:
+            self.yMinLabel.text = [NSString stringWithFormat:@"%@\n%@", kYMinLabelPrefix, frequency];
+            break;
+        case kLineTypeZMax:
+            self.zMaxLabel.text = [NSString stringWithFormat:@"%@\n%@", kZMaxLabelPrefix, frequency];
+            break;
+        case kLineTypeZMin:
+            self.zMinLabel.text = [NSString stringWithFormat:@"%@\n%@", kZMinLabelPrefix, frequency];
+            break;
+        default:
+            return;
+            
+    }
+}
+
+
+
+
 
 -(void)updateConfigViewLinesValid:(bool)valid{
-    VWWAxisFrequencies* line = [[VWWAxisFrequencies alloc]initWithBegin:self.begin andEnd:self.end];
+    VWWLine* line = [[VWWLine alloc]initWithBegin:self.begin andEnd:self.end];
     switch(self.lineType){
         case kLineTypeXMax:
             [self.configView setLineXMax:line valid:valid];

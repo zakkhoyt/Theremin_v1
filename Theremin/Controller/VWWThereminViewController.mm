@@ -193,7 +193,7 @@ const CGFloat kRotateZSensitivity = 0.25f;
         [s appendFormat:@" %@", NSStringFromCGPoint(point)];
     }
     
-    NSLog(@"%s numTouches:%d %@", method, touches.count, s);
+//    NSLog(@"%s numTouches:%d %@", method, touches.count, s);
     if(touches.count > 2){
         self.paused = !self.paused;
     }
@@ -249,11 +249,11 @@ const CGFloat kRotateZSensitivity = 0.25f;
 
 #pragma mark - Implements GLKViewControllerDelegate
 - (void)glkViewController:(GLKViewController *)controller willPause:(BOOL)pause{
-    NSLog(@"%s", __FUNCTION__);
+//    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)glkViewControllerUpdate:(GLKViewController *)controller{
-    NSLog(@"%s", __FUNCTION__);
+//    NSLog(@"%s", __FUNCTION__);
 }
 
 - (void)update{

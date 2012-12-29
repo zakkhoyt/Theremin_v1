@@ -25,9 +25,8 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testAutoTune
 {
-    STFail(@"Unit tests are not implemented yet in ThereminTests");
     VWWThereminNotes* notes = [[VWWThereminNotes alloc]init];
     
     float frequency = 121.3;
@@ -54,10 +53,6 @@
     nearest = [notes getClosestNote:frequency];
     NSLog(@"frequency=%f nearest=%f", frequency, nearest);
 
-    
-    
-    
-    
     
     [notes release];
 }

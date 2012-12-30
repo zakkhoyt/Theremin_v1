@@ -7,7 +7,7 @@
 //
 
 #import "VWWThereminConfigInputFrequencyViewController.h"
-#import "VWWConfigSensorView.h"
+#import "VWWConfigInputFrequencyView.h"
 
 const NSUInteger kEndzoneWidth = 30;
 
@@ -31,7 +31,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 @interface VWWThereminConfigInputFrequencyViewController ()
 //@property (retain, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (nonatomic, retain) IBOutlet UIView* infoView;
-@property (retain, nonatomic) IBOutlet VWWConfigSensorView *configView;
+@property (retain, nonatomic) IBOutlet VWWConfigInputFrequencyView *configView;
 @property (retain, nonatomic) IBOutlet UILabel *frequencyMaxLabel;
 @property (retain, nonatomic) IBOutlet UILabel *frequencyMinLabel;
 @property (retain, nonatomic) IBOutlet UILabel *xMaxLabel;
@@ -77,20 +77,20 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 #endif
     
     // Set nav bar title
-    switch(self.sensorType){
-        case kVWWSensorTypeAccelerometer:
-            self.navigationItem.title = @"Accelerometer";
+    switch(self.inputType){
+        case kInputAccelerometer:
+            self.navigationItem.title = @"Accelerometers";
             break;
-        case kVWWSensorTypeGyro:
+        case kInputGyros:
             self.navigationItem.title = @"Gyroscopes";
             break;
-        case kVWWSensorTypeMagnetometer:
+        case kInputMagnetometer:
             self.navigationItem.title = @"Magnetometers";
             break;
-        case kVWWSensorTypeTouch:
+        case kInputTouch:
             self.navigationItem.title = @"Touch Screen";
             break;
-        case kVWWSensorTypeNone:
+        case kInputNone:
             self.navigationItem.title = @"Invalid Input";
         default:
             break;
@@ -333,3 +333,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     [self.delegate VWWThereminConfigInputFrequencyViewControllerUserIsDone:self];
 }
 @end
+
+
+
+

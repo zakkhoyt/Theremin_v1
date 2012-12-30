@@ -1,5 +1,5 @@
 //
-//  VWWConfigSensorView.h
+//  VWWConfigInputFrequencyView.h
 //  Theremin
 //
 //  Created by Zakk Hoyt on 12/26/12.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VWWLine.h"
 
-@interface VWWConfigSensorView : UIView
+@interface VWWConfigInputFrequencyView : UIView
 -(void)setLineFrequencies:(VWWLine *)line;
 -(void)setLineXMax:(VWWLine *)line valid:(bool)valid;
 -(void)setLineXMin:(VWWLine *)line valid:(bool)valid;

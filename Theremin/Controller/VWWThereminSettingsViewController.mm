@@ -8,9 +8,19 @@
 
 #import "VWWThereminSettingsViewController.h"
 #import "VWWThereminConfigInputFrequencyViewController.h"
+#import "VWWThereminConfigInputWaveformsViewController.h"
+#import "VWWThereminConfigInputSensitivityViewController.h"
+#import "VWWThereminConfigInputEffectsViewController.h"
 
 static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
-@interface VWWThereminSettingsViewController () <VWWThereminConfigInputFrequencyViewControllerDelegate>
+static NSString* kSegueSettingsToConfigInputWaveform = @"segueSettingsToConfigInputWaveform";
+static NSString* kSegueSettingsToConfigInputSensitivity = @"segueSettingsToConfigInputSensitivity";
+static NSString* kSegueSettingsToConfigInputEffects = @"segueSettingsToConfigInputEffects";
+
+@interface VWWThereminSettingsViewController () <VWWThereminConfigInputFrequencyViewControllerDelegate,
+VWWThereminConfigInputWaveformsViewControllerDelegate,
+VWWThereminConfigInputSensitivityViewControllerDelegate,
+VWWThereminConfigInputEffectsViewControllerDelegate>
 
 
 /// Command buttons
@@ -30,19 +40,27 @@ static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigI
 - (IBAction)handle_butInputAccelerometer:(id)sender;
 - (IBAction)handle_butInputTouch:(id)sender;
 - (IBAction)handle_butInputGyros:(id)sender;
-- (IBAction)handle_butConfigAccelerometer:(id)sender;
 
 
+@property (nonatomic) InputType configInputType;
+- (IBAction)configMagnetometerFrequency:(id)sender;
+- (IBAction)configAccelerometerFrequency:(id)sender;
+- (IBAction)configGyroscopeFrequency:(id)sender;
+- (IBAction)configTouchscreenFrequency:(id)sender;
+- (IBAction)configMagnetometerWaveform:(id)sender;
+- (IBAction)configAccelerometerWaveform:(id)sender;
+- (IBAction)configGyroscopeWaveform:(id)sender;
+- (IBAction)configTouchscreenWaveform:(id)sender;
+- (IBAction)configMagnetometerSensitivity:(id)sender;
+- (IBAction)configAccelerometerSensitivity:(id)sender;
+- (IBAction)configGyroscopeSensitivity:(id)sender;
+- (IBAction)configTouchscreenSensitivity:(id)sender;
+- (IBAction)configMagnetometerEffects:(id)sender;
+- (IBAction)configAccelerometerEffects:(id)sender;
+- (IBAction)configGyroscopeEffects:(id)sender;
+- (IBAction)configTouchscreenEffects:(id)sender;
 
-//// Input sliders
-//@property (retain, nonatomic) IBOutlet UISlider *sldMagnetometer;
-//@property (retain, nonatomic) IBOutlet UISlider *sldAccelerometer;
-//@property (retain, nonatomic) IBOutlet UISlider *sldGyros;
-//@property (retain, nonatomic) IBOutlet UISlider *sldTouch;
-//- (IBAction)handle_sldMagnetometer:(id)sender;
-//- (IBAction)handle_sldAccelerometer:(id)sender;
-//- (IBAction)handle_sldGyros:(id)sender;
-//- (IBAction)handle_sldTouch:(id)sender;
+
 
 
 
@@ -110,10 +128,6 @@ static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigI
     [_butFrequencyPrevious release];
     [_butFrequencyDouble release];
     [_butFrequencyHalf release];
-//    [_sldMagnetometer release];
-//    [_sldAccelerometer release];
-//    [_sldGyros release];
-//    [_sldTouch release];
     [_butEffectAutotune release];
     [_butEffectNone release];
     [super dealloc];
@@ -136,21 +150,6 @@ static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigI
 
 
 -(void)initializeClass{
-//    self.sldAccelerometer.minimumValue = 0.1;
-//    self.sldAccelerometer.maximumValue = 2.0;
-//    self.sldAccelerometer.value = 1.0;
-//    
-//    self.sldMagnetometer.minimumValue = 0.1;
-//    self.sldMagnetometer.maximumValue = 2.0;
-//    self.sldMagnetometer.value = 1.0;
-//    
-//    self.sldGyros.minimumValue = 0.1;
-//    self.sldGyros.maximumValue = 2.0;
-//    self.sldGyros.value = 1.0;
-//    
-//    self.sldTouch.minimumValue = 0.1;
-//    self.sldTouch.maximumValue = 2.0;
-//    self.sldTouch.value = 1.0;
 }
 
 
@@ -161,12 +160,35 @@ static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigI
 	if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputFrequency])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigInputFrequencyViewController* configSensorController = [[navigationController viewControllers]objectAtIndex:0];
-		configSensorController.delegate = self;
-//        configSensorController.settings = self.settings;
-//        configSensorController.motion = self.motionMonitor;
+		VWWThereminConfigInputFrequencyViewController* configFrequencyController = [[navigationController viewControllers]objectAtIndex:0];
+		configFrequencyController.delegate = self;
+        configFrequencyController.inputType = self.configInputType;
 	}
+    else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputWaveform])
+	{
+		UINavigationController* navigationController = segue.destinationViewController;
+		VWWThereminConfigInputWaveformsViewController* configWaveformController = [[navigationController viewControllers]objectAtIndex:0];
+		configWaveformController.delegate = self;
+        configWaveformController.inputType = self.configInputType;
+	}
+    else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputSensitivity])
+	{
+		UINavigationController* navigationController = segue.destinationViewController;
+		VWWThereminConfigInputSensitivityViewController* configSensitivityController = [[navigationController viewControllers]objectAtIndex:0];
+		configSensitivityController.delegate = self;
+        configSensitivityController.inputType = self.configInputType;
+	}
+    
+    else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputEffects])
+	{
+		UINavigationController* navigationController = segue.destinationViewController;
+		VWWThereminConfigInputEffectsViewController* configEffectsController = [[navigationController viewControllers]objectAtIndex:0];
+		configEffectsController.delegate = self;
+        configEffectsController.inputType = self.configInputType;
+	}
+    
 }
+
 
 
 
@@ -258,9 +280,19 @@ static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigI
     }
 }
 
-- (IBAction)handle_butConfigAccelerometer:(id)sender {
-    [self performSegueWithIdentifier:kSegueSettingsToConfigInputFrequency sender:self];
-}
+//- (IBAction)configInputFrequencyButtonHandler:(id)sender {
+//    [self performSegueWithIdentifier:kSegueSettingsToConfigInputFrequency sender:self];
+//}
+//
+//- (IBAction)configInputWaveformButtonHandler:(id)sender {
+//     [self performSegueWithIdentifier:kSegueSettingsToConfigInputWaveform sender:self];
+//}
+//
+//- (IBAction)configInputSensitivityButtonHandler:(id)sender {
+//     [self performSegueWithIdentifier:kSegueSettingsToConfigInputSensitivity sender:self];
+//}
+
+
 
 //#pragma mark Handlers for hardware slider sensitivity
 //- (IBAction)handle_sldMagnetometer:(id)sender {
@@ -332,6 +364,89 @@ static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigI
     self.settings.effectType = kEffectNone;
 }
 
+
+#pragma Mark Configuration button handlers
+- (IBAction)configMagnetometerFrequency:(id)sender {
+    self.configInputType = kInputMagnetometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputFrequency sender:self];
+}
+
+- (IBAction)configAccelerometerFrequency:(id)sender {
+    self.configInputType = kInputAccelerometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputFrequency sender:self];
+}
+
+- (IBAction)configGyroscopeFrequency:(id)sender {
+    self.configInputType = kInputGyros;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputFrequency sender:self];
+}
+
+- (IBAction)configTouchscreenFrequency:(id)sender {
+    self.configInputType = kInputTouch;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputFrequency sender:self];
+}
+
+- (IBAction)configMagnetometerWaveform:(id)sender {
+    self.configInputType = kInputMagnetometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputWaveform sender:self];
+}
+
+- (IBAction)configAccelerometerWaveform:(id)sender {
+    self.configInputType = kInputAccelerometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputWaveform sender:self];
+}
+
+- (IBAction)configGyroscopeWaveform:(id)sender {
+    self.configInputType = kInputGyros;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputWaveform sender:self];
+}
+
+- (IBAction)configTouchscreenWaveform:(id)sender {
+    self.configInputType = kInputTouch;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputWaveform sender:self];
+}
+
+- (IBAction)configMagnetometerSensitivity:(id)sender {
+    self.configInputType = kInputMagnetometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputSensitivity sender:self];
+}
+
+- (IBAction)configAccelerometerSensitivity:(id)sender {
+    self.configInputType = kInputAccelerometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputSensitivity sender:self];
+}
+
+- (IBAction)configGyroscopeSensitivity:(id)sender {
+    self.configInputType = kInputGyros;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputSensitivity sender:self];
+}
+
+- (IBAction)configTouchscreenSensitivity:(id)sender {
+    self.configInputType = kInputTouch;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputSensitivity sender:self];
+}
+
+- (IBAction)configMagnetometerEffects:(id)sender {
+    self.configInputType = kInputMagnetometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputEffects sender:self];
+}
+
+- (IBAction)configAccelerometerEffects:(id)sender {
+    self.configInputType = kInputAccelerometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputEffects sender:self];
+}
+
+- (IBAction)configGyroscopeEffects:(id)sender {
+    self.configInputType = kInputGyros;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputEffects sender:self];
+}
+
+- (IBAction)configTouchscreenEffects:(id)sender {
+    self.configInputType = kInputTouch;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputEffects sender:self];
+}
+
+
 #pragma mark - Implements VWWThereminConfigInputFrequencyViewControllerDelegate
 -(void)VWWThereminConfigInputFrequencyViewControllerUserIsDone:(VWWThereminConfigInputFrequencyViewController *)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -339,4 +454,35 @@ static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigI
 -(void)VWWThereminConfigInputFrequencyViewControllerUserDidCancel:(VWWThereminConfigInputFrequencyViewController*)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
+
+
+#pragma mark - Implements VWWThereminConfigInputSensitivityViewControllerDelegate
+-(void)vwwThereminConfigInputSensitivityViewControllerUserIsDone:(VWWThereminConfigInputSensitivityViewController*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)vwwThereminConfigInputSensitivityViewControllerUserCancelled:(VWWThereminConfigInputSensitivityViewController*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Implements VWWThereminConfigInputWaveformsViewControllerDelegate 
+-(void)vwwThereminConfigInputWaveformsViewControllerUserIsDone:(VWWThereminConfigInputWaveformsViewController*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)vwwThereminConfigInputWaveformsViewControllerUserCancelled:(VWWThereminConfigInputWaveformsViewController*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Implements VWWThereminConfigInputEffectsViewControllerDelegate
+-(void)vwwThereminConfigInputEffectsViewControllerUserIsDone:(VWWThereminConfigInputEffectsViewController*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)vwwThereminConfigInputEffectsViewControllerUserCancelled:(VWWThereminConfigInputEffectsViewController*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 @end

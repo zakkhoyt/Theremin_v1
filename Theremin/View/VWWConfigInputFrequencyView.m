@@ -1,14 +1,14 @@
 //
-//  VWWConfigSensorView.m
+//  VWWConfigInputFrequencyView.m
 //  Theremin
 //
 //  Created by Zakk Hoyt on 12/26/12.
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWConfigSensorView.h"
+#import "VWWConfigInputFrequencyView.h"
 
-@interface VWWConfigSensorView ()
+@interface VWWConfigInputFrequencyView ()
 @property (nonatomic, retain) VWWLine* lineFrequencies;
 @property (nonatomic, retain) VWWLine* lineXMax;
 @property (nonatomic, retain) VWWLine* lineXMin;
@@ -24,7 +24,7 @@
 @property (nonatomic) bool lineZMinValid;
 @end
 
-@implementation VWWConfigSensorView
+@implementation VWWConfigInputFrequencyView
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -154,3 +154,14 @@
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+

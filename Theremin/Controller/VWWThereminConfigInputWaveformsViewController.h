@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWWThereminSynthesizerSettings.h"
+
+@class VWWThereminConfigInputWaveformsViewController;
+
+@protocol VWWThereminConfigInputWaveformsViewControllerDelegate <NSObject>
+-(void)vwwThereminConfigInputWaveformsViewControllerUserIsDone:(VWWThereminConfigInputWaveformsViewController*)sender;
+-(void)vwwThereminConfigInputWaveformsViewControllerUserCancelled:(VWWThereminConfigInputWaveformsViewController*)sender;
+@end
 
 @interface VWWThereminConfigInputWaveformsViewController : UIViewController
-
+@property (nonatomic, assign) id <VWWThereminConfigInputWaveformsViewControllerDelegate> delegate;
+@property (nonatomic) InputType inputType;
 @end

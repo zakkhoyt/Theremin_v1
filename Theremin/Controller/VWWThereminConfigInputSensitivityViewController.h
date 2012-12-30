@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWWThereminSynthesizerSettings.h"
+
+@class VWWThereminConfigInputSensitivityViewController;
+
+@protocol VWWThereminConfigInputSensitivityViewControllerDelegate <NSObject>
+-(void)vwwThereminConfigInputSensitivityViewControllerUserIsDone:(VWWThereminConfigInputSensitivityViewController*)sender;
+-(void)vwwThereminConfigInputSensitivityViewControllerUserCancelled:(VWWThereminConfigInputSensitivityViewController*)sender;
+@end
 
 @interface VWWThereminConfigInputSensitivityViewController : UIViewController
-
+@property (nonatomic, assign) id <VWWThereminConfigInputSensitivityViewControllerDelegate> delegate;
+@property (nonatomic) InputType inputType;
 @end

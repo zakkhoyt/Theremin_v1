@@ -24,6 +24,9 @@ const CGFloat kRotateXSensitivity = 0.25f;
 const CGFloat kRotateYSensitivity = 0.25f;
 const CGFloat kRotateZSensitivity = 0.25f;
 
+static NSString* kSegueThereminToSettings = @"segueThereminToSettings";
+static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
+
 @interface VWWThereminViewController () <GLKViewControllerDelegate,
     VWWMotionMonitorDelegate,
     VWWThereminHelpViewControllerDelegate,
@@ -99,7 +102,7 @@ const CGFloat kRotateZSensitivity = 0.25f;
 {
     // A segue is about to be performed. This is our chance to send data to the
     // view controller that will be loaded.
-	if ([segue.identifier isEqualToString:@"segueThereminToSettings"])
+	if ([segue.identifier isEqualToString:kSegueThereminToSettings])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
 		VWWThereminSettingsViewController* viewController = (VWWThereminSettingsViewController*)[[navigationController viewControllers]objectAtIndex:0];
@@ -107,7 +110,7 @@ const CGFloat kRotateZSensitivity = 0.25f;
         viewController.settings = self.settings;
         viewController.motion = self.motionMonitor;
 	}
-    else if ([segue.identifier isEqualToString:@"segue_VWWThereminHelpViewController"]){
+    else if ([segue.identifier isEqualToString:kSegueThereminToAbout]){
 		UINavigationController* navigationController = segue.destinationViewController;
 		VWWThereminHelpViewController* viewController = (VWWThereminHelpViewController*)[[navigationController viewControllers]objectAtIndex:0];
 		viewController.delegate = self;

@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminViewController.mm"
-         timestampString = "378247907.580534"
+         timestampString = "378535953.776675"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
          landmarkName = "-touchesCancelled:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "378272562.69792"
+         timestampString = "378532586.101542"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "87"
-         endingLineNumber = "87"
+         startingLineNumber = "105"
+         endingLineNumber = "105"
          landmarkName = "-initWithNibName:bundle:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -183,6 +183,19 @@
          startingLineNumber = "107"
          endingLineNumber = "107"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Theremin/Controller/VWWThereminConfigInputWaveformsViewController.mm"
+         timestampString = "378601617.681311"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "214"
+         endingLineNumber = "214"
+         landmarkName = "-dismissInfoViewButton:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

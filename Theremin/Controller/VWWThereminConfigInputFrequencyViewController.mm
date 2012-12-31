@@ -96,6 +96,10 @@ static NSString* kZMinLabelPrefix = @"Z Min";
             break;
     }
     
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
     self.frequencyMaxLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MAX];
     self.frequencyMinLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MIN];
     
@@ -107,18 +111,16 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     end.y -= self.frequencyMinLabel.frame.size.height/2.0;
     
     VWWLine* frequenciesLine = [[VWWLine alloc]
-                                           initWithBegin:begin
-                                           andEnd:end];
+                                initWithBegin:begin
+                                andEnd:end];
     [self.configView setLineFrequencies:frequenciesLine];
     [frequenciesLine release];
-
+    
     self.frequencyEndzone = CGRectMake(begin.x - kEndzoneWidth/2.0,
                                        begin.y,
                                        kEndzoneWidth,
                                        end.y - begin.y);
-//    NSLog(@"_frequencyEndzone = %@", NSStringFromCGRect(self.frequencyEndzone));
-
-    
+    [self.configView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning

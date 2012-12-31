@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 #import "VWWThereminSynthesizerSettings.h"
 
@@ -14,4 +15,5 @@
 @property (nonatomic) NSUInteger frequencyMin;
 @property (nonatomic) WaveType waveType;
 @property (nonatomic) float sensitivity;
+@property (nonatomic) EffectType effectType;
 @end

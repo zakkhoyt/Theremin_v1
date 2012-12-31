@@ -47,6 +47,7 @@
 		C6CE37C1168F1DB7000F2A48 /* VWWThereminConfigInputSensitivityViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37C0168F1DB7000F2A48 /* VWWThereminConfigInputSensitivityViewController.mm */; };
 		C6D3E1A21639B4B10032D2F3 /* button_background.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E1A11639B4B10032D2F3 /* button_background.png */; };
 		C6D3E1A41639B5580032D2F3 /* button_background_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */; };
+		C6DAB1DC169112540056E769 /* VWWFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DAB1DB169112540056E769 /* VWWFileSystem.m */; };
 		C6E34B80166AE52800D0AB2C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E34B7E166AE52700D0AB2C /* GLKit.framework */; };
 		C6E34B81166AE52800D0AB2C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E34B7F166AE52700D0AB2C /* OpenGLES.framework */; };
 		C6E34B96166AE82000D0AB2C /* 3x3_00.png in Resources */ = {isa = PBXBuildFile; fileRef = C6E34B90166AE82000D0AB2C /* 3x3_00.png */; };
@@ -158,6 +159,8 @@
 		C6CE37C0168F1DB7000F2A48 /* VWWThereminConfigInputSensitivityViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminConfigInputSensitivityViewController.mm; sourceTree = "<group>"; };
 		C6D3E1A11639B4B10032D2F3 /* button_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_background.png; path = images/button_background.png; sourceTree = SOURCE_ROOT; };
 		C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_background_pressed.png; path = images/button_background_pressed.png; sourceTree = SOURCE_ROOT; };
+		C6DAB1DA169112530056E769 /* VWWFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWFileSystem.h; sourceTree = "<group>"; };
+		C6DAB1DB169112540056E769 /* VWWFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWFileSystem.m; sourceTree = "<group>"; };
 		C6E34B7E166AE52700D0AB2C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		C6E34B7F166AE52700D0AB2C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		C6E34B90166AE82000D0AB2C /* 3x3_00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3x3_00.png; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 		C606D294166AE1E500FA7B70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C6DAB1D81691123B0056E769 /* File */,
 				C6CE37B3168EC870000F2A48 /* Inputs */,
 				C6EB8880168B921900DD1F3E /* OpenGL */,
 				C606D295166AE1E500FA7B70 /* Motion */,
@@ -387,6 +391,15 @@
 				C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */,
 			);
 			name = Inputs;
+			sourceTree = "<group>";
+		};
+		C6DAB1D81691123B0056E769 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				C6DAB1DA169112530056E769 /* VWWFileSystem.h */,
+				C6DAB1DB169112540056E769 /* VWWFileSystem.m */,
+			);
+			name = File;
 			sourceTree = "<group>";
 		};
 		C6E34B8F166AE82000D0AB2C /* GLtextures */ = {
@@ -681,6 +694,7 @@
 				C6A94FD7168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m in Sources */,
 				C6747F66168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm in Sources */,
 				C6747F6A168FECDF007133AD /* VWWConfigInputEffectsView.m in Sources */,
+				C6DAB1DC169112540056E769 /* VWWFileSystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

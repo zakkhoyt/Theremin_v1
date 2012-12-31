@@ -9,11 +9,11 @@
 
 
 typedef enum{
-    kWaveNone = 0x00,
-    kWaveSin = 0x01,
-    kWaveSquare = 0x02,
-    kWaveTriangle = 0x04,
-    kWaveSawtooth = 0x08,
+    kWaveNone = 0,
+    kWaveSin,
+    kWaveSquare,
+    kWaveTriangle,
+    kWaveSawtooth,
 } WaveType;
 
 typedef enum{
@@ -24,13 +24,11 @@ typedef enum{
     kInputMagnetometer = 0x08,
 } InputType;
 
-
 typedef enum{
     kEffectNone = 0x00,
     kEffectAutoTune = 0x01,
-    kEffectType2 = 0x02,
-    kEffectType3 = 0x04,
-    kEffectType4 = 0x08,
+    kEffectLinearize = 0x02,
+    kEffectThrottle = 0x04,
 } EffectType;
 
 

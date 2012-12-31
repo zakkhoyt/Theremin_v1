@@ -39,6 +39,10 @@
     return self;
 }
 
+-(NSDictionary*)jsonRepresentation{
+    return nil;
+}
+
 -(void)dealloc{
     [_inputs release];
     [super dealloc];

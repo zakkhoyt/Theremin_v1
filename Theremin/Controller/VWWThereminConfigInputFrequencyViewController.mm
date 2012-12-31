@@ -8,6 +8,8 @@
 
 #import "VWWThereminConfigInputFrequencyViewController.h"
 #import "VWWConfigInputFrequencyView.h"
+#import "VWWThereminInputs.h"
+
 
 const NSUInteger kEndzoneWidth = 30;
 
@@ -331,7 +333,122 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     [self.delegate VWWThereminConfigInputFrequencyViewControllerUserDidCancel:self];
 }
 
+
+
+
+
+
 - (IBAction)doneButtonHandler:(id)sender {
+    
+    
+//    // Example of how to go from json to an array
+//    NSString* dataStr = @"[{\"id\": \"1\", \"name\":\"Aaa\"}, {\"id\": \"2\", \"name\":\"Bbb\"}]";
+//    NSData* data = [dataStr dataUsingEncoding:NSUTF8StringEncoding];
+//    NSError *e = nil;
+//    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error: &e];
+////    if (!jsonArray) {
+////        NSLog(@"Error parsing JSON: %@", e);
+////    } else {
+////        for(NSDictionary *item in jsonArray) {
+////            NSLog(@"Item: %@", item);
+////        }
+////    }
+//    
+//    
+//    NSError* error = nil;
+//    NSData* outData = [NSJSONSerialization dataWithJSONObject:jsonArray options:NSJSONReadingMutableContainers error:&error];
+//    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
+//    NSLog(@"%@", outDataString);
+    
+    
+    
+//    NSMutableDictionary* axisX = [NSMutableDictionary new];
+//    [axisX setValue:@"x" forKey:@"name"];
+//    [axisX setValue:@(2500) forKey:@"fmax"];
+//    [axisX setValue:@(20) forKey:@"fmin"];
+//    [axisX setValue:@"square" forKey:@"waveform"];
+//    [axisX setValue:@(1.0) forKey:@"sensitivity"];
+//    [axisX setValue:@"none" forKey:@"effect"];
+//
+//    NSMutableDictionary* axisY = [NSMutableDictionary new];
+//    [axisY setValue:@"y" forKey:@"name"];
+//    [axisY setValue:@(2500) forKey:@"fmax"];
+//    [axisY setValue:@(20) forKey:@"fmin"];
+//    [axisY setValue:@"square" forKey:@"waveform"];
+//    [axisY setValue:@(1.0) forKey:@"sensitivity"];
+//    [axisY setValue:@"none" forKey:@"effect"];
+//
+//    NSMutableDictionary* axisZ = [NSMutableDictionary new];
+//    [axisZ setValue:@"z" forKey:@"name"];
+//    [axisZ setValue:@(2500) forKey:@"fmax"];
+//    [axisZ setValue:@(20) forKey:@"fmin"];
+//    [axisZ setValue:@"square" forKey:@"waveform"];
+//    [axisZ setValue:@(1.0) forKey:@"sensitivity"];
+//    [axisZ setValue:@"none" forKey:@"effect"];
+//
+//    NSMutableDictionary* inputAccelerometer = [NSMutableDictionary new];
+//    [inputAccelerometer setValue:@"accelerometer" forKey:@"type"];
+//    [inputAccelerometer setValue:axisX forKey:@"x"];
+//    [inputAccelerometer setValue:axisY forKey:@"y"];
+//    [inputAccelerometer setValue:axisZ forKey:@"z"];
+//    
+//    
+//    
+//    
+//    
+//    
+//
+//    
+//    NSError* error = nil;
+//    NSData* outData = [NSJSONSerialization dataWithJSONObject:inputAccelerometer options:NSJSONReadingMutableContainers error:&error];
+//    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
+//    NSLog(@"%@", outDataString);
+//    
+//    
+    
+    
+    
+//    {
+//        "input": {
+//            "-type": "accelerometer",
+//            "axis": [
+//                     {
+//                         "-name": "x",
+//                         "fmax": "2500",
+//                         "fmin": "20",
+//                         "waveform": "square",
+//                         "sensitivity": "1.0",
+//                         "effect": "none"
+//                     },
+//                     {
+//                         "-name": "y",
+//                         "fmax": "2500",
+//                         "fmin": "20",
+//                         "waveform": "square",
+//                         "sensitivity": "1.0",
+//                         "effect": "none"
+//                     },
+//                     {
+//                         "-name": "z",
+//                         "fmax": "2500",
+//                         "fmin": "20",
+//                         "waveform": "square",
+//                         "sensitivity": "1.0",
+//                         "effect": "none"
+//                     }
+//                     ]
+//        }
+//    }
+    
+//    VWWThereminInput* input = [[VWWThereminInput alloc]init];
+//    
+//    NSError* error = nil;
+//    NSData* outData = [NSJSONSerialization dataWithJSONObject:input.jsonRepresentation options:NSJSONReadingMutableContainers error:&error];
+//    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
+//    NSLog(@"%@", outDataString);
+//    
+
+
     [self.delegate VWWThereminConfigInputFrequencyViewControllerUserIsDone:self];
 }
 @end

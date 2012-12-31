@@ -14,4 +14,5 @@
 @property (nonatomic, retain) VWWThereminInputAxis* y;
 @property (nonatomic, retain) VWWThereminInputAxis* z;
 @property (nonatomic) InputType inputType;
+-(NSDictionary*)jsonRepresentation;
 @end

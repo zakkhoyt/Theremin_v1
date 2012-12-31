@@ -18,5 +18,6 @@
 +(VWWThereminInputs *)sharedInstance;
 
 -(void)saveDefaults;
+-(NSDictionary*)jsonRepresentation;
 
 @end

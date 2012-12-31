@@ -16,4 +16,5 @@
 @property (nonatomic) WaveType waveType;
 @property (nonatomic) float sensitivity;
 @property (nonatomic) EffectType effectType;
+-(NSDictionary*)jsonRepresentation;
 @end

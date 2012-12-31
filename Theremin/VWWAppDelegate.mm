@@ -7,6 +7,7 @@
 //
 
 #import "VWWAppDelegate.h"
+#import "VWWThereminInputs.h"
 
 @implementation VWWAppDelegate
 
@@ -18,9 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Appearance
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
-//    [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1.0]];
+    
+    // Configure inputs from settings file (or create default)
+    [VWWThereminInputs sharedInstance];
+    
     return YES;
 }
 							

@@ -15,7 +15,7 @@
 		C606D2A9166AE1E600FA7B70 /* VWWThereminSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D29C166AE1E500FA7B70 /* VWWThereminSynthesizer.mm */; };
 		C606D2AA166AE1E600FA7B70 /* VWWThereminSynthesizerSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D29E166AE1E500FA7B70 /* VWWThereminSynthesizerSettings.mm */; };
 		C606D2B1166AE20C00FA7B70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2AC166AE20C00FA7B70 /* main.m */; };
-		C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.m */; };
+		C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.mm */; };
 		C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2BD166AE3A200FA7B70 /* VWWCubeScene.m */; };
 		C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2BF166AE3A200FA7B70 /* VWWScene.m */; };
 		C606D2CA166AE40F00FA7B70 /* VWWCubeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2C7166AE40F00FA7B70 /* VWWCubeModel.m */; };
@@ -109,7 +109,7 @@
 		C606D2AD166AE20C00FA7B70 /* Theremin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Theremin-Info.plist"; sourceTree = "<group>"; };
 		C606D2AE166AE20C00FA7B70 /* Theremin-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Theremin-Prefix.pch"; sourceTree = "<group>"; };
 		C606D2AF166AE20C00FA7B70 /* VWWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAppDelegate.h; sourceTree = "<group>"; };
-		C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
+		C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWAppDelegate.mm; sourceTree = "<group>"; };
 		C606D2B8166AE34100FA7B70 /* VWWThereminViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminViewController.h; sourceTree = "<group>"; };
 		C606D2BC166AE3A200FA7B70 /* VWWCubeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCubeScene.h; sourceTree = "<group>"; };
 		C606D2BD166AE3A200FA7B70 /* VWWCubeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCubeScene.m; sourceTree = "<group>"; };
@@ -482,7 +482,7 @@
 				C606D2AD166AE20C00FA7B70 /* Theremin-Info.plist */,
 				C606D2AE166AE20C00FA7B70 /* Theremin-Prefix.pch */,
 				C606D2AF166AE20C00FA7B70 /* VWWAppDelegate.h */,
-				C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.m */,
+				C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.mm */,
 				C6F7537F15C6313C00911E59 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -674,7 +674,7 @@
 				C606D2A9166AE1E600FA7B70 /* VWWThereminSynthesizer.mm in Sources */,
 				C606D2AA166AE1E600FA7B70 /* VWWThereminSynthesizerSettings.mm in Sources */,
 				C606D2B1166AE20C00FA7B70 /* main.m in Sources */,
-				C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.m in Sources */,
+				C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.mm in Sources */,
 				C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */,
 				C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */,
 				C606D2CA166AE40F00FA7B70 /* VWWCubeModel.m in Sources */,

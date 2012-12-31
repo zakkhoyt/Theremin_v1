@@ -64,8 +64,31 @@
     if(contents == nil){
         return;
     }
-    
-    
+
+    NSLog(@"parsing json...");
+
+    // Example of how to go from json to an array
+//    NSString* dataStr = @"[{\"id\": \"1\", \"name\":\"Aaa\"}, {\"id\": \"2\", \"name\":\"Bbb\"}]";
+    NSData* data = [contents dataUsingEncoding:NSUTF8StringEncoding];
+    NSError* error = nil;
+    NSArray* jsonArray = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&error];
+    if (!jsonArray) {
+        NSLog(@"Error parsing JSON: %@", error);
+    } else {
+        for(NSDictionary *item in jsonArray) {
+            NSLog(@"Item: %@", item);
+            NSString* typeString = [item valueForKey:@"type"];
+            if([typeString isEqualToString:@"touchscreen"]){
+                [self populateInput:self.touchInput withJson:item];
+            }
+        }
+    }
+}
+
+-(void)populateInput:(VWWThereminInput*)input withDictionary:(NSDictionary*)dict{
+//    input.inputType = [dict valueForKey:@"touchscreen"];
 }
 
 -(void)initializeClass{
@@ -75,7 +98,13 @@
     _gyroscopeInput = [[VWWThereminInput alloc]initWithType:kInputGyros];
     _magnetometerInput = [[VWWThereminInput alloc]initWithType:kInputMagnetometer];
     
-    [self loadFile];
+    // If the config file exists, load it. If not, go ahead and write our default values as a file and move on. 
+    if([VWWFileSystem configFileExists]){
+        [self loadFile];
+    }
+    else{
+        [self saveFile];
+    }
 }
 
 

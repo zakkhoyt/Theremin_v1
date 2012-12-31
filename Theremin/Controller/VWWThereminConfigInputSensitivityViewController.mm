@@ -8,6 +8,7 @@
 
 #import "VWWThereminConfigInputSensitivityViewController.h"
 #import "VWWConfigInputSensitivityView.h"
+#import "VWWThereminInputs.h"
 
 @interface VWWThereminConfigInputSensitivityViewController ()
 @property (nonatomic, retain) IBOutlet UIView* infoView;
@@ -80,6 +81,7 @@
 }
 
 - (IBAction)doneButtonHandler:(id)sender {
+    [[VWWThereminInputs sharedInstance]saveFile];
     [self.delegate vwwThereminConfigInputSensitivityViewControllerUserIsDone:self];
 }
 @end

@@ -15,10 +15,10 @@
 
 @implementation VWWThereminInput
 
--(id)init{
+-(id)initWithType:(InputType)type{
     self = [super init];
     if(self){
-        _inputType = VWW_INPUT_TYPE;
+        _inputType = type;
         _x = [[VWWThereminInputAxis alloc]init];
         _y = [[VWWThereminInputAxis alloc]init];
         _z = [[VWWThereminInputAxis alloc]init];

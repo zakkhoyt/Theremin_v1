@@ -8,6 +8,7 @@
 
 #import "VWWThereminConfigInputWaveformsViewController.h"
 #import "VWWConfigInputWaveformView.h"
+#import "VWWThereminInputs.h"
 
 typedef enum{
     kLineTypeNone = 0,
@@ -223,6 +224,7 @@ typedef enum{
 }
 
 - (IBAction)doneButtonHandler:(id)sender {
+    [[VWWThereminInputs sharedInstance]saveFile];
     [self.delegate vwwThereminConfigInputWaveformsViewControllerUserIsDone:self];
 }
 - (void)dealloc {

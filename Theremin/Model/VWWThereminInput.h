@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VWWThereminInputAxis.h"
+#import "VWWThereminSynthesizerSettings.h"
 
 @interface VWWThereminInput : NSObject
 @property (nonatomic, retain) VWWThereminInputAxis* x;
@@ -15,4 +16,5 @@
 @property (nonatomic, retain) VWWThereminInputAxis* z;
 @property (nonatomic) InputType inputType;
 -(NSDictionary*)jsonRepresentation;
+-(id)initWithType:(InputType)type;
 @end

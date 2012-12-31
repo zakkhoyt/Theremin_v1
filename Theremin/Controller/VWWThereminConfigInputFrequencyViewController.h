@@ -10,14 +10,6 @@
 #import "VWWLine.h"
 #import "VWWThereminSynthesizerSettings.h"
 
-//typedef enum{
-//    kVWWSensorTypeNone = 0,
-//    kVWWSensorTypeAccelerometer,
-//    kVWWSensorTypeGyro,
-//    kVWWSensorTypeMagnetometer,
-//    kVWWSensorTypeTouch,
-//} VWWSensorType;
-
 @class VWWThereminConfigInputFrequencyViewController;
 
 @protocol VWWThereminConfigInputFrequencyViewControllerDelegate <NSObject>

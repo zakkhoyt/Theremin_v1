@@ -7,6 +7,7 @@
 //
 
 #import "VWWThereminInputs.h"
+#import "VWWFileSystem.h"
 
 @interface VWWThereminInputs ()
 
@@ -26,28 +27,57 @@
 -(id)init{
     self = [super init];
     if(self){
-        VWWThereminInput* touchInput = [[VWWThereminInput alloc]init];
-        VWWThereminInput* accelerometerInput = [[VWWThereminInput alloc]init];
-        VWWThereminInput* gyroscopeInput = [[VWWThereminInput alloc]init];
-        VWWThereminInput* magnetometerInput = [[VWWThereminInput alloc]init];
-        _inputs = [NSArray arrayWithObjects:touchInput,
-                   accelerometerInput,
-                   gyroscopeInput,
-                   magnetometerInput,
-                   nil];
+        [self initializeClass];
     }
     return self;
 }
 
--(NSDictionary*)jsonRepresentation{
-    return nil;
+-(NSString*)jsonRepresentation{
+    NSArray* inputs = [NSArray arrayWithObjects:_touchInput.jsonRepresentation,
+              _accelerometerInput.jsonRepresentation,
+              _gyroscopeInput.jsonRepresentation,
+              _magnetometerInput.jsonRepresentation,
+              nil];
+    
+    NSError* error = nil;
+    NSData* outData = [NSJSONSerialization dataWithJSONObject:inputs options:NSJSONReadingMutableContainers error:&error];
+    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
+    return outDataString;
 }
 
 -(void)dealloc{
-    [_inputs release];
+
     [super dealloc];
 }
--(void)saveDefaults{
-    [self.inputs makeObjectsPerformSelector:@selector(saveDefaults:)];
+
+-(void)saveFile{
+    NSString* fileString = self.jsonRepresentation;
+//    NSLog(@"%@", fileString);
+    if([VWWFileSystem writeFile:fileString] == NO){
+        NSLog(@"Error writing config file");
+    }
 }
+
+// Read from file and populate data structures
+-(void)loadFile{
+    NSString* contents = [VWWFileSystem readFile];
+    if(contents == nil){
+        return;
+    }
+    
+    
+}
+
+-(void)initializeClass{
+    
+    _touchInput = [[VWWThereminInput alloc]initWithType:kInputTouch];
+    _accelerometerInput = [[VWWThereminInput alloc]initWithType:kInputAccelerometer];
+    _gyroscopeInput = [[VWWThereminInput alloc]initWithType:kInputGyros];
+    _magnetometerInput = [[VWWThereminInput alloc]initWithType:kInputMagnetometer];
+    
+    [self loadFile];
+}
+
+
+
 @end

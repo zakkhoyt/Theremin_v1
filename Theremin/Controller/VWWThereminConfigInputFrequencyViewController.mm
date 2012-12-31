@@ -438,17 +438,23 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 //                     }
 //                     ]
 //        }
-//    }
+//    }	
     
-//    VWWThereminInput* input = [[VWWThereminInput alloc]init];
-//    
+    //VWWThereminInput* input = [[VWWThereminInput alloc]init];
+
+    
 //    NSError* error = nil;
 //    NSData* outData = [NSJSONSerialization dataWithJSONObject:input.jsonRepresentation options:NSJSONReadingMutableContainers error:&error];
 //    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
 //    NSLog(@"%@", outDataString);
-//    
-
-
+    
+//    VWWThereminInputs* inputs = [[VWWThereminInputs alloc]init];
+//    [inputs saveFile];
+//
+//    [inputs loadFile];
+    
+    [[VWWThereminInputs sharedInstance]saveFile];
+    
     [self.delegate VWWThereminConfigInputFrequencyViewControllerUserIsDone:self];
 }
 @end

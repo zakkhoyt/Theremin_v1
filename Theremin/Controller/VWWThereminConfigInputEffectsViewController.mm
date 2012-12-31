@@ -8,6 +8,7 @@
 
 #import "VWWThereminConfigInputEffectsViewController.h"
 #import "VWWConfigInputEffectsView.h"
+#import "VWWThereminInputs.h"
 
 typedef enum{
     kLineTypeNone = 0,
@@ -222,6 +223,7 @@ typedef enum{
 }
 
 - (IBAction)doneButtonHandler:(id)sender {
+    [[VWWThereminInputs sharedInstance]saveFile];
     [self.delegate vwwThereminConfigInputEffectsViewControllerUserIsDone:self];
 }
 - (void)dealloc {

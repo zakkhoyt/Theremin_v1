@@ -28,7 +28,7 @@ typedef enum{
 @property (retain, nonatomic) IBOutlet UIImageView *squareImageView;
 @property (retain, nonatomic) IBOutlet UIImageView *triangleImageView;
 @property (retain, nonatomic) IBOutlet UIImageView *sawtoothImageView;
-
+@property (nonatomic, retain) VWWThereminInput* input;
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
 @property (nonatomic) CGRect waveformEndzone;
@@ -58,22 +58,28 @@ typedef enum{
     [self.infoView setHidden:NO];
 #endif
     
+
     // Set nav bar title
     switch(self.inputType){
         case kInputAccelerometer:
             self.navigationItem.title = @"Accelerometers";
+            self.input = [VWWThereminInputs accelerometerInput];
             break;
         case kInputGyros:
             self.navigationItem.title = @"Gyroscopes";
+            self.input = [VWWThereminInputs gyroscopeInput];
             break;
         case kInputMagnetometer:
             self.navigationItem.title = @"Magnetometers";
+            self.input = [VWWThereminInputs magnetometerInput];
             break;
         case kInputTouch:
             self.navigationItem.title = @"Touch Screen";
+            self.input = [VWWThereminInputs touchscreenInput];
             break;
         case kInputNone:
             self.navigationItem.title = @"Invalid Input";
+            self.input = nil;
         default:
             break;
     }
@@ -82,6 +88,9 @@ typedef enum{
                                       self.sinImageView.frame.origin.y,
                                       self.sinImageView.frame.size.width,
                                       self.sawtoothImageView.frame.origin.y + self.sawtoothImageView.frame.size.height);
+    
+    
+    [self makeLinesFromInputData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -149,23 +158,23 @@ typedef enum{
     UITouch* touch = [touchesArray objectAtIndex:0];
     CGPoint end = [touch locationInView:self.configView];
     
-//    if(CGRectContainsPoint(self.waveformEndzone, end)){
-//        self.end = CGPointMake(self.waveformEndzone.origin.x + self.waveformEndzone.size.width/2.0, end.y);
-//        [self updateConfigViewLinesValid:YES];
-//    }
     if(CGRectContainsPoint(self.sinImageView.frame, end)){
+        [self updateWavetype:kWaveSin];
         self.end = CGPointMake(self.sinImageView.frame.origin.x, self.sinImageView.frame.origin.y + self.sinImageView.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
     else if(CGRectContainsPoint(self.squareImageView.frame, end)){
+        [self updateWavetype:kWaveSquare];
         self.end = CGPointMake(self.squareImageView.frame.origin.x, self.squareImageView.frame.origin.y + self.squareImageView.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
     else if(CGRectContainsPoint(self.triangleImageView.frame, end)){
+        [self updateWavetype:kWaveTriangle];
         self.end = CGPointMake(self.triangleImageView.frame.origin.x, self.triangleImageView.frame.origin.y + self.triangleImageView.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
     else if(CGRectContainsPoint(self.sawtoothImageView.frame, end)){
+        [self updateWavetype:kWaveSawtooth];
         self.end = CGPointMake(self.sawtoothImageView.frame.origin.x, self.sawtoothImageView.frame.origin.y + self.sawtoothImageView.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
@@ -179,6 +188,22 @@ typedef enum{
 
 
 
+// For when a user is drawing
+-(void)updateWavetype:(WaveType)wavetype{
+    switch(self.lineType){
+        case kLineTypeX:
+            self.input.x.waveType = wavetype;
+            break;
+        case kLineTypeY:
+            self.input.y.waveType = wavetype;
+            break;
+        case kLineTypeZ:
+            self.input.z.waveType = wavetype;
+            break;
+        default:
+            return;
+    }
+}
 
 -(void)updateConfigViewLinesValid:(bool)valid{
     VWWLine* line = [[VWWLine alloc]initWithBegin:self.begin andEnd:self.end];
@@ -201,11 +226,60 @@ typedef enum{
 }
 
 
+-(void)makeLinesFromInputData{
+    VWWLine* xLine = [[[VWWLine alloc]initWithBegin:[self getLineXBegin]
+                                                andEnd:[self getLineXEnd]]autorelease];
+    [self.configView setLineX:xLine valid:YES];
 
+    VWWLine* yLine = [[[VWWLine alloc]initWithBegin:[self getLineYBegin]
+                                             andEnd:[self getLineYEnd]]autorelease];
+    [self.configView setLineY:yLine valid:YES];
+    
+    VWWLine* zLine = [[[VWWLine alloc]initWithBegin:[self getLineZBegin]
+                                             andEnd:[self getLineZEnd]]autorelease];
+    [self.configView setLineZ:zLine valid:YES];
+}
 
-
-
-
+-(CGPoint)getLineXBegin{
+    return CGPointMake(self.xLabel.center.x + self.xLabel.frame.size.width/2.0,
+                       self.xLabel.center.y);
+}
+-(CGPoint)getLineXEnd{
+    return [self getLineEndWithWavetype:self.input.x.waveType];
+}
+-(CGPoint)getLineYBegin{
+    return CGPointMake(self.yLabel.center.x + self.yLabel.frame.size.width/2.0,
+                       self.yLabel.center.y);
+}
+-(CGPoint)getLineYEnd{
+    return [self getLineEndWithWavetype:self.input.y.waveType];
+}
+-(CGPoint)getLineZBegin{
+    return CGPointMake(self.zLabel.center.x + self.zLabel.frame.size.width/2.0,
+                       self.zLabel.center.y);
+}
+-(CGPoint)getLineZEnd{
+    return [self getLineEndWithWavetype:self.input.z.waveType];
+}
+-(CGPoint)getLineEndWithWavetype:(WaveType)wavetype{
+    switch(wavetype){
+        case kWaveSin:
+            return CGPointMake(self.sinImageView.frame.origin.x, self.sinImageView.frame.origin.y + self.sinImageView.frame.size.height/2.0);
+            break;
+        case kWaveSquare:
+            return CGPointMake(self.squareImageView.frame.origin.x, self.squareImageView.frame.origin.y + self.squareImageView.frame.size.height/2.0);
+            break;
+        case kWaveSawtooth:
+            return CGPointMake(self.sawtoothImageView.frame.origin.x, self.sawtoothImageView.frame.origin.y + self.sawtoothImageView.frame.size.height/2.0);
+            break;
+        case kWaveTriangle:
+            return CGPointMake(self.triangleImageView.frame.origin.x, self.triangleImageView.frame.origin.y + self.triangleImageView.frame.size.height/2.0);
+            break;
+        case kWaveNone:
+        default:
+            return CGPointMake(0,0);
+    }
+}
 
 
 

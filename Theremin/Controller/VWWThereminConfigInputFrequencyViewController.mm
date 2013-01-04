@@ -167,33 +167,27 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     
     if(CGRectContainsPoint(self.xMaxLabel.frame, begin)){
         self.lineType = kLineTypeXMax;
-        self.begin = CGPointMake(self.xMaxLabel.center.x + self.xMaxLabel.frame.size.width/2.0,
-                                 self.xMaxLabel.center.y);
+        self.begin = [self getLineXMaxBegin];
     }
     else if(CGRectContainsPoint(self.xMinLabel.frame, begin)){
         self.lineType = kLineTypeXMin;
-        self.begin = CGPointMake(self.xMinLabel.center.x + self.xMinLabel.frame.size.width/2.0,
-                                 self.xMinLabel.center.y);
+        self.begin = [self getLineXMinBegin];
     }
     else if(CGRectContainsPoint(self.yMaxLabel.frame, begin)){
         self.lineType = kLineTypeYMax;
-        self.begin = CGPointMake(self.yMaxLabel.center.x + self.yMaxLabel.frame.size.width/2.0,
-                                 self.yMaxLabel.center.y);
+        self.begin = [self getLineYMaxBegin];
     }
     else if(CGRectContainsPoint(self.yMinLabel.frame, begin)){
         self.lineType = kLineTypeYMin;
-        self.begin = CGPointMake(self.yMinLabel.center.x + self.yMinLabel.frame.size.width/2.0,
-                                 self.yMinLabel.center.y);
+        self.begin = [self getLineYMinBegin];
     }
     else if(CGRectContainsPoint(self.zMaxLabel.frame, begin)){
         self.lineType = kLineTypeZMax;
-        self.begin = CGPointMake(self.zMaxLabel.center.x + self.zMaxLabel.frame.size.width/2.0,
-                                 self.zMaxLabel.center.y);
+        self.begin = [self getLineZMaxBegin];
     }
     else if(CGRectContainsPoint(self.zMinLabel.frame, begin)){
         self.lineType = kLineTypeZMin;
-        self.begin = CGPointMake(self.zMinLabel.center.x + self.zMinLabel.frame.size.width/2.0,
-                                 self.zMinLabel.center.y);
+        self.begin = [self getLineZMinBegin];
     }
     else{
         self.lineType = kLineTypeNone;
@@ -247,7 +241,11 @@ static NSString* kZMinLabelPrefix = @"Z Min";
         float endzoneHeight = self.frequencyEndzone.size.height;
         float ratio = endzonePoint/endzoneHeight;
         float frequency = ((VWW_FREQUENCY_MAX - VWW_FREQUENCY_MIN) * ratio) + VWW_FREQUENCY_MIN;
+        
+        // Update data structure
         [self updateInputFrequency:frequency];
+        
+        // Update GUI
         NSString* frequencyString = [self stringFromFrequency:frequency];
         [self updateAxisLabelsWithFrequency:frequencyString];
         [self updateConfigViewLinesValid:YES];
@@ -268,6 +266,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     return [NSString stringWithFormat:@"%.2f kHz", significand];
 }
 
+// For when a user is drawing
 -(void)updateInputFrequency:(float)frequency{
     switch(self.lineType){
         case kLineTypeXMax:
@@ -295,7 +294,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 }
 
 
-
+// For when a user is drawing
 -(void)updateAxisLabelsWithFrequency:(NSString*)frequency{
     switch(self.lineType){
         case kLineTypeXMax:
@@ -322,7 +321,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     }
 }
 
-
+// For when a user is drawing
 -(void)updateConfigViewLinesValid:(bool)valid{
     VWWLine* line = [[VWWLine alloc]initWithBegin:self.begin andEnd:self.end];
     switch(self.lineType){
@@ -391,9 +390,6 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 
 }
 
-// TODO: Use teh following funcitons to draw lines, replacing the code above which
-// was only written in a manner to draw lines with your finger, not load from a file
-// or data structures. These fuctions are named well and should make it easier to draw. 
 -(CGPoint)getLineXMaxBegin{
     return CGPointMake(self.xMaxLabel.center.x + self.xMaxLabel.frame.size.width/2.0,
                 self.xMaxLabel.center.y);
@@ -441,7 +437,8 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     float fTotal = VWW_FREQUENCY_MAX - VWW_FREQUENCY_MIN;
     float fPoint = (frequency - VWW_FREQUENCY_MIN) / fTotal; // 0.0 .. 1.0
     return CGPointMake(self.frequencyEndzone.origin.x + self.frequencyEndzone.size.width/2.0, // center x wise
-                       self.frequencyEndzone.origin.y + self.frequencyEndzone.size.height - (self.frequencyEndzone.size.height * fPoint)); // origin + % of height
+                       (self.frequencyEndzone.origin.y + self.frequencyEndzone.size.height
+                       - (self.frequencyEndzone.size.height * fPoint))); // origin + % of height
     
 }
 

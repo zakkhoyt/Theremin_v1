@@ -13,6 +13,7 @@
 @interface VWWThereminConfigInputSensitivityViewController ()
 @property (nonatomic, retain) IBOutlet UIView* infoView;
 @property (nonatomic, retain) IBOutlet VWWConfigInputSensitivityView* configView;
+@property (nonatomic, retain) VWWThereminInput* input;
 - (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
@@ -44,18 +45,23 @@
     switch(self.inputType){
         case kInputAccelerometer:
             self.navigationItem.title = @"Accelerometers";
+            self.input = [VWWThereminInputs accelerometerInput];
             break;
         case kInputGyros:
             self.navigationItem.title = @"Gyroscopes";
+            self.input = [VWWThereminInputs gyroscopeInput];
             break;
         case kInputMagnetometer:
             self.navigationItem.title = @"Magnetometers";
+            self.input = [VWWThereminInputs magnetometerInput];
             break;
         case kInputTouch:
             self.navigationItem.title = @"Touch Screen";
+            self.input = [VWWThereminInputs touchscreenInput];
             break;
         case kInputNone:
             self.navigationItem.title = @"Invalid Input";
+            self.input = nil;
         default:
             break;
     }

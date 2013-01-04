@@ -88,7 +88,16 @@ typedef enum{
                                       self.autotuneLabel.frame.origin.y,
                                       self.autotuneLabel.frame.size.width,
                                       self.noEffectLabel.frame.origin.y + self.noEffectLabel.frame.size.height);
+    
+
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self makeLinesFromInputData];
+    [self.configView setNeedsDisplay];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -139,12 +148,6 @@ typedef enum{
     UITouch* touch = [touchesArray objectAtIndex:0];
     self.end = [touch locationInView:self.configView];
     
-//    if(CGRectContainsPoint(self.waveformEndzone, self.end)){
-//        [self updateConfigViewLinesValid:YES];
-//    }
-//    else{
-//        [self updateConfigViewLinesValid:NO];
-//    }
     
     if(CGRectContainsPoint(self.autotuneLabel.frame, self.end) ||
        CGRectContainsPoint(self.linearizeLabel.frame, self.end) ||
@@ -168,18 +171,22 @@ typedef enum{
     CGPoint end = [touch locationInView:self.configView];
     
     if(CGRectContainsPoint(self.autotuneLabel.frame, end)){
+        [self updateEffect:kEffectAutoTune];
         self.end = CGPointMake(self.autotuneLabel.frame.origin.x, self.autotuneLabel.frame.origin.y + self.autotuneLabel.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
     else if(CGRectContainsPoint(self.linearizeLabel.frame, end)){
+        [self updateEffect:kEffectLinearize];
         self.end = CGPointMake(self.linearizeLabel.frame.origin.x, self.linearizeLabel.frame.origin.y + self.linearizeLabel.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
     else if(CGRectContainsPoint(self.throttleLabel.frame, end)){
+        [self updateEffect:kEffectThrottle];
         self.end = CGPointMake(self.throttleLabel.frame.origin.x, self.throttleLabel.frame.origin.y + self.throttleLabel.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
     else if(CGRectContainsPoint(self.noEffectLabel.frame, end)){
+        [self updateEffect:kEffectNone];
         self.end = CGPointMake(self.noEffectLabel.frame.origin.x, self.noEffectLabel.frame.origin.y + self.noEffectLabel.frame.size.height/2.0);
         [self updateConfigViewLinesValid:YES];
     }
@@ -192,7 +199,22 @@ typedef enum{
 }
 
 
-
+// For when a user is drawing
+-(void)updateEffect:(EffectType)effect{
+    switch(self.lineType){
+        case kLineTypeX:
+            self.input.x.effectType = effect;
+            break;
+        case kLineTypeY:
+            self.input.y.effectType = effect;
+            break;
+        case kLineTypeZ:
+            self.input.z.effectType = effect;
+            break;
+        default:
+            return;
+    }
+}
 
 -(void)updateConfigViewLinesValid:(bool)valid{
     VWWLine* line = [[VWWLine alloc]initWithBegin:self.begin andEnd:self.end];
@@ -213,6 +235,67 @@ typedef enum{
     [line release];
     [self.configView setNeedsDisplay];
 }
+
+
+
+
+// For loading data
+-(void)makeLinesFromInputData{
+    VWWLine* xLine = [[[VWWLine alloc]initWithBegin:[self getLineXBegin]
+                                             andEnd:[self getLineXEnd]]autorelease];
+    [self.configView setLineX:xLine valid:YES];
+    
+    VWWLine* yLine = [[[VWWLine alloc]initWithBegin:[self getLineYBegin]
+                                             andEnd:[self getLineYEnd]]autorelease];
+    [self.configView setLineY:yLine valid:YES];
+    
+    VWWLine* zLine = [[[VWWLine alloc]initWithBegin:[self getLineZBegin]
+                                             andEnd:[self getLineZEnd]]autorelease];
+    [self.configView setLineZ:zLine valid:YES];
+}
+
+-(CGPoint)getLineXBegin{
+    return CGPointMake(self.xLabel.center.x + self.xLabel.frame.size.width/2.0,
+                       self.xLabel.center.y);
+}
+-(CGPoint)getLineXEnd{
+    return [self getLineEndWithEffect:self.input.x.effectType];
+}
+-(CGPoint)getLineYBegin{
+    return CGPointMake(self.yLabel.center.x + self.yLabel.frame.size.width/2.0,
+                       self.yLabel.center.y);
+}
+-(CGPoint)getLineYEnd{
+    return [self getLineEndWithEffect:self.input.y.effectType];
+}
+-(CGPoint)getLineZBegin{
+    return CGPointMake(self.zLabel.center.x + self.zLabel.frame.size.width/2.0,
+                       self.zLabel.center.y);
+}
+-(CGPoint)getLineZEnd{
+    return [self getLineEndWithEffect:self.input.z.effectType];
+}
+-(CGPoint)getLineEndWithEffect:(EffectType)effect{
+    switch(effect){
+        case kEffectAutoTune:
+            return CGPointMake(self.autotuneLabel.frame.origin.x, self.autotuneLabel.frame.origin.y + self.autotuneLabel.frame.size.height/2.0);
+            break;
+        case kEffectLinearize:
+            return CGPointMake(self.linearizeLabel.frame.origin.x, self.linearizeLabel.frame.origin.y + self.linearizeLabel.frame.size.height/2.0);
+            break;
+        case kEffectThrottle:
+            return CGPointMake(self.throttleLabel.frame.origin.x, self.throttleLabel.frame.origin.y + self.throttleLabel.frame.size.height/2.0);
+            break;
+        case kEffectNone:
+        default:
+            return CGPointMake(self.noEffectLabel.frame.origin.x, self.noEffectLabel.frame.origin.y + self.noEffectLabel.frame.size.height/2.0);
+    }
+}
+
+
+
+
+
 
 
 - (IBAction)dismissInfoViewButton:(id)sender {

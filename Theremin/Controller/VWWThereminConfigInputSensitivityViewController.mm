@@ -18,6 +18,14 @@
 - (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 
+@property (retain, nonatomic) IBOutlet UISlider *xSlider;
+@property (retain, nonatomic) IBOutlet UISlider *ySlider;
+@property (retain, nonatomic) IBOutlet UISlider *zSlider;
+
+- (IBAction)xSliderHandler:(id)sender;
+- (IBAction)ySliderHandler:(id)sender;
+- (IBAction)zSliderHandler:(id)sender;
+
 @end
 
 @implementation VWWThereminConfigInputSensitivityViewController
@@ -66,6 +74,7 @@
             break;
     }
     
+    [self updateSlidersFromData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +82,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+-(void)updateSlidersFromData{
+    self.xSlider.minimumValue = 0.0;
+    self.xSlider.maximumValue = 1.0;
+    self.xSlider.value = self.input.x.sensitivity;
+    
+    self.ySlider.minimumValue = 0.0;
+    self.ySlider.maximumValue = 1.0;
+    self.ySlider.value = self.input.y.sensitivity;
+    
+    self.zSlider.minimumValue = 0.0;
+    self.zSlider.maximumValue = 1.0;
+    self.zSlider.value = self.input.z.sensitivity;
+}
+
+
+
 
 - (IBAction)dismissInfoViewButton:(id)sender {
     [UIView animateWithDuration:1.0 animations:^{
@@ -89,5 +116,26 @@
 - (IBAction)doneButtonHandler:(id)sender {
     [VWWThereminInputs saveConfigFile];
     [self.delegate vwwThereminConfigInputSensitivityViewControllerUserIsDone:self];
+}
+
+- (IBAction)xSliderHandler:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    self.input.x.sensitivity = slider.value;
+}
+
+- (IBAction)ySliderHandler:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    self.input.y.sensitivity = slider.value;
+}
+
+- (IBAction)zSliderHandler:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    self.input.z.sensitivity = slider.value;
+}
+- (void)dealloc {
+    [_xSlider release];
+    [_ySlider release];
+    [_zSlider release];
+    [super dealloc];
 }
 @end

@@ -90,8 +90,13 @@ typedef enum{
                                       self.sawtoothImageView.frame.origin.y + self.sawtoothImageView.frame.size.height);
     
     
-    [self makeLinesFromInputData];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self makeLinesFromInputData];
+    [self.configView setNeedsDisplay];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

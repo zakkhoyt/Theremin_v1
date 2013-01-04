@@ -126,13 +126,15 @@ static NSString* kZMinLabelPrefix = @"Z Min";
                                        begin.y,
                                        kEndzoneWidth,
                                        end.y - begin.y);
-    [self.configView setNeedsDisplay];
+    
     
     
     
     // Update GUI from data in memory
     [self makeLinesFromInputData];
     [self updateFrequencyLabels];
+    
+    [self.configView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning

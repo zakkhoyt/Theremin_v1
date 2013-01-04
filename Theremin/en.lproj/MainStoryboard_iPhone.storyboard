@@ -60,7 +60,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oEB-Tn-OEy">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="r5r-Ju-5n3">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="r5r-Ju-5n3">
                             <connections>
                                 <action selector="cancelButtonHandler:" destination="Cmr-2A-XxW" id="sXO-vZ-5VT"/>
                             </connections>
@@ -156,14 +156,23 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="I79-4l-xgR">
                                         <rect key="frame" x="18" y="55" width="284" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="xSliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="evA-g3-pyo"/>
+                                        </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="OL2-b4-3Vs">
                                         <rect key="frame" x="18" y="208" width="284" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="ySliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="weU-0c-ihe"/>
+                                        </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="VEn-HL-NsF">
                                         <rect key="frame" x="18" y="373" width="284" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="zSliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="y5F-5v-T4g"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,7 +181,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="c3q-ON-FC1">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="cEa-hk-1IS">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="cEa-hk-1IS">
                             <connections>
                                 <action selector="cancelButtonHandler:" destination="t6j-yK-gz4" id="ial-M4-DFL"/>
                             </connections>
@@ -186,6 +195,9 @@
                     <connections>
                         <outlet property="configView" destination="Cw8-bE-Et4" id="quF-ab-UoU"/>
                         <outlet property="infoView" destination="fBw-4T-c5e" id="KNX-Kb-8Km"/>
+                        <outlet property="xSlider" destination="I79-4l-xgR" id="pPo-va-Zgu"/>
+                        <outlet property="ySlider" destination="OL2-b4-3Vs" id="yZy-yE-SM6"/>
+                        <outlet property="zSlider" destination="VEn-HL-NsF" id="l7G-LA-ghD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9q-aM-ErE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -322,7 +334,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="evP-CL-8TD">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="1eY-LZ-FID">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="1eY-LZ-FID">
                             <connections>
                                 <action selector="cancelButtonHandler:" destination="Kph-Z2-9Ne" id="kio-bX-Qpe"/>
                             </connections>
@@ -456,7 +468,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aO0-VX-Eqp">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="HMj-ck-5ei">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="HMj-ck-5ei">
                             <connections>
                                 <action selector="cancelButtonHandler:" destination="K44-o3-RJh" id="Dtk-we-w8T"/>
                             </connections>
@@ -1360,6 +1372,18 @@
         </class>
         <class className="VWWThereminConfigInputSensitivityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputSensitivityViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonHandler:"/>
+                <relationship kind="action" name="dismissInfoViewButton:"/>
+                <relationship kind="action" name="doneButtonHandler:"/>
+                <relationship kind="action" name="xSliderHandler:"/>
+                <relationship kind="action" name="ySliderHandler:"/>
+                <relationship kind="action" name="zSliderHandler:"/>
+                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="xSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="ySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="zSlider" candidateClass="UISlider"/>
+            </relationships>
         </class>
         <class className="VWWThereminConfigInputWaveformsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputWaveformsViewController.h"/>

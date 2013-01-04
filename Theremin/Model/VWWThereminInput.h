@@ -15,6 +15,10 @@
 @property (nonatomic, retain) VWWThereminInputAxis* y;
 @property (nonatomic, retain) VWWThereminInputAxis* z;
 @property (nonatomic) InputType inputType;
--(NSDictionary*)jsonRepresentation;
+
+-(id)initWithDictionary:(NSDictionary *)dictionary;
 -(id)initWithType:(InputType)type;
+
+-(NSDictionary*)jsonRepresentation;
+-(NSString*)description;
 @end

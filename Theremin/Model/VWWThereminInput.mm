@@ -8,6 +8,16 @@
 
 #import "VWWThereminInput.h"
 
+// Keys for read/writing hash sets
+static NSString* kKeyAccelerometer = @"accelerometer";
+static NSString* kKeyGyroscope = @"gyroscope";
+static NSString* kKeyMagnetometer = @"magnetometer";
+static NSString* kKeyTouchScreen = @"touchscreen";
+static NSString* kKeyNone = @"none";
+static NSString* kKeyType = @"type";
+static NSString* kKeyX = @"x";
+static NSString* kKeyY = @"y";
+static NSString* kKeyZ = @"z";
 
 @interface VWWThereminInput ()
 
@@ -26,55 +36,76 @@
     return self;
 }
 
-
+- (id)initWithDictionary:(NSDictionary *)dictionary{
+    self = [super init];
+    if(self){
+        if(dictionary){
+            NSString* type = [dictionary objectForKey:kKeyType];
+            _inputType = [self inputTypeFromString:type];        
+            NSDictionary* xDict = [dictionary objectForKey:kKeyX];
+            _x = [[VWWThereminInputAxis alloc]initWithDictionary:xDict];
+            NSDictionary* yDict = [dictionary objectForKey:kKeyY];
+            _y = [[VWWThereminInputAxis alloc]initWithDictionary:yDict];
+            NSDictionary* zDict = [dictionary objectForKey:kKeyZ];
+            _z = [[VWWThereminInputAxis alloc]initWithDictionary:zDict];
+        }
+        else{
+            // Defaults
+            _inputType = VWW_INPUT_TYPE;
+            _x = [[VWWThereminInputAxis alloc]init];
+            _y = [[VWWThereminInputAxis alloc]init];
+            _z = [[VWWThereminInputAxis alloc]init];
+        }
+    }
+    return self;
+}
 
 -(NSDictionary*)jsonRepresentation{
     NSMutableDictionary* jsonDict = [NSMutableDictionary new];
-    [jsonDict setValue:self.x.jsonRepresentation forKey:@"x"];
-    [jsonDict setValue:self.y.jsonRepresentation forKey:@"y"];
-    [jsonDict setValue:self.z.jsonRepresentation forKey:@"z"];
-    [jsonDict setValue:[self stringForInputType] forKey:@"type"];
+    [jsonDict setValue:self.x.jsonRepresentation forKey:kKeyX];
+    [jsonDict setValue:self.y.jsonRepresentation forKey:kKeyY];
+    [jsonDict setValue:self.z.jsonRepresentation forKey:kKeyZ];
+    [jsonDict setValue:[self stringForInputType] forKey:kKeyType];
     return jsonDict;
-//
-//    NSError* error = nil;
-//    NSData* outData = [NSJSONSerialization dataWithJSONObject:jsonDict options:NSJSONReadingMutableContainers error:&error];
-//    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
-//    //    NSLog(@"%@", outDataString);
-//    return outDataString;
 }
 
 -(NSString*)stringForInputType{
     switch (self.inputType) {
         case kInputAccelerometer:
-            return @"accelerometer";
+            return kKeyAccelerometer;
         case kInputGyros:
-            return @"gyroscope";
+            return kKeyGyroscope;
         case kInputMagnetometer:
-            return @"magnetometer";
+            return kKeyMagnetometer;
         case kInputTouch:
-            return @"touchscreen";
+            return kKeyTouchScreen;
         case kInputNone:
         default:
-            return @"none";
+            return kKeyNone;
     }
 }
 
-
--(void)loadDefaults{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults string]
-//    [defaults setObject:firstName forKey:@"firstName"];
-//    [defaults setObject:lastName forKey:@"lastname"];
-//    [defaults setInteger:age forKey:@"age"];
-//    [defaults setObject:imageData forKey:@"image"];
-    [defaults synchronize];
+-(InputType)inputTypeFromString:(NSString*)typeString{
+    if([typeString isEqualToString:kKeyAccelerometer]){
+        return kInputAccelerometer;
+    }
+    else if([typeString isEqualToString:kKeyGyroscope]){
+        return kInputGyros;
+    }
+    else if([typeString isEqualToString:kKeyMagnetometer]){
+        return kInputMagnetometer;
+    }
+    else if([typeString isEqualToString:kKeyTouchScreen]){
+        return kInputTouch;
+    }
+    else /* if([typeString isEqualToString:kKeyNone]) */ {
+        return kInputNone;
+    }
 }
 
--(void)saveDefaults{
-    
+-(NSString*)description{
+    return [self stringForInputType];
 }
-
-
 
 
 @end

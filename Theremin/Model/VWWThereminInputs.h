@@ -12,12 +12,7 @@
 
 
 @interface VWWThereminInputs : NSObject
-@property (nonatomic, retain) VWWThereminInput* activeInput;
-@property (nonatomic, retain) VWWThereminInput* touchInput;
-@property (nonatomic, retain) VWWThereminInput* accelerometerInput;
-@property (nonatomic, retain) VWWThereminInput* gyroscopeInput;
-@property (nonatomic, retain) VWWThereminInput* magnetometerInput;
-
+@property (nonatomic, retain) NSMutableDictionary* inputs;
 +(VWWThereminInputs *)sharedInstance;
 -(void)saveFile;
 

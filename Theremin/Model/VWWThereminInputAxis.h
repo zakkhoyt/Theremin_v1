@@ -11,8 +11,8 @@
 #import "VWWThereminSynthesizerSettings.h"
 
 @interface VWWThereminInputAxis : NSObject
-@property (nonatomic) NSUInteger frequencyMax;
-@property (nonatomic) NSUInteger frequencyMin;
+@property (nonatomic) float frequencyMax;
+@property (nonatomic) float frequencyMin;
 @property (nonatomic) WaveType waveType;
 @property (nonatomic) float sensitivity;
 @property (nonatomic) EffectType effectType;

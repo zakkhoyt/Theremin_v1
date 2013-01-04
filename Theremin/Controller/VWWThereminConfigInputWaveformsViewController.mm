@@ -224,7 +224,7 @@ typedef enum{
 }
 
 - (IBAction)doneButtonHandler:(id)sender {
-    [[VWWThereminInputs sharedInstance]saveFile];
+    [VWWThereminInputs saveConfigFile];
     [self.delegate vwwThereminConfigInputWaveformsViewControllerUserIsDone:self];
 }
 - (void)dealloc {

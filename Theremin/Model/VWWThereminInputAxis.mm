@@ -27,8 +27,8 @@ static NSString* kKeyNone = @"none";
 -(id)init{
     self = [super init];
     if(self){
-        _frequencyMax = VWW_FREQUENCY_MAX;
-        _frequencyMin = VWW_FREQUENCY_MIN;
+        _frequencyMax = VWW_INPUT_FREQUENCY_MAX;
+        _frequencyMin = VWW_INPUT_FREQUENCY_MIN;
         _waveType = VWW_WAVETYPE;
         _sensitivity = VWW_SENSITIVITY;
         _effectType = VWW_EFFECT;
@@ -52,8 +52,8 @@ static NSString* kKeyNone = @"none";
             _waveType = [self  waveformFromString:wavetypeString];
         }
         else{
-            _frequencyMax = VWW_FREQUENCY_MAX;
-            _frequencyMin = VWW_FREQUENCY_MIN;
+            _frequencyMax = VWW_INPUT_FREQUENCY_MAX;
+            _frequencyMin = VWW_INPUT_FREQUENCY_MIN;
             _waveType = VWW_WAVETYPE;
             _sensitivity = VWW_SENSITIVITY;
             _effectType = VWW_EFFECT;

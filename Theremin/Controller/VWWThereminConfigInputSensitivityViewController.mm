@@ -81,7 +81,7 @@
 }
 
 - (IBAction)doneButtonHandler:(id)sender {
-    [[VWWThereminInputs sharedInstance]saveFile];
+    [VWWThereminInputs saveConfigFile];
     [self.delegate vwwThereminConfigInputSensitivityViewControllerUserIsDone:self];
 }
 @end

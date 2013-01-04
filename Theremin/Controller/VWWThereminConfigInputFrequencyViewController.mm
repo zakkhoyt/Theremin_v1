@@ -46,7 +46,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
 @property (nonatomic) CGRect frequencyEndzone;
-
+@property (nonatomic, retain) VWWThereminInput* input;
 
 - (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)cancelButtonHandler:(id)sender;
@@ -82,47 +82,57 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     switch(self.inputType){
         case kInputAccelerometer:
             self.navigationItem.title = @"Accelerometers";
+            self.input = [VWWThereminInputs accelerometerInput];
             break;
         case kInputGyros:
             self.navigationItem.title = @"Gyroscopes";
+            self.input = [VWWThereminInputs gyroscopeInput];
             break;
         case kInputMagnetometer:
             self.navigationItem.title = @"Magnetometers";
+            self.input = [VWWThereminInputs magnetometerInput];
             break;
         case kInputTouch:
             self.navigationItem.title = @"Touch Screen";
+            self.input = [VWWThereminInputs touchscreenInput];
             break;
         case kInputNone:
             self.navigationItem.title = @"Invalid Input";
+            self.input = nil;
         default:
             break;
     }
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    // Update labels
     self.frequencyMaxLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MAX];
     self.frequencyMinLabel.text = [self stringFromFrequency:VWW_FREQUENCY_MIN];
     
+    // Set up frequency line
     CGPoint begin = self.frequencyMaxLabel.center;
     begin.y += self.frequencyMaxLabel.frame.size.height/2.0;
-    
     CGPoint end = self.frequencyMinLabel.center;
     NSLog(@"%@", NSStringFromCGPoint(end));
     end.y -= self.frequencyMinLabel.frame.size.height/2.0;
-    
     VWWLine* frequenciesLine = [[VWWLine alloc]
                                 initWithBegin:begin
                                 andEnd:end];
     [self.configView setLineFrequencies:frequenciesLine];
     [frequenciesLine release];
     
+    // Calculate endzone (for touch events)
     self.frequencyEndzone = CGRectMake(begin.x - kEndzoneWidth/2.0,
                                        begin.y,
                                        kEndzoneWidth,
                                        end.y - begin.y);
     [self.configView setNeedsDisplay];
+    
+    
+    
+    // Update GUI from data in memory
+    [self makeLinesFromInputData];
+    [self updateFrequencyLabels];
 }
 
 - (void)didReceiveMemoryWarning
@@ -237,9 +247,9 @@ static NSString* kZMinLabelPrefix = @"Z Min";
         float endzoneHeight = self.frequencyEndzone.size.height;
         float ratio = endzonePoint/endzoneHeight;
         float frequency = ((VWW_FREQUENCY_MAX - VWW_FREQUENCY_MIN) * ratio) + VWW_FREQUENCY_MIN;
+        [self updateInputFrequency:frequency];
         NSString* frequencyString = [self stringFromFrequency:frequency];
         [self updateAxisLabelsWithFrequency:frequencyString];
-        
         [self updateConfigViewLinesValid:YES];
     }
     else{
@@ -258,6 +268,31 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     return [NSString stringWithFormat:@"%.2f kHz", significand];
 }
 
+-(void)updateInputFrequency:(float)frequency{
+    switch(self.lineType){
+        case kLineTypeXMax:
+            self.input.x.frequencyMax = frequency;
+            break;
+        case kLineTypeXMin:
+            self.input.x.frequencyMin = frequency;
+            break;
+        case kLineTypeYMax:
+            self.input.y.frequencyMax = frequency;
+            break;
+        case kLineTypeYMin:
+            self.input.y.frequencyMin = frequency;
+            break;
+        case kLineTypeZMax:
+            self.input.z.frequencyMax = frequency;
+            break;
+        case kLineTypeZMin:
+            self.input.z.frequencyMin = frequency;
+            break;
+        default:
+            return;
+            
+    }
+}
 
 
 
@@ -286,9 +321,6 @@ static NSString* kZMinLabelPrefix = @"Z Min";
             
     }
 }
-
-
-
 
 
 -(void)updateConfigViewLinesValid:(bool)valid{
@@ -321,6 +353,100 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 }
 
 
+
+-(void)makeLinesFromInputData{
+    VWWLine* xMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineXMaxBegin]
+                                               andEnd:[self getLineXMaxEnd]]autorelease];
+    [self.configView setLineXMax:xMaxLine valid:YES];
+    
+    VWWLine* xMinLine = [[[VWWLine alloc]initWithBegin:[self getLineXMinBegin]
+                                                andEnd:[self getLineXMinEnd]]autorelease];
+    [self.configView setLineXMin:xMinLine valid:YES];
+    
+    VWWLine* yMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineYMaxBegin]
+                                                andEnd:[self getLineYMaxEnd]]autorelease];
+    [self.configView setLineYMax:yMaxLine valid:YES];
+    
+    VWWLine* yMinLine = [[[VWWLine alloc]initWithBegin:[self getLineYMinBegin]
+                                                andEnd:[self getLineYMinEnd]]autorelease];
+    [self.configView setLineYMin:yMinLine valid:YES];
+    
+    VWWLine* zMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineZMaxBegin]
+                                                andEnd:[self getLineZMaxEnd]]autorelease];
+    [self.configView setLineZMax:zMaxLine valid:YES];
+    
+    VWWLine* zMinLine = [[[VWWLine alloc]initWithBegin:[self getLineZMinBegin]
+                                                andEnd:[self getLineZMinEnd]]autorelease];
+    [self.configView setLineZMin:zMinLine valid:YES];
+
+}
+
+-(void)updateFrequencyLabels{
+    self.xMaxLabel.text = [NSString stringWithFormat:@"%@\n%@", kXMaxLabelPrefix, [self stringFromFrequency:self.input.x.frequencyMax]];
+    self.xMinLabel.text = [NSString stringWithFormat:@"%@\n%@", kXMinLabelPrefix, [self stringFromFrequency:self.input.x.frequencyMin]];
+    self.yMaxLabel.text = [NSString stringWithFormat:@"%@\n%@", kYMaxLabelPrefix, [self stringFromFrequency:self.input.y.frequencyMax]];
+    self.yMinLabel.text = [NSString stringWithFormat:@"%@\n%@", kYMinLabelPrefix, [self stringFromFrequency:self.input.y.frequencyMin]];
+    self.zMaxLabel.text = [NSString stringWithFormat:@"%@\n%@", kZMaxLabelPrefix, [self stringFromFrequency:self.input.z.frequencyMax]];
+    self.zMinLabel.text = [NSString stringWithFormat:@"%@\n%@", kZMinLabelPrefix, [self stringFromFrequency:self.input.z.frequencyMin]];
+
+}
+
+// TODO: Use teh following funcitons to draw lines, replacing the code above which
+// was only written in a manner to draw lines with your finger, not load from a file
+// or data structures. These fuctions are named well and should make it easier to draw. 
+-(CGPoint)getLineXMaxBegin{
+    return CGPointMake(self.xMaxLabel.center.x + self.xMaxLabel.frame.size.width/2.0,
+                self.xMaxLabel.center.y);
+}
+-(CGPoint)getLineXMaxEnd{
+    return [self getPointOnFrequencyLine:self.input.x.frequencyMax];
+}
+-(CGPoint)getLineXMinBegin{
+    return CGPointMake(self.xMinLabel.center.x + self.xMinLabel.frame.size.width/2.0,
+                self.xMinLabel.center.y);
+}
+-(CGPoint)getLineXMinEnd{
+    return [self getPointOnFrequencyLine:self.input.x.frequencyMin];
+}
+-(CGPoint)getLineYMaxBegin{
+    return CGPointMake(self.yMaxLabel.center.x + self.yMaxLabel.frame.size.width/2.0,
+                self.yMaxLabel.center.y);
+}
+-(CGPoint)getLineYMaxEnd{
+    return [self getPointOnFrequencyLine:self.input.y.frequencyMax];
+}
+-(CGPoint)getLineYMinBegin{
+    return CGPointMake(self.yMinLabel.center.x + self.yMinLabel.frame.size.width/2.0,
+                self.yMinLabel.center.y);
+}
+-(CGPoint)getLineYMinEnd{
+    return [self getPointOnFrequencyLine:self.input.y.frequencyMin];
+}
+-(CGPoint)getLineZMaxBegin{
+    return CGPointMake(self.zMaxLabel.center.x + self.zMaxLabel.frame.size.width/2.0,
+                self.zMaxLabel.center.y);
+}
+-(CGPoint)getLineZMaxEnd{
+    return [self getPointOnFrequencyLine:self.input.z.frequencyMax];
+}
+-(CGPoint)getLineZMinBegin{
+    return CGPointMake(self.zMinLabel.center.x + self.zMinLabel.frame.size.width/2.0,
+                self.zMinLabel.center.y);
+}
+-(CGPoint)getLineZMinEnd{
+    return [self getPointOnFrequencyLine:self.input.z.frequencyMin];
+}
+
+-(CGPoint)getPointOnFrequencyLine:(float)frequency{
+    float fTotal = VWW_FREQUENCY_MAX - VWW_FREQUENCY_MIN;
+    float fPoint = (frequency - VWW_FREQUENCY_MIN) / fTotal; // 0.0 .. 1.0
+    return CGPointMake(self.frequencyEndzone.origin.x + self.frequencyEndzone.size.width/2.0, // center x wise
+                       self.frequencyEndzone.origin.y + self.frequencyEndzone.size.height - (self.frequencyEndzone.size.height * fPoint)); // origin + % of height
+    
+}
+
+
+#pragma mark - Custom UI action handlers. 
 - (IBAction)dismissInfoViewButton:(id)sender {
     [UIView animateWithDuration:1.0 animations:^{
         self.infoView.alpha = 0.0;
@@ -333,128 +459,8 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     [self.delegate VWWThereminConfigInputFrequencyViewControllerUserDidCancel:self];
 }
 
-
-
-
-
-
 - (IBAction)doneButtonHandler:(id)sender {
-    
-    
-//    // Example of how to go from json to an array
-//    NSString* dataStr = @"[{\"id\": \"1\", \"name\":\"Aaa\"}, {\"id\": \"2\", \"name\":\"Bbb\"}]";
-//    NSData* data = [dataStr dataUsingEncoding:NSUTF8StringEncoding];
-//    NSError *e = nil;
-//    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error: &e];
-////    if (!jsonArray) {
-////        NSLog(@"Error parsing JSON: %@", e);
-////    } else {
-////        for(NSDictionary *item in jsonArray) {
-////            NSLog(@"Item: %@", item);
-////        }
-////    }
-//    
-//    
-//    NSError* error = nil;
-//    NSData* outData = [NSJSONSerialization dataWithJSONObject:jsonArray options:NSJSONReadingMutableContainers error:&error];
-//    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@", outDataString);
-    
-    
-    
-//    NSMutableDictionary* axisX = [NSMutableDictionary new];
-//    [axisX setValue:@"x" forKey:@"name"];
-//    [axisX setValue:@(2500) forKey:@"fmax"];
-//    [axisX setValue:@(20) forKey:@"fmin"];
-//    [axisX setValue:@"square" forKey:@"waveform"];
-//    [axisX setValue:@(1.0) forKey:@"sensitivity"];
-//    [axisX setValue:@"none" forKey:@"effect"];
-//
-//    NSMutableDictionary* axisY = [NSMutableDictionary new];
-//    [axisY setValue:@"y" forKey:@"name"];
-//    [axisY setValue:@(2500) forKey:@"fmax"];
-//    [axisY setValue:@(20) forKey:@"fmin"];
-//    [axisY setValue:@"square" forKey:@"waveform"];
-//    [axisY setValue:@(1.0) forKey:@"sensitivity"];
-//    [axisY setValue:@"none" forKey:@"effect"];
-//
-//    NSMutableDictionary* axisZ = [NSMutableDictionary new];
-//    [axisZ setValue:@"z" forKey:@"name"];
-//    [axisZ setValue:@(2500) forKey:@"fmax"];
-//    [axisZ setValue:@(20) forKey:@"fmin"];
-//    [axisZ setValue:@"square" forKey:@"waveform"];
-//    [axisZ setValue:@(1.0) forKey:@"sensitivity"];
-//    [axisZ setValue:@"none" forKey:@"effect"];
-//
-//    NSMutableDictionary* inputAccelerometer = [NSMutableDictionary new];
-//    [inputAccelerometer setValue:@"accelerometer" forKey:@"type"];
-//    [inputAccelerometer setValue:axisX forKey:@"x"];
-//    [inputAccelerometer setValue:axisY forKey:@"y"];
-//    [inputAccelerometer setValue:axisZ forKey:@"z"];
-//    
-//    
-//    
-//    
-//    
-//    
-//
-//    
-//    NSError* error = nil;
-//    NSData* outData = [NSJSONSerialization dataWithJSONObject:inputAccelerometer options:NSJSONReadingMutableContainers error:&error];
-//    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@", outDataString);
-//    
-//    
-    
-    
-    
-//    {
-//        "input": {
-//            "-type": "accelerometer",
-//            "axis": [
-//                     {
-//                         "-name": "x",
-//                         "fmax": "2500",
-//                         "fmin": "20",
-//                         "waveform": "square",
-//                         "sensitivity": "1.0",
-//                         "effect": "none"
-//                     },
-//                     {
-//                         "-name": "y",
-//                         "fmax": "2500",
-//                         "fmin": "20",
-//                         "waveform": "square",
-//                         "sensitivity": "1.0",
-//                         "effect": "none"
-//                     },
-//                     {
-//                         "-name": "z",
-//                         "fmax": "2500",
-//                         "fmin": "20",
-//                         "waveform": "square",
-//                         "sensitivity": "1.0",
-//                         "effect": "none"
-//                     }
-//                     ]
-//        }
-//    }	
-    
-    //VWWThereminInput* input = [[VWWThereminInput alloc]init];
-
-    
-//    NSError* error = nil;
-//    NSData* outData = [NSJSONSerialization dataWithJSONObject:input.jsonRepresentation options:NSJSONReadingMutableContainers error:&error];
-//    NSString* outDataString = [[NSString alloc]initWithBytes:[outData bytes] length:outData.length encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@", outDataString);
-    
-//    VWWThereminInputs* inputs = [[VWWThereminInputs alloc]init];
-//    [inputs saveFile];
-//
-//    [inputs loadFile];
-    
-    [[VWWThereminInputs sharedInstance]saveFile];
-    
+    [VWWThereminInputs saveConfigFile];
     [self.delegate VWWThereminConfigInputFrequencyViewControllerUserIsDone:self];
 }
 @end

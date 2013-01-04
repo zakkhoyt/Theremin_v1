@@ -10,11 +10,18 @@
 #import "VWWThereminInput.h"
 #import "VWWThereminSynthesizerSettings.h"
 
+// TODO: These are defined elsewhere in the app.
+// We really don't want two instances 
+static NSString* kKeyAccelerometer = @"accelerometer";
+static NSString* kKeyGyroscope = @"gyroscope";
+static NSString* kKeyMagnetometer = @"magnetometer";
+static NSString* kKeyTouchScreen = @"touchscreen";
 
 @interface VWWThereminInputs : NSObject
-@property (nonatomic, retain) NSMutableDictionary* inputs;
 +(VWWThereminInputs *)sharedInstance;
--(void)saveFile;
-
-
++(VWWThereminInput*)accelerometerInput;
++(VWWThereminInput*)gyroscopeInput;
++(VWWThereminInput*)magnetometerInput;
++(VWWThereminInput*)touchscreenInput;
++(void)saveConfigFile;
 @end

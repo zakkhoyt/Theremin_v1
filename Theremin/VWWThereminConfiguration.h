@@ -10,13 +10,18 @@
 #ifndef Theremin_VWWThereminConfiguration_h
 #define Theremin_VWWThereminConfiguration_h
 
-#define VWW_MAX_CHANNELS    1
-#define VWW_FREQUENCY_MAX   2500.0
-#define VWW_FREQUENCY_MIN   20.0
-#define VWW_WAVETYPE        kWaveSin
-#define VWW_SENSITIVITY     1.0
-#define VWW_EFFECT          kEffectNone
-#define VWW_INPUT_TYPE      kInputTouch
+// Max/min frequency that can be reached by any channel
+#define VWW_FREQUENCY_MAX           2500.0
+#define VWW_FREQUENCY_MIN           20.0
 
-#define VWW_SHOW_INFO_SCREENS 1
+// Default max/min for each channel
+#define VWW_INPUT_FREQUENCY_MAX     2000.0
+#define VWW_INPUT_FREQUENCY_MIN     30.0
+#define VWW_WAVETYPE                kWaveSin
+#define VWW_SENSITIVITY             1.0
+#define VWW_EFFECT                  kEffectNone
+#define VWW_INPUT_TYPE              kInputTouch
+
+#define VWW_SHOW_INFO_SCREENS       1
+#define VWW_MAX_CHANNELS            1
 #endif

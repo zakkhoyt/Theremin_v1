@@ -10,7 +10,7 @@
 #import "VWWFileSystem.h"
 
 @interface VWWThereminInputs ()
-
+@property (nonatomic, retain) NSMutableDictionary* inputs;
 @end
 
 @implementation VWWThereminInputs
@@ -22,6 +22,21 @@
         instance = [[VWWThereminInputs alloc]init];
     });
     return instance;
+}
++(void)saveConfigFile{
+    [[self sharedInstance]saveFile];
+}
++(VWWThereminInput*)accelerometerInput{
+    return [[self sharedInstance].inputs objectForKey:kKeyAccelerometer];
+}
++(VWWThereminInput*)gyroscopeInput{
+    return [[self sharedInstance].inputs objectForKey:kKeyGyroscope];
+}
++(VWWThereminInput*)magnetometerInput{
+    return [[self sharedInstance].inputs objectForKey:kKeyMagnetometer];
+}
++(VWWThereminInput*)touchscreenInput{
+    return [[self sharedInstance].inputs objectForKey:kKeyTouchScreen];
 }
 
 -(id)init{

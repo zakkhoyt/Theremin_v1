@@ -111,18 +111,15 @@ typedef enum{
     
     if(CGRectContainsPoint(self.xLabel.frame, begin)){
         self.lineType = kLineTypeX;
-        self.begin = CGPointMake(self.xLabel.center.x + self.xLabel.frame.size.width/2.0,
-                                 self.xLabel.center.y);
+        self.begin = [self getLineXBegin];
     }
     else if(CGRectContainsPoint(self.yLabel.frame, begin)){
         self.lineType = kLineTypeY;
-        self.begin = CGPointMake(self.yLabel.center.x + self.yLabel.frame.size.width/2.0,
-                                 self.yLabel.center.y);
+        self.begin = [self getLineYBegin];
     }
     else if(CGRectContainsPoint(self.zLabel.frame, begin)){
         self.lineType = kLineTypeZ;
-        self.begin = CGPointMake(self.zLabel.center.x + self.zLabel.frame.size.width/2.0,
-                                 self.zLabel.center.y);
+        self.begin = [self getLineZBegin];
     }
     else{
         self.lineType = kLineTypeNone;
@@ -205,6 +202,7 @@ typedef enum{
     }
 }
 
+// For when a user is drawing
 -(void)updateConfigViewLinesValid:(bool)valid{
     VWWLine* line = [[VWWLine alloc]initWithBegin:self.begin andEnd:self.end];
     switch(self.lineType){
@@ -225,7 +223,7 @@ typedef enum{
     [self.configView setNeedsDisplay];
 }
 
-
+// For loading data
 -(void)makeLinesFromInputData{
     VWWLine* xLine = [[[VWWLine alloc]initWithBegin:[self getLineXBegin]
                                                 andEnd:[self getLineXEnd]]autorelease];
@@ -280,8 +278,6 @@ typedef enum{
             return CGPointMake(0,0);
     }
 }
-
-
 
 
 

@@ -79,12 +79,77 @@
     } else {
         for(NSDictionary *item in jsonArray) {
             NSLog(@"Item: %@", item);
-            NSString* typeString = [item valueForKey:@"type"];
-            if([typeString isEqualToString:@"touchscreen"]){
-                [self populateInput:self.touchInput withJson:item];
+            NSString* type = [item valueForKey:@"type"];
+            NSDictionary* x = [item valueForKey:@"x"];
+            NSDictionary* y = [item valueForKey:@"y"];
+            NSDictionary* z = [item valueForKey:@"z"];
+//            VWWThereminInputAxis* x = [[VWWThereminInputAxis alloc]initWithDictionary:
+            
+            if([type isEqualToString:@"touchscreen"]){
+//                [self populateInput:self.touchInput withJson:item];
             }
         }
     }
+}
+
+-(VWWThereminInputAxis*)inputAxisFromDictionary:(NSDictionary*)dictionary{
+    VWWThereminInputAxis* axis = [[VWWThereminInputAxis alloc]init];
+    axis.frequencyMin = ((NSNumber*)[dictionary valueForKey:@"fmin"]).floatValue;
+    axis.frequencyMax = ((NSNumber*)[dictionary valueForKey:@"fmax"]).floatValue;
+    axis.sensitivity = ((NSNumber*)[dictionary valueForKey:@"sensitivity"]).floatValue;
+    
+    
+//    @property (nonatomic) NSUInteger frequencyMax;
+//    @property (nonatomic) NSUInteger frequencyMin;
+//    @property (nonatomic) WaveType waveType;
+//    @property (nonatomic) float sensitivity;
+//    @property (nonatomic) EffectType effectType;
+
+}
+
+-(EffectType)effectTypeFromString:(NSString*)effectString{
+    if([effectString isEqualToString:@"autotune"]){
+        return kEffectAutoTune;
+    }
+    else if([effectString isEqualToString:@"linearize"]){
+        return kEffectLinearize;
+    }
+    else if([effectString isEqualToString:@"throttle"]){
+        return kEffectThrottle;
+    }
+    else /* if([effectString isEqualToString:@"none"]) */ {
+        return kEffectNone;
+    }
+}
+
+-(WaveType)waveTypeForString:(NSString*)waveString{
+    if([waveString isEqualToString:@"sin"]){
+        return kWaveSin;
+    }
+    else if([waveString isEqualToString:@"square"]){
+        return kWaveSquare;
+    }
+    else if([waveString isEqualToString:@"triangle"]){
+        return kWaveTriangle;
+    }
+    else if([waveString isEqualToString:@"sawtooth"]){
+        return kWaveSawtooth;
+    }
+    else /* if([waveString isEqualToString:@"none"]) */ {
+        return kWaveNone;
+    }
+}
+
+
+-(InputType)inputTypeForString:(NSString*)inputString{
+//
+//        typedef enum{
+//            kInputNone = 0x00,
+//            kInputTouch = 0x01,
+//            kInputAccelerometer = 0x02,
+//            kInputGyros = 0x04,
+//            kInputMagnetometer = 0x08,
+//        } InputType;
 }
 
 -(void)populateInput:(VWWThereminInput*)input withDictionary:(NSDictionary*)dict{

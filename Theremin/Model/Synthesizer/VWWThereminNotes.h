@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface VWWThereminNotes : NSObject
--(float)getClosestNote:(float)frequency;
++(VWWThereminNotes *)sharedInstance;
++(float)getClosestNoteForFrequency:(float)frequency;
 @end

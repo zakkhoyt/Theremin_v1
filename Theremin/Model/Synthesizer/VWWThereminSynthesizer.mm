@@ -44,9 +44,7 @@ OSStatus RenderTone( void* inRefCon,
 //        counter = 0;
 //    }
 
-    
-    
-    
+
 	// This is a mono tone generator so we only need the first buffer
 	const int channel = 0;
 	Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
@@ -143,7 +141,6 @@ OSStatus RenderTone( void* inRefCon,
     NSAssert1(err == noErr, @"Error starting unit: %d", err);
 }
 
-// stops render
 - (void)stop
 {
     if(!self.isRunning) return;
@@ -211,7 +208,7 @@ OSStatus RenderTone( void* inRefCon,
 
 -(void)setFrequency:(float)newFrequency{
     if(_effectType == kEffectAutoTune){
-        _frequency = [self.notes getClosestNote:newFrequency];
+        _frequency = [VWWThereminNotes getClosestNoteForFrequency:newFrequency];
     }
     else{
         _frequency = newFrequency;

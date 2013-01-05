@@ -2,6 +2,7 @@
 
 Feature implementations
 * Bounjor client/server
+* add "mute" effect
 
 Improvements
 * Change all instances of "Gyros" or "Gyro" to Gyroscope

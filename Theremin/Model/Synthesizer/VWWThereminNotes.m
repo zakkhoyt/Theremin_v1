@@ -19,13 +19,27 @@
 
 @implementation VWWThereminNotes
 
+
++(VWWThereminNotes *)sharedInstance{
+    static VWWThereminNotes* instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[VWWThereminNotes alloc]init];
+    });
+    return instance;
+}
+
+
 -(id)init{
     self = [super init];
     if(self){
         [self initializeClass];
-//        NSLog(@"Loaded %d notes", self.notes.count);
     }
     return self;
+}
+
++(float)getClosestNoteForFrequency:(float)frequency{
+    return [[VWWThereminNotes sharedInstance]getClosestNote:frequency];
 }
 
 -(float)getClosestNote:(float)frequency{

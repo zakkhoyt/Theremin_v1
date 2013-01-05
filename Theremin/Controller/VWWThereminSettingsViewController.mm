@@ -94,7 +94,8 @@ VWWThereminConfigInputEffectsViewControllerDelegate>
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.navigationItem.title = @"Settings";
+    
     UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
     if([VWWThereminInputs accelerometerInput].enabled)
         [self.butInputAccelerometer setBackgroundImage:buttonImage forState:UIControlStateNormal];

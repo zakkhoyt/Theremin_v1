@@ -112,12 +112,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "379059758.492842"
+         timestampString = "379062888.594324"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "99"
-         endingLineNumber = "99"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Theremin/Controller/VWWThereminViewController.mm"
+         timestampString = "379062990.048337"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
+         landmarkName = "-touchesMoved:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

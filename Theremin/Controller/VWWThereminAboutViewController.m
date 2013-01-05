@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationItem.title = @"About";
     // Load default labels from local string file
     NSString* localString = NSLocalizedStringFromTable (@"VWWThereminAboutViewController.titleLabel.text", @"custom", @"");
     self.titleLabel.text = localString;
@@ -46,6 +46,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+//#pragma mark - UIResponder touch events
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//}
+//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+//}
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//}
+
+
+
 
 - (IBAction)doneButtonHandler:(id)sender {
     [self.delegate vwwThereminAboutViewControllerUserIsDone:self];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VWWLine.h"
-#import "VWWThereminSynthesizerSettings.h"
+
 
 @class VWWThereminConfigInputFrequencyViewController;
 

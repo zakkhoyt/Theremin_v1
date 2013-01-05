@@ -78,6 +78,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     [self.infoView setHidden:NO];
 #endif
     
+    
     // Set nav bar title
     switch(self.inputType){
         case kInputAccelerometer:
@@ -95,6 +96,8 @@ static NSString* kZMinLabelPrefix = @"Z Min";
         case kInputTouch:
             self.navigationItem.title = @"Touch Screen";
             self.input = [VWWThereminInputs touchscreenInput];
+            self.zMaxLabel.hidden = YES;
+            self.zMinLabel.hidden = YES;
             break;
         case kInputNone:
             self.navigationItem.title = @"Invalid Input";
@@ -102,6 +105,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
         default:
             break;
     }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -372,14 +376,15 @@ static NSString* kZMinLabelPrefix = @"Z Min";
                                                 andEnd:[self getLineYMinEnd]]autorelease];
     [self.configView setLineYMin:yMinLine valid:YES];
     
-    VWWLine* zMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineZMaxBegin]
-                                                andEnd:[self getLineZMaxEnd]]autorelease];
-    [self.configView setLineZMax:zMaxLine valid:YES];
-    
-    VWWLine* zMinLine = [[[VWWLine alloc]initWithBegin:[self getLineZMinBegin]
-                                                andEnd:[self getLineZMinEnd]]autorelease];
-    [self.configView setLineZMin:zMinLine valid:YES];
-
+    if(self.inputType != kInputTouch){
+        VWWLine* zMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineZMaxBegin]
+                                                    andEnd:[self getLineZMaxEnd]]autorelease];
+        [self.configView setLineZMax:zMaxLine valid:YES];
+        
+        VWWLine* zMinLine = [[[VWWLine alloc]initWithBegin:[self getLineZMinBegin]
+                                                    andEnd:[self getLineZMinEnd]]autorelease];
+        [self.configView setLineZMin:zMinLine valid:YES];
+    }
 }
 
 -(void)updateFrequencyLabels{

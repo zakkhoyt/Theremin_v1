@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VWWThereminInput.h"
-#import "VWWThereminSynthesizerSettings.h"
+
 
 // TODO: These are defined elsewhere in the app.
 // We really don't want two instances 

@@ -29,6 +29,8 @@ static NSString* kKeyZ = @"z";
     self = [super init];
     if(self){
         _inputType = type;
+        [self enableTouchScreenByDefault];
+        
         _x = [[VWWThereminInputAxis alloc]init];
         _y = [[VWWThereminInputAxis alloc]init];
         _z = [[VWWThereminInputAxis alloc]init];
@@ -41,7 +43,9 @@ static NSString* kKeyZ = @"z";
     if(self){
         if(dictionary){
             NSString* type = [dictionary objectForKey:kKeyType];
-            _inputType = [self inputTypeFromString:type];        
+            _inputType = [self inputTypeFromString:type];
+            [self enableTouchScreenByDefault];
+
             NSDictionary* xDict = [dictionary objectForKey:kKeyX];
             _x = [[VWWThereminInputAxis alloc]initWithDictionary:xDict];
             NSDictionary* yDict = [dictionary objectForKey:kKeyY];
@@ -52,6 +56,7 @@ static NSString* kKeyZ = @"z";
         else{
             // Defaults
             _inputType = VWW_INPUT_TYPE;
+            [self enableTouchScreenByDefault];
             _x = [[VWWThereminInputAxis alloc]init];
             _y = [[VWWThereminInputAxis alloc]init];
             _z = [[VWWThereminInputAxis alloc]init];
@@ -67,6 +72,15 @@ static NSString* kKeyZ = @"z";
     [jsonDict setValue:self.z.jsonRepresentation forKey:kKeyZ];
     [jsonDict setValue:[self stringForInputType] forKey:kKeyType];
     return jsonDict;
+}
+
+-(void)enableTouchScreenByDefault{
+    if(_inputType == kInputTouch){
+        _enabled = YES;
+    }
+    else{
+        _enabled = NO;
+    }
 }
 
 -(NSString*)stringForInputType{
@@ -107,5 +121,21 @@ static NSString* kKeyZ = @"z";
     return [self stringForInputType];
 }
 
+
+-(void)setEnabled:(bool)newEnabled{
+    if(_enabled == newEnabled) return;
+
+    _enabled = newEnabled;
+    if(_enabled){
+        _x.volume = 1.0;
+        _y.volume = 1.0;
+        _z.volume = 1.0;
+    }
+    else{
+        _x.volume = 0.0;
+        _y.volume = 0.0;
+        _z.volume = 0.0;
+    }
+}
 
 @end

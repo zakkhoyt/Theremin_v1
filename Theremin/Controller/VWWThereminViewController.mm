@@ -14,12 +14,9 @@
 #import <OpenGLES/ES2/gl.h>
 #import "VWWCubeScene.h"
 #import "VWWThereminViewController.h"
-//#import "VWWCubeModel.h"
 #import "VWWMotionMonitor.h"
-#import "VWWThereminSynthesizerSettings.h"
 #import "VWWThereminSettingsViewController.h"
 #import "VWWThereminHelpViewController.h"
-
 #import "VWWThereminInputs.h"
 
 const CGFloat kRotateXSensitivity = 0.25f;
@@ -34,7 +31,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     VWWThereminHelpViewControllerDelegate,
     VWWThereminSettingsViewControllerDelegate>{
 }
-@property (nonatomic, retain) VWWThereminSynthesizerSettings* settings;
 @property (nonatomic, retain) EAGLContext * context;
 @property (nonatomic, retain) IBOutlet GLKView* view;
 @property (nonatomic, retain) VWWMotionMonitor* motionMonitor;
@@ -47,7 +43,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 
 // UI components
-
 @property (retain, nonatomic) IBOutlet UILabel *lblAccelerometer;
 @property (retain, nonatomic) IBOutlet UILabel *lblGyros;
 @property (retain, nonatomic) IBOutlet UILabel *lblMagnetometer;
@@ -109,7 +104,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 		UINavigationController* navigationController = segue.destinationViewController;
 		VWWThereminSettingsViewController* viewController = (VWWThereminSettingsViewController*)[[navigationController viewControllers]objectAtIndex:0];
 		viewController.delegate = self;
-        viewController.settings = self.settings;
         viewController.motion = self.motionMonitor;
 	}
     else if ([segue.identifier isEqualToString:kSegueThereminToAbout]){
@@ -141,8 +135,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     else if(touch.tapCount == 1){
         [self touchEvent:touches withEvent:event];
     }
-    
-    [self.settings start];
     
     [VWWThereminInputs touchscreenInput].x.volume = 1.0;
     [VWWThereminInputs touchscreenInput].y.volume = 1.0;
@@ -224,12 +216,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 #pragma mark - Custom methods
 
 -(void)initializeClass{
-    
-    // settings is a controller for the synthesizer.
-    // We will use this single pointer throughout the app.
-    // Occasionally shared with other controllers
-//    self.settings = [[VWWThereminSynthesizerSettings alloc]init];
-    
     self.motionMonitor = [[VWWMotionMonitor alloc]init];
     self.motionMonitor.delegate = self;
 }
@@ -237,19 +223,12 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 -(void)createCubeScene{
     
     self.cubes = [[NSMutableArray alloc] init];
-
-//    float cubeWidth = 4.0;
-//    float z = 1;
     VWWCubeScene* cubes[1] = {};
-
     
     cubes[0] = [[VWWCubeScene alloc]initWithFrame:self.view.frame context:self.context];
     cubes[0].translate = GLKVector3Make(0, 0, 13);
     [self.cubes addObject:cubes[0]];
 
-    
-  
-    
 }
 
 -(void)createGLView{
@@ -293,7 +272,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 #pragma mark = Implements VWWMotionMonitorDelegate
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device{
-    self.settings.accelerometerValue = device.x.currentNormalized;
     self.lblAccelerometer.text = [NSString stringWithFormat:@"Accelerometer\n"
                                   "(min, current, max):\n"
                                   "X; %f < %f < %f\n"
@@ -310,7 +288,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
                                   device.z.max];
 }
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
-    self.settings.magnetometerValue = device.x.currentNormalized;
     self.lblMagnetometer.text = [NSString stringWithFormat:@"Magnetometer\n"
                                  "(min, current, max):\n"
                                  "X; %f < %f < %f\n"
@@ -327,7 +304,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
                                  device.z.max];
 }
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device{
-    self.settings.gyroValue = device.x.currentNormalized;
     self.lblGyros.text = [NSString stringWithFormat:@"Gyro\n"
                           "(min, current, max):\n"
                           "X; %f < %f < %f\n"
@@ -366,8 +342,5 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 }
 -(void)userSetGyroInput:(bool)enabled{
     self.lblGyros.hidden = !enabled;
-}
--(void)userSetTouchInput:(bool)enabled{
-    // TODO: implement touch blocking?
 }
 @end

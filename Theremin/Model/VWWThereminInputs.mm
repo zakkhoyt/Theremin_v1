@@ -50,27 +50,25 @@
 -(void)initializeClass{
     _inputs = [[NSMutableDictionary alloc]init];
         
-    // Create default set of inputs, then either write them to a file, or overwrite them with the contents of the file.
-    VWWThereminInput* touchInput = [[VWWThereminInput alloc]initWithType:kInputTouch];
-    VWWThereminInput* accelerometerInput = [[VWWThereminInput alloc]initWithType:kInputAccelerometer];
-    VWWThereminInput* gyroscopeInput = [[VWWThereminInput alloc]initWithType:kInputGyros];
-    VWWThereminInput* magnetometerInput = [[VWWThereminInput alloc]initWithType:kInputMagnetometer];
-
-    [self.inputs setObject:touchInput forKey:touchInput.description];
-    [self.inputs setObject:accelerometerInput forKey:accelerometerInput.description];
-    [self.inputs setObject:gyroscopeInput forKey:gyroscopeInput.description];
-    [self.inputs setObject:magnetometerInput forKey:magnetometerInput.description];
-
-    [touchInput release];
-    [accelerometerInput release];
-    [gyroscopeInput release];
-    [magnetometerInput release];
-    
     // If the config file exists, load it. If not, go ahead and write our default values as a file and move on.
     if([VWWFileSystem configFileExists]){
         [self loadFile];
     }
     else{
+        VWWThereminInput* touchInput = [[VWWThereminInput alloc]initWithType:kInputTouch];
+        VWWThereminInput* accelerometerInput = [[VWWThereminInput alloc]initWithType:kInputAccelerometer];
+        VWWThereminInput* gyroscopeInput = [[VWWThereminInput alloc]initWithType:kInputGyros];
+        VWWThereminInput* magnetometerInput = [[VWWThereminInput alloc]initWithType:kInputMagnetometer];
+        
+        [self.inputs setObject:touchInput forKey:touchInput.description];
+        [self.inputs setObject:accelerometerInput forKey:accelerometerInput.description];
+        [self.inputs setObject:gyroscopeInput forKey:gyroscopeInput.description];
+        [self.inputs setObject:magnetometerInput forKey:magnetometerInput.description];
+        
+        [touchInput release];
+        [accelerometerInput release];
+        [gyroscopeInput release];
+        [magnetometerInput release];
         [self saveFile];
     }
 }

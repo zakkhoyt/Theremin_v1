@@ -44,8 +44,7 @@ static NSString* kKeyNone = @"none";
         _synthesizer = [[VWWThereminSynthesizer alloc]initWithVolume:_volume andFrequency:_frequency];
         _synthesizer.waveType = _waveType;
         _synthesizer.effectType = _effectType;
-        
-
+        [_synthesizer start];
     }
     return self;
 }
@@ -73,12 +72,11 @@ static NSString* kKeyNone = @"none";
             _effectType = VWW_EFFECT;
         }
     
-        _frequency = _frequencyMin;
+        _frequency = _frequencyMax;
         _volume = 0.0;
         _synthesizer = [[VWWThereminSynthesizer alloc]initWithVolume:_volume andFrequency:_frequency];
         _synthesizer.waveType = _waveType;
         _synthesizer.effectType = _effectType;
-
         [_synthesizer start];
     }
     return self;
@@ -166,6 +164,11 @@ static NSString* kKeyNone = @"none";
 -(void)setVolume:(float)newVolume{
     _volume = newVolume;
     self.synthesizer.volume = _volume;
+}
+
+-(void)setEffectType:(EffectType)newEffectType{
+    _effectType = newEffectType;
+    self.synthesizer.effectType = _effectType;
 }
 
 -(void)setWaveType:(WaveType)newWaveType{

@@ -7,6 +7,7 @@
 //
 #import <CoreMotion/CoreMotion.h>
 #import "VWWMotionMonitor.h"
+#import "VWWThereminInputs.h"
 
 const float kAccelerometerXMax = 2.0;
 const float kAccelerometerYMax = 2.0;
@@ -24,6 +25,9 @@ const float kMagnetometerZMax = 30.0f;
 @interface VWWMotionMonitor ()
 @property (nonatomic, retain) CMMotionManager* motion;
 @property Devices devices;
+@property (nonatomic) bool accelerometerRunning;
+@property (nonatomic) bool magnetometerRunning;
+@property (nonatomic) bool gyrosRunning;
 @end
 
 @implementation VWWMotionMonitor
@@ -31,8 +35,12 @@ const float kMagnetometerZMax = 30.0f;
 -(id)init{
     self = [super init];
     if(self){
+        _accelerometerRunning = NO;
+        _magnetometerRunning = NO;
+        _gyrosRunning = NO;
         memset(&_devices, 0, sizeof(Devices));
         self.motion = [[CMMotionManager alloc]init];
+        
     }
     return self;
 }
@@ -45,6 +53,8 @@ const float kMagnetometerZMax = 30.0f;
 
 
 -(void)startAccelerometer{
+    if(self.accelerometerRunning == YES) return;
+    
     self.motion.accelerometerUpdateInterval = 1/30.0f;
 
     NSOperationQueue* accelerometerQueue = [[NSOperationQueue alloc] init];
@@ -109,24 +119,61 @@ const float kMagnetometerZMax = 30.0f;
             _devices.accelerometer.z.max = accelerometerData.acceleration.z;
         }
 
+        // Send new frequencie to the synth channels
+        VWWThereminInput* accelerometer = [VWWThereminInputs accelerometerInput];
+        {
+            float centerFreq = (accelerometer.x.frequencyMax - accelerometer.x.frequencyMin) / 2.0;
+            float maxDrift = accelerometer.x.frequencyMax - centerFreq;
+            float driftFactor = _devices.accelerometer.x.currentNormalized * accelerometer.x.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            accelerometer.x.frequency = newFrequency;
+            NSLog(@"X normalized:%f newFreq:%f", _devices.accelerometer.x.currentNormalized, newFrequency);
+        }
+        {
+            float centerFreq = (accelerometer.y.frequencyMax - accelerometer.y.frequencyMin) / 2.0;
+            float maxDrift = accelerometer.y.frequencyMax - centerFreq;
+            float driftFactor = _devices.accelerometer.y.currentNormalized * accelerometer.y.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            accelerometer.y.frequency = newFrequency;
+            NSLog(@"Y normalized:%f newFreq:%f", _devices.accelerometer.y.currentNormalized, newFrequency);
+        }
+        {
+            float centerFreq = (accelerometer.z.frequencyMax - accelerometer.z.frequencyMin) / 2.0;
+            float maxDrift = accelerometer.z.frequencyMax - centerFreq;
+            float driftFactor = _devices.accelerometer.z.currentNormalized * accelerometer.z.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            accelerometer.z.frequency = newFrequency;
+            NSLog(@"Z normalized:%f newFreq:%f", _devices.accelerometer.z.currentNormalized, newFrequency);
+        }
+        
+        // Update UI
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate vwwMotionMonitor:self accelerometerUpdated:self.devices.accelerometer];
         });
     };
 
     [self.motion startAccelerometerUpdatesToQueue:accelerometerQueue withHandler:[[accelerometerHandler copy]autorelease]];
+    self.accelerometerRunning = YES;
     NSLog(@"Started Accelerometer");
 }
     
-    
+
 -(void)stopAccelerometer{
+    if(self.accelerometerRunning == NO) return;
+    
     [self.motion stopAccelerometerUpdates];
     memset(&_devices.accelerometer, 0, sizeof(MotionDevice));
+    self.accelerometerRunning = NO;
     NSLog(@"Stopped Accelerometer");
 }
 
 
 -(void)startMagnetometer{
+    if(self.magnetometerRunning == YES) return;
+    
     self.motion.magnetometerUpdateInterval = 1/30.0f;
     
     NSOperationQueue* magnetometerQueue = [[NSOperationQueue alloc] init];
@@ -191,22 +238,58 @@ const float kMagnetometerZMax = 30.0f;
             _devices.magnetometer.z.max = magnetometerData.magneticField.z;
         }
         
+        // Send new frequencie to the synth channels
+        VWWThereminInput* magnetometer = [VWWThereminInputs magnetometerInput];
+        {
+            float centerFreq = (magnetometer.x.frequencyMax - magnetometer.x.frequencyMin) / 2.0;
+            float maxDrift = magnetometer.x.frequencyMax - centerFreq;
+            float driftFactor = _devices.magnetometer.x.currentNormalized * magnetometer.x.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            magnetometer.x.frequency = newFrequency;
+            NSLog(@"X normalized:%f newFreq:%f", _devices.magnetometer.x.currentNormalized, newFrequency);
+        }
+        {
+            float centerFreq = (magnetometer.y.frequencyMax - magnetometer.y.frequencyMin) / 2.0;
+            float maxDrift = magnetometer.y.frequencyMax - centerFreq;
+            float driftFactor = _devices.magnetometer.y.currentNormalized * magnetometer.y.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            magnetometer.y.frequency = newFrequency;
+            NSLog(@"Y normalized:%f newFreq:%f", _devices.magnetometer.y.currentNormalized, newFrequency);
+        }
+        {
+            float centerFreq = (magnetometer.z.frequencyMax - magnetometer.z.frequencyMin) / 2.0;
+            float maxDrift = magnetometer.z.frequencyMax - centerFreq;
+            float driftFactor = _devices.magnetometer.z.currentNormalized * magnetometer.z.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            magnetometer.z.frequency = newFrequency;
+            NSLog(@"Z normalized:%f newFreq:%f", _devices.magnetometer.z.currentNormalized, newFrequency);
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate vwwMotionMonitor:self magnetometerUpdated:self.devices.magnetometer];
         });
     };
     
     [self.motion startMagnetometerUpdatesToQueue:magnetometerQueue withHandler:[[magnetometerHandler copy]autorelease]];
+    self.magnetometerRunning = YES;
     NSLog(@"Started Magnetometer");
     
 }
 -(void)stopMagnetometer{
+    if(self.magnetometerRunning == NO) return;
+    
     [self.motion stopMagnetometerUpdates];
     memset(&_devices.magnetometer, 0, sizeof(MotionDevice));
+    self.magnetometerRunning = NO;
     NSLog(@"Stopped Magnetometer");
 }
 
 -(void)startGyros{
+    if(self.gyrosRunning == YES) return;
+    
     self.motion.gyroUpdateInterval = 1/30.0f;
     
     NSOperationQueue* gyroQueue = [[NSOperationQueue alloc] init];
@@ -271,18 +354,53 @@ const float kMagnetometerZMax = 30.0f;
             _devices.gyro.z.max = gyroData.rotationRate.z;
         }
         
+        
+        // Send new frequencie to the synth channels
+        VWWThereminInput* gyroscope = [VWWThereminInputs gyroscopeInput];
+        {
+            float centerFreq = (gyroscope.x.frequencyMax - gyroscope.x.frequencyMin) / 2.0;
+            float maxDrift = gyroscope.x.frequencyMax - centerFreq;
+            float driftFactor = _devices.gyro.x.currentNormalized * gyroscope.x.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            gyroscope.x.frequency = newFrequency;
+            NSLog(@"X normalized:%f newFreq:%f", _devices.gyro.x.currentNormalized, newFrequency);
+        }
+        {
+            float centerFreq = (gyroscope.y.frequencyMax - gyroscope.y.frequencyMin) / 2.0;
+            float maxDrift = gyroscope.y.frequencyMax - centerFreq;
+            float driftFactor = _devices.gyro.y.currentNormalized * gyroscope.y.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            gyroscope.y.frequency = newFrequency;
+            NSLog(@"Y normalized:%f newFreq:%f", _devices.gyro.y.currentNormalized, newFrequency);
+        }
+        {
+            float centerFreq = (gyroscope.z.frequencyMax - gyroscope.z.frequencyMin) / 2.0;
+            float maxDrift = gyroscope.z.frequencyMax - centerFreq;
+            float driftFactor = _devices.gyro.z.currentNormalized * gyroscope.z.sensitivity;
+            float drift = maxDrift * driftFactor;
+            float newFrequency = centerFreq + drift;
+            gyroscope.z.frequency = newFrequency;
+            NSLog(@"Z normalized:%f newFreq:%f", _devices.gyro.z.currentNormalized, newFrequency);
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate vwwMotionMonitor:self gyroUpdated:self.devices.gyro];
         });
     };
     
     [self.motion startGyroUpdatesToQueue:gyroQueue withHandler:[[gyroHandler copy]autorelease]];
+    self.gyrosRunning = YES;
     NSLog(@"Started Gyros");
 
 }
 -(void)stopGyros{
+    if(self.gyrosRunning == NO) return;
+    
     [self.motion stopGyroUpdates];
     memset(&_devices.gyro, 0, sizeof(MotionDevice));
+    self.gyrosRunning = NO;
     NSLog(@"Stopped Gyros");
 }
 

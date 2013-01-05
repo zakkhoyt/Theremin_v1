@@ -13,7 +13,6 @@
 		C606D2A7166AE1E600FA7B70 /* VWWMotionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D297166AE1E500FA7B70 /* VWWMotionMonitor.m */; };
 		C606D2A8166AE1E600FA7B70 /* VWWThereminNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D29A166AE1E500FA7B70 /* VWWThereminNotes.m */; };
 		C606D2A9166AE1E600FA7B70 /* VWWThereminSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D29C166AE1E500FA7B70 /* VWWThereminSynthesizer.mm */; };
-		C606D2AA166AE1E600FA7B70 /* VWWThereminSynthesizerSettings.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D29E166AE1E500FA7B70 /* VWWThereminSynthesizerSettings.mm */; };
 		C606D2B1166AE20C00FA7B70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2AC166AE20C00FA7B70 /* main.m */; };
 		C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.mm */; };
 		C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2BD166AE3A200FA7B70 /* VWWCubeScene.m */; };
@@ -103,8 +102,6 @@
 		C606D29A166AE1E500FA7B70 /* VWWThereminNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminNotes.m; sourceTree = "<group>"; };
 		C606D29B166AE1E500FA7B70 /* VWWThereminSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminSynthesizer.h; sourceTree = "<group>"; };
 		C606D29C166AE1E500FA7B70 /* VWWThereminSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminSynthesizer.mm; sourceTree = "<group>"; };
-		C606D29D166AE1E500FA7B70 /* VWWThereminSynthesizerSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminSynthesizerSettings.h; sourceTree = "<group>"; };
-		C606D29E166AE1E500FA7B70 /* VWWThereminSynthesizerSettings.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminSynthesizerSettings.mm; sourceTree = "<group>"; };
 		C606D2AC166AE20C00FA7B70 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C606D2AD166AE20C00FA7B70 /* Theremin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Theremin-Info.plist"; sourceTree = "<group>"; };
 		C606D2AE166AE20C00FA7B70 /* Theremin-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Theremin-Prefix.pch"; sourceTree = "<group>"; };
@@ -121,6 +118,7 @@
 		C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSquareModel.m; sourceTree = "<group>"; };
 		C624E67615C7E3E400A8DD94 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		C63486411697C76800B5E701 /* VWWThereminMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMath.h; sourceTree = "<group>"; };
+		C63486421697DC2800B5E701 /* VWWThereminTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWThereminTypes.h; sourceTree = "<group>"; };
 		C6357CED15C7A5690074E722 /* sawtooth_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sawtooth_256x256.png; path = images/sawtooth_256x256.png; sourceTree = "<group>"; };
 		C6357CEE15C7A5690074E722 /* sine_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sine_256x256.png; path = images/sine_256x256.png; sourceTree = "<group>"; };
 		C6357CEF15C7A5690074E722 /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_256x256.png; path = images/square_256x256.png; sourceTree = "<group>"; };
@@ -307,8 +305,7 @@
 				C606D29A166AE1E500FA7B70 /* VWWThereminNotes.m */,
 				C606D29B166AE1E500FA7B70 /* VWWThereminSynthesizer.h */,
 				C606D29C166AE1E500FA7B70 /* VWWThereminSynthesizer.mm */,
-				C606D29D166AE1E500FA7B70 /* VWWThereminSynthesizerSettings.h */,
-				C606D29E166AE1E500FA7B70 /* VWWThereminSynthesizerSettings.mm */,
+				C63486421697DC2800B5E701 /* VWWThereminTypes.h */,
 			);
 			path = Synthesizer;
 			sourceTree = "<group>";
@@ -674,7 +671,6 @@
 				C606D2A7166AE1E600FA7B70 /* VWWMotionMonitor.m in Sources */,
 				C606D2A8166AE1E600FA7B70 /* VWWThereminNotes.m in Sources */,
 				C606D2A9166AE1E600FA7B70 /* VWWThereminSynthesizer.mm in Sources */,
-				C606D2AA166AE1E600FA7B70 /* VWWThereminSynthesizerSettings.mm in Sources */,
 				C606D2B1166AE20C00FA7B70 /* main.m in Sources */,
 				C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.mm in Sources */,
 				C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */,

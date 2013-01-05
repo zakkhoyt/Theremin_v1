@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VWWThereminSynthesizerSettings.h"
+
 #import "VWWMotionMonitor.h"
 
 @protocol VWWThereminSettingsViewControllerDelegate <NSObject>
@@ -17,12 +17,10 @@
 -(void)userSetAccelerometerInput:(bool)enabled;
 -(void)userSetMagnetometerInput:(bool)enabled;
 -(void)userSetGyroInput:(bool)enabled;
--(void)userSetTouchInput:(bool)enabled;
 
 @end
 
 @interface VWWThereminSettingsViewController : UIViewController
 @property (nonatomic, assign) id <VWWThereminSettingsViewControllerDelegate> delegate;
-@property (nonatomic, retain) VWWThereminSynthesizerSettings* settings;
 @property (nonatomic, retain) VWWMotionMonitor* motion;
 @end

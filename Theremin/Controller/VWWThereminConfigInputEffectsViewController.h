@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VWWThereminSynthesizerSettings.h"
+
 
 @class VWWThereminConfigInputEffectsViewController;
 

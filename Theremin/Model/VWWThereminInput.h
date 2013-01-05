@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "VWWThereminInputAxis.h"
-#import "VWWThereminSynthesizerSettings.h"
+
 
 @interface VWWThereminInput : NSObject
 @property (nonatomic, retain) VWWThereminInputAxis* x;
 @property (nonatomic, retain) VWWThereminInputAxis* y;
 @property (nonatomic, retain) VWWThereminInputAxis* z;
 @property (nonatomic) InputType inputType;
-
+@property (nonatomic, setter=setEnabled:) bool enabled;
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 -(id)initWithType:(InputType)type;
 

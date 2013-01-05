@@ -76,6 +76,7 @@ typedef enum{
         case kInputTouch:
             self.navigationItem.title = @"Touch Screen";
             self.input = [VWWThereminInputs touchscreenInput];
+            self.zLabel.hidden = YES;
             break;
         case kInputNone:
             self.navigationItem.title = @"Invalid Input";
@@ -238,9 +239,11 @@ typedef enum{
                                              andEnd:[self getLineYEnd]]autorelease];
     [self.configView setLineY:yLine valid:YES];
     
-    VWWLine* zLine = [[[VWWLine alloc]initWithBegin:[self getLineZBegin]
-                                             andEnd:[self getLineZEnd]]autorelease];
-    [self.configView setLineZ:zLine valid:YES];
+    if(self.inputType != kInputTouch){
+        VWWLine* zLine = [[[VWWLine alloc]initWithBegin:[self getLineZBegin]
+                                                 andEnd:[self getLineZEnd]]autorelease];
+        [self.configView setLineZ:zLine valid:YES];
+    }
 }
 
 -(CGPoint)getLineXBegin{

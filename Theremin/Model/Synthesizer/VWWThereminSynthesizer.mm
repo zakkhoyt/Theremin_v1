@@ -8,6 +8,7 @@
 
 #import "VWWThereminSynthesizer.h"
 #import "VWWThereminMath.h"
+#import "VWWThereminNotes.h"
 
 static float kSampleRate = 44100.0;
 
@@ -18,12 +19,34 @@ OSStatus RenderTone( void* inRefCon,
                        UInt32                      inNumberFrames,
                        AudioBufferList             *ioData){
     
+
     
 	// Get the tone parameters out of the view controller
 	VWWThereminSynthesizer *synth = (VWWThereminSynthesizer *)inRefCon;
 	double theta = synth.theta;
 	double theta_increment = 2.0 * M_PI * synth.frequency / kSampleRate;
 
+//    // To see how many instances are being created
+//    static NSMutableDictionary* d = [NSMutableDictionary new];
+//    NSString* value = [NSString stringWithFormat:@"%p", synth];
+//    if([d objectForKey:value] != nil){
+//        NSLog(@"found %d channels", d.count);
+//    }
+//    else{
+//        [d setObject:value forKey:value];
+//    }
+    
+//    // Print out info, but makes audio choppy
+//    static NSUInteger counter = 0;
+//    const NSUInteger counterThreshold = 1;
+//    if(counter++ >= counterThreshold){
+//        NSLog(@"volume:%f freq:%f self=%x",synth.volume,  synth.frequency, (NSUInteger)synth);
+//        counter = 0;
+//    }
+
+    
+    
+    
 	// This is a mono tone generator so we only need the first buffer
 	const int channel = 0;
 	Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
@@ -52,7 +75,7 @@ OSStatus RenderTone( void* inRefCon,
                 break;
                 
         }
-        
+                
 		theta += theta_increment;
 		if (theta > 2.0 * M_PI)
 		{
@@ -72,7 +95,7 @@ OSStatus RenderTone( void* inRefCon,
 }
 
 @property bool isRunning;
-
+@property (nonatomic, retain) VWWThereminNotes* notes;
 @end
 
 
@@ -83,11 +106,12 @@ OSStatus RenderTone( void* inRefCon,
 -(id)initWithVolume:(float)volume andFrequency:(float)frequency{
     self = [super init];
     if(self){
-        self.frequency = frequency;
-        self.volume = volume;
-        self.waveType = kWaveSin;
-        self.isRunning = NO;
-        self.theta = 0;
+        _frequency = frequency;
+        _volume = volume;
+        _waveType = kWaveSin;
+        _isRunning = NO;
+        _theta = 0;
+        _notes = [[VWWThereminNotes alloc]init];
     }
     return self;
 }
@@ -95,7 +119,7 @@ OSStatus RenderTone( void* inRefCon,
 // Clean up memory
 - (void)dealloc {
     
-//    DisposeAUGraph(_mGraph);
+    [_notes release];
     [super dealloc];
 }
 
@@ -185,6 +209,14 @@ OSStatus RenderTone( void* inRefCon,
 	NSAssert1(err == noErr, @"Error setting stream format: %dd", err);
 }
 
+-(void)setFrequency:(float)newFrequency{
+    if(_effectType == kEffectAutoTune){
+        _frequency = [self.notes getClosestNote:newFrequency];
+    }
+    else{
+        _frequency = newFrequency;
+    }
+}
 
 @end
 

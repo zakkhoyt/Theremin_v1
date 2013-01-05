@@ -21,6 +21,7 @@
 @property (retain, nonatomic) IBOutlet UISlider *xSlider;
 @property (retain, nonatomic) IBOutlet UISlider *ySlider;
 @property (retain, nonatomic) IBOutlet UISlider *zSlider;
+@property (retain, nonatomic) IBOutlet UILabel *zSliderLabel;
 
 - (IBAction)xSliderHandler:(id)sender;
 - (IBAction)ySliderHandler:(id)sender;
@@ -66,6 +67,8 @@
         case kInputTouch:
             self.navigationItem.title = @"Touch Screen";
             self.input = [VWWThereminInputs touchscreenInput];
+            self.zSlider.hidden = YES;
+            self.zSliderLabel.hidden = YES;
             break;
         case kInputNone:
             self.navigationItem.title = @"Invalid Input";
@@ -136,6 +139,7 @@
     [_xSlider release];
     [_ySlider release];
     [_zSlider release];
+    [_zSliderLabel release];
     [super dealloc];
 }
 @end

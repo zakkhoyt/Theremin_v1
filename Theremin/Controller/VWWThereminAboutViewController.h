@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VWWThereminAboutViewController : UIViewController
+@class VWWThereminAboutViewController;
 
+@protocol VWWThereminAboutViewControllerDelegate <NSObject>
+-(void)vwwThereminAboutViewControllerUserIsDone:(VWWThereminAboutViewController*)sender;
+@end
+
+@interface VWWThereminAboutViewController : UIViewController
+@property (nonatomic, assign) id <VWWThereminAboutViewControllerDelegate> delegate;
 @end

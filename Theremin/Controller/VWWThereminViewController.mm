@@ -18,6 +18,7 @@
 #import "VWWThereminSettingsViewController.h"
 #import "VWWThereminHelpViewController.h"
 #import "VWWThereminInputs.h"
+#import "VWWThereminAboutViewController.h"
 
 const CGFloat kRotateXSensitivity = 0.25f;
 const CGFloat kRotateYSensitivity = 0.25f;
@@ -29,7 +30,8 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 @interface VWWThereminViewController () <GLKViewControllerDelegate,
     VWWMotionMonitorDelegate,
     VWWThereminHelpViewControllerDelegate,
-    VWWThereminSettingsViewControllerDelegate>{
+    VWWThereminSettingsViewControllerDelegate,
+    VWWThereminAboutViewControllerDelegate>{
 }
 @property (nonatomic, retain) EAGLContext * context;
 @property (nonatomic, retain) IBOutlet GLKView* view;
@@ -264,10 +266,11 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 
 - (IBAction)settingsButtonHandler:(id)sender {
-    [self performSegueWithIdentifier:@"segueThereminToSettings" sender:self];
+    [self performSegueWithIdentifier:kSegueThereminToSettings sender:self];
 }
 
 - (IBAction)aboutButtonHandler:(id)sender {
+    [self performSegueWithIdentifier:kSegueThereminToAbout sender:self];
 }
 
 #pragma mark = Implements VWWMotionMonitorDelegate
@@ -327,6 +330,11 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 #pragma mark - Implements VWWThereminSettingsViewControllerDelegate
 -(void)userIsDoneWithSettings{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Implements VWWThereminAboutViewControllerDelegate
+-(void)vwwThereminAboutViewControllerUserIsDone:(VWWThereminAboutViewController*)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

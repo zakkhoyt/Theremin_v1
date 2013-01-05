@@ -19,6 +19,8 @@
 		C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2BF166AE3A200FA7B70 /* VWWScene.m */; };
 		C606D2CA166AE40F00FA7B70 /* VWWCubeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2C7166AE40F00FA7B70 /* VWWCubeModel.m */; };
 		C606D2CB166AE40F00FA7B70 /* VWWSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */; };
+		C60E4FF5169805DD006BD352 /* vww_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C60E4FF4169805DC006BD352 /* vww_logo.png */; };
+		C60E4FF8169807C8006BD352 /* custom.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60E4FF7169807C8006BD352 /* custom.strings */; };
 		C6357CF215C7A5690074E722 /* sawtooth_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CED15C7A5690074E722 /* sawtooth_256x256.png */; };
 		C6357CF315C7A5690074E722 /* sine_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEE15C7A5690074E722 /* sine_256x256.png */; };
 		C6357CF415C7A5690074E722 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEF15C7A5690074E722 /* square_256x256.png */; };
@@ -116,6 +118,8 @@
 		C606D2C7166AE40F00FA7B70 /* VWWCubeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCubeModel.m; sourceTree = "<group>"; };
 		C606D2C8166AE40F00FA7B70 /* VWWSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSquareModel.h; sourceTree = "<group>"; };
 		C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSquareModel.m; sourceTree = "<group>"; };
+		C60E4FF4169805DC006BD352 /* vww_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vww_logo.png; path = images/vww_logo.png; sourceTree = SOURCE_ROOT; };
+		C60E4FF7169807C8006BD352 /* custom.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = custom.strings; sourceTree = "<group>"; };
 		C624E67615C7E3E400A8DD94 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		C63486411697C76800B5E701 /* VWWThereminMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMath.h; sourceTree = "<group>"; };
 		C63486421697DC2800B5E701 /* VWWThereminTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWThereminTypes.h; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 		C606D292166AE1E500FA7B70 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				C60E4FF7169807C8006BD352 /* custom.strings */,
 				C606D293166AE1E500FA7B70 /* todo.txt */,
 			);
 			path = Documents;
@@ -358,6 +363,7 @@
 				C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */,
 				C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */,
 				C66F464915C7AE580066E94B /* Default.png */,
+				C60E4FF4169805DC006BD352 /* vww_logo.png */,
 				C66F464715C7ADD40066E94B /* Icon_72x72.png */,
 				C66F464315C7AD9F0066E94B /* Icon_114x114.png */,
 				C66F464115C7AD990066E94B /* Icon_57x57.png */,
@@ -628,6 +634,8 @@
 				C6E34B99166AE82000D0AB2C /* 3x3_03.png in Resources */,
 				C6E34B9A166AE82000D0AB2C /* 3x3_04.png in Resources */,
 				C6E34B9B166AE82000D0AB2C /* 3x3_05.png in Resources */,
+				C60E4FF5169805DD006BD352 /* vww_logo.png in Resources */,
+				C60E4FF8169807C8006BD352 /* custom.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

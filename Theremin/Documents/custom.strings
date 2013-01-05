@@ -1,0 +1,18 @@
+// 
+//  custom.strings
+//  ColorBlind
+//
+//  Created by Zakk Hoyt on 7/28/12.
+//
+//  This file contains default contents of UI labels.
+
+
+//****************************************************** VWW_AboutViewController
+"VWWThereminAboutViewController.titleLabel.text" = "Motion Sensor Theremin";
+
+"VWWThereminAboutViewController.aboutLabel.text" = "App description here";
+
+"VWWThereminAboutViewController.newsLabel.text" = "Official website: http://vaporwarewolf.com
+Written by: Zakk Hoyt
+Source code available: https://github.com/zakkhoyt/Theremin";
+

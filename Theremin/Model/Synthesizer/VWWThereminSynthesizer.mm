@@ -9,45 +9,43 @@
 #import "VWWThereminSynthesizer.h"
 #import "VWWThereminMath.h"
 
-static float kSampleRate = 44100;
+static float kSampleRate = 44100.0;
 
 OSStatus RenderTone( void* inRefCon,
                        AudioUnitRenderActionFlags  *ioActionFlags,
                        const AudioTimeStamp        *inTimeStamp,
                        UInt32                      inBusNumber,
                        UInt32                      inNumberFrames,
-                       AudioBufferList             *ioData) {
+                       AudioBufferList             *ioData){
     
-	// Fixed amplitude is good enough for our purposes
-	const double amplitude = 0.25;
     
 	// Get the tone parameters out of the view controller
 	VWWThereminSynthesizer *synth = (VWWThereminSynthesizer *)inRefCon;
 	double theta = synth.theta;
 	double theta_increment = 2.0 * M_PI * synth.frequency / kSampleRate;
-    
+
 	// This is a mono tone generator so we only need the first buffer
 	const int channel = 0;
 	Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
-	
+
 	// Generate the samples
 	for (UInt32 frame = 0; frame < inNumberFrames; frame++)
 	{
         switch(synth.waveType){
             case kWaveSin:{
-                buffer[frame] = sin(theta) * amplitude;
+                buffer[frame] = sin(theta) * synth.volume;
                 break;
             }
             case kWaveSquare:{
-                buffer[frame] = square(theta) * amplitude;
+                buffer[frame] = square(theta) * synth.volume;
                 break;
             }
             case kWaveSawtooth:{
-                buffer[frame] = sawtooth(theta) * amplitude;
+                buffer[frame] = sawtooth(theta) * synth.volume;
                 break;
             }
             case kWaveTriangle:{
-                buffer[frame] = triangle(theta) * amplitude;
+                buffer[frame] = triangle(theta) * synth.volume;
                 break;
             }
             default:
@@ -62,11 +60,10 @@ OSStatus RenderTone( void* inRefCon,
 		}
 	}
 	
-	// Store the theta back in the view controller
 	synth.theta = theta;
     
 	return noErr;
-} // end inputCallback()
+}
 
 
 
@@ -75,6 +72,7 @@ OSStatus RenderTone( void* inRefCon,
 }
 
 @property bool isRunning;
+
 @end
 
 

@@ -20,6 +20,8 @@
 #import "VWWThereminSettingsViewController.h"
 #import "VWWThereminHelpViewController.h"
 
+#import "VWWThereminInputs.h"
+
 const CGFloat kRotateXSensitivity = 0.25f;
 const CGFloat kRotateYSensitivity = 0.25f;
 const CGFloat kRotateZSensitivity = 0.25f;
@@ -123,6 +125,8 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 #pragma mark - UIResponder touch events
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.lblInfo.hidden = YES;
+    
     // OpenGL
     [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
     NSArray *touchesArray = [touches allObjects];
@@ -139,6 +143,9 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     }
     
     [self.settings start];
+    
+    [VWWThereminInputs touchscreenInput].x.volume = 1.0;
+    [VWWThereminInputs touchscreenInput].y.volume = 1.0;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -165,6 +172,10 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     
     // Synth
     self.selectedPixel = CGPointMake(0, 0);
+    
+    
+    [VWWThereminInputs touchscreenInput].x.volume = 0;
+    [VWWThereminInputs touchscreenInput].y.volume = 0;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -182,8 +193,16 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
         }
         
         self.selectedPixel = point;
-        float newTouchValue = (self.view.bounds.size.height - point.y) / self.view.bounds.size.height;
-        self.settings.touchValue = newTouchValue;
+
+        VWWThereminInputAxis* touchX = [VWWThereminInputs touchscreenInput].x;
+        float newTouchValueX = point.x / self.view.bounds.size.width;
+        float newFrequencyX = ((touchX.frequencyMax - touchX.frequencyMin) * newTouchValueX) + touchX.frequencyMin;
+        [VWWThereminInputs touchscreenInput].x.frequency = newFrequencyX;
+
+        VWWThereminInputAxis* touchY = [VWWThereminInputs touchscreenInput].y;
+        float newTouchValueY = (self.view.bounds.size.height - point.y) / self.view.bounds.size.height;
+        float newFrequencyY = ((touchY.frequencyMax - touchY.frequencyMin) * newTouchValueY) + touchY.frequencyMin;
+        [VWWThereminInputs touchscreenInput].y.frequency = newFrequencyY;
     }
 }
 
@@ -209,7 +228,7 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     // settings is a controller for the synthesizer.
     // We will use this single pointer throughout the app.
     // Occasionally shared with other controllers
-    self.settings = [[VWWThereminSynthesizerSettings alloc]init];
+//    self.settings = [[VWWThereminSynthesizerSettings alloc]init];
     
     self.motionMonitor = [[VWWMotionMonitor alloc]init];
     self.motionMonitor.delegate = self;

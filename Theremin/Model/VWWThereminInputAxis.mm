@@ -7,6 +7,7 @@
 //
 
 #import "VWWThereminInputAxis.h"
+#import "VWWThereminSynthesizer.h"
 
 // Keys for read/writing hash sets
 static NSString* kKeyFMax = @"fmax";
@@ -23,6 +24,11 @@ static NSString* kKeyLinearize = @"linearize";
 static NSString* kKeyThrottle = @"throttle";
 static NSString* kKeyNone = @"none";
 
+
+@interface VWWThereminInputAxis ()
+@property (nonatomic, retain) VWWThereminSynthesizer* synthesizer; 
+@end
+
 @implementation VWWThereminInputAxis
 -(id)init{
     self = [super init];
@@ -32,6 +38,14 @@ static NSString* kKeyNone = @"none";
         _waveType = VWW_WAVETYPE;
         _sensitivity = VWW_SENSITIVITY;
         _effectType = VWW_EFFECT;
+        
+        _frequency = _frequencyMax;
+        _volume = 0.0;
+        _synthesizer = [[VWWThereminSynthesizer alloc]initWithVolume:_volume andFrequency:_frequency];
+        _synthesizer.waveType = _waveType;
+        _synthesizer.effectType = _effectType;
+        
+
     }
     return self;
 }
@@ -58,8 +72,15 @@ static NSString* kKeyNone = @"none";
             _sensitivity = VWW_SENSITIVITY;
             _effectType = VWW_EFFECT;
         }
-        
-    }    
+    
+        _frequency = _frequencyMin;
+        _volume = 0.0;
+        _synthesizer = [[VWWThereminSynthesizer alloc]initWithVolume:_volume andFrequency:_frequency];
+        _synthesizer.waveType = _waveType;
+        _synthesizer.effectType = _effectType;
+
+        [_synthesizer start];
+    }
     return self;
 }
 
@@ -135,4 +156,20 @@ static NSString* kKeyNone = @"none";
     }
 }
 
+
+-(void)setFrequency:(float)newFrequency{
+    _frequency = newFrequency;
+    self.synthesizer.frequency = _frequency;
+}
+
+
+-(void)setVolume:(float)newVolume{
+    _volume = newVolume;
+    self.synthesizer.volume = _volume;
+}
+
+-(void)setWaveType:(WaveType)newWaveType{
+    _waveType = newWaveType;
+    self.synthesizer.waveType = _waveType;
+}
 @end

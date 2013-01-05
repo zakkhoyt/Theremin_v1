@@ -11,12 +11,18 @@
 #import "VWWThereminSynthesizerSettings.h"
 
 @interface VWWThereminInputAxis : NSObject
+// These values are read/written to config file
 @property (nonatomic) float frequencyMax;
 @property (nonatomic) float frequencyMin;
-@property (nonatomic) WaveType waveType;
+@property (nonatomic, setter=setWaveType:) WaveType waveType;
 @property (nonatomic) float sensitivity;
 @property (nonatomic) EffectType effectType;
 
+// These values change on the fly
+@property (nonatomic, setter=setFrequency:) float frequency;
+@property (nonatomic, setter=setVolume:) float volume;
+
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 -(NSDictionary*)jsonRepresentation;
+
 @end

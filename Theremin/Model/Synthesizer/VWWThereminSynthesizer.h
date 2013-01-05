@@ -16,25 +16,23 @@
 
 
 
-const Float64 kGraphSampleRate = 44100.0;
-
 
 
 @interface VWWThereminSynthesizer : NSObject
 
 @property float volume;
 @property float frequency;
-@property double sinPhase;
 @property WaveType waveType;
+@property EffectType effectType;
+
+@property double sinPhase;
 @property double theta;
-//@property (nonatomic, retain) VWWThereminSynthesizerSettings* settings;
+
 
 -(id)initWithVolume:(float)volume andFrequency:(float)frequency;
 
 - (void)start;
 - (void)stop;
 
-//  (2)1/12
-//-(void)setNoteAndOctive
 
 @end

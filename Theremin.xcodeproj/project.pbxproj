@@ -69,7 +69,7 @@
 		C6F7539915C6313C00911E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537615C6313C00911E59 /* UIKit.framework */; };
 		C6F7539A15C6313C00911E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537815C6313C00911E59 /* Foundation.framework */; };
 		C6F753A215C6313C00911E59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6F753A015C6313C00911E59 /* InfoPlist.strings */; };
-		C6F753A515C6313C00911E59 /* ThereminTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F753A415C6313C00911E59 /* ThereminTests.m */; };
+		C6F753A515C6313C00911E59 /* ThereminTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F753A415C6313C00911E59 /* ThereminTests.mm */; };
 		C6F829AF1628C6E900C79CAA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F829AC1628C6E900C79CAA /* AudioToolbox.framework */; };
 		C6F829B01628C6E900C79CAA /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F829AD1628C6E900C79CAA /* CoreAudio.framework */; };
 		C6F829B11628C6E900C79CAA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F829AE1628C6E900C79CAA /* CoreMotion.framework */; };
@@ -186,7 +186,7 @@
 		C6F7539F15C6313C00911E59 /* ThereminTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThereminTests-Info.plist"; sourceTree = "<group>"; };
 		C6F753A115C6313C00911E59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C6F753A315C6313C00911E59 /* ThereminTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThereminTests.h; sourceTree = "<group>"; };
-		C6F753A415C6313C00911E59 /* ThereminTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThereminTests.m; sourceTree = "<group>"; };
+		C6F753A415C6313C00911E59 /* ThereminTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ThereminTests.mm; sourceTree = "<group>"; };
 		C6F829AC1628C6E900C79CAA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C6F829AD1628C6E900C79CAA /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		C6F829AE1628C6E900C79CAA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -492,7 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F753A315C6313C00911E59 /* ThereminTests.h */,
-				C6F753A415C6313C00911E59 /* ThereminTests.m */,
+				C6F753A415C6313C00911E59 /* ThereminTests.mm */,
 				C6F7539E15C6313C00911E59 /* Supporting Files */,
 			);
 			path = ThereminTests;
@@ -702,7 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F753A515C6313C00911E59 /* ThereminTests.m in Sources */,
+				C6F753A515C6313C00911E59 /* ThereminTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

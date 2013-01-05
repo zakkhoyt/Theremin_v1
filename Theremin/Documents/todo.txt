@@ -1,16 +1,14 @@
 
 
 Feature implementations
-* Move our one and only channel from directly mapping into the synth so that it resides on an axis of an input device. 
-* Then recode the synth classes to be able to run multiple channels
-* Find an easier way to make the synth stop. Currnetly you need to go into the settings to turn it off. 
+* Bounjor client/server
 
 Improvements
-* Convert from threads to queues
 * Change all instances of "Gyros" or "Gyro" to Gyroscope
 
 Bug fixes
-* Get rid of the pop associated with the synth sample looping around
+* Touch makes the synth sound on the about screen and settings screens.
+
 
 
 

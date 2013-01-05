@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C606D2A2166AE1E600FA7B70 /* VWWThereminHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D28B166AE1E500FA7B70 /* VWWThereminHelpViewController.m */; };
-		C606D2A3166AE1E600FA7B70 /* VWWThereminMotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D28D166AE1E500FA7B70 /* VWWThereminMotionViewController.m */; };
 		C606D2A4166AE1E600FA7B70 /* VWWThereminSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D28F166AE1E500FA7B70 /* VWWThereminSettingsViewController.mm */; };
 		C606D2A7166AE1E600FA7B70 /* VWWMotionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D297166AE1E500FA7B70 /* VWWMotionMonitor.m */; };
 		C606D2A8166AE1E600FA7B70 /* VWWThereminNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D29A166AE1E500FA7B70 /* VWWThereminNotes.m */; };
@@ -39,7 +37,6 @@
 		C6A94FD4168FC8AE003F2AFE /* VWWConfigInputWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A94FD3168FC8AE003F2AFE /* VWWConfigInputWaveformView.m */; };
 		C6A94FD7168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */; };
 		C6B3E963168BFBB100298AF5 /* VWWConfigInputFrequencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */; };
-		C6CE37A9168EBB9A000F2A48 /* VWWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37A8168EBB9A000F2A48 /* VWWUserDefaults.m */; };
 		C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */; };
 		C6CE37B2168EC804000F2A48 /* VWWThereminInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37B1168EC804000F2A48 /* VWWThereminInput.mm */; };
 		C6CE37B8168ECFC4000F2A48 /* VWWThereminInputs.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37B7168ECFC4000F2A48 /* VWWThereminInputs.mm */; };
@@ -91,10 +88,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C606D28A166AE1E500FA7B70 /* VWWThereminHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminHelpViewController.h; sourceTree = "<group>"; };
-		C606D28B166AE1E500FA7B70 /* VWWThereminHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminHelpViewController.m; sourceTree = "<group>"; };
-		C606D28C166AE1E500FA7B70 /* VWWThereminMotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMotionViewController.h; sourceTree = "<group>"; };
-		C606D28D166AE1E500FA7B70 /* VWWThereminMotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminMotionViewController.m; sourceTree = "<group>"; };
 		C606D28E166AE1E500FA7B70 /* VWWThereminSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminSettingsViewController.h; sourceTree = "<group>"; };
 		C606D28F166AE1E500FA7B70 /* VWWThereminSettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminSettingsViewController.mm; sourceTree = "<group>"; };
 		C606D293166AE1E500FA7B70 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
@@ -146,8 +139,6 @@
 		C6B3E961168BFBB100298AF5 /* VWWConfigInputFrequencyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputFrequencyView.h; sourceTree = "<group>"; };
 		C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputFrequencyView.m; sourceTree = "<group>"; };
 		C6CE37A6168EBAE3000F2A48 /* VWWThereminConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWThereminConfiguration.h; sourceTree = "<group>"; };
-		C6CE37A7168EBB9A000F2A48 /* VWWUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUserDefaults.h; sourceTree = "<group>"; };
-		C6CE37A8168EBB9A000F2A48 /* VWWUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUserDefaults.m; sourceTree = "<group>"; };
 		C6CE37AB168EC640000F2A48 /* VWWThereminInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInput.h; sourceTree = "<group>"; };
 		C6CE37AE168EC67C000F2A48 /* VWWThereminInputAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInputAxis.h; sourceTree = "<group>"; };
 		C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminInputAxis.mm; sourceTree = "<group>"; };
@@ -247,14 +238,10 @@
 			children = (
 				C606D2B8166AE34100FA7B70 /* VWWThereminViewController.h */,
 				C6E34B9C166AE89600D0AB2C /* VWWThereminViewController.mm */,
-				C606D28A166AE1E500FA7B70 /* VWWThereminHelpViewController.h */,
-				C606D28B166AE1E500FA7B70 /* VWWThereminHelpViewController.m */,
-				C606D28C166AE1E500FA7B70 /* VWWThereminMotionViewController.h */,
-				C606D28D166AE1E500FA7B70 /* VWWThereminMotionViewController.m */,
-				C606D28E166AE1E500FA7B70 /* VWWThereminSettingsViewController.h */,
-				C606D28F166AE1E500FA7B70 /* VWWThereminSettingsViewController.mm */,
 				C6EB8888168B975600DD1F3E /* VWWThereminAboutViewController.h */,
 				C6EB8889168B975600DD1F3E /* VWWThereminAboutViewController.m */,
+				C606D28E166AE1E500FA7B70 /* VWWThereminSettingsViewController.h */,
+				C606D28F166AE1E500FA7B70 /* VWWThereminSettingsViewController.mm */,
 				C6EB88AA168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.h */,
 				C6EB88AB168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm */,
 				C6CE37BC168F1D3E000F2A48 /* VWWThereminConfigInputWaveformsViewController.h */,
@@ -284,8 +271,6 @@
 				C6EB8880168B921900DD1F3E /* OpenGL */,
 				C606D295166AE1E500FA7B70 /* Motion */,
 				C606D298166AE1E500FA7B70 /* Synthesizer */,
-				C6CE37A7168EBB9A000F2A48 /* VWWUserDefaults.h */,
-				C6CE37A8168EBB9A000F2A48 /* VWWUserDefaults.m */,
 				C6CE37B9168ED11F000F2A48 /* VWWLine.h */,
 				C6CE37BA168ED120000F2A48 /* VWWLine.m */,
 			);
@@ -673,8 +658,6 @@
 				C6F829BE1628C80B00C79CAA /* CADebugMacros.cpp in Sources */,
 				C6F829BF1628C80B00C79CAA /* CAStreamBasicDescription.cpp in Sources */,
 				C6F829C01628C80B00C79CAA /* CAXException.cpp in Sources */,
-				C606D2A2166AE1E600FA7B70 /* VWWThereminHelpViewController.m in Sources */,
-				C606D2A3166AE1E600FA7B70 /* VWWThereminMotionViewController.m in Sources */,
 				C606D2A4166AE1E600FA7B70 /* VWWThereminSettingsViewController.mm in Sources */,
 				C606D2A7166AE1E600FA7B70 /* VWWMotionMonitor.m in Sources */,
 				C606D2A8166AE1E600FA7B70 /* VWWThereminNotes.m in Sources */,
@@ -689,7 +672,6 @@
 				C6EB888A168B975600DD1F3E /* VWWThereminAboutViewController.m in Sources */,
 				C6EB88AC168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm in Sources */,
 				C6B3E963168BFBB100298AF5 /* VWWConfigInputFrequencyView.m in Sources */,
-				C6CE37A9168EBB9A000F2A48 /* VWWUserDefaults.m in Sources */,
 				C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */,
 				C6CE37B2168EC804000F2A48 /* VWWThereminInput.mm in Sources */,
 				C6CE37B8168ECFC4000F2A48 /* VWWThereminInputs.mm in Sources */,
@@ -820,9 +802,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -836,9 +820,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

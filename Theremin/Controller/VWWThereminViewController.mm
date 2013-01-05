@@ -16,20 +16,18 @@
 #import "VWWThereminViewController.h"
 #import "VWWMotionMonitor.h"
 #import "VWWThereminSettingsViewController.h"
-#import "VWWThereminHelpViewController.h"
 #import "VWWThereminInputs.h"
 #import "VWWThereminAboutViewController.h"
 
-const CGFloat kRotateXSensitivity = 0.25f;
-const CGFloat kRotateYSensitivity = 0.25f;
-const CGFloat kRotateZSensitivity = 0.25f;
+//const CGFloat kRotateXSensitivity = 0.25f;
+//const CGFloat kRotateYSensitivity = 0.25f;
+//const CGFloat kRotateZSensitivity = 0.25f;
 
 static NSString* kSegueThereminToSettings = @"segueThereminToSettings";
 static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 @interface VWWThereminViewController () <GLKViewControllerDelegate,
     VWWMotionMonitorDelegate,
-    VWWThereminHelpViewControllerDelegate,
     VWWThereminSettingsViewControllerDelegate,
     VWWThereminAboutViewControllerDelegate>{
 }
@@ -110,7 +108,7 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 	}
     else if ([segue.identifier isEqualToString:kSegueThereminToAbout]){
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminHelpViewController* viewController = (VWWThereminHelpViewController*)[[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminAboutViewController* viewController = (VWWThereminAboutViewController*)[[navigationController viewControllers]objectAtIndex:0];
 		viewController.delegate = self;
     }
 }
@@ -321,11 +319,6 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
                           device.z.min,
                           device.z.current,
                           device.z.max];
-}
-
-#pragma mark - Implements VWWThereminHelpViewControllerDelegate
--(void)userIsDoneWithHelp{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Implements VWWThereminSettingsViewControllerDelegate

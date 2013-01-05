@@ -24,4 +24,6 @@
 
 #define VWW_SHOW_INFO_SCREENS       1
 #define VWW_MAX_CHANNELS            1
+
+#define VWW_DISMISS_INFO_DURATION   0.5
 #endif

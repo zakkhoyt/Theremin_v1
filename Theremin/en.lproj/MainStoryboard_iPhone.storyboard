@@ -60,12 +60,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oEB-Tn-OEy">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="r5r-Ju-5n3">
-                            <connections>
-                                <action selector="cancelButtonHandler:" destination="Cmr-2A-XxW" id="sXO-vZ-5VT"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="zQp-xh-UVe">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="zQp-xh-UVe">
                             <connections>
                                 <action selector="doneButtonHandler:" destination="Cmr-2A-XxW" id="bJM-6r-yua"/>
                             </connections>
@@ -181,12 +176,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="c3q-ON-FC1">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="cEa-hk-1IS">
-                            <connections>
-                                <action selector="cancelButtonHandler:" destination="t6j-yK-gz4" id="ial-M4-DFL"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="8u0-zn-1U5">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="8u0-zn-1U5">
                             <connections>
                                 <action selector="doneButtonHandler:" destination="t6j-yK-gz4" id="FsN-Df-Xq8"/>
                             </connections>
@@ -334,12 +324,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="evP-CL-8TD">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="1eY-LZ-FID">
-                            <connections>
-                                <action selector="cancelButtonHandler:" destination="Kph-Z2-9Ne" id="kio-bX-Qpe"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="RTD-zz-Yna">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="RTD-zz-Yna">
                             <connections>
                                 <action selector="doneButtonHandler:" destination="Kph-Z2-9Ne" id="Ryh-Aj-POx"/>
                             </connections>
@@ -468,12 +453,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aO0-VX-Eqp">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Cancel" id="HMj-ck-5ei">
-                            <connections>
-                                <action selector="cancelButtonHandler:" destination="K44-o3-RJh" id="Dtk-we-w8T"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="AYL-bc-7O0">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="AYL-bc-7O0">
                             <connections>
                                 <action selector="doneButtonHandler:" destination="K44-o3-RJh" id="sxC-gH-yP9"/>
                             </connections>
@@ -1372,24 +1352,15 @@
         </class>
         <class className="VWWThereminConfigInputSensitivityViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputSensitivityViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonHandler:"/>
-                <relationship kind="action" name="dismissInfoViewButton:"/>
-                <relationship kind="action" name="doneButtonHandler:"/>
-                <relationship kind="action" name="xSliderHandler:"/>
-                <relationship kind="action" name="ySliderHandler:"/>
-                <relationship kind="action" name="zSliderHandler:"/>
-                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="xSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="ySlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="zSlider" candidateClass="UISlider"/>
-            </relationships>
         </class>
         <class className="VWWThereminConfigInputWaveformsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputWaveformsViewController.h"/>
         </class>
         <class className="VWWThereminSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="configGyroscopeFrequency:"/>
+            </relationships>
         </class>
         <class className="VWWThereminViewController" superclassName="GLKViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminViewController.h"/>

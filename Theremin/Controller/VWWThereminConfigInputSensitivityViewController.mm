@@ -102,7 +102,7 @@
 
 
 - (IBAction)dismissInfoViewButton:(id)sender {
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:VWW_DISMISS_INFO_DURATION animations:^{
         self.infoView.alpha = 0.0;
     } completion:^(BOOL finished){
         [self.infoView removeFromSuperview];

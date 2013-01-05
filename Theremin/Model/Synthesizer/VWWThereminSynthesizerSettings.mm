@@ -11,8 +11,10 @@
 #import "VWWThereminNotes.h"
 
 
-@interface VWWThereminSynthesizerSettings ()
-@property (nonatomic, retain) VWWThereminSynthesizer* synthesizer;
+@interface VWWThereminSynthesizerSettings (){
+    VWWThereminSynthesizer* _channels[8];
+}
+//@property (nonatomic, retain) VWWThereminSynthesizer* synthesizer;
 @property (nonatomic, retain) VWWThereminNotes* notes;
 -(void)initializeClass;
 -(void)monitorFrequencyThread;
@@ -42,10 +44,9 @@
 
 
 - (void)dealloc {
-    
-	[self.synthesizer stopAUGraph];
-	[self.synthesizer release];
-
+//    // ZAKK
+//	[self.synthesizer stop];
+//	[_synthesizer release];
     [super dealloc];
 }
 
@@ -76,11 +77,9 @@
     _magnetometerSensitivity = 1.0;
     _gyroSensitivity = 1.0;
     
-    self.synthesizer = [[VWWThereminSynthesizer alloc]initWithVolume:self.volume andFrequency:self.frequency];
-    [self.synthesizer initializeAUGraph];
-    
-    self.notes = [[VWWThereminNotes alloc]init];
-
+    _notes = [[VWWThereminNotes alloc]init];
+    _channels[0] = [[VWWThereminSynthesizer alloc]initWithVolume:self.volume andFrequency:self.frequency];
+    _channels[1] = [[VWWThereminSynthesizer alloc]initWithVolume:self.volume andFrequency:self.frequency*1.5];
 }
 
 // This method continuously runs in a thread and augments the frequency based on
@@ -109,11 +108,11 @@
         
             // Apply self.frequency to self.synthesizer.frequency
             if(_effectType == kEffectAutoTune){
-                self.synthesizer.frequency = [self.notes getClosestNote:self.frequency];
+                _channels[0].frequency = [self.notes getClosestNote:self.frequency];
             }
             // TODO implement cases for other effects
             else if(_effectType == kEffectNone){
-                self.synthesizer.frequency = self.frequency;
+                _channels[0].frequency = self.frequency;
             }
 //            NSLog(@"frequency = %f", self.synthesizer.frequency);
         }
@@ -123,21 +122,23 @@
 
 
 -(void)restart{
-    if(self.synthesizer){
-        [self.synthesizer release];
+    if(_channels[0]){
+        [_channels[0] release];
     }
-    self.synthesizer = [[VWWThereminSynthesizer alloc]initWithVolume:self.volume andFrequency:self.frequency];
-    [self.synthesizer initializeAUGraph];
+    _channels[0] = [[VWWThereminSynthesizer alloc]initWithVolume:self.volume andFrequency:self.frequency];
 }
+
 -(void)start{
     if(self.running == NO){
-        [self.synthesizer startAUGraph];
+        [_channels[0] start];
+        [_channels[1] start];
         self.running = YES;
     }
 }
 -(void)stop{
     if(self.running == YES){
-        [self.synthesizer stopAUGraph];
+        [_channels[0] stop];
+        [_channels[1] stop];
         self.running = NO;
     }
 }
@@ -164,7 +165,7 @@
 
 -(void)setWaveType:(WaveType)newWaveType{
     _waveType = newWaveType;
-    self.synthesizer.waveType = _waveType;
+    _channels[0].waveType = _waveType;
 }
 
 @end

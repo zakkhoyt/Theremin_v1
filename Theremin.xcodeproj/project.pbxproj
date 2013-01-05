@@ -120,6 +120,7 @@
 		C606D2C8166AE40F00FA7B70 /* VWWSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSquareModel.h; sourceTree = "<group>"; };
 		C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSquareModel.m; sourceTree = "<group>"; };
 		C624E67615C7E3E400A8DD94 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		C63486411697C76800B5E701 /* VWWThereminMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMath.h; sourceTree = "<group>"; };
 		C6357CED15C7A5690074E722 /* sawtooth_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sawtooth_256x256.png; path = images/sawtooth_256x256.png; sourceTree = "<group>"; };
 		C6357CEE15C7A5690074E722 /* sine_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sine_256x256.png; path = images/sine_256x256.png; sourceTree = "<group>"; };
 		C6357CEF15C7A5690074E722 /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_256x256.png; path = images/square_256x256.png; sourceTree = "<group>"; };
@@ -301,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				C6F829B51628C80B00C79CAA /* Apple CA Helpers */,
+				C63486411697C76800B5E701 /* VWWThereminMath.h */,
 				C606D299166AE1E500FA7B70 /* VWWThereminNotes.h */,
 				C606D29A166AE1E500FA7B70 /* VWWThereminNotes.m */,
 				C606D29B166AE1E500FA7B70 /* VWWThereminSynthesizer.h */,

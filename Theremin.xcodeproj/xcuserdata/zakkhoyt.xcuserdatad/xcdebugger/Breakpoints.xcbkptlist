@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminConfigInputEffectsViewController.mm"
-         timestampString = "379036156.423353"
+         timestampString = "379043658.019854"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "244"
-         endingLineNumber = "244"
+         startingLineNumber = "242"
+         endingLineNumber = "242"
          landmarkName = "-makeLinesFromInputData"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminConfigInputEffectsViewController.mm"
-         timestampString = "379036156.423353"
+         timestampString = "379043658.019854"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
          landmarkName = "-touchesEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminConfigInputEffectsViewController.mm"
-         timestampString = "379036156.423353"
+         timestampString = "379043658.019854"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "195"
-         endingLineNumber = "195"
+         startingLineNumber = "193"
+         endingLineNumber = "193"
          landmarkName = "-touchesEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminConfigInputEffectsViewController.mm"
-         timestampString = "379036156.423353"
+         timestampString = "379043658.019854"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "174"
-         endingLineNumber = "174"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
          landmarkName = "-touchesEnded:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -108,7 +108,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
@@ -121,7 +121,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"

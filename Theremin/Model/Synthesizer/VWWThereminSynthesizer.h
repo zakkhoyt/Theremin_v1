@@ -26,14 +26,13 @@ const Float64 kGraphSampleRate = 44100.0;
 @property float frequency;
 @property double sinPhase;
 @property WaveType waveType;
-
+@property double theta;
 //@property (nonatomic, retain) VWWThereminSynthesizerSettings* settings;
 
 -(id)initWithVolume:(float)volume andFrequency:(float)frequency;
 
-- (void)initializeAUGraph;
-- (void)startAUGraph;
-- (void)stopAUGraph;
+- (void)start;
+- (void)stop;
 
 //  (2)1/12
 //-(void)setNoteAndOctive

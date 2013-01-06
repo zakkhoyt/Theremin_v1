@@ -15,7 +15,6 @@
 @property (nonatomic, retain) IBOutlet VWWConfigInputSensitivityView* configView;
 @property (nonatomic, retain) VWWThereminInput* input;
 - (IBAction)dismissInfoViewButton:(id)sender;
-- (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UISlider *xSlider;
@@ -112,9 +111,6 @@
     }];
 }
 
-- (IBAction)cancelButtonHandler:(id)sender {
-    [self.delegate vwwThereminConfigInputSensitivityViewControllerUserCancelled:self];
-}
 
 - (IBAction)doneButtonHandler:(id)sender {
     [VWWThereminInputs saveConfigFile];

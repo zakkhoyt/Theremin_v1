@@ -13,7 +13,6 @@
 
 @protocol VWWThereminConfigInputWaveformsViewControllerDelegate <NSObject>
 -(void)vwwThereminConfigInputWaveformsViewControllerUserIsDone:(VWWThereminConfigInputWaveformsViewController*)sender;
--(void)vwwThereminConfigInputWaveformsViewControllerUserCancelled:(VWWThereminConfigInputWaveformsViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputWaveformsViewController : UIViewController

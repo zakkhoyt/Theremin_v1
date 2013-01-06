@@ -13,7 +13,6 @@
 
 @protocol VWWThereminConfigInputSensitivityViewControllerDelegate <NSObject>
 -(void)vwwThereminConfigInputSensitivityViewControllerUserIsDone:(VWWThereminConfigInputSensitivityViewController*)sender;
--(void)vwwThereminConfigInputSensitivityViewControllerUserCancelled:(VWWThereminConfigInputSensitivityViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputSensitivityViewController : UIViewController

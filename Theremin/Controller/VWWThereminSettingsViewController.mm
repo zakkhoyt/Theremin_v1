@@ -7,18 +7,21 @@
 //
 
 #import "VWWThereminSettingsViewController.h"
+#import "VWWThereminConfigInputAmplitudeViewController.h"
 #import "VWWThereminConfigInputFrequencyViewController.h"
 #import "VWWThereminConfigInputWaveformsViewController.h"
 #import "VWWThereminConfigInputSensitivityViewController.h"
 #import "VWWThereminConfigInputEffectsViewController.h"
 #import "VWWThereminInputs.h"
 
+static NSString* kSegueSettingsToConfigInputAmplitude = @"segueSettingsToConfigInputAmplitude";
 static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
 static NSString* kSegueSettingsToConfigInputWaveform = @"segueSettingsToConfigInputWaveform";
 static NSString* kSegueSettingsToConfigInputSensitivity = @"segueSettingsToConfigInputSensitivity";
 static NSString* kSegueSettingsToConfigInputEffects = @"segueSettingsToConfigInputEffects";
 
-@interface VWWThereminSettingsViewController () <VWWThereminConfigInputFrequencyViewControllerDelegate,
+@interface VWWThereminSettingsViewController () <VWWThereminConfigInputAmplitudeViewControllerDelegate,
+VWWThereminConfigInputFrequencyViewControllerDelegate,
 VWWThereminConfigInputWaveformsViewControllerDelegate,
 VWWThereminConfigInputSensitivityViewControllerDelegate,
 VWWThereminConfigInputEffectsViewControllerDelegate>
@@ -60,6 +63,10 @@ VWWThereminConfigInputEffectsViewControllerDelegate>
 - (IBAction)configAccelerometerEffects:(id)sender;
 - (IBAction)configGyroscopeEffects:(id)sender;
 - (IBAction)configTouchscreenEffects:(id)sender;
+- (IBAction)configTouchscreenAmplitude:(id)sender;
+- (IBAction)configMagnetometerAmplitude:(id)sender;
+- (IBAction)configGyroscopeAmplitude:(id)sender;
+- (IBAction)configAccelerometerAmplitude:(id)sender;
 
 
 // Navigation bar buttons
@@ -148,13 +155,19 @@ VWWThereminConfigInputEffectsViewControllerDelegate>
 		configSensitivityController.delegate = self;
         configSensitivityController.inputType = self.configInputType;
 	}
-    
     else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputEffects])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
 		VWWThereminConfigInputEffectsViewController* configEffectsController = [[navigationController viewControllers]objectAtIndex:0];
 		configEffectsController.delegate = self;
         configEffectsController.inputType = self.configInputType;
+	}
+    else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputAmplitude])
+	{
+		UINavigationController* navigationController = segue.destinationViewController;
+		VWWThereminConfigInputAmplitudeViewController* configAmplitudeController = [[navigationController viewControllers]objectAtIndex:0];
+		configAmplitudeController.delegate = self;
+        configAmplitudeController.inputType = self.configInputType;
 	}
     
 }
@@ -353,6 +366,28 @@ VWWThereminConfigInputEffectsViewControllerDelegate>
 }
 
 
+- (IBAction)configTouchscreenAmplitude:(id)sender {
+    self.configInputType = kInputTouch;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputAmplitude sender:self];
+}
+
+- (IBAction)configMagnetometerAmplitude:(id)sender {
+    self.configInputType = kInputMagnetometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputAmplitude sender:self];
+}
+
+- (IBAction)configAccelerometerAmplitude:(id)sender {
+    self.configInputType = kInputAccelerometer;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputAmplitude sender:self];
+}
+
+- (IBAction)configGyroscopeAmplitude:(id)sender {
+    self.configInputType = kInputGyros;
+    [self performSegueWithIdentifier:kSegueSettingsToConfigInputAmplitude sender:self];
+}
+
+
+
 #pragma mark - Implements VWWThereminConfigInputFrequencyViewControllerDelegate
 -(void)VWWThereminConfigInputFrequencyViewControllerUserIsDone:(VWWThereminConfigInputFrequencyViewController *)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -387,6 +422,12 @@ VWWThereminConfigInputEffectsViewControllerDelegate>
 -(void)vwwThereminConfigInputEffectsViewControllerUserCancelled:(VWWThereminConfigInputEffectsViewController*)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - Implements VWWThereminConfigInputAmplitudeViewControllerDelegate
+-(void)vwwThereminConfigInputAmplitudeViewControllerUserIsDone:(VWWThereminConfigInputAmplitudeViewController*)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];    
+}
+
 
 
 @end

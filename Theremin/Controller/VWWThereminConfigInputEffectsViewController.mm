@@ -295,10 +295,6 @@ typedef enum{
 
 
 
-
-
-
-
 - (IBAction)dismissInfoViewButton:(id)sender {
     [UIView animateWithDuration:VWW_DISMISS_INFO_DURATION animations:^{
         self.infoView.alpha = 0.0;
@@ -307,9 +303,6 @@ typedef enum{
     }];
 }
 
-- (IBAction)cancelButtonHandler:(id)sender {
-    [self.delegate vwwThereminConfigInputEffectsViewControllerUserCancelled:self];
-}
 
 - (IBAction)doneButtonHandler:(id)sender {
     [VWWThereminInputs saveConfigFile];

@@ -14,7 +14,6 @@
 
 @protocol VWWThereminConfigInputFrequencyViewControllerDelegate <NSObject>
 -(void)VWWThereminConfigInputFrequencyViewControllerUserIsDone:(VWWThereminConfigInputFrequencyViewController *)sender;
--(void)VWWThereminConfigInputFrequencyViewControllerUserDidCancel:(VWWThereminConfigInputFrequencyViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputFrequencyViewController : UIViewController

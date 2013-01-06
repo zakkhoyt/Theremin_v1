@@ -13,7 +13,6 @@
 
 @protocol VWWThereminConfigInputEffectsViewControllerDelegate <NSObject>
 -(void)vwwThereminConfigInputEffectsViewControllerUserIsDone:(VWWThereminConfigInputEffectsViewController*)sender;
--(void)vwwThereminConfigInputEffectsViewControllerUserCancelled:(VWWThereminConfigInputEffectsViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputEffectsViewController : UIViewController

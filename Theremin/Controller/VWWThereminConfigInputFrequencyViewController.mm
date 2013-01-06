@@ -49,7 +49,6 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 @property (nonatomic, retain) VWWThereminInput* input;
 
 - (IBAction)dismissInfoViewButton:(id)sender;
-- (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 @end
 
@@ -459,9 +458,6 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     }];
 }
 
-- (IBAction)cancelButtonHandler:(id)sender {
-    [self.delegate VWWThereminConfigInputFrequencyViewControllerUserDidCancel:self];
-}
 
 - (IBAction)doneButtonHandler:(id)sender {
     [VWWThereminInputs saveConfigFile];

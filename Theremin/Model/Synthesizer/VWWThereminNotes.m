@@ -10,8 +10,6 @@
 
 #define NWF(x) [NSNumber numberWithFloat:x]
 
-
-
 @interface VWWThereminNotes ()
 @property (nonatomic, retain) NSArray* notes;
 -(void)initializeClass;

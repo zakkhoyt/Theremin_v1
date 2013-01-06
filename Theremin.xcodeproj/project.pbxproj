@@ -57,6 +57,8 @@
 		C6E34B9D166AE89600D0AB2C /* VWWThereminViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6E34B9C166AE89600D0AB2C /* VWWThereminViewController.mm */; };
 		C6EB888A168B975600DD1F3E /* VWWThereminAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6EB8889168B975600DD1F3E /* VWWThereminAboutViewController.m */; };
 		C6EB88AC168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EB88AB168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm */; };
+		C6F23BC9169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F23BC8169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm */; };
+		C6F23BCD16995399001C8FA8 /* VWWConfigInputAmplitudeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F23BCC16995399001C8FA8 /* VWWConfigInputAmplitudeView.m */; };
 		C6F7537715C6313C00911E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537615C6313C00911E59 /* UIKit.framework */; };
 		C6F7537915C6313C00911E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537815C6313C00911E59 /* Foundation.framework */; };
 		C6F7537B15C6313C00911E59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537A15C6313C00911E59 /* CoreGraphics.framework */; };
@@ -168,6 +170,10 @@
 		C6EB8889168B975600DD1F3E /* VWWThereminAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminAboutViewController.m; sourceTree = "<group>"; };
 		C6EB88AA168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminConfigInputFrequencyViewController.h; sourceTree = "<group>"; };
 		C6EB88AB168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminConfigInputFrequencyViewController.mm; sourceTree = "<group>"; };
+		C6F23BC7169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminConfigInputAmplitudeViewController.h; sourceTree = "<group>"; };
+		C6F23BC8169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminConfigInputAmplitudeViewController.mm; sourceTree = "<group>"; };
+		C6F23BCB16995399001C8FA8 /* VWWConfigInputAmplitudeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputAmplitudeView.h; sourceTree = "<group>"; };
+		C6F23BCC16995399001C8FA8 /* VWWConfigInputAmplitudeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputAmplitudeView.m; sourceTree = "<group>"; };
 		C6F7537215C6313C00911E59 /* Theremin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theremin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F7537615C6313C00911E59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6F7537815C6313C00911E59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -242,6 +248,8 @@
 				C6EB8889168B975600DD1F3E /* VWWThereminAboutViewController.m */,
 				C606D28E166AE1E500FA7B70 /* VWWThereminSettingsViewController.h */,
 				C606D28F166AE1E500FA7B70 /* VWWThereminSettingsViewController.mm */,
+				C6F23BC7169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.h */,
+				C6F23BC8169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm */,
 				C6EB88AA168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.h */,
 				C6EB88AB168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm */,
 				C6CE37BC168F1D3E000F2A48 /* VWWThereminConfigInputWaveformsViewController.h */,
@@ -303,6 +311,8 @@
 		C606D29F166AE1E500FA7B70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C6F23BCB16995399001C8FA8 /* VWWConfigInputAmplitudeView.h */,
+				C6F23BCC16995399001C8FA8 /* VWWConfigInputAmplitudeView.m */,
 				C6B3E961168BFBB100298AF5 /* VWWConfigInputFrequencyView.h */,
 				C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */,
 				C6A94FD2168FC8AE003F2AFE /* VWWConfigInputWaveformView.h */,
@@ -683,6 +693,8 @@
 				C6747F66168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm in Sources */,
 				C6747F6A168FECDF007133AD /* VWWConfigInputEffectsView.m in Sources */,
 				C6DAB1DC169112540056E769 /* VWWFileSystem.m in Sources */,
+				C6F23BC9169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */,
+				C6F23BCD16995399001C8FA8 /* VWWConfigInputAmplitudeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

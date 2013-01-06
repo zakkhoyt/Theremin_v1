@@ -1,14 +1,16 @@
 //
-//  VWWThereminConfigInputWaveformsViewController.m
+//  VWWThereminConfigInputAmplitudeViewController.m
 //  Theremin
 //
-//  Created by Zakk Hoyt on 12/29/12.
-//  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
+//  Created by Zakk Hoyt on 1/5/13.
+//  Copyright (c) 2013 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWThereminConfigInputWaveformsViewController.h"
-#import "VWWConfigInputWaveformView.h"
+#import "VWWThereminConfigInputAmplitudeViewController.h"
+#import "VWWConfigInputAmplitudeView.h"
 #import "VWWThereminInputs.h"
+
+const NSUInteger kEndzoneWidth = 30;
 
 typedef enum{
     kLineTypeNone = 0,
@@ -17,34 +19,43 @@ typedef enum{
     kLineTypeZ,
 } LineType;
 
-@interface VWWThereminConfigInputWaveformsViewController ()
+
+static NSString* kXLabelPrefix = @"X Axis";
+static NSString* kYLabelPrefix = @"Y Axis";
+static NSString* kZLabelPrefix = @"Z Axis";
+
+@interface VWWThereminConfigInputAmplitudeViewController ()
 @property (nonatomic, retain) IBOutlet UIView* infoView;
-@property (nonatomic) LineType lineType;
-@property (nonatomic, retain) IBOutlet VWWConfigInputWaveformView* configView;
+@property (retain, nonatomic) IBOutlet VWWConfigInputAmplitudeView *configView;
+@property (retain, nonatomic) IBOutlet UILabel *amplitudeMaxLabel;
+@property (retain, nonatomic) IBOutlet UILabel *amplitudeMinLabel;
 @property (retain, nonatomic) IBOutlet UILabel *xLabel;
 @property (retain, nonatomic) IBOutlet UILabel *yLabel;
 @property (retain, nonatomic) IBOutlet UILabel *zLabel;
-@property (retain, nonatomic) IBOutlet UIImageView *sinImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *squareImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *triangleImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *sawtoothImageView;
-@property (nonatomic, retain) VWWThereminInput* input;
+
+@property (nonatomic) LineType lineType;
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
-@property (nonatomic) CGRect waveformEndzone;
+@property (nonatomic) CGRect amplitudeEndzone;
+@property (nonatomic, retain) VWWThereminInput* input;
+
 - (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 @end
 
-@implementation VWWThereminConfigInputWaveformsViewController
+@implementation VWWThereminConfigInputAmplitudeViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        [self initializeClass];
     }
     return self;
+}
+
+-(void)initializeClass{
+    
 }
 
 - (void)viewDidLoad
@@ -57,7 +68,7 @@ typedef enum{
     [self.infoView setHidden:NO];
 #endif
     
-
+    
     // Set nav bar title
     switch(self.inputType){
         case kInputAccelerometer:
@@ -76,6 +87,7 @@ typedef enum{
             self.navigationItem.title = @"Touch Screen";
             self.input = [VWWThereminInputs touchscreenInput];
             self.zLabel.hidden = YES;
+            self.zLabel.hidden = YES;
             break;
         case kInputNone:
             self.navigationItem.title = @"Invalid Input";
@@ -84,24 +96,56 @@ typedef enum{
             break;
     }
     
-    self.waveformEndzone = CGRectMake(self.sinImageView.frame.origin.x,
-                                      self.sinImageView.frame.origin.y,
-                                      self.sinImageView.frame.size.width,
-                                      self.sawtoothImageView.frame.origin.y + self.sawtoothImageView.frame.size.height);
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    // Update labels
+    self.amplitudeMaxLabel.text = [self stringFromAmplitude:VWW_AMPLITUDE_MAX];
+    self.amplitudeMaxLabel.text = [self stringFromAmplitude:VWW_AMPLITUDE_MIN];
+    
+    // Set up amplitude line
+    CGPoint begin = self.amplitudeMaxLabel.center;
+    begin.y += self.amplitudeMaxLabel.frame.size.height/2.0;
+    CGPoint end = self.amplitudeMinLabel.center;
+    NSLog(@"%@", NSStringFromCGPoint(end));
+    end.y -= self.amplitudeMinLabel.frame.size.height/2.0;
+    VWWLine* amplitudeLine = [[VWWLine alloc]
+                                initWithBegin:begin
+                                andEnd:end];
+    [self.configView setLineAmplitude:amplitudeLine];
+    [amplitudeLine release];
+    
+    // Calculate endzone (for touch events)
+    self.amplitudeEndzone = CGRectMake(begin.x - kEndzoneWidth/2.0,
+                                       begin.y,
+                                       kEndzoneWidth,
+                                       end.y - begin.y);
+    
+    
+    
+    
+    // Update GUI from data in memory
     [self makeLinesFromInputData];
+    [self updateAmplitudeLabels];
+    
     [self.configView setNeedsDisplay];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+- (void)dealloc {
+    [_amplitudeMaxLabel release];
+    [_amplitudeMinLabel release];
+    [_xLabel release];
+    [_yLabel release];
+    [_zLabel release];
+    [super dealloc];
 }
 
 
@@ -142,10 +186,19 @@ typedef enum{
     UITouch* touch = [touchesArray objectAtIndex:0];
     self.end = [touch locationInView:self.configView];
     
-    if(CGRectContainsPoint(self.waveformEndzone, self.end)){
+    if(CGRectContainsPoint(self.amplitudeEndzone, self.end)){
+        
+        // Calculate frequcency
+        float endzonePoint = self.amplitudeEndzone.origin.y + self.amplitudeEndzone.size.height - self.end.y;
+        float endzoneHeight = self.amplitudeEndzone.size.height;
+        float ratio = endzonePoint/endzoneHeight;
+        float amplitude = ((VWW_AMPLITUDE_MAX - VWW_AMPLITUDE_MIN) * ratio) + VWW_AMPLITUDE_MIN;
+        NSString* amplitudeString = [self stringFromAmplitude:amplitude];
+        [self updateAxisLabelsWithAmplitude:amplitudeString];
         [self updateConfigViewLinesValid:YES];
     }
     else{
+        [self updateAxisLabelsWithAmplitude:@""];
         [self updateConfigViewLinesValid:NO];
     }
 }
@@ -160,24 +213,21 @@ typedef enum{
     UITouch* touch = [touchesArray objectAtIndex:0];
     CGPoint end = [touch locationInView:self.configView];
     
-    if(CGRectContainsPoint(self.sinImageView.frame, end)){
-        [self updateWavetype:kWaveSin];
-        self.end = CGPointMake(self.sinImageView.frame.origin.x, self.sinImageView.frame.origin.y + self.sinImageView.frame.size.height/2.0);
-        [self updateConfigViewLinesValid:YES];
-    }
-    else if(CGRectContainsPoint(self.squareImageView.frame, end)){
-        [self updateWavetype:kWaveSquare];
-        self.end = CGPointMake(self.squareImageView.frame.origin.x, self.squareImageView.frame.origin.y + self.squareImageView.frame.size.height/2.0);
-        [self updateConfigViewLinesValid:YES];
-    }
-    else if(CGRectContainsPoint(self.triangleImageView.frame, end)){
-        [self updateWavetype:kWaveTriangle];
-        self.end = CGPointMake(self.triangleImageView.frame.origin.x, self.triangleImageView.frame.origin.y + self.triangleImageView.frame.size.height/2.0);
-        [self updateConfigViewLinesValid:YES];
-    }
-    else if(CGRectContainsPoint(self.sawtoothImageView.frame, end)){
-        [self updateWavetype:kWaveSawtooth];
-        self.end = CGPointMake(self.sawtoothImageView.frame.origin.x, self.sawtoothImageView.frame.origin.y + self.sawtoothImageView.frame.size.height/2.0);
+    if(CGRectContainsPoint(self.amplitudeEndzone, end)){
+        self.end = CGPointMake(self.amplitudeEndzone.origin.x + self.amplitudeEndzone.size.width/2.0, end.y);
+        
+        // Calculate frequcency
+        float endzonePoint = self.amplitudeEndzone.origin.y + self.amplitudeEndzone.size.height - end.y;
+        float endzoneHeight = self.amplitudeEndzone.size.height;
+        float ratio = endzonePoint/endzoneHeight;
+        float amplitude = ((VWW_AMPLITUDE_MAX - VWW_AMPLITUDE_MIN) * ratio) + VWW_AMPLITUDE_MIN;
+        
+        // Update data structure
+        [self updateInputAmplitude:amplitude];
+        
+        // Update GUI
+        NSString* amplitudeString = [self stringFromAmplitude:amplitude];
+        [self updateAxisLabelsWithAmplitude:amplitudeString];
         [self updateConfigViewLinesValid:YES];
     }
     else{
@@ -188,22 +238,48 @@ typedef enum{
     }
 }
 
-
+-(NSString*)stringFromAmplitude:(float)amplitude{
+//    if(amplitude < 1000){
+//        return [NSString stringWithFormat:@"%d Hz", (int)amplitude];
+//    }
+//    float significand = amplitude / 1000;
+    return [NSString stringWithFormat:@"%d", (int)amplitude*100];
+}
 
 // For when a user is drawing
--(void)updateWavetype:(WaveType)wavetype{
+-(void)updateInputAmplitude:(float)amplitude{
     switch(self.lineType){
         case kLineTypeX:
-            self.input.x.waveType = wavetype;
+            self.input.x.volume = amplitude;
             break;
         case kLineTypeY:
-            self.input.y.waveType = wavetype;
+            self.input.y.volume = amplitude;
             break;
         case kLineTypeZ:
-            self.input.z.waveType = wavetype;
+            self.input.z.volume = amplitude;
             break;
         default:
             return;
+            
+    }
+}
+
+
+// For when a user is drawing
+-(void)updateAxisLabelsWithAmplitude:(NSString*)amplitude{
+    switch(self.lineType){
+        case kLineTypeX:
+            self.xLabel.text = [NSString stringWithFormat:@"%@\n%@", kXLabelPrefix, amplitude];
+            break;
+        case kLineTypeY:
+            self.yLabel.text = [NSString stringWithFormat:@"%@\n%@", kYLabelPrefix, amplitude];
+            break;
+        case kLineTypeZ:
+            self.zLabel.text = [NSString stringWithFormat:@"%@\n%@", kZLabelPrefix, amplitude];
+            break;
+        default:
+            return;
+            
     }
 }
 
@@ -228,21 +304,29 @@ typedef enum{
     [self.configView setNeedsDisplay];
 }
 
-// For loading data
+
+
 -(void)makeLinesFromInputData{
     VWWLine* xLine = [[[VWWLine alloc]initWithBegin:[self getLineXBegin]
                                                 andEnd:[self getLineXEnd]]autorelease];
     [self.configView setLineX:xLine valid:YES];
-
+    
+    
     VWWLine* yLine = [[[VWWLine alloc]initWithBegin:[self getLineYBegin]
-                                             andEnd:[self getLineYEnd]]autorelease];
+                                                andEnd:[self getLineYEnd]]autorelease];
     [self.configView setLineY:yLine valid:YES];
     
     if(self.inputType != kInputTouch){
         VWWLine* zLine = [[[VWWLine alloc]initWithBegin:[self getLineZBegin]
-                                                 andEnd:[self getLineZEnd]]autorelease];
+                                                    andEnd:[self getLineZEnd]]autorelease];
         [self.configView setLineZ:zLine valid:YES];
     }
+}
+
+-(void)updateAmplitudeLabels{
+    self.xLabel.text = [NSString stringWithFormat:@"%@\n%@", kXLabelPrefix, [self stringFromAmplitude:self.input.x.volume]];
+    self.yLabel.text = [NSString stringWithFormat:@"%@\n%@", kYLabelPrefix, [self stringFromAmplitude:self.input.y.volume]];
+    self.zLabel.text = [NSString stringWithFormat:@"%@\n%@", kZLabelPrefix, [self stringFromAmplitude:self.input.z.volume]];
 }
 
 -(CGPoint)getLineXBegin{
@@ -250,44 +334,34 @@ typedef enum{
                        self.xLabel.center.y);
 }
 -(CGPoint)getLineXEnd{
-    return [self getLineEndWithWavetype:self.input.x.waveType];
+    return [self getPointOnAmplitudeLine:self.input.x.volume];
 }
 -(CGPoint)getLineYBegin{
     return CGPointMake(self.yLabel.center.x + self.yLabel.frame.size.width/2.0,
                        self.yLabel.center.y);
 }
 -(CGPoint)getLineYEnd{
-    return [self getLineEndWithWavetype:self.input.y.waveType];
+    return [self getPointOnAmplitudeLine:self.input.y.volume];
 }
 -(CGPoint)getLineZBegin{
     return CGPointMake(self.zLabel.center.x + self.zLabel.frame.size.width/2.0,
                        self.zLabel.center.y);
 }
 -(CGPoint)getLineZEnd{
-    return [self getLineEndWithWavetype:self.input.z.waveType];
+    return [self getPointOnAmplitudeLine:self.input.z.volume];
 }
--(CGPoint)getLineEndWithWavetype:(WaveType)wavetype{
-    switch(wavetype){
-        case kWaveSin:
-            return CGPointMake(self.sinImageView.frame.origin.x, self.sinImageView.frame.origin.y + self.sinImageView.frame.size.height/2.0);
-            break;
-        case kWaveSquare:
-            return CGPointMake(self.squareImageView.frame.origin.x, self.squareImageView.frame.origin.y + self.squareImageView.frame.size.height/2.0);
-            break;
-        case kWaveSawtooth:
-            return CGPointMake(self.sawtoothImageView.frame.origin.x, self.sawtoothImageView.frame.origin.y + self.sawtoothImageView.frame.size.height/2.0);
-            break;
-        case kWaveTriangle:
-            return CGPointMake(self.triangleImageView.frame.origin.x, self.triangleImageView.frame.origin.y + self.triangleImageView.frame.size.height/2.0);
-            break;
-        case kWaveNone:
-        default:
-            return CGPointMake(0,0);
-    }
+
+-(CGPoint)getPointOnAmplitudeLine:(float)amplitude{
+    float fTotal = VWW_AMPLITUDE_MAX - VWW_AMPLITUDE_MIN;
+    float fPoint = (amplitude - VWW_AMPLITUDE_MIN) / fTotal; // 0.0 .. 1.0
+    return CGPointMake(self.amplitudeEndzone.origin.x + self.amplitudeEndzone.size.width/2.0, // center x wise
+                       (self.amplitudeEndzone.origin.y + self.amplitudeEndzone.size.height
+                        - (self.amplitudeEndzone.size.height * fPoint))); // origin + % of height
+    
 }
 
 
-
+#pragma mark - Custom UI action handlers.
 - (IBAction)dismissInfoViewButton:(id)sender {
     [UIView animateWithDuration:VWW_DISMISS_INFO_DURATION animations:^{
         self.infoView.alpha = 0.0;
@@ -298,16 +372,7 @@ typedef enum{
 
 - (IBAction)doneButtonHandler:(id)sender {
     [VWWThereminInputs saveConfigFile];
-    [self.delegate vwwThereminConfigInputWaveformsViewControllerUserIsDone:self];
+    [self.delegate vwwThereminConfigInputAmplitudeViewControllerUserIsDone:self];
 }
-- (void)dealloc {
-    [_xLabel release];
-    [_yLabel release];
-    [_zLabel release];
-    [_sinImageView release];
-    [_squareImageView release];
-    [_triangleImageView release];
-    [_sawtoothImageView release];
-    [super dealloc];
-}
+
 @end

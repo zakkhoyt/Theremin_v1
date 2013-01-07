@@ -32,4 +32,20 @@ typedef enum{
     kEffectThrottle = 0x04,
 } EffectType;
 
+typedef enum{
+    kNoteKeyAll = 0,
+    kNoteKeyAMinor,
+    kNoteKeyAMajor,
+    kNoteKeyBMinor,
+    kNoteKeyBMajor,
+    kNoteKeyCMajor,
+    kNoteKeyDMinor,
+    kNoteKeyDMajor,
+    kNoteKeyEMinor,
+    kNoteKeyEMajor,
+    kNoteKeyFMajor,
+    kNoteKeyGMinor,
+    kNoteKeyGMajor,
+} NoteKey;
+
 #endif

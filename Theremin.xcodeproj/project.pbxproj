@@ -59,6 +59,8 @@
 		C6EB88AC168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EB88AB168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm */; };
 		C6F23BC9169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F23BC8169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm */; };
 		C6F23BCD16995399001C8FA8 /* VWWConfigInputAmplitudeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F23BCC16995399001C8FA8 /* VWWConfigInputAmplitudeView.m */; };
+		C6F23BD0169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F23BCF169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm */; };
+		C6F23BD3169A96D6001C8FA8 /* VWWConfigInputKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6F23BD2169A96D6001C8FA8 /* VWWConfigInputKeyView.m */; };
 		C6F7537715C6313C00911E59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537615C6313C00911E59 /* UIKit.framework */; };
 		C6F7537915C6313C00911E59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537815C6313C00911E59 /* Foundation.framework */; };
 		C6F7537B15C6313C00911E59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6F7537A15C6313C00911E59 /* CoreGraphics.framework */; };
@@ -174,6 +176,10 @@
 		C6F23BC8169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminConfigInputAmplitudeViewController.mm; sourceTree = "<group>"; };
 		C6F23BCB16995399001C8FA8 /* VWWConfigInputAmplitudeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputAmplitudeView.h; sourceTree = "<group>"; };
 		C6F23BCC16995399001C8FA8 /* VWWConfigInputAmplitudeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputAmplitudeView.m; sourceTree = "<group>"; };
+		C6F23BCE169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminConfigInputKeyViewController.h; sourceTree = "<group>"; };
+		C6F23BCF169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminConfigInputKeyViewController.mm; sourceTree = "<group>"; };
+		C6F23BD1169A96D6001C8FA8 /* VWWConfigInputKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputKeyView.h; sourceTree = "<group>"; };
+		C6F23BD2169A96D6001C8FA8 /* VWWConfigInputKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputKeyView.m; sourceTree = "<group>"; };
 		C6F7537215C6313C00911E59 /* Theremin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Theremin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F7537615C6313C00911E59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6F7537815C6313C00911E59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -256,6 +262,8 @@
 				C6CE37BD168F1D3E000F2A48 /* VWWThereminConfigInputWaveformsViewController.mm */,
 				C6CE37BF168F1DB7000F2A48 /* VWWThereminConfigInputSensitivityViewController.h */,
 				C6CE37C0168F1DB7000F2A48 /* VWWThereminConfigInputSensitivityViewController.mm */,
+				C6F23BCE169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.h */,
+				C6F23BCF169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm */,
 				C6747F64168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.h */,
 				C6747F65168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm */,
 			);
@@ -319,6 +327,8 @@
 				C6A94FD3168FC8AE003F2AFE /* VWWConfigInputWaveformView.m */,
 				C6A94FD5168FC8C1003F2AFE /* VWWConfigInputSensitivityView.h */,
 				C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */,
+				C6F23BD1169A96D6001C8FA8 /* VWWConfigInputKeyView.h */,
+				C6F23BD2169A96D6001C8FA8 /* VWWConfigInputKeyView.m */,
 				C6747F68168FECDF007133AD /* VWWConfigInputEffectsView.h */,
 				C6747F69168FECDF007133AD /* VWWConfigInputEffectsView.m */,
 			);
@@ -695,6 +705,8 @@
 				C6DAB1DC169112540056E769 /* VWWFileSystem.m in Sources */,
 				C6F23BC9169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */,
 				C6F23BCD16995399001C8FA8 /* VWWConfigInputAmplitudeView.m in Sources */,
+				C6F23BD0169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm in Sources */,
+				C6F23BD3169A96D6001C8FA8 /* VWWConfigInputKeyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

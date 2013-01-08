@@ -26,6 +26,7 @@
 		C6357CF615C7A5690074E722 /* waveforms.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CF115C7A5690074E722 /* waveforms.png */; };
 		C63EDF29169BC74F0036E49B /* VWWThereminAboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EDF28169BC74F0036E49B /* VWWThereminAboutView.m */; };
 		C63EDF2D169BC83F0036E49B /* VWWThereminSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EDF2C169BC83F0036E49B /* VWWThereminSettingsView.m */; };
+		C63EDF30169BFB530036E49B /* paid_vs_free.txt in Resources */ = {isa = PBXBuildFile; fileRef = C63EDF2F169BFB530036E49B /* paid_vs_free.txt */; };
 		C66F465115C7B7EF0066E94B /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */; };
 		C66F465215C7B7F70066E94B /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */; };
 		C6747F66168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6747F65168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm */; };
@@ -132,6 +133,7 @@
 		C63EDF28169BC74F0036E49B /* VWWThereminAboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminAboutView.m; sourceTree = "<group>"; };
 		C63EDF2B169BC83F0036E49B /* VWWThereminSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminSettingsView.h; sourceTree = "<group>"; };
 		C63EDF2C169BC83F0036E49B /* VWWThereminSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminSettingsView.m; sourceTree = "<group>"; };
+		C63EDF2F169BFB530036E49B /* paid_vs_free.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = paid_vs_free.txt; sourceTree = "<group>"; };
 		C66F463F15C7AD880066E94B /* Icon_144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_144x144.png; path = ../Icon_144x144.png; sourceTree = "<group>"; };
 		C66F464115C7AD990066E94B /* Icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_57x57.png; path = ../Icon_57x57.png; sourceTree = "<group>"; };
 		C66F464315C7AD9F0066E94B /* Icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_114x114.png; path = ../Icon_114x114.png; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				C60E4FF7169807C8006BD352 /* custom.strings */,
 				C606D293166AE1E500FA7B70 /* todo.txt */,
+				C63EDF2F169BFB530036E49B /* paid_vs_free.txt */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				C6E34B9B166AE82000D0AB2C /* 3x3_05.png in Resources */,
 				C60E4FF5169805DD006BD352 /* vww_logo.png in Resources */,
 				C60E4FF8169807C8006BD352 /* custom.strings in Resources */,
+				C63EDF30169BFB530036E49B /* paid_vs_free.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,8 +801,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -812,8 +816,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "00C13604-DB92-4521-B760-FAB1911D10FA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00C13604-DB92-4521-B760-FAB1911D10FA";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -826,8 +830,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -835,8 +839,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "00C13604-DB92-4521-B760-FAB1911D10FA";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00C13604-DB92-4521-B760-FAB1911D10FA";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -854,8 +858,8 @@
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8526BA0B-F57E-412B-9F5B-85B477ED0012";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8526BA0B-F57E-412B-9F5B-85B477ED0012";
+				PROVISIONING_PROFILE = "F544128D-6F65-49B3-9C0D-AD249E01720A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F544128D-6F65-49B3-9C0D-AD249E01720A";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -872,8 +876,8 @@
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8526BA0B-F57E-412B-9F5B-85B477ED0012";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8526BA0B-F57E-412B-9F5B-85B477ED0012";
+				PROVISIONING_PROFILE = "F544128D-6F65-49B3-9C0D-AD249E01720A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F544128D-6F65-49B3-9C0D-AD249E01720A";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

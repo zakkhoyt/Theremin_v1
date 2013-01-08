@@ -1,0 +1,48 @@
+This document outlines the future differences between paid and free versions of this app. 
+
+
+* info/help screen
+    * free
+        * popup all the time
+    * paid
+        * shows first couple times, then never after that 
+        * unless "defaults" are reset
+* min/max frequencies
+    * free
+        * 50-2000
+    * paid
+        * 20-3000, but customizable
+        
+* effects
+    * free
+        * autotune (chromatic only)
+    * paid
+        * autotune (with chromatic and all major/minor keys)
+        * echo/delay (configurable)
+        * linearize (configurable)
+        * throttle (configurable)
+        * other (configurable)
+
+* Open GL
+    * free  
+        * no renderng
+    * paid
+        * render waveforms (configurable)
+        * rotation options
+        
+        
+* Bounjor (aka Composer Mode)
+    * free
+        * not included
+    * paid
+        * control other instances. Master will control pitch, and timing. Slaves will control effect, wavetype, etc...
+
+* Record/playback?
+    * free  
+        * not included
+    * paid
+        * wav or compressed audio
+        * binary data (musical paper)
+
+
+* Share config files?

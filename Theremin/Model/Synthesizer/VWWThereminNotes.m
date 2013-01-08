@@ -149,7 +149,7 @@
     return r;
 }
 
-
+// I precalculated these frequendies with the formula f = 2^n/12 * 27.5 with n from 1 .. 114
 -(void)initializeAllNotes{
     self.notes = [NSArray arrayWithObjects:NWF(27.50),
                   NWF(29.14),
@@ -269,15 +269,18 @@
                   nil];
 }
 
+
 //// major = 0, 2, 4, 5, 7, 9, 11
-//9xBCx
-//45x7x
-//x0x2x
+// Guitar pattern
+//D:9xBCx
+//A:5x7x
+//E:x0x2x
 
 //// minor = 0, 2, 3, 5, 7, 8, 10,
-//xAxCx
-//x5x78
-//x0x23
+// Guitar pattern
+//D:xAxCx
+//A:x5x78
+//E:x0x23
 
 
 
@@ -319,7 +322,7 @@
     _notesInGMajor = [NSArray new];
 }
 
-// These notes were precalculated with the formula f = 2^n/12 * 27.5 with n from 1 .. 114
+
 -(void)initializeClass{
     [self initializeAllNotes];
     [self initializeNotesInAMinor];

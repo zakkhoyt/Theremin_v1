@@ -133,7 +133,7 @@ static NSString* kKeyZ = @"z";
     else{
         _x.muted = NO;
         _y.muted = NO;
-        _z.muted = self.inputType == kInputTouch ? YES : NO;
+        _z.muted = self.inputType == kInputTouch ? YES : NO; // Mute touch Z always
     }
 }
 

@@ -23,15 +23,6 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 #pragma mark - UIResponder touch events.
 // If we don't override these methods, the responder chain will end up at our
 // touch screen input

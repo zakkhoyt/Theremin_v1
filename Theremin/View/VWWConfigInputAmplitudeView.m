@@ -8,8 +8,6 @@
 
 #import "VWWConfigInputAmplitudeView.h"
 
-
-
 @interface VWWConfigInputAmplitudeView ()
 @property (nonatomic, retain) VWWLine* lineAmplitude;
 @property (nonatomic, retain) VWWLine* lineX;
@@ -19,8 +17,6 @@
 @property (nonatomic) bool lineYValid;
 @property (nonatomic) bool lineZValid;
 @end
-
-
 
 @implementation VWWConfigInputAmplitudeView
 
@@ -34,7 +30,6 @@
     }
     return self;
 }
-
 
 
 - (void)drawRect:(CGRect)rect

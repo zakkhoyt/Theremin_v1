@@ -6,31 +6,6 @@
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
 
-//<!-- Example XML formatting -->
-//<input type="accelerometer>
-//    <axis name="x">
-//        <fmax>2500</fmax>
-//        <fmin>20</fmin>
-//        <waveform>square</waveform>
-//        <sensitivity>1.0</sensitivity>
-//        <effect>none</effect>
-//    </axis>
-//    <axis name="y">
-//        <fmax>2500</fmax>
-//        <fmin>20</fmin>
-//        <waveform>square</waveform>
-//        <sensitivity>1.0</sensitivity>
-//        <effect>none</effect>
-//    </axis>
-//    <axis name="z">
-//        <fmax>2500</fmax>
-//        <fmin>20</fmin>
-//        <waveform>square</waveform>
-//        <sensitivity>1.0</sensitivity>
-//        <effect>none</effect>
-//    </axis>
-//</input>
-
 ////Example JSON formatting
 //{
 //    "type" : "touchscreen",

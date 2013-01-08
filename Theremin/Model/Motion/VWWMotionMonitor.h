@@ -31,13 +31,11 @@ typedef struct{
 
 @class VWWMotionMonitor;
 
-
 @protocol VWWMotionMonitorDelegate <NSObject>
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device;
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device;
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device;
 @end
-
 
 @interface VWWMotionMonitor : NSObject
 @property (nonatomic, assign) id <VWWMotionMonitorDelegate> delegate;

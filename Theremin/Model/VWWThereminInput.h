@@ -9,17 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "VWWThereminInputAxis.h"
 
-
 @interface VWWThereminInput : NSObject
 @property (nonatomic, retain) VWWThereminInputAxis* x;
 @property (nonatomic, retain) VWWThereminInputAxis* y;
 @property (nonatomic, retain) VWWThereminInputAxis* z;
 @property (nonatomic) InputType inputType;
-@property (nonatomic, setter=setMuted:) bool muted;
+@property (nonatomic) bool muted;
+
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 -(id)initWithType:(InputType)type;
-
 -(NSDictionary*)jsonRepresentation;
 -(NSString*)description;
-
 @end

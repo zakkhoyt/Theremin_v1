@@ -19,12 +19,13 @@ typedef enum{
 
 typedef enum{
     kInputNone = 0x00,
-    kInputTouch = 0x01,
-    kInputAccelerometer = 0x02,
-    kInputGyros = 0x04,
-    kInputMagnetometer = 0x08,
+    kInputTouch,
+    kInputAccelerometer,
+    kInputGyros,
+    kInputMagnetometer,
 } InputType;
 
+// Use bitwise so we can apply multiple settings to one channel
 typedef enum{
     kEffectNone = 0x00,
     kEffectAutoTune = 0x01,

@@ -10,6 +10,8 @@
 #ifndef Theremin_VWWThereminConfiguration_h
 #define Theremin_VWWThereminConfiguration_h
 
+#define VWW_ENABLE_PAID_VERSION     1
+
 // Temporary in order to not render for release 1.0
 #define VWW_SKIP_RENDERING_CALL     1
 

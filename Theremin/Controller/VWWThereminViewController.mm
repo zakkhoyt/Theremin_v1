@@ -245,7 +245,11 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
     glClearColor(0,0,0,1);
     glClear(GL_COLOR_BUFFER_BIT);
+    
+#if defined(VWW_SKIP_RENDERING_CALL)
+#else
     [self.cubes makeObjectsPerformSelector:@selector(render)];
+#endif
 }
 
 #pragma mark - Implements GLKViewControllerDelegate

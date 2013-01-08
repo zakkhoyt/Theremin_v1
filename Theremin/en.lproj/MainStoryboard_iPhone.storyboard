@@ -260,32 +260,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UNL-aA-fpn">
-                                        <rect key="frame" x="240" y="156" width="80" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
-                                        <state key="normal" title="Linearize" backgroundImage="button_background.png">
-                                            <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="button_background_pressed.png"/>
-                                        <state key="highlighted" backgroundImage="button_background_pressed.png">
-                                            <color key="titleColor" red="1" green="0.044120462989999998" blue="0.030343670119999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1MC-c3-NOu">
-                                        <rect key="frame" x="240" y="294" width="80" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
-                                        <state key="normal" title="Throttle" backgroundImage="button_background.png">
-                                            <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="button_background_pressed.png"/>
-                                        <state key="highlighted" backgroundImage="button_background_pressed.png">
-                                            <color key="titleColor" red="1" green="0.044120462989999998" blue="0.030343670119999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5mC-aj-pHG">
                                         <rect key="frame" x="240" y="442" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -329,9 +303,7 @@
                         <outlet property="autotuneLabel" destination="ut8-fK-5Ba" id="74f-Ku-Dfq"/>
                         <outlet property="configView" destination="1v0-7a-rkf" id="4SU-MV-jfD"/>
                         <outlet property="infoView" destination="psY-rt-Li8" id="FEe-Ih-K0f"/>
-                        <outlet property="linearizeLabel" destination="UNL-aA-fpn" id="vrf-HB-euL"/>
                         <outlet property="noEffectLabel" destination="5mC-aj-pHG" id="Ydl-1o-aep"/>
-                        <outlet property="throttleLabel" destination="1MC-c3-NOu" id="i6t-Gb-K9G"/>
                         <outlet property="xLabel" destination="gff-o0-yGn" id="8MU-ya-Aw8"/>
                         <outlet property="yLabel" destination="p9E-3P-qej" id="ZlD-gn-eis"/>
                         <outlet property="zLabel" destination="1he-7K-Y5G" id="yBK-Kq-z5P"/>
@@ -867,7 +839,7 @@
         <scene sceneID="8SM-ei-n0J">
             <objects>
                 <viewController id="Us7-Dd-BmP" customClass="VWWThereminSettingsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VFt-aX-43N">
+                    <view key="view" contentMode="scaleToFill" id="VFt-aX-43N" customClass="VWWThereminSettingsView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8zd-EJ-BrW">
@@ -900,7 +872,7 @@
                                     <action selector="handle_butInputAccelerometer:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="7Xm-RB-ezV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1sf-xs-ly6">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1sf-xs-ly6">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="13"/>
@@ -1345,7 +1317,7 @@
                                     <action selector="configMagnetometerKey:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="xWO-I2-9ge"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ola-ul-XDI">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ola-ul-XDI">
                                 <rect key="frame" x="0.0" y="454" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
@@ -1391,7 +1363,7 @@
         <scene sceneID="nI2-Xb-9OQ">
             <objects>
                 <viewController id="Yed-yr-VnA" customClass="VWWThereminAboutViewController" sceneMemberID="viewController">
-                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="HTr-Gf-Jlc">
+                    <view key="view" contentMode="scaleToFill" id="HTr-Gf-Jlc" customClass="VWWThereminAboutView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -1399,7 +1371,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Source  code available at https://github.com/zakkhoyt/Theremin" textAlignment="right" id="Pu1-IE-70O">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Source  code available at https://github.com/zakkhoyt/Theremin" id="Pu1-IE-70O">
                                 <rect key="frame" x="0.0" y="283" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1442,7 +1414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNb-8o-GYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1291" y="1640"/>
+            <point key="canvasLocation" x="1327" y="1640"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oFI-tc-O01">
@@ -1702,6 +1674,9 @@
         <class className="VWWConfigInputWaveformView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputWaveformView.h"/>
         </class>
+        <class className="VWWThereminAboutView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminAboutView.h"/>
+        </class>
         <class className="VWWThereminAboutViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminAboutViewController.h"/>
             <relationships>
@@ -1719,10 +1694,6 @@
         </class>
         <class className="VWWThereminConfigInputFrequencyViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputFrequencyViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismissInfoViewButton:"/>
-                <relationship kind="action" name="doneButtonHandler:"/>
-            </relationships>
         </class>
         <class className="VWWThereminConfigInputKeyViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputKeyViewController.h"/>
@@ -1732,6 +1703,9 @@
         </class>
         <class className="VWWThereminConfigInputWaveformsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputWaveformsViewController.h"/>
+        </class>
+        <class className="VWWThereminSettingsView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsView.h"/>
         </class>
         <class className="VWWThereminSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsViewController.h"/>

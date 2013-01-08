@@ -24,6 +24,8 @@
 		C6357CF415C7A5690074E722 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEF15C7A5690074E722 /* square_256x256.png */; };
 		C6357CF515C7A5690074E722 /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CF015C7A5690074E722 /* triangle_256x256.png */; };
 		C6357CF615C7A5690074E722 /* waveforms.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CF115C7A5690074E722 /* waveforms.png */; };
+		C63EDF29169BC74F0036E49B /* VWWThereminAboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EDF28169BC74F0036E49B /* VWWThereminAboutView.m */; };
+		C63EDF2D169BC83F0036E49B /* VWWThereminSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EDF2C169BC83F0036E49B /* VWWThereminSettingsView.m */; };
 		C66F465115C7B7EF0066E94B /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464B15C7AE690066E94B /* Default-Portrait~ipad.png */; };
 		C66F465215C7B7F70066E94B /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */; };
 		C6747F66168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6747F65168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm */; };
@@ -126,6 +128,10 @@
 		C6357CEF15C7A5690074E722 /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_256x256.png; path = images/square_256x256.png; sourceTree = "<group>"; };
 		C6357CF015C7A5690074E722 /* triangle_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle_256x256.png; path = images/triangle_256x256.png; sourceTree = "<group>"; };
 		C6357CF115C7A5690074E722 /* waveforms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = waveforms.png; path = images/waveforms.png; sourceTree = "<group>"; };
+		C63EDF27169BC74F0036E49B /* VWWThereminAboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminAboutView.h; sourceTree = "<group>"; };
+		C63EDF28169BC74F0036E49B /* VWWThereminAboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminAboutView.m; sourceTree = "<group>"; };
+		C63EDF2B169BC83F0036E49B /* VWWThereminSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminSettingsView.h; sourceTree = "<group>"; };
+		C63EDF2C169BC83F0036E49B /* VWWThereminSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminSettingsView.m; sourceTree = "<group>"; };
 		C66F463F15C7AD880066E94B /* Icon_144x144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_144x144.png; path = ../Icon_144x144.png; sourceTree = "<group>"; };
 		C66F464115C7AD990066E94B /* Icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_57x57.png; path = ../Icon_57x57.png; sourceTree = "<group>"; };
 		C66F464315C7AD9F0066E94B /* Icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon_114x114.png; path = ../Icon_114x114.png; sourceTree = "<group>"; };
@@ -334,6 +340,10 @@
 				C6F23BD2169A96D6001C8FA8 /* VWWConfigInputKeyView.m */,
 				C6747F68168FECDF007133AD /* VWWConfigInputEffectsView.h */,
 				C6747F69168FECDF007133AD /* VWWConfigInputEffectsView.m */,
+				C63EDF27169BC74F0036E49B /* VWWThereminAboutView.h */,
+				C63EDF28169BC74F0036E49B /* VWWThereminAboutView.m */,
+				C63EDF2B169BC83F0036E49B /* VWWThereminSettingsView.h */,
+				C63EDF2C169BC83F0036E49B /* VWWThereminSettingsView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -721,6 +731,8 @@
 				C6F23BD0169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm in Sources */,
 				C6F23BD3169A96D6001C8FA8 /* VWWConfigInputKeyView.m in Sources */,
 				C6C1BC2C169BA4B400AD8244 /* VWWThereminEffectNoteKey.m in Sources */,
+				C63EDF29169BC74F0036E49B /* VWWThereminAboutView.m in Sources */,
+				C63EDF2D169BC83F0036E49B /* VWWThereminSettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

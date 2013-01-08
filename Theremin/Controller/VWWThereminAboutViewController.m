@@ -7,6 +7,7 @@
 //
 
 #import "VWWThereminAboutViewController.h"
+#import "VWWThereminAboutView.h"
 
 @interface VWWThereminAboutViewController ()
 - (IBAction)doneButtonHandler:(id)sender;

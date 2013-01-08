@@ -273,7 +273,7 @@
 //// major = 0, 2, 4, 5, 7, 9, 11
 // Guitar pattern
 //D:9xBCx
-//A:5x7x
+//A:45x7x
 //E:x0x2x
 
 //// minor = 0, 2, 3, 5, 7, 8, 10,

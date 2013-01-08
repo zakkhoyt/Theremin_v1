@@ -104,7 +104,7 @@
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s51-gt-XO2">
                             <rect key="frame" x="62" y="82" width="197" height="192"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Configure maximum and minimum frequcencies by drawing a line from the axis on the left to a point on the frequency line on the right. When the line turns from red to green and the desired frequecny is displayed, release your finger. To set a new frequency, repeat.</string>
+                            <string key="text">Configure the waveform for each axis by drawing a line from the axis on the left to a waveform type on the right. When the line turns from red to green, you have made a valid selection and can release your finger. To set a new waveform, repeat.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                                 <action selector="dismissInfoViewButton:" destination="t6j-yK-gz4" eventType="touchUpInside" id="lQH-Y0-Fe8"/>
                             </connections>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Configure the sensitivity of each axis by chaning the slider values." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RSw-PK-cy7">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Configure the sensitivity of each axis by changing the slider values." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RSw-PK-cy7">
                             <rect key="frame" x="62" y="82" width="197" height="192"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -332,9 +332,10 @@
                                 <action selector="dismissInfoViewButton:" destination="Kph-Z2-9Ne" eventType="touchUpInside" id="6T0-kj-4bU"/>
                             </connections>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Configure the sensitivity of each axis by chaning the slider values." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IcX-6W-15x">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IcX-6W-15x">
                             <rect key="frame" x="62" y="82" width="197" height="192"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Configure the effect type for each axis by drawing a line from the axis on the left to an effect type on the right. When the line turns from red to green, you have made a valid selection and can release your finger. To set a new effect, repeat.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -609,41 +610,51 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pxu-nu-Bis">
-                                        <rect key="frame" x="260" y="0.0" width="60" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis amplitude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Hk-za-LAU">
+                                        <rect key="frame" x="108" y="15" width="105" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ox7-l2-OTd">
-                                        <rect key="frame" x="0.0" y="19" width="60" height="30"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis amplitude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vby-Hs-iu8">
+                                        <rect key="frame" x="75" y="205" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hiv-mi-G47">
-                                        <rect key="frame" x="0.0" y="237" width="60" height="30"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis amplitude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ecc-ll-YzS">
+                                        <rect key="frame" x="75" y="408" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJ1-fu-DID">
-                                        <rect key="frame" x="0.0" y="453" width="60" height="30"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="LZv-9H-qYG">
+                                        <rect key="frame" x="18" y="54" width="284" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="xSliderHandler:" destination="VvZ-jq-Jon" eventType="valueChanged" id="NOT-DC-pNK"/>
+                                            <action selector="xSliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="eM7-hl-KJB"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="sYi-Ea-azo">
+                                        <rect key="frame" x="18" y="252" width="284" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J2D-fe-pH1">
-                                        <rect key="frame" x="260" y="483" width="60" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <connections>
+                                            <action selector="ySliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="Ije-fo-4at"/>
+                                            <action selector="ySliderHandler:" destination="VvZ-jq-Jon" eventType="valueChanged" id="et2-q8-qnA"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="xK0-VT-24H">
+                                        <rect key="frame" x="18" y="454" width="284" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="zSliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="dgi-Ui-X1P"/>
+                                            <action selector="zSliderHandler:" destination="VvZ-jq-Jon" eventType="valueChanged" id="wJR-J2-Lct"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -658,13 +669,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="amplitudeMaxLabel" destination="Pxu-nu-Bis" id="L7H-eR-btw"/>
-                        <outlet property="amplitudeMinLabel" destination="J2D-fe-pH1" id="V9w-C5-jfJ"/>
                         <outlet property="configView" destination="KRr-K7-Hoj" id="9iC-8v-qZu"/>
                         <outlet property="infoView" destination="k1e-tb-pkn" id="eIQ-lN-5gF"/>
-                        <outlet property="xLabel" destination="Ox7-l2-OTd" id="epb-kb-JEK"/>
-                        <outlet property="yLabel" destination="hiv-mi-G47" id="vFy-H7-n3q"/>
-                        <outlet property="zLabel" destination="SJ1-fu-DID" id="w21-CB-lbX"/>
+                        <outlet property="xSlider" destination="LZv-9H-qYG" id="ud1-0d-O1O"/>
+                        <outlet property="ySlider" destination="sYi-Ea-azo" id="0hK-ta-vEb"/>
+                        <outlet property="zSlider" destination="xK0-VT-24H" id="FkX-9L-8G6"/>
+                        <outlet property="zSliderLabel" destination="Ecc-ll-YzS" id="b6T-xY-Y7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bo-FO-TpH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -690,10 +700,9 @@
                                 <action selector="dismissInfoViewButton:" destination="VvZ-jq-Jon" eventType="touchUpInside" id="ztT-d5-r2r"/>
                             </connections>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gaj-M7-p9u">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Configure the amplitude for a channel by changing the sliders below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gaj-M7-p9u">
                             <rect key="frame" x="62" y="82" width="197" height="192"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Configure the amplitude for a channel by drawing a line from the axis on the left to a point on the amplitude line on the right. When the line turns from red to green and the desired frequecny is displayed, release your finger. To set a new amplitude, repeat.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -824,7 +833,7 @@
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xys-R0-HJx">
                             <rect key="frame" x="62" y="82" width="197" height="192"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Configure maximum and minimum frequcencies by drawing a line from the axis on the left to a point on the frequency line on the right. When the line turns from red to green and the desired frequecny is displayed, release your finger. To set a new frequency, repeat.</string>
+                            <string key="text">Configure the minimum and maximum frequencies for each axis by drawing a line from the axis on the left to a point on the frequency line on the right. When the line turns from red to green, you have made a valid selection and can release your finger. To set a new frequency, repeat.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -1197,7 +1206,7 @@
                                     <action selector="configTouchscreenEffects:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="Cgw-Xb-Ur3"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mrb-VF-kDm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mrb-VF-kDm">
                                 <rect key="frame" x="0.0" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
@@ -1212,7 +1221,7 @@
                                     <action selector="configTouchscreenAmplitude:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="Tby-ak-CU4"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n0k-pk-x6E">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n0k-pk-x6E">
                                 <rect key="frame" x="80" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
@@ -1227,7 +1236,7 @@
                                     <action selector="configAccelerometerAmplitude:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="MLA-3Q-l4m"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WAf-xv-aSh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WAf-xv-aSh">
                                 <rect key="frame" x="160" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
@@ -1242,7 +1251,7 @@
                                     <action selector="configGyroscopeAmplitude:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="GvJ-0l-F2i"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lT-cU-HZ2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lT-cU-HZ2">
                                 <rect key="frame" x="240" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>

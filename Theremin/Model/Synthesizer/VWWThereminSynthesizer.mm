@@ -40,7 +40,8 @@ OSStatus RenderTone( void* inRefCon,
 //    static NSUInteger counter = 0;
 //    const NSUInteger counterThreshold = 1;
 //    if(counter++ >= counterThreshold){
-//        NSLog(@"amplitude:%f freq:%f self=%x",synth.amplitude,  synth.frequency, (NSUInteger)synth);
+//        int muted = synth.muted ? 1 : 0;
+//        NSLog(@"muted:%d amplitude:%f freq:%f self=%x", muted, synth.amplitude,  synth.frequency, (NSUInteger)synth);
 //        counter = 0;
 //    }
 
@@ -52,28 +53,32 @@ OSStatus RenderTone( void* inRefCon,
 	// Generate the samples
 	for (UInt32 frame = 0; frame < inNumberFrames; frame++)
 	{
-        switch(synth.waveType){
-            case kWaveSin:{
-                buffer[frame] = sin(theta) * synth.amplitude;
-                break;
-            }
-            case kWaveSquare:{
-                buffer[frame] = square(theta) * synth.amplitude;
-                break;
-            }
-            case kWaveSawtooth:{
-                buffer[frame] = sawtooth(theta) * synth.amplitude;
-                break;
-            }
-            case kWaveTriangle:{
-                buffer[frame] = triangle(theta) * synth.amplitude;
-                break;
-            }
-            default:
-                break;
-                
+        if(synth.muted){
+            buffer[frame] = 0;
         }
-                
+        else{
+            switch(synth.waveType){
+                case kWaveSin:{
+                    buffer[frame] = sin(theta) * synth.amplitude;
+                    break;
+                }
+                case kWaveSquare:{
+                    buffer[frame] = square(theta) * synth.amplitude;
+                    break;
+                }
+                case kWaveSawtooth:{
+                    buffer[frame] = sawtooth(theta) * synth.amplitude;
+                    break;
+                }
+                case kWaveTriangle:{
+                    buffer[frame] = triangle(theta) * synth.amplitude;
+                    break;
+                }
+                default:
+                    break;
+                    
+            }
+        }
 		theta += theta_increment;
 		if (theta > 2.0 * M_PI)
 		{
@@ -106,6 +111,7 @@ OSStatus RenderTone( void* inRefCon,
     if(self){
         _frequency = frequency;
         _amplitude = amplitude;
+        _muted = NO;
         _waveType = kWaveSin;
         _isRunning = NO;
         _theta = 0;

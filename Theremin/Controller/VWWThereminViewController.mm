@@ -136,8 +136,10 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
         [self touchEvent:touches withEvent:event];
     }
     
-    [VWWThereminInputs touchscreenInput].x.amplitude = 1.0;
-    [VWWThereminInputs touchscreenInput].y.amplitude = 1.0;
+    [VWWThereminInputs touchscreenInput].x.muted = NO;
+    [VWWThereminInputs touchscreenInput].y.muted = NO;
+//    [VWWThereminInputs touchscreenInput].x.amplitude = 1.0;
+//    [VWWThereminInputs touchscreenInput].y.amplitude = 1.0;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -165,9 +167,11 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     // Synth
     self.selectedPixel = CGPointMake(0, 0);
     
-    
-    [VWWThereminInputs touchscreenInput].x.amplitude = 0;
-    [VWWThereminInputs touchscreenInput].y.amplitude = 0;
+    [VWWThereminInputs touchscreenInput].x.muted = YES;
+    [VWWThereminInputs touchscreenInput].y.muted = YES;
+//    
+//    [VWWThereminInputs touchscreenInput].x.amplitude = 0;
+//    [VWWThereminInputs touchscreenInput].y.amplitude = 0;
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{

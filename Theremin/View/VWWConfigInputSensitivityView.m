@@ -32,4 +32,15 @@
 }
 */
 
+#pragma mark - UIResponder touch events.
+// If we don't override these methods, the responder chain will end up at our
+// touch screen input
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+}
+
+
 @end

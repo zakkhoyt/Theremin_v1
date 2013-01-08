@@ -13,9 +13,6 @@
 // Temporary in order to not render for release 1.0
 #define VWW_SKIP_RENDERING_CALL     1
 
-// Max/min amplitude that can be reached by any channel
-#define VWW_AMPLITUDE_MAX           1.0
-#define VWW_AMPLITUDE_MIN           0.0
 
 // Max/min frequency that can be reached by any channel
 #define VWW_FREQUENCY_MAX           2500.0
@@ -28,9 +25,9 @@
 #define VWW_SENSITIVITY             1.0
 #define VWW_EFFECT                  kEffectNone
 #define VWW_INPUT_TYPE              kInputTouch
-#define VWW_VOLUME                  0.0
+#define VWW_AMPLITUDE               1.0
 #define VWW_NOTE_KEY                kNoteKeyChromatic
-
+#define VWW_MUTED                   YES
 #define VWW_SHOW_INFO_SCREENS       1
 #define VWW_MAX_CHANNELS            1
 

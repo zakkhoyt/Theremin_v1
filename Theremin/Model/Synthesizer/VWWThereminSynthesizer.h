@@ -20,6 +20,7 @@
 @interface VWWThereminSynthesizer : NSObject
 
 @property float amplitude;
+@property bool muted;
 @property (nonatomic, setter=setFrequency:) float frequency;
 @property WaveType waveType;
 @property EffectType effectType;

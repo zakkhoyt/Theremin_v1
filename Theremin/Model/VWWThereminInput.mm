@@ -33,13 +33,6 @@ static NSString* kKeyZ = @"z";
         _x = [[VWWThereminInputAxis alloc]init];
         _y = [[VWWThereminInputAxis alloc]init];
         _z = [[VWWThereminInputAxis alloc]init];
-        
-//        // We will give our touch channels amplitude of 1, but leave others at 0 so they don't annoy
-//        if(_inputType == kInputTouch){
-//            self.x.amplitude = 1.0;
-//            self.y.amplitude = 1.0;
-//            //self.z.amplitude = 1.0;  // no z axis for touch
-//        }
     }
     return self;
 }
@@ -65,13 +58,7 @@ static NSString* kKeyZ = @"z";
             _x = [[VWWThereminInputAxis alloc]init];
             _y = [[VWWThereminInputAxis alloc]init];
             _z = [[VWWThereminInputAxis alloc]init];
-            
-//            // We will give our touch channels amplitude of 1, but leave others at 0 so they don't annoy
-//            if(_inputType == kInputTouch){
-//                self.x.amplitude = 1.0;
-//                self.y.amplitude = 1.0;
-//                //self.z.amplitude = 1.0;  // no z axis for touch
-//            }
+
         }
     }
     return self;
@@ -88,10 +75,10 @@ static NSString* kKeyZ = @"z";
 
 -(void)enableTouchScreenByDefault{
     if(_inputType == kInputTouch){
-        _enabled = YES;
+        self.muted = NO;
     }
     else{
-        _enabled = NO;
+        self.muted = YES;
     }
 }
 
@@ -134,19 +121,19 @@ static NSString* kKeyZ = @"z";
 }
 
 
--(void)setEnabled:(bool)newEnabled{
-    if(_enabled == newEnabled) return;
+-(void)setMuted:(bool)newMuted{
+    if(_muted == newMuted) return;
 
-    _enabled = newEnabled;
-    if(_enabled){
-        _x.amplitude = 1.0;
-        _y.amplitude = 1.0;
-        _z.amplitude = 1.0;
+    _muted = newMuted;
+    if(_muted){
+        _x.muted = YES;
+        _y.muted = YES;
+        _z.muted = YES;
     }
     else{
-        _x.amplitude = 0.0;
-        _y.amplitude = 0.0;
-        _z.amplitude = 0.0;
+        _x.muted = NO;
+        _y.muted = NO;
+        _z.muted = self.inputType == kInputTouch ? YES : NO;
     }
 }
 

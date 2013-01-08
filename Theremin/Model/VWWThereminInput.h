@@ -15,7 +15,7 @@
 @property (nonatomic, retain) VWWThereminInputAxis* y;
 @property (nonatomic, retain) VWWThereminInputAxis* z;
 @property (nonatomic) InputType inputType;
-@property (nonatomic, setter=setEnabled:) bool enabled;
+@property (nonatomic, setter=setMuted:) bool muted;
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 -(id)initWithType:(InputType)type;
 

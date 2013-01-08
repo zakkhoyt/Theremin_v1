@@ -23,6 +23,7 @@ static NSString* kKeyAutotune = @"autotune";
 static NSString* kKeyLinearize = @"linearize";
 static NSString* kKeyThrottle = @"throttle";
 static NSString* kKeyAmplitude = @"amplitude";
+static NSString* kKeyMuted = @"muted";
 static NSString* kKeyNone = @"none";
 
 
@@ -39,12 +40,14 @@ static NSString* kKeyNone = @"none";
         _waveType = VWW_WAVETYPE;
         _sensitivity = VWW_SENSITIVITY;
         _effectType = VWW_EFFECT;
-        _amplitude = VWW_VOLUME;
+        _amplitude = VWW_AMPLITUDE;
+        _muted = VWW_MUTED;
 
         _frequency = _frequencyMax;
         _synthesizer = [[VWWThereminSynthesizer alloc]initWithAmplitude:_amplitude andFrequency:_frequency];
         _synthesizer.waveType = _waveType;
         _synthesizer.effectType = _effectType;
+        _synthesizer.muted = _muted;
         [_synthesizer start];
     }
     return self;
@@ -66,6 +69,8 @@ static NSString* kKeyNone = @"none";
             _waveType = [self  waveformFromString:wavetypeString];
             NSNumber* amplitudeNumber = [dictionary objectForKey:kKeyAmplitude];
             _amplitude = amplitudeNumber.floatValue;
+            NSNumber* mutedNumber = [dictionary objectForKey:kKeyMuted];
+            _muted = mutedNumber.floatValue > 0;
         }
         else{
             _frequencyMax = VWW_INPUT_FREQUENCY_MAX;
@@ -73,13 +78,15 @@ static NSString* kKeyNone = @"none";
             _waveType = VWW_WAVETYPE;
             _sensitivity = VWW_SENSITIVITY;
             _effectType = VWW_EFFECT;
-            _amplitude = VWW_VOLUME;
+            _amplitude = VWW_AMPLITUDE;
+            _muted = VWW_MUTED;
         }
     
         _frequency = _frequencyMax;
         _synthesizer = [[VWWThereminSynthesizer alloc]initWithAmplitude:_amplitude andFrequency:_frequency];
         _synthesizer.waveType = _waveType;
         _synthesizer.effectType = _effectType;
+        _synthesizer.muted = _muted;
         [_synthesizer start];
     }
     return self;
@@ -93,6 +100,7 @@ static NSString* kKeyNone = @"none";
     [jsonDict setValue:@(self.sensitivity) forKey:kKeySensitivity];
     [jsonDict setValue:[self stringForWaveform] forKey:kKeyWaveType];
     [jsonDict setValue:@(self.amplitude) forKey:kKeyAmplitude];
+    [jsonDict setValue:@(_muted ? 1 : 0) forKey:kKeyMuted];
     return jsonDict;
 }
 
@@ -179,5 +187,10 @@ static NSString* kKeyNone = @"none";
 -(void)setWaveType:(WaveType)newWaveType{
     _waveType = newWaveType;
     self.synthesizer.waveType = _waveType;
+}
+
+-(void)setMuted:(bool)newMuted{
+    _muted = newMuted;
+    self.synthesizer.muted = _muted;
 }
 @end

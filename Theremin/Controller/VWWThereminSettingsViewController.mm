@@ -112,16 +112,16 @@ VWWThereminConfigInputKeyViewControllerDelegate>
     self.navigationItem.title = @"Settings";
     
     UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
-    if([VWWThereminInputs accelerometerInput].enabled)
+    if([VWWThereminInputs accelerometerInput].muted == NO)
         [self.butInputAccelerometer setBackgroundImage:buttonImage forState:UIControlStateNormal];
 
-    if([VWWThereminInputs gyroscopeInput].enabled)
+    if([VWWThereminInputs gyroscopeInput].muted == NO)
         [self.butInputGyros setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
-    if([VWWThereminInputs magnetometerInput].enabled)
+    if([VWWThereminInputs magnetometerInput].muted == NO)
         [self.butInputMagnetometer setBackgroundImage:buttonImage forState:UIControlStateNormal];
     
-    if([VWWThereminInputs touchscreenInput].enabled)
+    if([VWWThereminInputs touchscreenInput].muted == NO)
         [self.butInputTouch setBackgroundImage:buttonImage forState:UIControlStateNormal];
 }
 
@@ -224,76 +224,76 @@ VWWThereminConfigInputKeyViewControllerDelegate>
     VWWThereminInput* magnetometer = [VWWThereminInputs magnetometerInput];
     UIButton* button = (UIButton*)sender;
     
-    if(magnetometer.enabled){
-        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
-        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-        [self.motion stopMagnetometer];
-        if(self.delegate) [self.delegate userSetMagnetometerInput:NO];
-    }
-    else{
+    if(magnetometer.muted){
         UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
         [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.motion startMagnetometer];
         if(self.delegate) [self.delegate userSetMagnetometerInput:YES];
     }
-    magnetometer.enabled = !magnetometer.enabled;
+    else{
+        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
+        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.motion stopMagnetometer];
+        if(self.delegate) [self.delegate userSetMagnetometerInput:NO];
+    }
+    magnetometer.muted = !magnetometer.muted;
 }
 
 - (IBAction)handle_butInputAccelerometer:(id)sender{
     VWWThereminInput* accelerometer = [VWWThereminInputs accelerometerInput];
     UIButton* button = (UIButton*)sender;
 
-    if(accelerometer.enabled){
-        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
-        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-        [self.motion stopAccelerometer];
-        if(self.delegate) [self.delegate userSetAccelerometerInput:NO];
-    }
-    else{
+    if(accelerometer.muted){
         UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
         [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.motion startAccelerometer];
         if(self.delegate) [self.delegate userSetAccelerometerInput:YES];
     }
-    accelerometer.enabled = !accelerometer.enabled;
+    else{
+        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
+        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.motion stopAccelerometer];
+        if(self.delegate) [self.delegate userSetAccelerometerInput:NO];
+    }
+    accelerometer.muted = !accelerometer.muted;
 }
 
 - (IBAction)handle_butInputTouch:(id)sender{
     VWWThereminInput* touchscreen = [VWWThereminInputs touchscreenInput];
     UIButton* button = (UIButton*)sender;
     
-    if(touchscreen.enabled){
-        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
-        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-//        [self.motion stopAccelerometer];
-//        if(self.delegate) [self.delegate userSetAccelerometerInput:NO];
-    }
-    else{
+    if(touchscreen.muted){
         UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
         [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-//        [self.motion startAccelerometer];
-//        if(self.delegate) [self.delegate userSetAccelerometerInput:YES];
+        //        [self.motion startAccelerometer];
+        //        if(self.delegate) [self.delegate userSetAccelerometerInput:YES];
     }
-    touchscreen.enabled = !touchscreen.enabled;
+    else{
+        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
+        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        //        [self.motion stopAccelerometer];
+        //        if(self.delegate) [self.delegate userSetAccelerometerInput:NO];
+    }
+    touchscreen.muted = !touchscreen.muted;
 }
 
 - (IBAction)handle_butInputGyros:(id)sender{
     VWWThereminInput* gyroscope = [VWWThereminInputs gyroscopeInput];
     UIButton* button = (UIButton*)sender;
     
-    if(gyroscope.enabled){
-        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
-        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
-        [self.motion stopGyros];
-        if(self.delegate) [self.delegate userSetGyroInput:NO];
-    }
-    else{
+    if(gyroscope.muted){
         UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
         [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
         [self.motion startGyros];
         if(self.delegate) [self.delegate userSetGyroInput:YES];
     }
-    gyroscope.enabled = !gyroscope.enabled;
+    else{
+        UIImage * buttonImage = [UIImage imageNamed:@"button_background.png"];
+        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [self.motion stopGyros];
+        if(self.delegate) [self.delegate userSetGyroInput:NO];
+    }
+    gyroscope.muted = !gyroscope.muted;
 }
 
 

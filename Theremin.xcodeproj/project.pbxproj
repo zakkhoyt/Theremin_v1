@@ -846,16 +846,16 @@
 		C6F753A915C6313C00911E59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
+				PROVISIONING_PROFILE = "52E32661-84D6-440B-9C15-A62977F03279";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52E32661-84D6-440B-9C15-A62977F03279";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -864,16 +864,16 @@
 		C6F753AA15C6313C00911E59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (9ZVN82L8V9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2A0E169D-D925-4F76-8E3F-6DA52A861AD8";
+				PROVISIONING_PROFILE = "52E32661-84D6-440B-9C15-A62977F03279";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52E32661-84D6-440B-9C15-A62977F03279";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

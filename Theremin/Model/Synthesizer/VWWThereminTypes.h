@@ -33,7 +33,7 @@ typedef enum{
 } EffectType;
 
 typedef enum{
-    kNoteKeyAll = 0,
+    kNoteKeyChromatic = 0,
     kNoteKeyAMinor,
     kNoteKeyAMajor,
     kNoteKeyBMinor,

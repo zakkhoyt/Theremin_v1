@@ -26,6 +26,14 @@
 +(void)saveConfigFile{
     [[self sharedInstance]saveFile];
 }
++(void)resetConfigAndSave{
+    VWWThereminInputs* vwwThereminInputs = [VWWThereminInputs sharedInstance];
+    [vwwThereminInputs.inputs removeAllObjects];
+    [vwwThereminInputs createAndSaveNewInputs];
+    
+    // Save the changes;
+    [[self sharedInstance]saveFile];
+}
 +(VWWThereminInput*)accelerometerInput{
     return [[self sharedInstance].inputs objectForKey:kKeyAccelerometer];
 }
@@ -55,22 +63,26 @@
         [self loadFile];
     }
     else{
-        VWWThereminInput* touchInput = [[VWWThereminInput alloc]initWithType:kInputTouch];
-        VWWThereminInput* accelerometerInput = [[VWWThereminInput alloc]initWithType:kInputAccelerometer];
-        VWWThereminInput* gyroscopeInput = [[VWWThereminInput alloc]initWithType:kInputGyros];
-        VWWThereminInput* magnetometerInput = [[VWWThereminInput alloc]initWithType:kInputMagnetometer];
-        
-        [self.inputs setObject:touchInput forKey:touchInput.description];
-        [self.inputs setObject:accelerometerInput forKey:accelerometerInput.description];
-        [self.inputs setObject:gyroscopeInput forKey:gyroscopeInput.description];
-        [self.inputs setObject:magnetometerInput forKey:magnetometerInput.description];
-        
-        [touchInput release];
-        [accelerometerInput release];
-        [gyroscopeInput release];
-        [magnetometerInput release];
-        [self saveFile];
+        [self createAndSaveNewInputs];
     }
+}
+
+-(void)createAndSaveNewInputs{
+    VWWThereminInput* touchInput = [[VWWThereminInput alloc]initWithType:kInputTouch];
+    VWWThereminInput* accelerometerInput = [[VWWThereminInput alloc]initWithType:kInputAccelerometer];
+    VWWThereminInput* gyroscopeInput = [[VWWThereminInput alloc]initWithType:kInputGyros];
+    VWWThereminInput* magnetometerInput = [[VWWThereminInput alloc]initWithType:kInputMagnetometer];
+    
+    [self.inputs setObject:touchInput forKey:touchInput.description];
+    [self.inputs setObject:accelerometerInput forKey:accelerometerInput.description];
+    [self.inputs setObject:gyroscopeInput forKey:gyroscopeInput.description];
+    [self.inputs setObject:magnetometerInput forKey:magnetometerInput.description];
+    
+    [touchInput release];
+    [accelerometerInput release];
+    [gyroscopeInput release];
+    [magnetometerInput release];
+    [self saveFile];
 }
 
 -(void)dealloc{

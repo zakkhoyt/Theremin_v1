@@ -84,7 +84,7 @@
 //            break;
 //        case kNoteKeyGMajor:
 //            break;
-//        case kNoteKeyAll:
+//        case kNoteKeyChromatic:
 //        default:
 //            break;
 //            return [self getClosestNote:frequency];

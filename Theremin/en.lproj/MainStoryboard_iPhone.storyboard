@@ -9,29 +9,29 @@
             <objects>
                 <viewController id="Cmr-2A-XxW" customClass="VWWThereminConfigInputWaveformsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ABE-vR-RVE">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="FEf-BS-A62" customClass="VWWConfigInputWaveformView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis waveform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eah-0c-g7P">
-                                        <rect key="frame" x="0.0" y="88" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="108" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis waveform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rek-TO-35P">
-                                        <rect key="frame" x="0.0" y="193" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="237" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis waveform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iUE-9E-GvZ">
-                                        <rect key="frame" x="0.0" y="296" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="363" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,15 +42,15 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="square_256x256.png" id="69U-pd-jV2">
-                                        <rect key="frame" x="220" y="104" width="100" height="100"/>
+                                        <rect key="frame" x="220" y="133" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="triangle_256x256.png" id="z5S-jh-tcw">
-                                        <rect key="frame" x="220" y="208" width="100" height="100"/>
+                                        <rect key="frame" x="220" y="266" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sawtooth_256x256.png" id="EGD-RB-hba">
-                                        <rect key="frame" x="220" y="312" width="100" height="100"/>
+                                        <rect key="frame" x="220" y="399" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -120,11 +120,11 @@
             <objects>
                 <viewController id="t6j-yK-gz4" customClass="VWWThereminConfigInputSensitivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K5d-3V-bm0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Cw8-bE-Et4" customClass="VWWConfigInputSensitivityView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis sensitivity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1It-5i-9WQ">
@@ -135,14 +135,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis sensitivity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tf5-gr-PtG">
-                                        <rect key="frame" x="75" y="169" width="170" height="30"/>
+                                        <rect key="frame" x="75" y="207" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis sensitivity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GrD-IW-37f">
-                                        <rect key="frame" x="75" y="334" width="170" height="30"/>
+                                        <rect key="frame" x="75" y="410" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -156,14 +156,14 @@
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="OL2-b4-3Vs">
-                                        <rect key="frame" x="18" y="207" width="284" height="23"/>
+                                        <rect key="frame" x="18" y="253" width="284" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="ySliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="weU-0c-ihe"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="VEn-HL-NsF">
-                                        <rect key="frame" x="18" y="372" width="284" height="23"/>
+                                        <rect key="frame" x="18" y="455" width="284" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="zSliderHandler:" destination="t6j-yK-gz4" eventType="valueChanged" id="y5F-5v-T4g"/>
@@ -232,36 +232,36 @@
             <objects>
                 <viewController id="Kph-Z2-9Ne" customClass="VWWThereminConfigInputEffectsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Weh-LA-ZsO">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="1v0-7a-rkf" customClass="VWWConfigInputEffectsView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gff-o0-yGn">
-                                        <rect key="frame" x="0.0" y="84" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="103" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p9E-3P-qej">
-                                        <rect key="frame" x="0.0" y="182" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="223" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1he-7K-Y5G">
-                                        <rect key="frame" x="0.0" y="281" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="345" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UNL-aA-fpn">
-                                        <rect key="frame" x="240" y="127" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="156" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="Linearize" backgroundImage="button_background.png">
@@ -274,7 +274,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1MC-c3-NOu">
-                                        <rect key="frame" x="240" y="239" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="294" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="Throttle" backgroundImage="button_background.png">
@@ -287,7 +287,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5mC-aj-pHG">
-                                        <rect key="frame" x="240" y="359" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="442" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="Off" backgroundImage="button_background.png">
@@ -371,36 +371,36 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2484" y="1958"/>
+            <point key="canvasLocation" x="2484" y="1270"/>
         </scene>
         <!--Theremin Config Input Key View Controller-->
         <scene sceneID="o3W-fC-R1b">
             <objects>
                 <viewController id="JDa-kc-dQg" customClass="VWWThereminConfigInputKeyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hJB-ik-jeg">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="M6K-oc-SqK" customClass="VWWConfigInputKeyView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s8c-m6-5v3">
-                                        <rect key="frame" x="0.0" y="76" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="93" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8jJ-SW-mlX">
-                                        <rect key="frame" x="0.0" y="163" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="200" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lnY-ha-oeq">
-                                        <rect key="frame" x="0.0" y="253" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="310" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,7 +420,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pGL-92-Fm6">
-                                        <rect key="frame" x="240" y="30" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="37" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="A Minor" backgroundImage="button_background.png">
@@ -433,7 +433,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a6s-40-aCV">
-                                        <rect key="frame" x="240" y="61" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="75" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="A Major" backgroundImage="button_background.png">
@@ -446,7 +446,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7tt-zK-RkB">
-                                        <rect key="frame" x="240" y="93" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="114" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="B Minor" backgroundImage="button_background.png">
@@ -459,7 +459,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Brm-1a-jcx">
-                                        <rect key="frame" x="240" y="124" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="152" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="B Major" backgroundImage="button_background.png">
@@ -472,7 +472,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2sv-YE-RLR">
-                                        <rect key="frame" x="240" y="156" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="192" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="C Major" backgroundImage="button_background.png">
@@ -485,7 +485,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e4g-mk-s0q">
-                                        <rect key="frame" x="240" y="187" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="230" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="D Minor" backgroundImage="button_background.png">
@@ -498,7 +498,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xtr-a0-Fdw">
-                                        <rect key="frame" x="240" y="218" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="268" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="D Major" backgroundImage="button_background.png">
@@ -511,7 +511,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eBr-1O-EY7">
-                                        <rect key="frame" x="240" y="250" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="308" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="E Major" backgroundImage="button_background.png">
@@ -524,7 +524,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0a0-9k-FoY">
-                                        <rect key="frame" x="240" y="281" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="346" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="F Minor" backgroundImage="button_background.png">
@@ -537,7 +537,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pAL-wg-zgd">
-                                        <rect key="frame" x="240" y="312" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="384" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="F Major" backgroundImage="button_background.png">
@@ -550,7 +550,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vbd-7i-51k">
-                                        <rect key="frame" x="240" y="344" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="423" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="G Minor" backgroundImage="button_background.png">
@@ -563,7 +563,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2nS-wG-UHc">
-                                        <rect key="frame" x="240" y="375" width="80" height="36"/>
+                                        <rect key="frame" x="240" y="461" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="G Major" backgroundImage="button_background.png">
@@ -623,18 +623,18 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2484" y="1258"/>
+            <point key="canvasLocation" x="2477" y="2055"/>
         </scene>
         <!--Theremin Config Input Amplitude View Controller-->
         <scene sceneID="a0r-ED-5k0">
             <objects>
                 <viewController id="VvZ-jq-Jon" customClass="VWWThereminConfigInputAmplitudeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pGa-0f-9K3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="KRr-K7-Hoj" customClass="VWWConfigInputAmplitudeView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pxu-nu-Bis">
@@ -645,28 +645,28 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ox7-l2-OTd">
-                                        <rect key="frame" x="0.0" y="16" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="19" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hiv-mi-G47">
-                                        <rect key="frame" x="0.0" y="193" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="237" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJ1-fu-DID">
-                                        <rect key="frame" x="0.0" y="369" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="453" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J2D-fe-pH1">
-                                        <rect key="frame" x="260" y="395" width="60" height="21"/>
+                                        <rect key="frame" x="260" y="483" width="60" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -737,11 +737,11 @@
             <objects>
                 <viewController id="K44-o3-RJh" customClass="VWWThereminConfigInputFrequencyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="StO-lR-9Ca">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="oPH-6s-F4Z" customClass="VWWConfigInputFrequencyView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r4d-mc-EyR">
@@ -752,49 +752,49 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xr5-w1-0b6">
-                                        <rect key="frame" x="0.0" y="19" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="23" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X Min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m6T-Cg-7si">
-                                        <rect key="frame" x="0.0" y="57" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="70" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uvf-Nq-vCi">
-                                        <rect key="frame" x="0.0" y="173" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="212" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y Min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j5A-1E-YFR">
-                                        <rect key="frame" x="0.0" y="211" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="259" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Itu-7a-xYO">
-                                        <rect key="frame" x="0.0" y="327" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="401" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z Min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lFY-12-uc7">
-                                        <rect key="frame" x="0.0" y="365" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="448" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Min Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0KX-op-kkx">
-                                        <rect key="frame" x="260" y="395" width="60" height="21"/>
+                                        <rect key="frame" x="260" y="483" width="60" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -868,7 +868,7 @@
             <objects>
                 <viewController id="Us7-Dd-BmP" customClass="VWWThereminSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VFt-aX-43N">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8zd-EJ-BrW">
                                 <rect key="frame" x="240" y="0.0" width="80" height="50"/>
@@ -931,7 +931,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Wr-VC-nHO">
-                                <rect key="frame" x="240" y="100" width="80" height="50"/>
+                                <rect key="frame" x="240" y="50" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Frequency" backgroundImage="button_background.png">
@@ -946,7 +946,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zjf-hh-B9d">
-                                <rect key="frame" x="80" y="100" width="80" height="50"/>
+                                <rect key="frame" x="80" y="50" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Frequency" backgroundImage="button_background.png">
@@ -961,7 +961,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zIc-8N-6Mz">
-                                <rect key="frame" x="160" y="100" width="80" height="50"/>
+                                <rect key="frame" x="160" y="50" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Frequency" backgroundImage="button_background.png">
@@ -976,7 +976,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sEz-VC-9KO">
-                                <rect key="frame" x="0.0" y="100" width="80" height="50"/>
+                                <rect key="frame" x="0.0" y="50" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Frequency" backgroundImage="button_background.png">
@@ -991,7 +991,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M8L-Sq-dxW">
-                                <rect key="frame" x="240" y="150" width="80" height="50"/>
+                                <rect key="frame" x="240" y="100" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Waveform" backgroundImage="button_background.png">
@@ -1006,7 +1006,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8UR-qm-tTK">
-                                <rect key="frame" x="80" y="150" width="80" height="50"/>
+                                <rect key="frame" x="80" y="100" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Waveform" backgroundImage="button_background.png">
@@ -1021,7 +1021,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BGf-Ep-dpr">
-                                <rect key="frame" x="160" y="150" width="80" height="50"/>
+                                <rect key="frame" x="160" y="100" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Waveform" backgroundImage="button_background.png">
@@ -1036,7 +1036,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Akz-Aa-MzL">
-                                <rect key="frame" x="0.0" y="150" width="80" height="50"/>
+                                <rect key="frame" x="0.0" y="100" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Waveform" backgroundImage="button_background.png">
@@ -1051,7 +1051,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gH4-Vm-aej">
-                                <rect key="frame" x="240" y="200" width="80" height="50"/>
+                                <rect key="frame" x="240" y="150" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Sensitivity" backgroundImage="button_background.png">
@@ -1066,7 +1066,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iEk-nQ-mgN">
-                                <rect key="frame" x="80" y="200" width="80" height="50"/>
+                                <rect key="frame" x="80" y="150" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Sensitivity" backgroundImage="button_background.png">
@@ -1081,7 +1081,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aIm-qn-jjr">
-                                <rect key="frame" x="160" y="200" width="80" height="50"/>
+                                <rect key="frame" x="160" y="150" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Sensitivity" backgroundImage="button_background.png">
@@ -1095,8 +1095,8 @@
                                     <action selector="configGyroscopeSensitivity:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="AL8-7Y-hlN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="twS-bq-dIW">
-                                <rect key="frame" x="0.0" y="200" width="80" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="twS-bq-dIW">
+                                <rect key="frame" x="0.0" y="150" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Sensitivity" backgroundImage="button_background.png">
@@ -1111,8 +1111,8 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QOQ-Yq-zSz">
-                                <rect key="frame" x="0.0" y="308" width="80" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="80" y="349" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <state key="normal" title="Start" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1127,8 +1127,8 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aCi-VE-bsh">
-                                <rect key="frame" x="0.0" y="344" width="80" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="160" y="349" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <state key="normal" title="Stop" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1143,8 +1143,8 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" id="Dty-qv-RUs">
-                                <rect key="frame" x="0.0" y="380" width="80" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="240" y="349" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                 <state key="normal" title="Restart" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1159,14 +1159,14 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Commands" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BIF-Zp-7Og">
-                                <rect key="frame" x="3" y="290" width="80" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="0.0" y="357" width="80" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kKQ-65-VDM">
-                                <rect key="frame" x="240" y="300" width="80" height="50"/>
+                                <rect key="frame" x="240" y="200" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Effect" backgroundImage="button_background.png">
@@ -1181,7 +1181,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eE9-3u-siN">
-                                <rect key="frame" x="80" y="300" width="80" height="50"/>
+                                <rect key="frame" x="80" y="200" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Effect" backgroundImage="button_background.png">
@@ -1196,7 +1196,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dEn-VZ-enm">
-                                <rect key="frame" x="160" y="300" width="80" height="50"/>
+                                <rect key="frame" x="160" y="200" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Effect" backgroundImage="button_background.png">
@@ -1211,7 +1211,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xgh-fA-Ywj">
-                                <rect key="frame" x="0.0" y="300" width="80" height="50"/>
+                                <rect key="frame" x="0.0" y="200" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Effect" backgroundImage="button_background.png">
@@ -1225,8 +1225,8 @@
                                     <action selector="configTouchscreenEffects:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="Cgw-Xb-Ur3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mrb-VF-kDm">
-                                <rect key="frame" x="0.0" y="50" width="80" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mrb-VF-kDm">
+                                <rect key="frame" x="0.0" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Volume" backgroundImage="button_background.png">
@@ -1240,8 +1240,8 @@
                                     <action selector="configTouchscreenAmplitude:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="Tby-ak-CU4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n0k-pk-x6E">
-                                <rect key="frame" x="80" y="50" width="80" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n0k-pk-x6E">
+                                <rect key="frame" x="80" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Volume" backgroundImage="button_background.png">
@@ -1255,8 +1255,8 @@
                                     <action selector="configAccelerometerAmplitude:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="MLA-3Q-l4m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WAf-xv-aSh">
-                                <rect key="frame" x="160" y="50" width="80" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WAf-xv-aSh">
+                                <rect key="frame" x="160" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Volume" backgroundImage="button_background.png">
@@ -1270,8 +1270,8 @@
                                     <action selector="configGyroscopeAmplitude:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="GvJ-0l-F2i"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lT-cU-HZ2">
-                                <rect key="frame" x="240" y="50" width="80" height="50"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0lT-cU-HZ2">
+                                <rect key="frame" x="240" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Volume" backgroundImage="button_background.png">
@@ -1285,9 +1285,9 @@
                                     <action selector="configMagnetometerAmplitude:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="eeZ-Dh-Bmd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V6L-bq-fNm">
-                                <rect key="frame" x="0.0" y="250" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V6L-bq-fNm">
+                                <rect key="frame" x="0.0" y="299" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Key" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1300,9 +1300,9 @@
                                     <action selector="configTouchscreenKey:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="QMo-LD-syy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Aq-vw-zuM">
-                                <rect key="frame" x="80" y="250" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Aq-vw-zuM">
+                                <rect key="frame" x="80" y="299" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Key" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1315,9 +1315,9 @@
                                     <action selector="configAccelerometerKey:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="Jxf-9X-yFP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cfd-Ae-wtz">
-                                <rect key="frame" x="160" y="250" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cfd-Ae-wtz">
+                                <rect key="frame" x="160" y="299" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Key" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1330,9 +1330,9 @@
                                     <action selector="configGyroscopeKey:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="tpC-lm-YhW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8gk-py-L0d">
-                                <rect key="frame" x="240" y="250" width="80" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8gk-py-L0d">
+                                <rect key="frame" x="240" y="299" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Key" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1345,8 +1345,23 @@
                                     <action selector="configMagnetometerKey:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="xWO-I2-9ge"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ola-ul-XDI">
+                                <rect key="frame" x="0.0" y="454" width="80" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
+                                <state key="normal" title="Reset" backgroundImage="button_background.png">
+                                    <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="0.044120462989999998" blue="0.030343670119999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetToDefaultsButtonHandler:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="9G6-gt-yaj"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Vp-R7-iQi">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="1Xp-u9-0QN">
@@ -1377,7 +1392,7 @@
             <objects>
                 <viewController id="Yed-yr-VnA" customClass="VWWThereminAboutViewController" sceneMemberID="viewController">
                     <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="HTr-Gf-Jlc">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="vww_logo.png" id="gN8-il-ABw">
@@ -1385,7 +1400,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Source  code available at https://github.com/zakkhoyt/Theremin" textAlignment="right" id="Pu1-IE-70O">
-                                <rect key="frame" x="0.0" y="283" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="283" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
@@ -1470,7 +1485,7 @@
             <objects>
                 <glkViewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" preferredFramesPerSecond="30" id="sm9-xW-wRB" customClass="VWWThereminViewController" sceneMemberID="viewController">
                     <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h4I-lX-E23">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Accelerometer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vlt-O5-7Wr">
@@ -1620,7 +1635,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQF-Ll-zFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="1958"/>
+            <point key="canvasLocation" x="1951" y="1270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fp3-rY-TfU">
@@ -1656,7 +1671,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAN-t5-3WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="1258"/>
+            <point key="canvasLocation" x="1951" y="2055"/>
         </scene>
     </scenes>
     <resources>
@@ -1668,9 +1683,66 @@
         <image name="triangle_256x256.png" width="256" height="256"/>
         <image name="vww_logo.png" width="810" height="810"/>
     </resources>
+    <classes>
+        <class className="VWWConfigInputAmplitudeView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputAmplitudeView.h"/>
+        </class>
+        <class className="VWWConfigInputEffectsView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputEffectsView.h"/>
+        </class>
+        <class className="VWWConfigInputFrequencyView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputFrequencyView.h"/>
+        </class>
+        <class className="VWWConfigInputKeyView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputKeyView.h"/>
+        </class>
+        <class className="VWWConfigInputSensitivityView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputSensitivityView.h"/>
+        </class>
+        <class className="VWWConfigInputWaveformView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputWaveformView.h"/>
+        </class>
+        <class className="VWWThereminAboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminAboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonHandler:"/>
+                <relationship kind="outlet" name="aboutLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="newsLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="VWWThereminConfigInputAmplitudeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputAmplitudeViewController.h"/>
+        </class>
+        <class className="VWWThereminConfigInputEffectsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputEffectsViewController.h"/>
+        </class>
+        <class className="VWWThereminConfigInputFrequencyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputFrequencyViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissInfoViewButton:"/>
+                <relationship kind="action" name="doneButtonHandler:"/>
+            </relationships>
+        </class>
+        <class className="VWWThereminConfigInputKeyViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputKeyViewController.h"/>
+        </class>
+        <class className="VWWThereminConfigInputSensitivityViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputSensitivityViewController.h"/>
+        </class>
+        <class className="VWWThereminConfigInputWaveformsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputWaveformsViewController.h"/>
+        </class>
+        <class className="VWWThereminSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsViewController.h"/>
+        </class>
+        <class className="VWWThereminViewController" superclassName="GLKViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

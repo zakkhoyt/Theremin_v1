@@ -313,13 +313,13 @@ typedef enum{
 //
 //
 //
-//- (IBAction)dismissInfoViewButton:(id)sender {
+- (IBAction)dismissInfoViewButton:(id)sender {
 //    [UIView animateWithDuration:VWW_DISMISS_INFO_DURATION animations:^{
 //        self.infoView.alpha = 0.0;
 //    } completion:^(BOOL finished){
 //        [self.infoView removeFromSuperview];
 //    }];
-//}
+}
 //
 //
 //- (void)dealloc {
@@ -330,8 +330,8 @@ typedef enum{
 //    [super dealloc];
 //}
 //
-//- (IBAction)doneButtonHandler:(id)sender {
+- (IBAction)doneButtonHandler:(id)sender {
 //    [VWWThereminInputs saveConfigFile];
 //    [self.delegate vwwThereminConfigInputKeyViewControllerUserIsDone:self];
-//}
+}
 @end

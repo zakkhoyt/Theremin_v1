@@ -23,5 +23,6 @@ static NSString* kKeyTouchScreen = @"touchscreen";
 +(VWWThereminInput*)gyroscopeInput;
 +(VWWThereminInput*)magnetometerInput;
 +(VWWThereminInput*)touchscreenInput;
++(void)resetConfigAndSave;
 +(void)saveConfigFile;
 @end

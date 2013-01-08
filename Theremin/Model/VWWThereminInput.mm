@@ -30,10 +30,16 @@ static NSString* kKeyZ = @"z";
     if(self){
         _inputType = type;
         [self enableTouchScreenByDefault];
-        
         _x = [[VWWThereminInputAxis alloc]init];
         _y = [[VWWThereminInputAxis alloc]init];
         _z = [[VWWThereminInputAxis alloc]init];
+        
+//        // We will give our touch channels amplitude of 1, but leave others at 0 so they don't annoy
+//        if(_inputType == kInputTouch){
+//            self.x.amplitude = 1.0;
+//            self.y.amplitude = 1.0;
+//            //self.z.amplitude = 1.0;  // no z axis for touch
+//        }
     }
     return self;
 }
@@ -45,7 +51,6 @@ static NSString* kKeyZ = @"z";
             NSString* type = [dictionary objectForKey:kKeyType];
             _inputType = [self inputTypeFromString:type];
             [self enableTouchScreenByDefault];
-
             NSDictionary* xDict = [dictionary objectForKey:kKeyX];
             _x = [[VWWThereminInputAxis alloc]initWithDictionary:xDict];
             NSDictionary* yDict = [dictionary objectForKey:kKeyY];
@@ -60,6 +65,13 @@ static NSString* kKeyZ = @"z";
             _x = [[VWWThereminInputAxis alloc]init];
             _y = [[VWWThereminInputAxis alloc]init];
             _z = [[VWWThereminInputAxis alloc]init];
+            
+//            // We will give our touch channels amplitude of 1, but leave others at 0 so they don't annoy
+//            if(_inputType == kInputTouch){
+//                self.x.amplitude = 1.0;
+//                self.y.amplitude = 1.0;
+//                //self.z.amplitude = 1.0;  // no z axis for touch
+//            }
         }
     }
     return self;
@@ -127,14 +139,14 @@ static NSString* kKeyZ = @"z";
 
     _enabled = newEnabled;
     if(_enabled){
-        _x.volume = 1.0;
-        _y.volume = 1.0;
-        _z.volume = 1.0;
+        _x.amplitude = 1.0;
+        _y.amplitude = 1.0;
+        _z.amplitude = 1.0;
     }
     else{
-        _x.volume = 0.0;
-        _y.volume = 0.0;
-        _z.volume = 0.0;
+        _x.amplitude = 0.0;
+        _y.amplitude = 0.0;
+        _z.amplitude = 0.0;
     }
 }
 

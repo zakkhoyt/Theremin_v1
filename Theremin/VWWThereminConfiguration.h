@@ -25,6 +25,8 @@
 #define VWW_SENSITIVITY             1.0
 #define VWW_EFFECT                  kEffectNone
 #define VWW_INPUT_TYPE              kInputTouch
+#define VWW_VOLUME                  0.0
+#define VWW_NOTE_KEY                kNoteKeyChromatic
 
 #define VWW_SHOW_INFO_SCREENS       1
 #define VWW_MAX_CHANNELS            1

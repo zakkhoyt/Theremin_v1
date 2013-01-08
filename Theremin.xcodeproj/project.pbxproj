@@ -37,6 +37,7 @@
 		C6A94FD4168FC8AE003F2AFE /* VWWConfigInputWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A94FD3168FC8AE003F2AFE /* VWWConfigInputWaveformView.m */; };
 		C6A94FD7168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */; };
 		C6B3E963168BFBB100298AF5 /* VWWConfigInputFrequencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */; };
+		C6C1BC2C169BA4B400AD8244 /* VWWThereminEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C1BC2B169BA4B400AD8244 /* VWWThereminEffectNoteKey.m */; };
 		C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */; };
 		C6CE37B2168EC804000F2A48 /* VWWThereminInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37B1168EC804000F2A48 /* VWWThereminInput.mm */; };
 		C6CE37B8168ECFC4000F2A48 /* VWWThereminInputs.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37B7168ECFC4000F2A48 /* VWWThereminInputs.mm */; };
@@ -142,6 +143,8 @@
 		C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputSensitivityView.m; sourceTree = "<group>"; };
 		C6B3E961168BFBB100298AF5 /* VWWConfigInputFrequencyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputFrequencyView.h; sourceTree = "<group>"; };
 		C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputFrequencyView.m; sourceTree = "<group>"; };
+		C6C1BC2A169BA4B400AD8244 /* VWWThereminEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminEffectNoteKey.h; sourceTree = "<group>"; };
+		C6C1BC2B169BA4B400AD8244 /* VWWThereminEffectNoteKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminEffectNoteKey.m; sourceTree = "<group>"; };
 		C6CE37A6168EBAE3000F2A48 /* VWWThereminConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWThereminConfiguration.h; sourceTree = "<group>"; };
 		C6CE37AB168EC640000F2A48 /* VWWThereminInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInput.h; sourceTree = "<group>"; };
 		C6CE37AE168EC67C000F2A48 /* VWWThereminInputAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminInputAxis.h; sourceTree = "<group>"; };
@@ -390,9 +393,19 @@
 			name = source_folder;
 			sourceTree = "<group>";
 		};
+		C6C1BC28169BA4A000AD8244 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				C6C1BC2A169BA4B400AD8244 /* VWWThereminEffectNoteKey.h */,
+				C6C1BC2B169BA4B400AD8244 /* VWWThereminEffectNoteKey.m */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
 		C6CE37B3168EC870000F2A48 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				C6C1BC28169BA4A000AD8244 /* Effects */,
 				C6CE37B4168ECE15000F2A48 /* VWWThereminInputs.h */,
 				C6CE37B7168ECFC4000F2A48 /* VWWThereminInputs.mm */,
 				C6CE37AB168EC640000F2A48 /* VWWThereminInput.h */,
@@ -707,6 +720,7 @@
 				C6F23BCD16995399001C8FA8 /* VWWConfigInputAmplitudeView.m in Sources */,
 				C6F23BD0169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm in Sources */,
 				C6F23BD3169A96D6001C8FA8 /* VWWConfigInputKeyView.m in Sources */,
+				C6C1BC2C169BA4B400AD8244 /* VWWThereminEffectNoteKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

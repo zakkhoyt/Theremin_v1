@@ -75,6 +75,7 @@ VWWThereminConfigInputKeyViewControllerDelegate>
 - (IBAction)configGyroscopeKey:(id)sender;
 - (IBAction)configMagnetometerKey:(id)sender;
 
+- (IBAction)resetToDefaultsButtonHandler:(id)sender;
 
 // Navigation bar buttons
 - (IBAction)handle_butDone:(id)sender;
@@ -417,6 +418,10 @@ VWWThereminConfigInputKeyViewControllerDelegate>
 - (IBAction)configMagnetometerKey:(id)sender {
     self.configInputType = kInputMagnetometer;
     [self performSegueWithIdentifier:kSegueSettingsToConfigInputKey sender:self];
+}
+
+- (IBAction)resetToDefaultsButtonHandler:(id)sender {
+    [VWWThereminInputs resetConfigAndSave];
 }
 
 

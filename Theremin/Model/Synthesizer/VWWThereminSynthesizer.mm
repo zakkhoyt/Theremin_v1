@@ -40,7 +40,7 @@ OSStatus RenderTone( void* inRefCon,
 //    static NSUInteger counter = 0;
 //    const NSUInteger counterThreshold = 1;
 //    if(counter++ >= counterThreshold){
-//        NSLog(@"volume:%f freq:%f self=%x",synth.volume,  synth.frequency, (NSUInteger)synth);
+//        NSLog(@"amplitude:%f freq:%f self=%x",synth.amplitude,  synth.frequency, (NSUInteger)synth);
 //        counter = 0;
 //    }
 
@@ -54,19 +54,19 @@ OSStatus RenderTone( void* inRefCon,
 	{
         switch(synth.waveType){
             case kWaveSin:{
-                buffer[frame] = sin(theta) * synth.volume;
+                buffer[frame] = sin(theta) * synth.amplitude;
                 break;
             }
             case kWaveSquare:{
-                buffer[frame] = square(theta) * synth.volume;
+                buffer[frame] = square(theta) * synth.amplitude;
                 break;
             }
             case kWaveSawtooth:{
-                buffer[frame] = sawtooth(theta) * synth.volume;
+                buffer[frame] = sawtooth(theta) * synth.amplitude;
                 break;
             }
             case kWaveTriangle:{
-                buffer[frame] = triangle(theta) * synth.volume;
+                buffer[frame] = triangle(theta) * synth.amplitude;
                 break;
             }
             default:
@@ -101,11 +101,11 @@ OSStatus RenderTone( void* inRefCon,
 
 @implementation VWWThereminSynthesizer
 
--(id)initWithVolume:(float)volume andFrequency:(float)frequency{
+-(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency{
     self = [super init];
     if(self){
         _frequency = frequency;
-        _volume = volume;
+        _amplitude = amplitude;
         _waveType = kWaveSin;
         _isRunning = NO;
         _theta = 0;

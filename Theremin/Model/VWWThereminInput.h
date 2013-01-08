@@ -21,4 +21,5 @@
 
 -(NSDictionary*)jsonRepresentation;
 -(NSString*)description;
+
 @end

@@ -19,7 +19,7 @@
 
 @interface VWWThereminSynthesizer : NSObject
 
-@property float volume;
+@property float amplitude;
 @property (nonatomic, setter=setFrequency:) float frequency;
 @property WaveType waveType;
 @property EffectType effectType;
@@ -27,7 +27,7 @@
 @property double sinPhase;
 @property double theta;
 
--(id)initWithVolume:(float)volume andFrequency:(float)frequency;
+-(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency;
 - (void)start;
 - (void)stop;
 

@@ -34,7 +34,6 @@ typedef enum{
 @property (nonatomic) CGRect waveformEndzone;
 @property (nonatomic, retain) VWWThereminInput* input;
 - (IBAction)dismissInfoViewButton:(id)sender;
-- (IBAction)cancelButtonHandler:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 @end
 

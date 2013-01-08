@@ -250,13 +250,13 @@ static NSString* kZLabelPrefix = @"Z Axis";
 -(void)updateInputAmplitude:(float)amplitude{
     switch(self.lineType){
         case kLineTypeX:
-            self.input.x.volume = amplitude;
+            self.input.x.amplitude = amplitude;
             break;
         case kLineTypeY:
-            self.input.y.volume = amplitude;
+            self.input.y.amplitude = amplitude;
             break;
         case kLineTypeZ:
-            self.input.z.volume = amplitude;
+            self.input.z.amplitude = amplitude;
             break;
         default:
             return;
@@ -324,9 +324,9 @@ static NSString* kZLabelPrefix = @"Z Axis";
 }
 
 -(void)updateAmplitudeLabels{
-    self.xLabel.text = [NSString stringWithFormat:@"%@\n%@", kXLabelPrefix, [self stringFromAmplitude:self.input.x.volume]];
-    self.yLabel.text = [NSString stringWithFormat:@"%@\n%@", kYLabelPrefix, [self stringFromAmplitude:self.input.y.volume]];
-    self.zLabel.text = [NSString stringWithFormat:@"%@\n%@", kZLabelPrefix, [self stringFromAmplitude:self.input.z.volume]];
+    self.xLabel.text = [NSString stringWithFormat:@"%@\n%@", kXLabelPrefix, [self stringFromAmplitude:self.input.x.amplitude]];
+    self.yLabel.text = [NSString stringWithFormat:@"%@\n%@", kYLabelPrefix, [self stringFromAmplitude:self.input.y.amplitude]];
+    self.zLabel.text = [NSString stringWithFormat:@"%@\n%@", kZLabelPrefix, [self stringFromAmplitude:self.input.z.amplitude]];
 }
 
 -(CGPoint)getLineXBegin{
@@ -334,21 +334,21 @@ static NSString* kZLabelPrefix = @"Z Axis";
                        self.xLabel.center.y);
 }
 -(CGPoint)getLineXEnd{
-    return [self getPointOnAmplitudeLine:self.input.x.volume];
+    return [self getPointOnAmplitudeLine:self.input.x.amplitude];
 }
 -(CGPoint)getLineYBegin{
     return CGPointMake(self.yLabel.center.x + self.yLabel.frame.size.width/2.0,
                        self.yLabel.center.y);
 }
 -(CGPoint)getLineYEnd{
-    return [self getPointOnAmplitudeLine:self.input.y.volume];
+    return [self getPointOnAmplitudeLine:self.input.y.amplitude];
 }
 -(CGPoint)getLineZBegin{
     return CGPointMake(self.zLabel.center.x + self.zLabel.frame.size.width/2.0,
                        self.zLabel.center.y);
 }
 -(CGPoint)getLineZEnd{
-    return [self getPointOnAmplitudeLine:self.input.z.volume];
+    return [self getPointOnAmplitudeLine:self.input.z.amplitude];
 }
 
 -(CGPoint)getPointOnAmplitudeLine:(float)amplitude{

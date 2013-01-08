@@ -128,7 +128,7 @@ const float kMagnetometerZMax = 30.0f;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
             accelerometer.x.frequency = newFrequency;
-            NSLog(@"X normalized:%f newFreq:%f", _devices.accelerometer.x.currentNormalized, newFrequency);
+//            NSLog(@"X normalized:%f newFreq:%f", _devices.accelerometer.x.currentNormalized, newFrequency);
         }
         {
             float centerFreq = (accelerometer.y.frequencyMax - accelerometer.y.frequencyMin) / 2.0;
@@ -137,7 +137,7 @@ const float kMagnetometerZMax = 30.0f;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
             accelerometer.y.frequency = newFrequency;
-            NSLog(@"Y normalized:%f newFreq:%f", _devices.accelerometer.y.currentNormalized, newFrequency);
+//            NSLog(@"Y normalized:%f newFreq:%f", _devices.accelerometer.y.currentNormalized, newFrequency);
         }
         {
             float centerFreq = (accelerometer.z.frequencyMax - accelerometer.z.frequencyMin) / 2.0;
@@ -146,7 +146,7 @@ const float kMagnetometerZMax = 30.0f;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
             accelerometer.z.frequency = newFrequency;
-            NSLog(@"Z normalized:%f newFreq:%f", _devices.accelerometer.z.currentNormalized, newFrequency);
+//            NSLog(@"Z normalized:%f newFreq:%f", _devices.accelerometer.z.currentNormalized, newFrequency);
         }
         
         // Update UI

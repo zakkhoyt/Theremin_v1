@@ -9,6 +9,8 @@
 #import "VWWMotionMonitor.h"
 #import "VWWThereminInputs.h"
 
+const float kSensitivityOffset = 2.0;
+
 const float kAccelerometerXMax = 2.0;
 const float kAccelerometerYMax = 2.0;
 const float kAccelerometerZMax = 2.0;
@@ -123,30 +125,34 @@ const float kMagnetometerZMax = 30.0f;
         VWWThereminInput* accelerometer = [VWWThereminInputs accelerometerInput];
         {
             float centerFreq = (accelerometer.x.frequencyMax - accelerometer.x.frequencyMin) / 2.0;
-            float maxDrift = accelerometer.x.frequencyMax - centerFreq;
+            float maxDrift = (accelerometer.x.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.accelerometer.x.currentNormalized * accelerometer.x.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
             accelerometer.x.frequency = newFrequency;
-//            NSLog(@"X normalized:%f newFreq:%f", _devices.accelerometer.x.currentNormalized, newFrequency);
+//            NSLog(@"X normalized:%f newFreq:%f", _devices.accelerometer.x.currentNormalized, newFrequency);/
+//            NSLog(@"X normalized:%f", _devices.accelerometer.x.currentNormalized);
+
         }
         {
             float centerFreq = (accelerometer.y.frequencyMax - accelerometer.y.frequencyMin) / 2.0;
-            float maxDrift = accelerometer.y.frequencyMax - centerFreq;
+            float maxDrift = (accelerometer.y.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.accelerometer.y.currentNormalized * accelerometer.y.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
             accelerometer.y.frequency = newFrequency;
 //            NSLog(@"Y normalized:%f newFreq:%f", _devices.accelerometer.y.currentNormalized, newFrequency);
+//            NSLog(@"Y normalized:%f", _devices.accelerometer.y.currentNormalized);
         }
         {
             float centerFreq = (accelerometer.z.frequencyMax - accelerometer.z.frequencyMin) / 2.0;
-            float maxDrift = accelerometer.z.frequencyMax - centerFreq;
+            float maxDrift = (accelerometer.z.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.accelerometer.z.currentNormalized * accelerometer.z.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
             accelerometer.z.frequency = newFrequency;
-//            NSLog(@"Z normalized:%f newFreq:%f", _devices.accelerometer.z.currentNormalized, newFrequency);
+            //            NSLog(@"Z normalized:%f newFreq:%f", _devices.accelerometer.z.currentNormalized, newFrequency);
+//            NSLog(@"Z normalized:%f", _devices.accelerometer.z.currentNormalized);
         }
         
         // Update UI
@@ -242,7 +248,7 @@ const float kMagnetometerZMax = 30.0f;
         VWWThereminInput* magnetometer = [VWWThereminInputs magnetometerInput];
         {
             float centerFreq = (magnetometer.x.frequencyMax - magnetometer.x.frequencyMin) / 2.0;
-            float maxDrift = magnetometer.x.frequencyMax - centerFreq;
+            float maxDrift = (magnetometer.x.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.magnetometer.x.currentNormalized * magnetometer.x.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
@@ -251,7 +257,7 @@ const float kMagnetometerZMax = 30.0f;
         }
         {
             float centerFreq = (magnetometer.y.frequencyMax - magnetometer.y.frequencyMin) / 2.0;
-            float maxDrift = magnetometer.y.frequencyMax - centerFreq;
+            float maxDrift = (magnetometer.y.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.magnetometer.y.currentNormalized * magnetometer.y.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
@@ -260,7 +266,7 @@ const float kMagnetometerZMax = 30.0f;
         }
         {
             float centerFreq = (magnetometer.z.frequencyMax - magnetometer.z.frequencyMin) / 2.0;
-            float maxDrift = magnetometer.z.frequencyMax - centerFreq;
+            float maxDrift = (magnetometer.z.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.magnetometer.z.currentNormalized * magnetometer.z.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
@@ -359,7 +365,7 @@ const float kMagnetometerZMax = 30.0f;
         VWWThereminInput* gyroscope = [VWWThereminInputs gyroscopeInput];
         {
             float centerFreq = (gyroscope.x.frequencyMax - gyroscope.x.frequencyMin) / 2.0;
-            float maxDrift = gyroscope.x.frequencyMax - centerFreq;
+            float maxDrift = (gyroscope.x.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.gyro.x.currentNormalized * gyroscope.x.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
@@ -368,7 +374,7 @@ const float kMagnetometerZMax = 30.0f;
         }
         {
             float centerFreq = (gyroscope.y.frequencyMax - gyroscope.y.frequencyMin) / 2.0;
-            float maxDrift = gyroscope.y.frequencyMax - centerFreq;
+            float maxDrift = (gyroscope.y.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.gyro.y.currentNormalized * gyroscope.y.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;
@@ -377,7 +383,7 @@ const float kMagnetometerZMax = 30.0f;
         }
         {
             float centerFreq = (gyroscope.z.frequencyMax - gyroscope.z.frequencyMin) / 2.0;
-            float maxDrift = gyroscope.z.frequencyMax - centerFreq;
+            float maxDrift = (gyroscope.z.frequencyMax - centerFreq) * kSensitivityOffset;
             float driftFactor = _devices.gyro.z.currentNormalized * gyroscope.z.sensitivity;
             float drift = maxDrift * driftFactor;
             float newFrequency = centerFreq + drift;

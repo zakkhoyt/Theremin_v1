@@ -1210,7 +1210,7 @@
                                 <rect key="frame" x="0.0" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Volume" backgroundImage="button_background.png">
+                                <state key="normal" title="Amlitude" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1225,7 +1225,7 @@
                                 <rect key="frame" x="80" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Volume" backgroundImage="button_background.png">
+                                <state key="normal" title="Amlitude" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1240,7 +1240,7 @@
                                 <rect key="frame" x="160" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Volume" backgroundImage="button_background.png">
+                                <state key="normal" title="Amlitude" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1255,7 +1255,7 @@
                                 <rect key="frame" x="240" y="249" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
-                                <state key="normal" title="Volume" backgroundImage="button_background.png">
+                                <state key="normal" title="Amlitude" backgroundImage="button_background.png">
                                     <color key="titleColor" red="0.076538031519999994" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1664,65 +1664,6 @@
         <image name="triangle_256x256.png" width="256" height="256"/>
         <image name="vww_logo.png" width="810" height="810"/>
     </resources>
-    <classes>
-        <class className="VWWConfigInputAmplitudeView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputAmplitudeView.h"/>
-        </class>
-        <class className="VWWConfigInputEffectsView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputEffectsView.h"/>
-        </class>
-        <class className="VWWConfigInputFrequencyView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputFrequencyView.h"/>
-        </class>
-        <class className="VWWConfigInputKeyView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputKeyView.h"/>
-        </class>
-        <class className="VWWConfigInputSensitivityView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputSensitivityView.h"/>
-        </class>
-        <class className="VWWConfigInputWaveformView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputWaveformView.h"/>
-        </class>
-        <class className="VWWThereminAboutView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminAboutView.h"/>
-        </class>
-        <class className="VWWThereminAboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminAboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonHandler:"/>
-                <relationship kind="outlet" name="aboutLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="newsLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="VWWThereminConfigInputAmplitudeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputAmplitudeViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputEffectsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputEffectsViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputFrequencyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputFrequencyViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputKeyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputKeyViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputSensitivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputSensitivityViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputWaveformsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputWaveformsViewController.h"/>
-        </class>
-        <class className="VWWThereminSettingsView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsView.h"/>
-        </class>
-        <class className="VWWThereminSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsViewController.h"/>
-        </class>
-        <class className="VWWThereminViewController" superclassName="GLKViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

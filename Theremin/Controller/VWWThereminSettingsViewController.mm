@@ -495,7 +495,7 @@ ADBannerViewDelegate>
     [UIView animateWithDuration:VWW_DISMISS_INFO_DURATION animations:^{
         self.adBannerView.alpha = 1.0;
     }];
-    
+     
 }
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
     NSLog(@"%s", __FUNCTION__);

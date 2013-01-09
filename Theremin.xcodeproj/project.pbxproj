@@ -467,7 +467,6 @@
 		C6F7536715C6313C00911E59 = {
 			isa = PBXGroup;
 			children = (
-				C68DE757169E26DA001C54DB /* iAd.framework */,
 				C6F7537C15C6313C00911E59 /* Theremin */,
 				C6F7539D15C6313C00911E59 /* ThereminTests */,
 				C6F7537515C6313C00911E59 /* Frameworks */,
@@ -487,6 +486,7 @@
 		C6F7537515C6313C00911E59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C68DE757169E26DA001C54DB /* iAd.framework */,
 				C6E34B7E166AE52700D0AB2C /* GLKit.framework */,
 				C6E34B7F166AE52700D0AB2C /* OpenGLES.framework */,
 				C6F829AC1628C6E900C79CAA /* AudioToolbox.framework */,

@@ -1329,7 +1329,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UiT-Kl-kYH">
-                                <rect key="frame" x="110" y="506" width="80" height="50"/>
+                                <rect key="frame" x="11" y="355" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Reset" backgroundImage="button_background.png">
@@ -1343,6 +1343,18 @@
                                     <action selector="resetToDefaultsButtonHandler:" destination="Ze1-5d-1Sm" eventType="touchUpInside" id="Nyp-mr-0W4"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" id="rqa-df-CJA">
+                                <rect key="frame" x="0.0" y="490" width="540" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                                <connections>
+                                    <outlet property="delegate" destination="Ze1-5d-1Sm" id="sxr-1W-sFH"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1355,6 +1367,7 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
+                        <outlet property="adBannerView" destination="rqa-df-CJA" id="CkQ-RE-1n8"/>
                         <outlet property="butInputAccelerometer" destination="4Hp-F2-EiS" id="Eed-hV-51n"/>
                         <outlet property="butInputGyros" destination="Fl7-LQ-QXG" id="GNo-E0-GMo"/>
                         <outlet property="butInputMagnetometer" destination="YFO-kg-X5w" id="ogL-iZ-B1f"/>

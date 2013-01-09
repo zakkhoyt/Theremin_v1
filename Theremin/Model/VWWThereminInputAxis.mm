@@ -53,6 +53,12 @@ static NSString* kKeyNone = @"none";
     return self;
 }
 
+-(void)stop{
+    [self.synthesizer stop];
+}
+-(void)start{
+    [self.synthesizer start];
+}
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if(self){

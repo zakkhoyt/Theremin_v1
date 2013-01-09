@@ -20,7 +20,6 @@ static NSString* kKeyY = @"y";
 static NSString* kKeyZ = @"z";
 
 @interface VWWThereminInput ()
-
 @end
 
 @implementation VWWThereminInput
@@ -136,5 +135,14 @@ static NSString* kKeyZ = @"z";
         _z.muted = self.inputType == kInputTouch ? YES : NO; // Mute touch Z always
     }
 }
+
+//-(bool)muted{
+//    if(_x.muted == NO ||
+//        _y.muted == NO ||
+//       _z.muted == NO){
+//        return NO;
+//    }
+//    return YES;
+//}
 
 @end

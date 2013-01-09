@@ -21,4 +21,6 @@
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 -(NSDictionary*)jsonRepresentation;
+-(void)stop;
+-(void)start;
 @end

@@ -1327,7 +1327,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ola-ul-XDI">
-                                <rect key="frame" x="0.0" y="454" width="80" height="50"/>
+                                <rect key="frame" x="0.0" y="390" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Reset" backgroundImage="button_background.png">
@@ -1341,6 +1341,18 @@
                                     <action selector="resetToDefaultsButtonHandler:" destination="Us7-Dd-BmP" eventType="touchUpInside" id="9G6-gt-yaj"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" id="zK1-Iy-wtL">
+                                <rect key="frame" x="0.0" y="454" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                                <connections>
+                                    <outlet property="delegate" destination="Us7-Dd-BmP" id="AGM-df-MuR"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1352,6 +1364,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adBannerView" destination="zK1-Iy-wtL" id="zfR-E0-Mvh"/>
                         <outlet property="butInputAccelerometer" destination="AQm-K7-vWg" id="CJO-z8-I5q"/>
                         <outlet property="butInputGyros" destination="HqC-sA-ZIG" id="JmY-Ws-UGY"/>
                         <outlet property="butInputMagnetometer" destination="8zd-EJ-BrW" id="six-Ss-ROt"/>
@@ -1366,7 +1379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhm-MO-48i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205" y="279"/>
+            <point key="canvasLocation" x="1228" y="293"/>
         </scene>
         <!--Theremin About View Controller-->
         <scene sceneID="nI2-Xb-9OQ">

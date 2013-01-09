@@ -5,7 +5,7 @@
 //  Created by Zakk Hoyt on 7/31/12.
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
-
+#import <iAd/iAd.h>
 #import "VWWThereminSettingsViewController.h"
 #import "VWWThereminConfigInputAmplitudeViewController.h"
 #import "VWWThereminConfigInputFrequencyViewController.h"
@@ -27,7 +27,8 @@ VWWThereminConfigInputFrequencyViewControllerDelegate,
 VWWThereminConfigInputWaveformsViewControllerDelegate,
 VWWThereminConfigInputSensitivityViewControllerDelegate,
 VWWThereminConfigInputEffectsViewControllerDelegate,
-VWWThereminConfigInputKeyViewControllerDelegate>
+VWWThereminConfigInputKeyViewControllerDelegate,
+ADBannerViewDelegate>
 
 
 /// Command buttons
@@ -48,6 +49,10 @@ VWWThereminConfigInputKeyViewControllerDelegate>
 - (IBAction)handle_butInputTouch:(id)sender;
 - (IBAction)handle_butInputGyros:(id)sender;
 
+@property (nonatomic)bool accelerometerMuteStateForAd;
+@property (nonatomic)bool gyroscopeMuteStateForAd;
+@property (nonatomic)bool magnetometerMuteStateForAd;
+@property (nonatomic)bool touchMuteStateForAd;
 
 @property (nonatomic) InputType configInputType;
 - (IBAction)configMagnetometerFrequency:(id)sender;
@@ -81,6 +86,13 @@ VWWThereminConfigInputKeyViewControllerDelegate>
 - (IBAction)handle_butDone:(id)sender;
 - (IBAction)handle_butCancel:(id)sender;
 
+
+
+
+@property (retain, nonatomic) IBOutlet ADBannerView *adBannerView;
+
+
+
 // Custom methods
 -(void)initializeClass;
 @end
@@ -101,6 +113,7 @@ VWWThereminConfigInputKeyViewControllerDelegate>
     [_butCommandStart release];
     [_butCommandStop release];
     [_butCommandRestart release];
+    [_adBannerView release];
     [super dealloc];
 }
 
@@ -123,6 +136,10 @@ VWWThereminConfigInputKeyViewControllerDelegate>
     
     if([VWWThereminInputs touchscreenInput].muted == NO)
         [self.butInputTouch setBackgroundImage:buttonImage forState:UIControlStateNormal];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self.adBannerView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning
@@ -470,4 +487,59 @@ VWWThereminConfigInputKeyViewControllerDelegate>
     [self dismissViewControllerAnimated:YES completion:nil];    
 }
 
+- (void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    NSLog(@"%s", __FUNCTION__);
+}
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+     NSLog(@"%s", __FUNCTION__);
+    [UIView animateWithDuration:VWW_DISMISS_INFO_DURATION animations:^{
+        self.adBannerView.alpha = 1.0;
+    }];
+    
+}
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"%s", __FUNCTION__);
+    // TODO: a better way to mute all
+    [[VWWThereminInputs accelerometerInput].x stop];
+    [[VWWThereminInputs accelerometerInput].y stop];
+    [[VWWThereminInputs accelerometerInput].z stop];
+    
+    [[VWWThereminInputs gyroscopeInput].x stop];
+    [[VWWThereminInputs gyroscopeInput].y stop];
+    [[VWWThereminInputs gyroscopeInput].z stop];
+    
+    [[VWWThereminInputs magnetometerInput].x stop];
+    [[VWWThereminInputs magnetometerInput].y stop];
+    [[VWWThereminInputs magnetometerInput].z stop];
+    
+    [[VWWThereminInputs touchscreenInput].x stop];
+    [[VWWThereminInputs touchscreenInput].y stop];
+    return YES;
+}
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    NSLog(@"%s", __FUNCTION__);
+    
+    // TODO: a better way to mute all
+    [[VWWThereminInputs accelerometerInput].x start];
+    [[VWWThereminInputs accelerometerInput].y start];
+    [[VWWThereminInputs accelerometerInput].z start];
+    
+    [[VWWThereminInputs gyroscopeInput].x start];
+    [[VWWThereminInputs gyroscopeInput].y start];
+    [[VWWThereminInputs gyroscopeInput].z start];
+    
+    [[VWWThereminInputs magnetometerInput].x start];
+    [[VWWThereminInputs magnetometerInput].y start];
+    [[VWWThereminInputs magnetometerInput].z start];
+    
+    [[VWWThereminInputs touchscreenInput].x start];
+    [[VWWThereminInputs touchscreenInput].y start];
+
+}
+
+
+- (void)viewDidUnload {
+    [self setAdBannerView:nil];
+    [super viewDidUnload];
+}
 @end

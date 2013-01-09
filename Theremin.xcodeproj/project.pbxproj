@@ -31,6 +31,7 @@
 		C66F465215C7B7F70066E94B /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464D15C7AE6F0066E94B /* Default-Portrait@2x~ipad.png */; };
 		C6747F66168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6747F65168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm */; };
 		C6747F6A168FECDF007133AD /* VWWConfigInputEffectsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6747F69168FECDF007133AD /* VWWConfigInputEffectsView.m */; };
+		C68DE758169E26DA001C54DB /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68DE757169E26DA001C54DB /* iAd.framework */; };
 		C693B5BD1628E154008CB1B1 /* Icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464115C7AD990066E94B /* Icon_57x57.png */; };
 		C693B5BE1628E15A008CB1B1 /* Icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464315C7AD9F0066E94B /* Icon_114x114.png */; };
 		C693B5BF1628E164008CB1B1 /* Icon_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = C66F464715C7ADD40066E94B /* Icon_72x72.png */; };
@@ -145,6 +146,7 @@
 		C6747F65168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWThereminConfigInputEffectsViewController.mm; sourceTree = "<group>"; };
 		C6747F68168FECDF007133AD /* VWWConfigInputEffectsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputEffectsView.h; sourceTree = "<group>"; };
 		C6747F69168FECDF007133AD /* VWWConfigInputEffectsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputEffectsView.m; sourceTree = "<group>"; };
+		C68DE757169E26DA001C54DB /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		C6A94FD2168FC8AE003F2AFE /* VWWConfigInputWaveformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputWaveformView.h; sourceTree = "<group>"; };
 		C6A94FD3168FC8AE003F2AFE /* VWWConfigInputWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputWaveformView.m; sourceTree = "<group>"; };
 		C6A94FD5168FC8C1003F2AFE /* VWWConfigInputSensitivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputSensitivityView.h; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68DE758169E26DA001C54DB /* iAd.framework in Frameworks */,
 				C6E34B80166AE52800D0AB2C /* GLKit.framework in Frameworks */,
 				C6E34B81166AE52800D0AB2C /* OpenGLES.framework in Frameworks */,
 				C6F829AF1628C6E900C79CAA /* AudioToolbox.framework in Frameworks */,
@@ -464,6 +467,7 @@
 		C6F7536715C6313C00911E59 = {
 			isa = PBXGroup;
 			children = (
+				C68DE757169E26DA001C54DB /* iAd.framework */,
 				C6F7537C15C6313C00911E59 /* Theremin */,
 				C6F7539D15C6313C00911E59 /* ThereminTests */,
 				C6F7537515C6313C00911E59 /* Frameworks */,

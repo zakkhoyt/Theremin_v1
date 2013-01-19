@@ -28,7 +28,7 @@ static NSString* kKeyNone = @"none";
 
 
 @interface VWWThereminInputAxis ()
-@property (nonatomic, retain) VWWThereminSynthesizer* synthesizer; 
+@property (nonatomic, strong) VWWThereminSynthesizer* synthesizer; 
 @end
 
 @implementation VWWThereminInputAxis
@@ -63,19 +63,19 @@ static NSString* kKeyNone = @"none";
     self = [super init];
     if(self){
         if(dictionary){
-            NSNumber* fMaxNumber = [dictionary objectForKey:kKeyFMax];
+            NSNumber* fMaxNumber = dictionary[kKeyFMax];
             _frequencyMax = fMaxNumber.floatValue;
-            NSNumber* fMinNumber = [dictionary objectForKey:kKeyFMin];
+            NSNumber* fMinNumber = dictionary[kKeyFMin];
             _frequencyMin = fMinNumber.floatValue;
-            NSString* effectString = [dictionary objectForKey:kKeyEffect];
+            NSString* effectString = dictionary[kKeyEffect];
             _effectType = [self effectFromString:effectString];
-            NSNumber* sensitivityNumber = [dictionary objectForKey:kKeySensitivity];
+            NSNumber* sensitivityNumber = dictionary[kKeySensitivity];
             _sensitivity = sensitivityNumber.floatValue;
-            NSString* wavetypeString = [dictionary objectForKey:kKeyWaveType];
+            NSString* wavetypeString = dictionary[kKeyWaveType];
             _waveType = [self  waveformFromString:wavetypeString];
-            NSNumber* amplitudeNumber = [dictionary objectForKey:kKeyAmplitude];
+            NSNumber* amplitudeNumber = dictionary[kKeyAmplitude];
             _amplitude = amplitudeNumber.floatValue;
-            NSNumber* mutedNumber = [dictionary objectForKey:kKeyMuted];
+            NSNumber* mutedNumber = dictionary[kKeyMuted];
             _muted = mutedNumber.floatValue > 0;
         }
         else{

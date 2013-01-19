@@ -19,20 +19,20 @@ typedef enum{
 
 
 @interface VWWThereminConfigInputEffectsViewController ()
-@property (nonatomic, retain) IBOutlet UIView* infoView;
-@property (nonatomic, retain) IBOutlet VWWConfigInputEffectsView* configView;
+@property (nonatomic, strong) IBOutlet UIView* infoView;
+@property (nonatomic, strong) IBOutlet VWWConfigInputEffectsView* configView;
 @property (nonatomic) LineType lineType;
-@property (retain, nonatomic) IBOutlet UILabel *xLabel;
-@property (retain, nonatomic) IBOutlet UILabel *yLabel;
-@property (retain, nonatomic) IBOutlet UILabel *zLabel;
-@property (retain, nonatomic) IBOutlet UIButton *autotuneLabel;
-@property (retain, nonatomic) IBOutlet UIButton *linearizeLabel;
-@property (retain, nonatomic) IBOutlet UIButton *throttleLabel;
-@property (retain, nonatomic) IBOutlet UIButton *noEffectLabel;
+@property (strong, nonatomic) IBOutlet UILabel *xLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yLabel;
+@property (strong, nonatomic) IBOutlet UILabel *zLabel;
+@property (strong, nonatomic) IBOutlet UIButton *autotuneLabel;
+@property (strong, nonatomic) IBOutlet UIButton *linearizeLabel;
+@property (strong, nonatomic) IBOutlet UIButton *throttleLabel;
+@property (strong, nonatomic) IBOutlet UIButton *noEffectLabel;
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
 @property (nonatomic) CGRect waveformEndzone;
-@property (nonatomic, retain) VWWThereminInput* input;
+@property (nonatomic, strong) VWWThereminInput* input;
 - (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 @end
@@ -112,7 +112,7 @@ typedef enum{
 #pragma mark - UIResponder touch events
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     CGPoint begin = [touch locationInView:self.configView];
     
     if(CGRectContainsPoint(self.xLabel.frame, begin)){
@@ -143,7 +143,7 @@ typedef enum{
     }
     
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     self.end = [touch locationInView:self.configView];
     
     
@@ -165,7 +165,7 @@ typedef enum{
     }
     
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     CGPoint end = [touch locationInView:self.configView];
     
     if(CGRectContainsPoint(self.autotuneLabel.frame, end)){
@@ -230,7 +230,6 @@ typedef enum{
             return;
             
     }
-    [line release];
     [self.configView setNeedsDisplay];
 }
 
@@ -239,17 +238,17 @@ typedef enum{
 
 // For loading data
 -(void)makeLinesFromInputData{
-    VWWLine* xLine = [[[VWWLine alloc]initWithBegin:[self getLineXBegin]
-                                             andEnd:[self getLineXEnd]]autorelease];
+    VWWLine* xLine = [[VWWLine alloc]initWithBegin:[self getLineXBegin]
+                                             andEnd:[self getLineXEnd]];
     [self.configView setLineX:xLine valid:YES];
     
-    VWWLine* yLine = [[[VWWLine alloc]initWithBegin:[self getLineYBegin]
-                                             andEnd:[self getLineYEnd]]autorelease];
+    VWWLine* yLine = [[VWWLine alloc]initWithBegin:[self getLineYBegin]
+                                             andEnd:[self getLineYEnd]];
     [self.configView setLineY:yLine valid:YES];
     
     if(self.inputType != kInputTouch){
-        VWWLine* zLine = [[[VWWLine alloc]initWithBegin:[self getLineZBegin]
-                                                 andEnd:[self getLineZEnd]]autorelease];
+        VWWLine* zLine = [[VWWLine alloc]initWithBegin:[self getLineZBegin]
+                                                 andEnd:[self getLineZEnd]];
         [self.configView setLineZ:zLine valid:YES];
     }
 }
@@ -306,12 +305,5 @@ typedef enum{
 - (IBAction)doneButtonHandler:(id)sender {
     [VWWThereminInputs saveConfigFile];
     [self.delegate vwwThereminConfigInputEffectsViewControllerUserIsDone:self];
-}
-- (void)dealloc {
-    [_autotuneLabel release];
-    [_noEffectLabel release];
-    [_linearizeLabel release];
-    [_throttleLabel release];
-    [super dealloc];
 }
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "VWWCubeScene.h"
-#import "VWWCUbeModel.h"
 
 typedef struct {
     float Position[3];
@@ -383,8 +382,7 @@ const GLubyte Indices[] = {
 @property (nonatomic) GLuint vertexArray;
 @property (nonatomic) GLuint vertexBuffer;
 @property (nonatomic) GLuint indexBuffer;
-@property (nonatomic, retain) VWWCubeModel* cube;
-@property (nonatomic, retain) GLKBaseEffect* effect;
+@property (nonatomic, strong) GLKBaseEffect* effect;
 @end
 
 @implementation VWWCubeScene
@@ -464,6 +462,5 @@ const GLubyte Indices[] = {
     [EAGLContext setCurrentContext:self.context];
     glDeleteBuffers(1, &_vertexBuffer);
     glDeleteBuffers(1, &_indexBuffer);
-    [self.effect release];
 }
 @end

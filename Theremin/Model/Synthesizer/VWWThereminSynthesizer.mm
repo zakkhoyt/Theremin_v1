@@ -22,7 +22,7 @@ OSStatus RenderTone( void* inRefCon,
 
     
 	// Get the tone parameters out of the view controller
-	VWWThereminSynthesizer *synth = (VWWThereminSynthesizer *)inRefCon;
+	VWWThereminSynthesizer *synth = (__bridge VWWThereminSynthesizer *)inRefCon;
 	double theta = synth.theta;
 	double theta_increment = 2.0 * M_PI * synth.frequency / kSampleRate;
 
@@ -98,7 +98,7 @@ OSStatus RenderTone( void* inRefCon,
 }
 
 @property bool isRunning;
-@property (nonatomic, retain) VWWThereminNotes* notes;
+@property (nonatomic, strong) VWWThereminNotes* notes;
 @end
 
 
@@ -121,11 +121,6 @@ OSStatus RenderTone( void* inRefCon,
 }
 
 // Clean up memory
-- (void)dealloc {
-    
-    [_notes release];
-    [super dealloc];
-}
 
 #pragma mark - Custom methods
 
@@ -181,7 +176,7 @@ OSStatus RenderTone( void* inRefCon,
 	// Set our tone rendering function on the unit
 	AURenderCallbackStruct input;
 	input.inputProc = RenderTone;
-	input.inputProcRefCon = self;
+	input.inputProcRefCon = (__bridge void*)self;
 	err = AudioUnitSetProperty(_toneUnit,
                                kAudioUnitProperty_SetRenderCallback,
                                kAudioUnitScope_Input,

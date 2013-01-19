@@ -10,7 +10,7 @@
 #import "VWWFileSystem.h"
 
 @interface VWWThereminInputs ()
-@property (nonatomic, retain) NSMutableDictionary* inputs;
+@property (nonatomic, strong) NSMutableDictionary* inputs;
 @end
 
 @implementation VWWThereminInputs
@@ -35,16 +35,16 @@
     [[self sharedInstance]saveFile];
 }
 +(VWWThereminInput*)accelerometerInput{
-    return [[self sharedInstance].inputs objectForKey:kKeyAccelerometer];
+    return ([self sharedInstance].inputs)[kKeyAccelerometer];
 }
 +(VWWThereminInput*)gyroscopeInput{
-    return [[self sharedInstance].inputs objectForKey:kKeyGyroscope];
+    return ([self sharedInstance].inputs)[kKeyGyroscope];
 }
 +(VWWThereminInput*)magnetometerInput{
-    return [[self sharedInstance].inputs objectForKey:kKeyMagnetometer];
+    return ([self sharedInstance].inputs)[kKeyMagnetometer];
 }
 +(VWWThereminInput*)touchscreenInput{
-    return [[self sharedInstance].inputs objectForKey:kKeyTouchScreen];
+    return ([self sharedInstance].inputs)[kKeyTouchScreen];
 }
 
 -(id)init{
@@ -73,27 +73,19 @@
     VWWThereminInput* gyroscopeInput = [[VWWThereminInput alloc]initWithType:kInputGyros];
     VWWThereminInput* magnetometerInput = [[VWWThereminInput alloc]initWithType:kInputMagnetometer];
     
-    [self.inputs setObject:touchInput forKey:touchInput.description];
-    [self.inputs setObject:accelerometerInput forKey:accelerometerInput.description];
-    [self.inputs setObject:gyroscopeInput forKey:gyroscopeInput.description];
-    [self.inputs setObject:magnetometerInput forKey:magnetometerInput.description];
+    (self.inputs)[touchInput.description] = touchInput;
+    (self.inputs)[accelerometerInput.description] = accelerometerInput;
+    (self.inputs)[gyroscopeInput.description] = gyroscopeInput;
+    (self.inputs)[magnetometerInput.description] = magnetometerInput;
     
-    [touchInput release];
-    [accelerometerInput release];
-    [gyroscopeInput release];
-    [magnetometerInput release];
     [self saveFile];
 }
 
--(void)dealloc{
-    [_inputs release];
-    [super dealloc];
-}
 
 -(NSString*)jsonRepresentation{
     NSMutableArray* inputs = [[NSMutableArray alloc]init];
     for(NSString* key in [self.inputs allKeys]){
-        VWWThereminInput* input = [self.inputs objectForKey:key];
+        VWWThereminInput* input = (self.inputs)[key];
         [inputs addObject:input.jsonRepresentation];
         
     }
@@ -134,10 +126,10 @@
     
     for(NSDictionary* dict in jsonArray) {
         VWWThereminInput* input = [[VWWThereminInput alloc]initWithDictionary:dict];
-        if([self.inputs objectForKey:input.description]){
+        if((self.inputs)[input.description]){
             [self.inputs removeObjectForKey:input.description];
         }
-        [self.inputs setObject:input forKey:input.description];
+        (self.inputs)[input.description] = input;
     }
 
     NSLog(@"self json = %@", self.jsonRepresentation);

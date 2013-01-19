@@ -38,7 +38,7 @@ typedef struct{
 @end
 
 @interface VWWMotionMonitor : NSObject
-@property (nonatomic, assign) id <VWWMotionMonitorDelegate> delegate;
+@property (nonatomic, weak) id <VWWMotionMonitorDelegate> delegate;
 -(void)startAccelerometer;
 -(void)stopAccelerometer;
 -(void)startMagnetometer;

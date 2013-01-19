@@ -19,7 +19,7 @@
 @end
 
 @interface VWWScene : NSObject 
-@property (nonatomic, retain) EAGLContext* context;
+@property (nonatomic, strong) EAGLContext* context;
 @property (nonatomic) CGRect bounds;
 -(id)initWithFrame:(CGRect)frame context:(EAGLContext *)context;
 -(void)render;

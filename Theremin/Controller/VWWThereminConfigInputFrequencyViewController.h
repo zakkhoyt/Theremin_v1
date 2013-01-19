@@ -18,8 +18,8 @@
 
 @interface VWWThereminConfigInputFrequencyViewController : UIViewController
 @property (nonatomic) InputType inputType;
-@property (nonatomic, retain) VWWLine* axisFrequenciesX;
-@property (nonatomic, retain) VWWLine* axisFrequenciesY;
-@property (nonatomic, retain) VWWLine* axisFrequenciesZ;
-@property (nonatomic, assign) id <VWWThereminConfigInputFrequencyViewControllerDelegate> delegate;
+@property (nonatomic, strong) VWWLine* axisFrequenciesX;
+@property (nonatomic, strong) VWWLine* axisFrequenciesY;
+@property (nonatomic, strong) VWWLine* axisFrequenciesZ;
+@property (nonatomic, weak) id <VWWThereminConfigInputFrequencyViewControllerDelegate> delegate;
 @end

@@ -10,9 +10,9 @@
 #import "VWWThereminInputAxis.h"
 
 @interface VWWThereminInput : NSObject
-@property (nonatomic, retain) VWWThereminInputAxis* x;
-@property (nonatomic, retain) VWWThereminInputAxis* y;
-@property (nonatomic, retain) VWWThereminInputAxis* z;
+@property (nonatomic, strong) VWWThereminInputAxis* x;
+@property (nonatomic, strong) VWWThereminInputAxis* y;
+@property (nonatomic, strong) VWWThereminInputAxis* z;
 @property (nonatomic) InputType inputType;
 @property (nonatomic) bool muted;
 

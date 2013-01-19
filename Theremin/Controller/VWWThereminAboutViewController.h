@@ -15,5 +15,5 @@
 @end
 
 @interface VWWThereminAboutViewController : UIViewController
-@property (nonatomic, assign) id <VWWThereminAboutViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <VWWThereminAboutViewControllerDelegate> delegate;
 @end

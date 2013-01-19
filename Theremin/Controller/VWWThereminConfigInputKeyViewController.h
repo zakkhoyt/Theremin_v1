@@ -14,6 +14,6 @@
 @end
 
 @interface VWWThereminConfigInputKeyViewController : UIViewController
-@property (nonatomic, assign) id <VWWThereminConfigInputKeyViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <VWWThereminConfigInputKeyViewControllerDelegate> delegate;
 @property (nonatomic) InputType inputType;
 @end

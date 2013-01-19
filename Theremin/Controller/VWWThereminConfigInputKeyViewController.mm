@@ -18,31 +18,31 @@ typedef enum{
 } LineType;
 
 @interface VWWThereminConfigInputKeyViewController ()
-@property (nonatomic, retain) IBOutlet UIView* infoView;
-@property (nonatomic, retain) IBOutlet VWWConfigInputKeyView* configView;
+@property (nonatomic, strong) IBOutlet UIView* infoView;
+@property (nonatomic, strong) IBOutlet VWWConfigInputKeyView* configView;
 @property (nonatomic) LineType lineType;
-@property (retain, nonatomic) IBOutlet UILabel *xLabel;
-@property (retain, nonatomic) IBOutlet UILabel *yLabel;
-@property (retain, nonatomic) IBOutlet UILabel *zLabel;
+@property (strong, nonatomic) IBOutlet UILabel *xLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yLabel;
+@property (strong, nonatomic) IBOutlet UILabel *zLabel;
 
-@property (retain, nonatomic) IBOutlet UIButton *notesChromaticLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesAMinorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesAMAjorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesBMinorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesBMAjorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesCMAjorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesDMinorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesDMAjorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesEMinorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesEMAjorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesFMAjorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesGMinorLabel;
-@property (retain, nonatomic) IBOutlet UIButton *notesGMAjorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesChromaticLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesAMinorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesAMAjorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesBMinorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesBMAjorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesCMAjorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesDMinorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesDMAjorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesEMinorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesEMAjorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesFMAjorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesGMinorLabel;
+@property (strong, nonatomic) IBOutlet UIButton *notesGMAjorLabel;
 
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
 @property (nonatomic) CGRect waveformEndzone;
-@property (nonatomic, retain) VWWThereminInput* input;
+@property (nonatomic, strong) VWWThereminInput* input;
 - (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 @end

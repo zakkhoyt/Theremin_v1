@@ -40,14 +40,14 @@ static NSString* kKeyZ = @"z";
     self = [super init];
     if(self){
         if(dictionary){
-            NSString* type = [dictionary objectForKey:kKeyType];
+            NSString* type = dictionary[kKeyType];
             _inputType = [self inputTypeFromString:type];
             [self enableTouchScreenByDefault];
-            NSDictionary* xDict = [dictionary objectForKey:kKeyX];
+            NSDictionary* xDict = dictionary[kKeyX];
             _x = [[VWWThereminInputAxis alloc]initWithDictionary:xDict];
-            NSDictionary* yDict = [dictionary objectForKey:kKeyY];
+            NSDictionary* yDict = dictionary[kKeyY];
             _y = [[VWWThereminInputAxis alloc]initWithDictionary:yDict];
-            NSDictionary* zDict = [dictionary objectForKey:kKeyZ];
+            NSDictionary* zDict = dictionary[kKeyZ];
             _z = [[VWWThereminInputAxis alloc]initWithDictionary:zDict];
         }
         else{

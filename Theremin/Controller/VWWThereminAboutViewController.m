@@ -11,9 +11,9 @@
 
 @interface VWWThereminAboutViewController ()
 - (IBAction)doneButtonHandler:(id)sender;
-@property (retain, nonatomic) IBOutlet UITextView *titleLabel;
-@property (retain, nonatomic) IBOutlet UITextView *aboutLabel;
-@property (retain, nonatomic) IBOutlet UITextView *newsLabel;
+@property (strong, nonatomic) IBOutlet UITextView *titleLabel;
+@property (strong, nonatomic) IBOutlet UITextView *aboutLabel;
+@property (strong, nonatomic) IBOutlet UITextView *newsLabel;
 @end
 
 @implementation VWWThereminAboutViewController
@@ -62,11 +62,5 @@
 
 - (IBAction)doneButtonHandler:(id)sender {
     [self.delegate vwwThereminAboutViewControllerUserIsDone:self];
-}
-- (void)dealloc {
-    [_titleLabel release];
-    [_aboutLabel release];
-    [_newsLabel release];
-    [super dealloc];
 }
 @end

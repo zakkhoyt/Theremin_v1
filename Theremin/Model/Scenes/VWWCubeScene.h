@@ -7,7 +7,7 @@
 //
 
 #import "VWWScene.h"
-#import "VWWCubeModel.h"
+
 
 @interface VWWCubeScene : VWWScene
 @property (nonatomic) GLKVector3 translate, rotate, scale;

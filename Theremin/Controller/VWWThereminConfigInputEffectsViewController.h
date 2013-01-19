@@ -16,6 +16,6 @@
 @end
 
 @interface VWWThereminConfigInputEffectsViewController : UIViewController
-@property (nonatomic, assign) id <VWWThereminConfigInputEffectsViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <VWWThereminConfigInputEffectsViewControllerDelegate> delegate;
 @property (nonatomic) InputType inputType;
 @end

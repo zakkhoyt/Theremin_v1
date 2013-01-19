@@ -21,6 +21,6 @@
 @end
 
 @interface VWWThereminSettingsViewController : UIViewController
-@property (nonatomic, assign) id <VWWThereminSettingsViewControllerDelegate> delegate;
-@property (nonatomic, retain) VWWMotionMonitor* motion;
+@property (nonatomic, weak) id <VWWThereminSettingsViewControllerDelegate> delegate;
+@property (nonatomic, strong) VWWMotionMonitor* motion;
 @end

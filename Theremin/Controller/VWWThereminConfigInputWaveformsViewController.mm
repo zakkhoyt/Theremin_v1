@@ -18,17 +18,17 @@ typedef enum{
 } LineType;
 
 @interface VWWThereminConfigInputWaveformsViewController ()
-@property (nonatomic, retain) IBOutlet UIView* infoView;
+@property (nonatomic, strong) IBOutlet UIView* infoView;
 @property (nonatomic) LineType lineType;
-@property (nonatomic, retain) IBOutlet VWWConfigInputWaveformView* configView;
-@property (retain, nonatomic) IBOutlet UILabel *xLabel;
-@property (retain, nonatomic) IBOutlet UILabel *yLabel;
-@property (retain, nonatomic) IBOutlet UILabel *zLabel;
-@property (retain, nonatomic) IBOutlet UIImageView *sinImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *squareImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *triangleImageView;
-@property (retain, nonatomic) IBOutlet UIImageView *sawtoothImageView;
-@property (nonatomic, retain) VWWThereminInput* input;
+@property (nonatomic, strong) IBOutlet VWWConfigInputWaveformView* configView;
+@property (strong, nonatomic) IBOutlet UILabel *xLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yLabel;
+@property (strong, nonatomic) IBOutlet UILabel *zLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *sinImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *squareImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *triangleImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *sawtoothImageView;
+@property (nonatomic, strong) VWWThereminInput* input;
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
 @property (nonatomic) CGRect waveformEndzone;
@@ -109,7 +109,7 @@ typedef enum{
 #pragma mark - UIResponder touch events
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     CGPoint begin = [touch locationInView:self.configView];
     //    NSLog(@"%@", NSStringFromCGPoint(begin));
     //    NSLog(@"%@", NSStringFromCGRect(self.xMaxLabel.frame));
@@ -139,7 +139,7 @@ typedef enum{
     }
     
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     self.end = [touch locationInView:self.configView];
     
     if(CGRectContainsPoint(self.waveformEndzone, self.end)){
@@ -157,7 +157,7 @@ typedef enum{
     }
     
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     CGPoint end = [touch locationInView:self.configView];
     
     if(CGRectContainsPoint(self.sinImageView.frame, end)){
@@ -224,23 +224,22 @@ typedef enum{
             return;
             
     }
-    [line release];
     [self.configView setNeedsDisplay];
 }
 
 // For loading data
 -(void)makeLinesFromInputData{
-    VWWLine* xLine = [[[VWWLine alloc]initWithBegin:[self getLineXBegin]
-                                                andEnd:[self getLineXEnd]]autorelease];
+    VWWLine* xLine = [[VWWLine alloc]initWithBegin:[self getLineXBegin]
+                                                andEnd:[self getLineXEnd]];
     [self.configView setLineX:xLine valid:YES];
 
-    VWWLine* yLine = [[[VWWLine alloc]initWithBegin:[self getLineYBegin]
-                                             andEnd:[self getLineYEnd]]autorelease];
+    VWWLine* yLine = [[VWWLine alloc]initWithBegin:[self getLineYBegin]
+                                             andEnd:[self getLineYEnd]];
     [self.configView setLineY:yLine valid:YES];
     
     if(self.inputType != kInputTouch){
-        VWWLine* zLine = [[[VWWLine alloc]initWithBegin:[self getLineZBegin]
-                                                 andEnd:[self getLineZEnd]]autorelease];
+        VWWLine* zLine = [[VWWLine alloc]initWithBegin:[self getLineZBegin]
+                                                 andEnd:[self getLineZEnd]];
         [self.configView setLineZ:zLine valid:YES];
     }
 }
@@ -299,15 +298,5 @@ typedef enum{
 - (IBAction)doneButtonHandler:(id)sender {
     [VWWThereminInputs saveConfigFile];
     [self.delegate vwwThereminConfigInputWaveformsViewControllerUserIsDone:self];
-}
-- (void)dealloc {
-    [_xLabel release];
-    [_yLabel release];
-    [_zLabel release];
-    [_sinImageView release];
-    [_squareImageView release];
-    [_triangleImageView release];
-    [_sawtoothImageView release];
-    [super dealloc];
 }
 @end

@@ -8,39 +8,39 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/Motion/VWWMotionMonitor.m"
-         timestampString = "379458044.817209"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "71"
-         endingLineNumber = "71"
-         landmarkName = "-startAccelerometer"
-         landmarkType = "5">
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "motion"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/Motion/VWWMotionMonitor.m"
-         timestampString = "379458044.817209"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "160"
-         endingLineNumber = "160"
-         landmarkName = "-startAccelerometer"
-         landmarkType = "5">
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "motion"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/Motion/VWWMotionMonitor.m"
-         timestampString = "379458044.817209"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164"
-         landmarkName = "-startAccelerometer"
-         landmarkType = "5">
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "motion"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/Synthesizer/VWWThereminSynthesizer.mm"
-         timestampString = "379314774.601416"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "113"
-         endingLineNumber = "113"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
          landmarkName = "-initWithAmplitude:andFrequency:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,37 +86,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/Motion/VWWMotionMonitor.m"
-         timestampString = "379458044.817209"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "132"
-         endingLineNumber = "132"
-         landmarkName = "-startAccelerometer"
-         landmarkType = "5">
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "motion"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/Motion/VWWMotionMonitor.m"
-         timestampString = "379458044.817209"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
-         landmarkName = "-startAccelerometer"
-         landmarkType = "5">
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "motion"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "379466401.626817"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
+         startingLineNumber = "120"
+         endingLineNumber = "120"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -124,25 +124,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Theremin/Controller/VWWThereminViewController.mm"
-         timestampString = "379313816.828367"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "146"
-         endingLineNumber = "146"
-         landmarkName = "-touchesMoved:withEvent:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379300611.082499"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "123"
-         endingLineNumber = "123"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
          landmarkName = "-loadFile"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379300611.082499"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "110"
-         endingLineNumber = "110"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-saveFile"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379300611.082499"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
          landmarkName = "-saveFile"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,24 +164,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379300611.082499"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "31"
-         endingLineNumber = "31"
-         landmarkName = "+resetConfigAndSave"
-         landmarkType = "5">
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "inputs"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "379466622.763106"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "192"
-         endingLineNumber = "192"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminConfigInputAmplitudeViewController.mm"
-         timestampString = "379312054.596653"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminConfigInputAmplitudeViewController.mm"
-         timestampString = "379312919.141489"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
          landmarkName = "-updateSlidersFromData"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,11 +229,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminConfigInputAmplitudeViewController.mm"
-         timestampString = "379458609.591894"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
          landmarkName = "-xSliderHandler:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -281,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "379466622.763106"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "260"
-         endingLineNumber = "260"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
          landmarkName = "-handle_butInputAccelerometer:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -294,63 +281,63 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379322477.212758"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-initializeClass"
-         landmarkType = "5">
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "inputs"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379322477.904002"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "64"
-         endingLineNumber = "64"
-         landmarkName = "-initializeClass"
-         landmarkType = "5">
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "inputs"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379322479.012091"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "-initializeClass"
-         landmarkType = "5">
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "inputs"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Model/VWWThereminInputs.mm"
-         timestampString = "379322480.670269"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
-         landmarkName = "-initializeClass"
-         landmarkType = "5">
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "inputs"
+         landmarkType = "19">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "379466859.69658"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "520"
-         endingLineNumber = "520"
+         startingLineNumber = "512"
+         endingLineNumber = "512"
          landmarkName = "-bannerViewActionDidFinish:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "379466859.69658"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "496"
-         endingLineNumber = "496"
+         startingLineNumber = "488"
+         endingLineNumber = "488"
          landmarkName = "-bannerViewDidLoadAd:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +359,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Theremin/Controller/VWWThereminSettingsViewController.mm"
-         timestampString = "379466847.930286"
+         timestampString = "380247024.133653"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "494"
-         endingLineNumber = "494"
+         startingLineNumber = "486"
+         endingLineNumber = "486"
          landmarkName = "-bannerViewDidLoadAd:"
          landmarkType = "5">
       </FileBreakpoint>

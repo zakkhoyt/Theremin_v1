@@ -15,7 +15,6 @@
 		C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.mm */; };
 		C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2BD166AE3A200FA7B70 /* VWWCubeScene.m */; };
 		C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2BF166AE3A200FA7B70 /* VWWScene.m */; };
-		C606D2CA166AE40F00FA7B70 /* VWWCubeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2C7166AE40F00FA7B70 /* VWWCubeModel.m */; };
 		C606D2CB166AE40F00FA7B70 /* VWWSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */; };
 		C60E4FF5169805DD006BD352 /* vww_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C60E4FF4169805DC006BD352 /* vww_logo.png */; };
 		C60E4FF8169807C8006BD352 /* custom.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60E4FF7169807C8006BD352 /* custom.strings */; };
@@ -116,8 +115,6 @@
 		C606D2BD166AE3A200FA7B70 /* VWWCubeScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCubeScene.m; sourceTree = "<group>"; };
 		C606D2BE166AE3A200FA7B70 /* VWWScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWScene.h; sourceTree = "<group>"; };
 		C606D2BF166AE3A200FA7B70 /* VWWScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWScene.m; sourceTree = "<group>"; };
-		C606D2C6166AE40F00FA7B70 /* VWWCubeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWCubeModel.h; sourceTree = "<group>"; };
-		C606D2C7166AE40F00FA7B70 /* VWWCubeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWCubeModel.m; sourceTree = "<group>"; };
 		C606D2C8166AE40F00FA7B70 /* VWWSquareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSquareModel.h; sourceTree = "<group>"; };
 		C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSquareModel.m; sourceTree = "<group>"; };
 		C60E4FF4169805DC006BD352 /* vww_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vww_logo.png; path = images/vww_logo.png; sourceTree = SOURCE_ROOT; };
@@ -368,8 +365,6 @@
 		C606D2C5166AE40F00FA7B70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C606D2C6166AE40F00FA7B70 /* VWWCubeModel.h */,
-				C606D2C7166AE40F00FA7B70 /* VWWCubeModel.m */,
 				C606D2C8166AE40F00FA7B70 /* VWWSquareModel.h */,
 				C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */,
 			);
@@ -717,7 +712,6 @@
 				C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.mm in Sources */,
 				C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */,
 				C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */,
-				C606D2CA166AE40F00FA7B70 /* VWWCubeModel.m in Sources */,
 				C606D2CB166AE40F00FA7B70 /* VWWSquareModel.m in Sources */,
 				C6E34B9D166AE89600D0AB2C /* VWWThereminViewController.mm in Sources */,
 				C6EB888A168B975600DD1F3E /* VWWThereminAboutViewController.m in Sources */,
@@ -854,6 +848,7 @@
 		C6F753A915C6313C00911E59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -872,6 +867,7 @@
 		C6F753AA15C6313C00911E59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zakk hoyt (65NJ4ZPC44)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

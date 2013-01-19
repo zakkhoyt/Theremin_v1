@@ -16,6 +16,6 @@
 @end
 
 @interface VWWThereminConfigInputSensitivityViewController : UIViewController
-@property (nonatomic, assign) id <VWWThereminConfigInputSensitivityViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <VWWThereminConfigInputSensitivityViewControllerDelegate> delegate;
 @property (nonatomic) InputType inputType;
 @end

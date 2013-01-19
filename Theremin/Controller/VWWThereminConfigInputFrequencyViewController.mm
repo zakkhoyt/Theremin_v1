@@ -32,21 +32,21 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 
 @interface VWWThereminConfigInputFrequencyViewController ()
 //@property (retain, nonatomic) IBOutlet UINavigationItem *navigationBar;
-@property (nonatomic, retain) IBOutlet UIView* infoView;
-@property (retain, nonatomic) IBOutlet VWWConfigInputFrequencyView *configView;
-@property (retain, nonatomic) IBOutlet UILabel *frequencyMaxLabel;
-@property (retain, nonatomic) IBOutlet UILabel *frequencyMinLabel;
-@property (retain, nonatomic) IBOutlet UILabel *xMaxLabel;
-@property (retain, nonatomic) IBOutlet UILabel *xMinLabel;
-@property (retain, nonatomic) IBOutlet UILabel *yMaxLabel;
-@property (retain, nonatomic) IBOutlet UILabel *yMinLabel;
-@property (retain, nonatomic) IBOutlet UILabel *zMaxLabel;
-@property (retain, nonatomic) IBOutlet UILabel *zMinLabel;
+@property (nonatomic, strong) IBOutlet UIView* infoView;
+@property (strong, nonatomic) IBOutlet VWWConfigInputFrequencyView *configView;
+@property (strong, nonatomic) IBOutlet UILabel *frequencyMaxLabel;
+@property (strong, nonatomic) IBOutlet UILabel *frequencyMinLabel;
+@property (strong, nonatomic) IBOutlet UILabel *xMaxLabel;
+@property (strong, nonatomic) IBOutlet UILabel *xMinLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yMaxLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yMinLabel;
+@property (strong, nonatomic) IBOutlet UILabel *zMaxLabel;
+@property (strong, nonatomic) IBOutlet UILabel *zMinLabel;
 @property (nonatomic) LineType lineType;
 @property (nonatomic) CGPoint begin;
 @property (nonatomic) CGPoint end;
 @property (nonatomic) CGRect frequencyEndzone;
-@property (nonatomic, retain) VWWThereminInput* input;
+@property (nonatomic, strong) VWWThereminInput* input;
 
 - (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
@@ -122,7 +122,6 @@ static NSString* kZMinLabelPrefix = @"Z Min";
                                 initWithBegin:begin
                                 andEnd:end];
     [self.configView setLineFrequencies:frequenciesLine];
-    [frequenciesLine release];
     
     // Calculate endzone (for touch events)
     self.frequencyEndzone = CGRectMake(begin.x - kEndzoneWidth/2.0,
@@ -148,24 +147,13 @@ static NSString* kZMinLabelPrefix = @"Z Min";
 
 
 
-- (void)dealloc {
-    [_frequencyMaxLabel release];
-    [_frequencyMinLabel release];
-    [_xMaxLabel release];
-    [_xMinLabel release];
-    [_yMaxLabel release];
-    [_yMinLabel release];
-    [_zMaxLabel release];
-    [_zMinLabel release];
-    [super dealloc];
-}
 
 
 
 #pragma mark - UIResponder touch events
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     CGPoint begin = [touch locationInView:self.configView];
 //    NSLog(@"%@", NSStringFromCGPoint(begin));
 //    NSLog(@"%@", NSStringFromCGRect(self.xMaxLabel.frame));
@@ -207,7 +195,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     }
     
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     self.end = [touch locationInView:self.configView];
     
     if(CGRectContainsPoint(self.frequencyEndzone, self.end)){
@@ -235,7 +223,7 @@ static NSString* kZMinLabelPrefix = @"Z Min";
     }
         
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     CGPoint end = [touch locationInView:self.configView];
 
     if(CGRectContainsPoint(self.frequencyEndzone, end)){
@@ -352,36 +340,35 @@ static NSString* kZMinLabelPrefix = @"Z Min";
             return;
             
     }
-    [line release];
     [self.configView setNeedsDisplay];
 }
 
 
 
 -(void)makeLinesFromInputData{
-    VWWLine* xMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineXMaxBegin]
-                                               andEnd:[self getLineXMaxEnd]]autorelease];
+    VWWLine* xMaxLine = [[VWWLine alloc]initWithBegin:[self getLineXMaxBegin]
+                                               andEnd:[self getLineXMaxEnd]];
     [self.configView setLineXMax:xMaxLine valid:YES];
     
-    VWWLine* xMinLine = [[[VWWLine alloc]initWithBegin:[self getLineXMinBegin]
-                                                andEnd:[self getLineXMinEnd]]autorelease];
+    VWWLine* xMinLine = [[VWWLine alloc]initWithBegin:[self getLineXMinBegin]
+                                                andEnd:[self getLineXMinEnd]];
     [self.configView setLineXMin:xMinLine valid:YES];
     
-    VWWLine* yMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineYMaxBegin]
-                                                andEnd:[self getLineYMaxEnd]]autorelease];
+    VWWLine* yMaxLine = [[VWWLine alloc]initWithBegin:[self getLineYMaxBegin]
+                                                andEnd:[self getLineYMaxEnd]];
     [self.configView setLineYMax:yMaxLine valid:YES];
     
-    VWWLine* yMinLine = [[[VWWLine alloc]initWithBegin:[self getLineYMinBegin]
-                                                andEnd:[self getLineYMinEnd]]autorelease];
+    VWWLine* yMinLine = [[VWWLine alloc]initWithBegin:[self getLineYMinBegin]
+                                                andEnd:[self getLineYMinEnd]];
     [self.configView setLineYMin:yMinLine valid:YES];
     
     if(self.inputType != kInputTouch){
-        VWWLine* zMaxLine = [[[VWWLine alloc]initWithBegin:[self getLineZMaxBegin]
-                                                    andEnd:[self getLineZMaxEnd]]autorelease];
+        VWWLine* zMaxLine = [[VWWLine alloc]initWithBegin:[self getLineZMaxBegin]
+                                                    andEnd:[self getLineZMaxEnd]];
         [self.configView setLineZMax:zMaxLine valid:YES];
         
-        VWWLine* zMinLine = [[[VWWLine alloc]initWithBegin:[self getLineZMinBegin]
-                                                    andEnd:[self getLineZMinEnd]]autorelease];
+        VWWLine* zMinLine = [[VWWLine alloc]initWithBegin:[self getLineZMinBegin]
+                                                    andEnd:[self getLineZMinEnd]];
         [self.configView setLineZMin:zMinLine valid:YES];
     }
 }

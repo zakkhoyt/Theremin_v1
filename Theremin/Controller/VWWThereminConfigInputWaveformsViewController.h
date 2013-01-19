@@ -16,6 +16,6 @@
 @end
 
 @interface VWWThereminConfigInputWaveformsViewController : UIViewController
-@property (nonatomic, assign) id <VWWThereminConfigInputWaveformsViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <VWWThereminConfigInputWaveformsViewControllerDelegate> delegate;
 @property (nonatomic) InputType inputType;
 @end

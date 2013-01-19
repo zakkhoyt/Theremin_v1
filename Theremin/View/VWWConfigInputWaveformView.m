@@ -9,9 +9,9 @@
 #import "VWWConfigInputWaveformView.h"
 
 @interface VWWConfigInputWaveformView ()
-@property (nonatomic, retain) VWWLine* lineX;
-@property (nonatomic, retain) VWWLine* lineY;
-@property (nonatomic, retain) VWWLine* lineZ;
+@property (nonatomic, strong) VWWLine* lineX;
+@property (nonatomic, strong) VWWLine* lineY;
+@property (nonatomic, strong) VWWLine* lineZ;
 @property (nonatomic) bool lineXValid;
 @property (nonatomic) bool lineYValid;
 @property (nonatomic) bool lineZValid;
@@ -77,18 +77,15 @@
 }
 
 -(void)setLineX:(VWWLine *)line valid:(bool)valid{
-    if(_lineX)[_lineX release];
-    _lineX = [line retain];
+    _lineX = line;
     _lineXValid = valid;
 }
 -(void)setLineY:(VWWLine *)line valid:(bool)valid{
-    if(_lineY)[_lineY release];
-    _lineY = [line retain];
+    _lineY = line;
     _lineYValid = valid;
 }
 -(void)setLineZ:(VWWLine *)line valid:(bool)valid{
-    if(_lineZ)[_lineZ release];
-    _lineZ = [line retain];
+    _lineZ = line;
     _lineZValid = valid;
 }
 

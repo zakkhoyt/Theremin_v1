@@ -32,18 +32,18 @@ ADBannerViewDelegate>
 
 
 /// Command buttons
-@property (retain, nonatomic) IBOutlet UIButton *butCommandStart;
-@property (retain, nonatomic) IBOutlet UIButton *butCommandStop;
-@property (retain, nonatomic) IBOutlet UIButton *butCommandRestart;
+@property (strong, nonatomic) IBOutlet UIButton *butCommandStart;
+@property (strong, nonatomic) IBOutlet UIButton *butCommandStop;
+@property (strong, nonatomic) IBOutlet UIButton *butCommandRestart;
 - (IBAction)handle_butCommandStart:(id)sender;
 - (IBAction)handle_butCommandStop:(id)sender;
 - (IBAction)handle_butCommandRestart:(id)sender;
 
 // Input buttons
-@property (retain, nonatomic) IBOutlet UIButton *butInputMagnetometer;
-@property (retain, nonatomic) IBOutlet UIButton *butInputAccelerometer;
-@property (retain, nonatomic) IBOutlet UIButton *butInputTouch;
-@property (retain, nonatomic) IBOutlet UIButton *butInputGyros;
+@property (strong, nonatomic) IBOutlet UIButton *butInputMagnetometer;
+@property (strong, nonatomic) IBOutlet UIButton *butInputAccelerometer;
+@property (strong, nonatomic) IBOutlet UIButton *butInputTouch;
+@property (strong, nonatomic) IBOutlet UIButton *butInputGyros;
 - (IBAction)handle_butInputMagnetometer:(id)sender;
 - (IBAction)handle_butInputAccelerometer:(id)sender;
 - (IBAction)handle_butInputTouch:(id)sender;
@@ -89,7 +89,7 @@ ADBannerViewDelegate>
 
 
 
-@property (retain, nonatomic) IBOutlet ADBannerView *adBannerView;
+@property (strong, nonatomic) IBOutlet ADBannerView *adBannerView;
 
 
 
@@ -108,14 +108,6 @@ ADBannerViewDelegate>
     return self;
 }
 
-- (void)dealloc {
-        
-    [_butCommandStart release];
-    [_butCommandStop release];
-    [_butCommandRestart release];
-    [_adBannerView release];
-    [super dealloc];
-}
 
 
 //- (void)viewDidAppear:(BOOL)animated{
@@ -162,42 +154,42 @@ ADBannerViewDelegate>
 	if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputFrequency])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigInputFrequencyViewController* configFrequencyController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminConfigInputFrequencyViewController* configFrequencyController = [navigationController viewControllers][0];
 		configFrequencyController.delegate = self;
         configFrequencyController.inputType = self.configInputType;
 	}
     else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputWaveform])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigInputWaveformsViewController* configWaveformController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminConfigInputWaveformsViewController* configWaveformController = [navigationController viewControllers][0];
 		configWaveformController.delegate = self;
         configWaveformController.inputType = self.configInputType;
 	}
     else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputSensitivity])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigInputSensitivityViewController* configSensitivityController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminConfigInputSensitivityViewController* configSensitivityController = [navigationController viewControllers][0];
 		configSensitivityController.delegate = self;
         configSensitivityController.inputType = self.configInputType;
 	}
     else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputEffects])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigInputEffectsViewController* configEffectsController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminConfigInputEffectsViewController* configEffectsController = [navigationController viewControllers][0];
 		configEffectsController.delegate = self;
         configEffectsController.inputType = self.configInputType;
 	}
     else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputAmplitude])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigInputAmplitudeViewController* configAmplitudeController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminConfigInputAmplitudeViewController* configAmplitudeController = [navigationController viewControllers][0];
 		configAmplitudeController.delegate = self;
         configAmplitudeController.inputType = self.configInputType;
 	}
     else if ([segue.identifier isEqualToString:kSegueSettingsToConfigInputKey])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminConfigInputKeyViewController* configKeyController = [[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminConfigInputKeyViewController* configKeyController = [navigationController viewControllers][0];
 		configKeyController.delegate = self;
         configKeyController.inputType = self.configInputType;
 	}

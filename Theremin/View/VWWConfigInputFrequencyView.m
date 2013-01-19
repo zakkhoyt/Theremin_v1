@@ -9,13 +9,13 @@
 #import "VWWConfigInputFrequencyView.h"
 
 @interface VWWConfigInputFrequencyView ()
-@property (nonatomic, retain) VWWLine* lineFrequencies;
-@property (nonatomic, retain) VWWLine* lineXMax;
-@property (nonatomic, retain) VWWLine* lineXMin;
-@property (nonatomic, retain) VWWLine* lineYMax;
-@property (nonatomic, retain) VWWLine* lineYMin;
-@property (nonatomic, retain) VWWLine* lineZMax;
-@property (nonatomic, retain) VWWLine* lineZMin;
+@property (nonatomic, strong) VWWLine* lineFrequencies;
+@property (nonatomic, strong) VWWLine* lineXMax;
+@property (nonatomic, strong) VWWLine* lineXMin;
+@property (nonatomic, strong) VWWLine* lineYMax;
+@property (nonatomic, strong) VWWLine* lineYMin;
+@property (nonatomic, strong) VWWLine* lineZMax;
+@property (nonatomic, strong) VWWLine* lineZMin;
 @property (nonatomic) bool lineXMaxValid;
 @property (nonatomic) bool lineXMinValid;
 @property (nonatomic) bool lineYMaxValid;
@@ -117,37 +117,30 @@
 
 
 -(void)setLineFrequencies:(VWWLine *)line{
-    if(_lineFrequencies)[_lineFrequencies release];
-    _lineFrequencies = [line retain];
+    _lineFrequencies = line;
 }
 -(void)setLineXMax:(VWWLine *)line valid:(bool)valid{
-    if(_lineXMax)[_lineXMax release];
-    _lineXMax = [line retain];
+    _lineXMax = line;
     _lineXMaxValid = valid;
 }
 -(void)setLineXMin:(VWWLine *)line valid:(bool)valid{
-    if(_lineXMin)[_lineXMin release];
-    _lineXMin = [line retain];
+    _lineXMin = line;
     _lineXMinValid = valid;
 }
 -(void)setLineYMax:(VWWLine *)line valid:(bool)valid{
-    if(_lineYMax)[_lineYMax release];
-    _lineYMax = [line retain];
+    _lineYMax = line;
     _lineYMaxValid = valid;
 }
 -(void)setLineYMin:(VWWLine *)line valid:(bool)valid{
-    if(_lineYMin)[_lineYMin release];
-    _lineYMin = [line retain];
+    _lineYMin = line;
     _lineYMinValid = valid;
 }
 -(void)setLineZMax:(VWWLine *)line valid:(bool)valid{
-    if(_lineZMax)[_lineZMax release];
-    _lineZMax = [line retain];
+    _lineZMax = line;
     _lineZMaxValid = valid;
 }
 -(void)setLineZMin:(VWWLine *)line valid:(bool)valid{
-    if(_lineZMin)[_lineZMin release];
-    _lineZMin = [line retain];
+    _lineZMin = line;
     _lineZMinValid = valid;
 }
 

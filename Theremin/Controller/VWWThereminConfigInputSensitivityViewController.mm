@@ -11,16 +11,16 @@
 #import "VWWThereminInputs.h"
 
 @interface VWWThereminConfigInputSensitivityViewController ()
-@property (nonatomic, retain) IBOutlet UIView* infoView;
-@property (nonatomic, retain) IBOutlet VWWConfigInputSensitivityView* configView;
-@property (nonatomic, retain) VWWThereminInput* input;
+@property (nonatomic, strong) IBOutlet UIView* infoView;
+@property (nonatomic, strong) IBOutlet VWWConfigInputSensitivityView* configView;
+@property (nonatomic, strong) VWWThereminInput* input;
 - (IBAction)dismissInfoViewButton:(id)sender;
 - (IBAction)doneButtonHandler:(id)sender;
 
-@property (retain, nonatomic) IBOutlet UISlider *xSlider;
-@property (retain, nonatomic) IBOutlet UISlider *ySlider;
-@property (retain, nonatomic) IBOutlet UISlider *zSlider;
-@property (retain, nonatomic) IBOutlet UILabel *zSliderLabel;
+@property (strong, nonatomic) IBOutlet UISlider *xSlider;
+@property (strong, nonatomic) IBOutlet UISlider *ySlider;
+@property (strong, nonatomic) IBOutlet UISlider *zSlider;
+@property (strong, nonatomic) IBOutlet UILabel *zSliderLabel;
 
 - (IBAction)xSliderHandler:(id)sender;
 - (IBAction)ySliderHandler:(id)sender;
@@ -130,12 +130,5 @@
 - (IBAction)zSliderHandler:(id)sender {
     UISlider* slider = (UISlider*)sender;
     self.input.z.sensitivity = slider.value;
-}
-- (void)dealloc {
-    [_xSlider release];
-    [_ySlider release];
-    [_zSlider release];
-    [_zSliderLabel release];
-    [super dealloc];
 }
 @end

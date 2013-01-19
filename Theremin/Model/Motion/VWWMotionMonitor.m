@@ -25,7 +25,7 @@ const float kMagnetometerZMax = 30.0f;
 
 
 @interface VWWMotionMonitor ()
-@property (nonatomic, retain) CMMotionManager* motion;
+@property (nonatomic, strong) CMMotionManager* motion;
 @property Devices devices;
 @property (nonatomic) bool accelerometerRunning;
 @property (nonatomic) bool magnetometerRunning;
@@ -46,13 +46,6 @@ const float kMagnetometerZMax = 30.0f;
     }
     return self;
 }
-
--(void)dealloc{
-    [self.motion release];
-    self.motion = nil;
-    [super dealloc];
-}
-
 
 -(void)startAccelerometer{
     if(self.accelerometerRunning == YES) return;
@@ -161,7 +154,7 @@ const float kMagnetometerZMax = 30.0f;
         });
     };
 
-    [self.motion startAccelerometerUpdatesToQueue:accelerometerQueue withHandler:[[accelerometerHandler copy]autorelease]];
+    [self.motion startAccelerometerUpdatesToQueue:accelerometerQueue withHandler:[accelerometerHandler copy]];
     self.accelerometerRunning = YES;
     NSLog(@"Started Accelerometer");
 }
@@ -279,7 +272,7 @@ const float kMagnetometerZMax = 30.0f;
         });
     };
     
-    [self.motion startMagnetometerUpdatesToQueue:magnetometerQueue withHandler:[[magnetometerHandler copy]autorelease]];
+    [self.motion startMagnetometerUpdatesToQueue:magnetometerQueue withHandler:[magnetometerHandler copy]];
     self.magnetometerRunning = YES;
     NSLog(@"Started Magnetometer");
     
@@ -396,7 +389,7 @@ const float kMagnetometerZMax = 30.0f;
         });
     };
     
-    [self.motion startGyroUpdatesToQueue:gyroQueue withHandler:[[gyroHandler copy]autorelease]];
+    [self.motion startGyroUpdatesToQueue:gyroQueue withHandler:[gyroHandler copy]];
     self.gyrosRunning = YES;
     NSLog(@"Started Gyros");
 

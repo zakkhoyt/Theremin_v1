@@ -31,22 +31,22 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     VWWThereminSettingsViewControllerDelegate,
     VWWThereminAboutViewControllerDelegate>{
 }
-@property (nonatomic, retain) EAGLContext * context;
-@property (nonatomic, retain) IBOutlet GLKView* view;
-@property (nonatomic, retain) VWWMotionMonitor* motionMonitor;
+@property (nonatomic, strong) EAGLContext * context;
+@property (nonatomic, strong) IBOutlet GLKView* view;
+@property (nonatomic, strong) VWWMotionMonitor* motionMonitor;
 @property (nonatomic) CGPoint touchBegan;
 @property (nonatomic) CGPoint touchMoved;
 @property (nonatomic) CGPoint touchEnded;
-@property (nonatomic, retain) NSTimer* rotateTimer;
-@property (nonatomic, retain) NSMutableArray* cubes;
+@property (nonatomic, strong) NSTimer* rotateTimer;
+@property (nonatomic, strong) NSMutableArray* cubes;
 @property CGPoint selectedPixel;
 
 
 // UI components
-@property (retain, nonatomic) IBOutlet UILabel *lblAccelerometer;
-@property (retain, nonatomic) IBOutlet UILabel *lblGyros;
-@property (retain, nonatomic) IBOutlet UILabel *lblMagnetometer;
-@property (retain, nonatomic) IBOutlet UILabel *lblInfo;
+@property (strong, nonatomic) IBOutlet UILabel *lblAccelerometer;
+@property (strong, nonatomic) IBOutlet UILabel *lblGyros;
+@property (strong, nonatomic) IBOutlet UILabel *lblMagnetometer;
+@property (strong, nonatomic) IBOutlet UILabel *lblInfo;
 
 - (IBAction)settingsButtonHandler:(id)sender;
 - (IBAction)aboutButtonHandler:(id)sender;
@@ -102,13 +102,13 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 	if ([segue.identifier isEqualToString:kSegueThereminToSettings])
 	{
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminSettingsViewController* viewController = (VWWThereminSettingsViewController*)[[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminSettingsViewController* viewController = (VWWThereminSettingsViewController*)[navigationController viewControllers][0];
 		viewController.delegate = self;
         viewController.motion = self.motionMonitor;
 	}
     else if ([segue.identifier isEqualToString:kSegueThereminToAbout]){
 		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminAboutViewController* viewController = (VWWThereminAboutViewController*)[[navigationController viewControllers]objectAtIndex:0];
+		VWWThereminAboutViewController* viewController = (VWWThereminAboutViewController*)[navigationController viewControllers][0];
 		viewController.delegate = self;
     }
 }
@@ -124,7 +124,7 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     // OpenGL
     [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     self.touchBegan = [touch locationInView:nil];
     
 
@@ -145,7 +145,7 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     [self printMethod:(char*)__FUNCTION__ withTouches:touches withEvent:event];
     NSArray *touchesArray = [touches allObjects];
-    UITouch* touch = [touchesArray objectAtIndex:0];
+    UITouch* touch = touchesArray[0];
     self.touchMoved = [touch locationInView:nil];
     CGFloat rotateX = self.touchBegan.x - self.touchMoved.x;
     CGFloat rotateY = self.touchBegan.y - self.touchMoved.y;
@@ -206,7 +206,7 @@ static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
     NSArray *touchesArray = [touches allObjects];
     NSMutableString* s = [NSMutableString new];
     for(int index = 0; index < touches.count; index++){
-        UITouch *touch = (UITouch *)[touchesArray objectAtIndex:index];
+        UITouch *touch = (UITouch *)touchesArray[index];
         CGPoint point = [touch locationInView:nil];
         [s appendFormat:@" %@", NSStringFromCGPoint(point)];
     }

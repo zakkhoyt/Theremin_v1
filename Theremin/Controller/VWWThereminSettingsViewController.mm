@@ -15,12 +15,12 @@
 #import "VWWThereminConfigInputKeyViewController.h"
 #import "VWWThereminInputs.h"
 
-static NSString* kSegueSettingsToConfigInputAmplitude = @"segueSettingsToConfigInputAmplitude";
-static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
-static NSString* kSegueSettingsToConfigInputWaveform = @"segueSettingsToConfigInputWaveform";
-static NSString* kSegueSettingsToConfigInputSensitivity = @"segueSettingsToConfigInputSensitivity";
-static NSString* kSegueSettingsToConfigInputEffects = @"segueSettingsToConfigInputEffects";
-static NSString* kSegueSettingsToConfigInputKey = @"segueSettingsToConfigInputKey";
+static __attribute ((unused)) NSString* kSegueSettingsToConfigInputAmplitude = @"segueSettingsToConfigInputAmplitude";
+static __attribute ((unused)) NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
+static __attribute ((unused)) NSString* kSegueSettingsToConfigInputWaveform = @"segueSettingsToConfigInputWaveform";
+static __attribute ((unused)) NSString* kSegueSettingsToConfigInputSensitivity = @"segueSettingsToConfigInputSensitivity";
+static __attribute ((unused)) NSString* kSegueSettingsToConfigInputEffects = @"segueSettingsToConfigInputEffects";
+static __attribute ((unused)) NSString* kSegueSettingsToConfigInputKey = @"segueSettingsToConfigInputKey";
 
 @interface VWWThereminSettingsViewController () <VWWThereminConfigInputAmplitudeViewControllerDelegate,
 VWWThereminConfigInputFrequencyViewControllerDelegate,

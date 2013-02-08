@@ -23,12 +23,12 @@ typedef enum{
     kLineTypeZMin,
 } LineType;
 
-static NSString* kXMaxLabelPrefix = @"X Max";
-static NSString* kXMinLabelPrefix = @"X Min";
-static NSString* kYMaxLabelPrefix = @"Y Max";
-static NSString* kYMinLabelPrefix = @"Y Min";
-static NSString* kZMaxLabelPrefix = @"Z Max";
-static NSString* kZMinLabelPrefix = @"Z Min";
+static __attribute ((unused)) NSString* kXMaxLabelPrefix = @"X Max";
+static __attribute ((unused)) NSString* kXMinLabelPrefix = @"X Min";
+static __attribute ((unused)) NSString* kYMaxLabelPrefix = @"Y Max";
+static __attribute ((unused)) NSString* kYMinLabelPrefix = @"Y Min";
+static __attribute ((unused)) NSString* kZMaxLabelPrefix = @"Z Max";
+static __attribute ((unused)) NSString* kZMinLabelPrefix = @"Z Min";
 
 @interface VWWThereminConfigInputFrequencyViewController ()
 //@property (retain, nonatomic) IBOutlet UINavigationItem *navigationBar;

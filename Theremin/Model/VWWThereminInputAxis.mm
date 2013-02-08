@@ -10,21 +10,21 @@
 #import "VWWThereminSynthesizer.h"
 
 // Keys for read/writing hash sets
-static NSString* kKeyFMax = @"fmax";
-static NSString* kKeyFMin = @"fmin";
-static NSString* kKeyEffect = @"effect";
-static NSString* kKeySensitivity = @"sensitivity";
-static NSString* kKeyWaveType = @"wavetype";
-static NSString* kKeySin = @"sin";
-static NSString* kKeySquare = @"square";
-static NSString* kKeyTriangle = @"triangle";
-static NSString* kKeySawtooth = @"sawtooth";
-static NSString* kKeyAutotune = @"autotune";
-static NSString* kKeyLinearize = @"linearize";
-static NSString* kKeyThrottle = @"throttle";
-static NSString* kKeyAmplitude = @"amplitude";
-static NSString* kKeyMuted = @"muted";
-static NSString* kKeyNone = @"none";
+static __attribute ((unused)) NSString* kKeyFMax = @"fmax";
+static __attribute ((unused)) NSString* kKeyFMin = @"fmin";
+static __attribute ((unused)) NSString* kKeyEffect = @"effect";
+static __attribute ((unused)) NSString* kKeySensitivity = @"sensitivity";
+static __attribute ((unused)) NSString* kKeyWaveType = @"wavetype";
+static __attribute ((unused)) NSString* kKeySin = @"sin";
+static __attribute ((unused)) NSString* kKeySquare = @"square";
+static __attribute ((unused)) NSString* kKeyTriangle = @"triangle";
+static __attribute ((unused)) NSString* kKeySawtooth = @"sawtooth";
+static __attribute ((unused)) NSString* kKeyAutotune = @"autotune";
+static __attribute ((unused)) NSString* kKeyLinearize = @"linearize";
+static __attribute ((unused)) NSString* kKeyThrottle = @"throttle";
+static __attribute ((unused)) NSString* kKeyAmplitude = @"amplitude";
+static __attribute ((unused)) NSString* kKeyMuted = @"muted";
+static __attribute ((unused)) NSString* kKeyNone = @"none";
 
 
 @interface VWWThereminInputAxis ()

@@ -23,8 +23,8 @@
 //const CGFloat kRotateYSensitivity = 0.25f;
 //const CGFloat kRotateZSensitivity = 0.25f;
 
-static NSString* kSegueThereminToSettings = @"segueThereminToSettings";
-static NSString* kSegueThereminToAbout = @"segueThereminToAbout";
+static __attribute ((unused)) NSString* kSegueThereminToSettings = @"segueThereminToSettings";
+static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 @interface VWWThereminViewController () <GLKViewControllerDelegate,
     VWWMotionMonitorDelegate,

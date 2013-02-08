@@ -8,20 +8,20 @@
 
 #import "VWWThereminEffectNoteKey.h"
 
-static NSString* kKeyKey = @"key";
-static NSString* kKeyAMinor = @"aminor";
-static NSString* kKeyAMajor = @"amajor";
-static NSString* kKeyBMinor = @"bminor";
-static NSString* kKeyBMajor = @"bmajor";
-static NSString* kKeyCMajor = @"cmajor";
-static NSString* kKeyDMinor = @"dminor";
-static NSString* kKeyDMajor = @"dmajor";
-static NSString* kKeyEMinor = @"eminor";
-static NSString* kKeyEMajor = @"emajor";
-static NSString* kKeyFMajor = @"fmajor";
-static NSString* kKeyGMinor = @"gminor";
-static NSString* kKeyGMajor = @"gmajor";
-static NSString* kKeyChromatic = @"chromatic";
+static __attribute ((unused)) NSString* kKeyKey = @"key";
+static __attribute ((unused)) NSString* kKeyAMinor = @"aminor";
+static __attribute ((unused)) NSString* kKeyAMajor = @"amajor";
+static __attribute ((unused)) NSString* kKeyBMinor = @"bminor";
+static __attribute ((unused)) NSString* kKeyBMajor = @"bmajor";
+static __attribute ((unused)) NSString* kKeyCMajor = @"cmajor";
+static __attribute ((unused)) NSString* kKeyDMinor = @"dminor";
+static __attribute ((unused)) NSString* kKeyDMajor = @"dmajor";
+static __attribute ((unused)) NSString* kKeyEMinor = @"eminor";
+static __attribute ((unused)) NSString* kKeyEMajor = @"emajor";
+static __attribute ((unused)) NSString* kKeyFMajor = @"fmajor";
+static __attribute ((unused)) NSString* kKeyGMinor = @"gminor";
+static __attribute ((unused)) NSString* kKeyGMajor = @"gmajor";
+static __attribute ((unused)) NSString* kKeyChromatic = @"chromatic";
 
 @implementation VWWThereminEffectNoteKey
 -(NSString*)stringForKey{

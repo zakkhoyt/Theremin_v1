@@ -9,15 +9,15 @@
 #import "VWWThereminInput.h"
 
 // Keys for read/writing hash sets
-static NSString* kKeyAccelerometer = @"accelerometer";
-static NSString* kKeyGyroscope = @"gyroscope";
-static NSString* kKeyMagnetometer = @"magnetometer";
-static NSString* kKeyTouchScreen = @"touchscreen";
-static NSString* kKeyNone = @"none";
-static NSString* kKeyType = @"type";
-static NSString* kKeyX = @"x";
-static NSString* kKeyY = @"y";
-static NSString* kKeyZ = @"z";
+static __attribute ((unused)) NSString* kKeyAccelerometer = @"accelerometer";
+static __attribute ((unused)) NSString* kKeyGyroscope = @"gyroscope";
+static __attribute ((unused)) NSString* kKeyMagnetometer = @"magnetometer";
+static __attribute ((unused)) NSString* kKeyTouchScreen = @"touchscreen";
+static __attribute ((unused)) NSString* kKeyNone = @"none";
+static __attribute ((unused)) NSString* kKeyType = @"type";
+static __attribute ((unused)) NSString* kKeyX = @"x";
+static __attribute ((unused)) NSString* kKeyY = @"y";
+static __attribute ((unused)) NSString* kKeyZ = @"z";
 
 @interface VWWThereminInput ()
 @end

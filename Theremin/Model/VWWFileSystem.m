@@ -8,7 +8,7 @@
 
 #import "VWWFileSystem.h"
 
-static NSString* kConfigFileName = @"theremin.cfg";
+static __attribute ((unused)) NSString* kConfigFileName = @"theremin.cfg";
 @implementation VWWFileSystem
 
 +(bool)configFileExists{

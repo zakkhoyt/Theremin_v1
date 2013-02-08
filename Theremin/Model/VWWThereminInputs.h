@@ -12,10 +12,10 @@
 
 // TODO: These are defined elsewhere in the app.
 // We really don't want two instances 
-static NSString* kKeyAccelerometer = @"accelerometer";
-static NSString* kKeyGyroscope = @"gyroscope";
-static NSString* kKeyMagnetometer = @"magnetometer";
-static NSString* kKeyTouchScreen = @"touchscreen";
+static __attribute ((unused)) NSString* kKeyAccelerometer = @"accelerometer";
+static __attribute ((unused)) NSString* kKeyGyroscope = @"gyroscope";
+static __attribute ((unused)) NSString* kKeyMagnetometer = @"magnetometer";
+static __attribute ((unused)) NSString* kKeyTouchScreen = @"touchscreen";
 
 @interface VWWThereminInputs : NSObject
 +(VWWThereminInputs *)sharedInstance;

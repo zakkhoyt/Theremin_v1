@@ -23,6 +23,7 @@
 		C6357CF415C7A5690074E722 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEF15C7A5690074E722 /* square_256x256.png */; };
 		C6357CF515C7A5690074E722 /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CF015C7A5690074E722 /* triangle_256x256.png */; };
 		C6357CF615C7A5690074E722 /* waveforms.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CF115C7A5690074E722 /* waveforms.png */; };
+		C63660E417EE4D720004C22E /* VWWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C63660E317EE4D720004C22E /* VWWSettingsViewController.m */; };
 		C63EDF29169BC74F0036E49B /* VWWThereminAboutView.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EDF28169BC74F0036E49B /* VWWThereminAboutView.m */; };
 		C63EDF2D169BC83F0036E49B /* VWWThereminSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C63EDF2C169BC83F0036E49B /* VWWThereminSettingsView.m */; };
 		C63EDF30169BFB530036E49B /* paid_vs_free.txt in Resources */ = {isa = PBXBuildFile; fileRef = C63EDF2F169BFB530036E49B /* paid_vs_free.txt */; };
@@ -39,6 +40,8 @@
 		C693B5C21628E198008CB1B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C624E67615C7E3E400A8DD94 /* Default@2x.png */; };
 		C6A94FD4168FC8AE003F2AFE /* VWWConfigInputWaveformView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A94FD3168FC8AE003F2AFE /* VWWConfigInputWaveformView.m */; };
 		C6A94FD7168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */; };
+		C6AA54F517EE4FB3004AAC8D /* settings~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C6AA54F317EE4FB3004AAC8D /* settings~iphone.png */; };
+		C6AA54F617EE4FB3004AAC8D /* settings@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C6AA54F417EE4FB3004AAC8D /* settings@2x~iPhone.png */; };
 		C6B3E963168BFBB100298AF5 /* VWWConfigInputFrequencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */; };
 		C6C1BC2C169BA4B400AD8244 /* VWWThereminEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C1BC2B169BA4B400AD8244 /* VWWThereminEffectNoteKey.m */; };
 		C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */; };
@@ -127,6 +130,8 @@
 		C6357CEF15C7A5690074E722 /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = square_256x256.png; path = images/square_256x256.png; sourceTree = "<group>"; };
 		C6357CF015C7A5690074E722 /* triangle_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangle_256x256.png; path = images/triangle_256x256.png; sourceTree = "<group>"; };
 		C6357CF115C7A5690074E722 /* waveforms.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = waveforms.png; path = images/waveforms.png; sourceTree = "<group>"; };
+		C63660E217EE4D720004C22E /* VWWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsViewController.h; sourceTree = "<group>"; };
+		C63660E317EE4D720004C22E /* VWWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsViewController.m; sourceTree = "<group>"; };
 		C63EDF27169BC74F0036E49B /* VWWThereminAboutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminAboutView.h; sourceTree = "<group>"; };
 		C63EDF28169BC74F0036E49B /* VWWThereminAboutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWThereminAboutView.m; sourceTree = "<group>"; };
 		C63EDF2B169BC83F0036E49B /* VWWThereminSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminSettingsView.h; sourceTree = "<group>"; };
@@ -148,6 +153,8 @@
 		C6A94FD3168FC8AE003F2AFE /* VWWConfigInputWaveformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputWaveformView.m; sourceTree = "<group>"; };
 		C6A94FD5168FC8C1003F2AFE /* VWWConfigInputSensitivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputSensitivityView.h; sourceTree = "<group>"; };
 		C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputSensitivityView.m; sourceTree = "<group>"; };
+		C6AA54F317EE4FB3004AAC8D /* settings~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings~iphone.png"; path = "images/settings~iphone.png"; sourceTree = "<group>"; };
+		C6AA54F417EE4FB3004AAC8D /* settings@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x~iPhone.png"; path = "images/settings@2x~iPhone.png"; sourceTree = "<group>"; };
 		C6B3E961168BFBB100298AF5 /* VWWConfigInputFrequencyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputFrequencyView.h; sourceTree = "<group>"; };
 		C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputFrequencyView.m; sourceTree = "<group>"; };
 		C6C1BC2A169BA4B400AD8244 /* VWWThereminEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminEffectNoteKey.h; sourceTree = "<group>"; };
@@ -277,6 +284,8 @@
 				C6F23BCF169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm */,
 				C6747F64168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.h */,
 				C6747F65168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm */,
+				C63660E217EE4D720004C22E /* VWWSettingsViewController.h */,
+				C63660E317EE4D720004C22E /* VWWSettingsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +384,8 @@
 		C6357CEB15C7A55C0074E722 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C6AA54F317EE4FB3004AAC8D /* settings~iphone.png */,
+				C6AA54F417EE4FB3004AAC8D /* settings@2x~iPhone.png */,
 				C6E34B8F166AE82000D0AB2C /* GLtextures */,
 				C606D27B166ADA4100FA7B70 /* xcode_produced */,
 				C6D3E1A31639B5580032D2F3 /* button_background_pressed.png */,
@@ -613,8 +624,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = VWW_;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Zakk Hoyt";
+				TargetAttributes = {
+					C6F7537115C6313C00911E59 = {
+						DevelopmentTeam = J7U74N85YF;
+					};
+				};
 			};
 			buildConfigurationList = C6F7536C15C6313C00911E59 /* Build configuration list for PBXProject "Theremin" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -657,10 +673,12 @@
 				C693B5C11628E191008CB1B1 /* Default.png in Resources */,
 				C693B5C21628E198008CB1B1 /* Default@2x.png in Resources */,
 				C6D3E1A21639B4B10032D2F3 /* button_background.png in Resources */,
+				C6AA54F517EE4FB3004AAC8D /* settings~iphone.png in Resources */,
 				C6D3E1A41639B5580032D2F3 /* button_background_pressed.png in Resources */,
 				C6E34B96166AE82000D0AB2C /* 3x3_00.png in Resources */,
 				C6E34B97166AE82000D0AB2C /* 3x3_01.png in Resources */,
 				C6E34B98166AE82000D0AB2C /* 3x3_02.png in Resources */,
+				C6AA54F617EE4FB3004AAC8D /* settings@2x~iPhone.png in Resources */,
 				C6E34B99166AE82000D0AB2C /* 3x3_03.png in Resources */,
 				C6E34B9A166AE82000D0AB2C /* 3x3_04.png in Resources */,
 				C6E34B9B166AE82000D0AB2C /* 3x3_05.png in Resources */,
@@ -712,6 +730,7 @@
 				C606D2B3166AE20C00FA7B70 /* VWWAppDelegate.mm in Sources */,
 				C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */,
 				C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */,
+				C63660E417EE4D720004C22E /* VWWSettingsViewController.m in Sources */,
 				C606D2CB166AE40F00FA7B70 /* VWWSquareModel.m in Sources */,
 				C6E34B9D166AE89600D0AB2C /* VWWThereminViewController.mm in Sources */,
 				C6EB888A168B975600DD1F3E /* VWWThereminAboutViewController.m in Sources */,
@@ -814,8 +833,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "52E32661-84D6-440B-9C15-A62977F03279";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52E32661-84D6-440B-9C15-A62977F03279";
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "E86FD57C-EF1F-4F78-B8EC-5AD9104A8818";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E86FD57C-EF1F-4F78-B8EC-5AD9104A8818";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -837,8 +857,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "52E32661-84D6-440B-9C15-A62977F03279";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52E32661-84D6-440B-9C15-A62977F03279";
+				PROVISIONING_PROFILE = "E86FD57C-EF1F-4F78-B8EC-5AD9104A8818";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E86FD57C-EF1F-4F78-B8EC-5AD9104A8818";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -855,10 +875,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52E32661-84D6-440B-9C15-A62977F03279";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52E32661-84D6-440B-9C15-A62977F03279";
+				PROVISIONING_PROFILE = "D474C98E-AC26-4441-993A-52D7975ADD6A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D474C98E-AC26-4441-993A-52D7975ADD6A";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -874,10 +894,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Theremin/Theremin-Prefix.pch";
 				INFOPLIST_FILE = "Theremin/Theremin-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "52E32661-84D6-440B-9C15-A62977F03279";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "52E32661-84D6-440B-9C15-A62977F03279";
+				PROVISIONING_PROFILE = "D474C98E-AC26-4441-993A-52D7975ADD6A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D474C98E-AC26-4441-993A-52D7975ADD6A";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

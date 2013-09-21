@@ -24,7 +24,9 @@
 //const CGFloat kRotateZSensitivity = 0.25f;
 
 static __attribute ((unused)) NSString* kSegueThereminToSettings = @"segueThereminToSettings";
+static __attribute ((unused)) NSString* kSegueThereminToSetting = @"segueThereminToSettings";
 static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminToAbout";
+
 
 @interface VWWThereminViewController () <GLKViewControllerDelegate,
     VWWMotionMonitorDelegate,
@@ -68,6 +70,8 @@ static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminT
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    
+    
     // Open GL stuff
     [self createGLView];
     [self createCubeScene];
@@ -79,6 +83,12 @@ static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminT
     self.lblAccelerometer.textColor = textColor;
     self.lblGyros.textColor = textColor;
     self.lblMagnetometer.textColor = textColor;
+}
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 
@@ -101,15 +111,13 @@ static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminT
     // view controller that will be loaded.
 	if ([segue.identifier isEqualToString:kSegueThereminToSettings])
 	{
-		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminSettingsViewController* viewController = (VWWThereminSettingsViewController*)[navigationController viewControllers][0];
-		viewController.delegate = self;
-        viewController.motion = self.motionMonitor;
+        VWWThereminSettingsViewController *vc = segue.destinationViewController;
+		vc.delegate = self;
+        vc.motion = self.motionMonitor;
 	}
     else if ([segue.identifier isEqualToString:kSegueThereminToAbout]){
-		UINavigationController* navigationController = segue.destinationViewController;
-		VWWThereminAboutViewController* viewController = (VWWThereminAboutViewController*)[navigationController viewControllers][0];
-		viewController.delegate = self;
+        VWWThereminAboutViewController *vc = segue.destinationViewController;
+		vc.delegate = self;
     }
 }
 
@@ -247,7 +255,7 @@ static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminT
 #pragma mark - Implements GLKViewDelegate
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
-    glClearColor(0,0,0,1);
+    glClearColor(0.3,0,0,1);
     glClear(GL_COLOR_BUFFER_BIT);
     
 #if defined(VWW_SKIP_RENDERING_CALL)
@@ -267,6 +275,11 @@ static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminT
 
 - (void)update{
     [self.cubes makeObjectsPerformSelector:@selector(update)];
+}
+
+#pragma mark IBActions
+- (IBAction)settingsButtonTouchUpInside:(id)sender {
+    [self performSegueWithIdentifier:kSegueThereminToSetting sender:self];
 }
 
 
@@ -336,11 +349,11 @@ static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminT
 
 #pragma mark - Implements VWWThereminAboutViewControllerDelegate
 -(void)vwwThereminAboutViewControllerUserIsDone:(VWWThereminAboutViewController*)sender{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)userIsCancelledSettings{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)userSetAccelerometerInput:(bool)enabled{

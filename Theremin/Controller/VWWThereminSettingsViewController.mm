@@ -116,6 +116,8 @@ ADBannerViewDelegate>
     [super viewDidLoad];
     self.navigationItem.title = @"Settings";
     
+    [self.navigationController setNavigationBarHidden:NO];
+    
     UIImage * buttonImage = [UIImage imageNamed:@"button_background_pressed.png"];
     if([VWWThereminInputs accelerometerInput].muted == NO)
         [self.butInputAccelerometer setBackgroundImage:buttonImage forState:UIControlStateNormal];

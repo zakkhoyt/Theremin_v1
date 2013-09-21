@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VWWSettingsViewController : UIViewController
+@interface VWWSettingsViewController : UITableViewController
 
 @end

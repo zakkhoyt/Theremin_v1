@@ -24,7 +24,7 @@
 //const CGFloat kRotateZSensitivity = 0.25f;
 
 static __attribute ((unused)) NSString* kSegueThereminToSettings = @"segueThereminToSettings";
-static __attribute ((unused)) NSString* kSegueThereminToSetting = @"segueThereminToSettings";
+static __attribute ((unused)) NSString* kSegueThereminToSetting = @"segueThereminToSetting";
 static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminToAbout";
 
 
@@ -119,6 +119,9 @@ static __attribute ((unused)) NSString* kSegueThereminToAbout = @"segueThereminT
         VWWThereminAboutViewController *vc = segue.destinationViewController;
 		vc.delegate = self;
     }
+    
+    
+    
 }
 
 

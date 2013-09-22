@@ -9,6 +9,14 @@
 #ifndef Theremin_VWWSettingsKeys_h
 #define Theremin_VWWSettingsKeys_h
 
+#import "VWWThereminTypes.h"
+
+typedef void (^VWWThereminFrequencyBlock)(float frequencyMax, float frequencyMin);
+typedef void (^VWWThereminAmplitudeBlock)(float amplitude);
+typedef void (^VWWThereminSensitivityBlock)(float sensitivity);
+typedef void (^VWWThereminWaveformBlock)(WaveType waveType);
+typedef void (^VWWThereminEffectBlock)(EffectType effectType);
+
 static NSString *kTouchScreenKey = @"Touch Screen";
 static NSString *kAccelerometerKey = @"Accelerometer";
 static NSString *kMagnetometerKey = @"Magnetometer";

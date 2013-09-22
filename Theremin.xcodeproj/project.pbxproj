@@ -47,6 +47,11 @@
 		C6AA550017EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA54FF17EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m */; };
 		C6AA550617EE71BB004AAC8D /* VWWSettingsParametersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA550517EE71BB004AAC8D /* VWWSettingsParametersViewController.m */; };
 		C6AA550917EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA550817EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m */; };
+		C6AA550D17EE8BD0004AAC8D /* VWWSettingsFrequencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA550C17EE8BD0004AAC8D /* VWWSettingsFrequencyTableViewCell.m */; };
+		C6AA551017EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA550F17EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.m */; };
+		C6AA551317EE8BF3004AAC8D /* VWWSettingsSensitivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA551217EE8BF3004AAC8D /* VWWSettingsSensitivityTableViewCell.m */; };
+		C6AA551617EE8C03004AAC8D /* VWWSettingsWaveformTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA551517EE8C03004AAC8D /* VWWSettingsWaveformTableViewCell.m */; };
+		C6AA551917EE8C16004AAC8D /* VWWSettingsEffectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA551817EE8C16004AAC8D /* VWWSettingsEffectTableViewCell.m */; };
 		C6B3E963168BFBB100298AF5 /* VWWConfigInputFrequencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */; };
 		C6C1BC2C169BA4B400AD8244 /* VWWThereminEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C1BC2B169BA4B400AD8244 /* VWWThereminEffectNoteKey.m */; };
 		C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */; };
@@ -171,6 +176,16 @@
 		C6AA550717EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsParametersTableViewCell.h; sourceTree = "<group>"; };
 		C6AA550817EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsParametersTableViewCell.m; sourceTree = "<group>"; };
 		C6AA550A17EE7ECE004AAC8D /* VWWSettingsKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsKeys.h; sourceTree = "<group>"; };
+		C6AA550B17EE8BD0004AAC8D /* VWWSettingsFrequencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsFrequencyTableViewCell.h; sourceTree = "<group>"; };
+		C6AA550C17EE8BD0004AAC8D /* VWWSettingsFrequencyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsFrequencyTableViewCell.m; sourceTree = "<group>"; };
+		C6AA550E17EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsAmplitudeTableViewCell.h; sourceTree = "<group>"; };
+		C6AA550F17EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsAmplitudeTableViewCell.m; sourceTree = "<group>"; };
+		C6AA551117EE8BF3004AAC8D /* VWWSettingsSensitivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsSensitivityTableViewCell.h; sourceTree = "<group>"; };
+		C6AA551217EE8BF3004AAC8D /* VWWSettingsSensitivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsSensitivityTableViewCell.m; sourceTree = "<group>"; };
+		C6AA551417EE8C03004AAC8D /* VWWSettingsWaveformTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsWaveformTableViewCell.h; sourceTree = "<group>"; };
+		C6AA551517EE8C03004AAC8D /* VWWSettingsWaveformTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsWaveformTableViewCell.m; sourceTree = "<group>"; };
+		C6AA551717EE8C16004AAC8D /* VWWSettingsEffectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsEffectTableViewCell.h; sourceTree = "<group>"; };
+		C6AA551817EE8C16004AAC8D /* VWWSettingsEffectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsEffectTableViewCell.m; sourceTree = "<group>"; };
 		C6B3E961168BFBB100298AF5 /* VWWConfigInputFrequencyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputFrequencyView.h; sourceTree = "<group>"; };
 		C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputFrequencyView.m; sourceTree = "<group>"; };
 		C6C1BC2A169BA4B400AD8244 /* VWWThereminEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminEffectNoteKey.h; sourceTree = "<group>"; };
@@ -445,6 +460,16 @@
 				C6AA54FF17EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m */,
 				C6AA550717EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.h */,
 				C6AA550817EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m */,
+				C6AA550B17EE8BD0004AAC8D /* VWWSettingsFrequencyTableViewCell.h */,
+				C6AA550C17EE8BD0004AAC8D /* VWWSettingsFrequencyTableViewCell.m */,
+				C6AA550E17EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.h */,
+				C6AA550F17EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.m */,
+				C6AA551117EE8BF3004AAC8D /* VWWSettingsSensitivityTableViewCell.h */,
+				C6AA551217EE8BF3004AAC8D /* VWWSettingsSensitivityTableViewCell.m */,
+				C6AA551417EE8C03004AAC8D /* VWWSettingsWaveformTableViewCell.h */,
+				C6AA551517EE8C03004AAC8D /* VWWSettingsWaveformTableViewCell.m */,
+				C6AA551717EE8C16004AAC8D /* VWWSettingsEffectTableViewCell.h */,
+				C6AA551817EE8C16004AAC8D /* VWWSettingsEffectTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -767,6 +792,7 @@
 				C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */,
 				C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */,
 				C63660E417EE4D720004C22E /* VWWSettingsViewController.m in Sources */,
+				C6AA551017EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.m in Sources */,
 				C606D2CB166AE40F00FA7B70 /* VWWSquareModel.m in Sources */,
 				C6E34B9D166AE89600D0AB2C /* VWWThereminViewController.mm in Sources */,
 				C6EB888A168B975600DD1F3E /* VWWThereminAboutViewController.m in Sources */,
@@ -777,16 +803,20 @@
 				C6CE37B2168EC804000F2A48 /* VWWThereminInput.mm in Sources */,
 				C6CE37B8168ECFC4000F2A48 /* VWWThereminInputs.mm in Sources */,
 				C6CE37BB168ED120000F2A48 /* VWWLine.m in Sources */,
+				C6AA550D17EE8BD0004AAC8D /* VWWSettingsFrequencyTableViewCell.m in Sources */,
+				C6AA551317EE8BF3004AAC8D /* VWWSettingsSensitivityTableViewCell.m in Sources */,
 				C6CE37BE168F1D3F000F2A48 /* VWWThereminConfigInputWaveformsViewController.mm in Sources */,
 				C6CE37C1168F1DB7000F2A48 /* VWWThereminConfigInputSensitivityViewController.mm in Sources */,
 				C6A94FD4168FC8AE003F2AFE /* VWWConfigInputWaveformView.m in Sources */,
 				C6A94FD7168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m in Sources */,
 				C6747F66168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm in Sources */,
 				C6747F6A168FECDF007133AD /* VWWConfigInputEffectsView.m in Sources */,
+				C6AA551617EE8C03004AAC8D /* VWWSettingsWaveformTableViewCell.m in Sources */,
 				C6AA550017EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m in Sources */,
 				C6DAB1DC169112540056E769 /* VWWFileSystem.m in Sources */,
 				C6F23BC9169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */,
 				C6AA54F917EE662A004AAC8D /* VWWSettingsTableViewCell.m in Sources */,
+				C6AA551917EE8C16004AAC8D /* VWWSettingsEffectTableViewCell.m in Sources */,
 				C6F23BCD16995399001C8FA8 /* VWWConfigInputAmplitudeView.m in Sources */,
 				C6F23BD0169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm in Sources */,
 				C6AA550617EE71BB004AAC8D /* VWWSettingsParametersViewController.m in Sources */,

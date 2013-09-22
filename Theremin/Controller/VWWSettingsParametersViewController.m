@@ -7,6 +7,7 @@
 //
 
 #import <iAd/iAd.h>
+#import "VWWThereminInputs.h"
 #import "VWWSettingsParametersViewController.h"
 #import "VWWSettingsParametersTableViewCell.h"
 #import "VWWThereminConfigInputAmplitudeViewController.h"
@@ -15,6 +16,14 @@
 #import "VWWThereminConfigInputSensitivityViewController.h"
 #import "VWWThereminConfigInputEffectsViewController.h"
 #import "VWWThereminConfigInputKeyViewController.h"
+
+
+
+#import "VWWSettingsFrequencyTableViewCell.h"
+#import "VWWSettingsAmplitudeTableViewCell.h"
+#import "VWWSettingsSensitivityTableViewCell.h"
+#import "VWWSettingsEffectTableViewCell.h"
+#import "VWWSettingsWaveformTableViewCell.h"
 
 static NSString* kSegueSettingsToConfigInputAmplitude = @"segueSettingsToConfigInputAmplitude";
 static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
@@ -38,6 +47,7 @@ ADBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tableKeys;
 @property (nonatomic, strong) NSString *parameterKey;
+//@property (nonatomic, strong) VWWThereminInput* input;
 @end
 
 @implementation VWWSettingsParametersViewController
@@ -83,6 +93,40 @@ ADBannerViewDelegate>
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark Private methods
+
+-(VWWThereminInputAxis*)inputAxis{
+    VWWThereminInput *input;
+    if([self.deviceKey isEqualToString:kAccelerometerKey]){
+        input = [VWWThereminInputs accelerometerInput];
+    }
+    else if([self.deviceKey isEqualToString:kGyroscopesKey]){
+        input = [VWWThereminInputs gyroscopeInput];
+    }
+    else if([self.deviceKey isEqualToString:kMagnetometerKey]){
+        input = [VWWThereminInputs magnetometerInput];
+    }
+    else /*if([self.deviceKey isEqualToString:kTouchScreenKey])*/{
+        input = [VWWThereminInputs touchscreenInput];
+    }
+    
+    return [self inputAxisFromAxisKey:input];
+}
+
+
+-(VWWThereminInputAxis*)inputAxisFromAxisKey:(VWWThereminInput*)input{
+    if([self.axisKey isEqualToString:kYAxisKey]){
+        return input.y;
+    }
+    else if([self.axisKey isEqualToString:kZAxisKey]){
+        return input.z;
+    }
+    else /*if([self.axisKey isEqualToString:kXAxisKey])*/{
+        return input.x;
+    }
+}
+
 #pragma mark UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -93,10 +137,76 @@ ADBannerViewDelegate>
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    VWWSettingsParametersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsParametersTableViewCell"];
-    cell.key = self.tableKeys[indexPath.row];
-    cell.delegate = self;
-    return cell;
+    NSString *key = self.tableKeys[indexPath.row];
+    if([key isEqualToString:kFrequencyKey]){
+        VWWSettingsFrequencyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsFrequencyTableViewCell"];
+        cell.input = [self inputAxis];
+        [cell setCompletionBlock:^(float frequencyMax, float frequencyMin) {
+            
+        }];
+        return cell;
+    }
+    else if([key isEqualToString:kAmplitudeKey]){
+        VWWSettingsAmplitudeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsAmplitudeTableViewCell"];
+        cell.input = [self inputAxis];
+        [cell setCompletionBlock:^(float amplitude) {
+          
+        }];
+        return cell;
+    }
+    else if([key isEqualToString:kSensitivityKey]){
+        VWWSettingsSensitivityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsSensitivityTableViewCell"];
+        cell.input = [self inputAxis];
+        [cell setCompletionBlock:^(float sensitivity) {
+           
+        }];
+        return cell;
+    }
+    else if([key isEqualToString:kWaveformKey]){
+        VWWSettingsWaveformTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsWaveformTableViewCell"];
+        cell.input = [self inputAxis];
+        [cell setCompletionBlock:^(WaveType waveType) {
+           
+        }];
+        return cell;
+    }
+    else if([key isEqualToString:kEffectKey]){
+        VWWSettingsEffectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsEffectTableViewCell"];
+        cell.input = [self inputAxis];
+        [cell setCompletionBlock:^(EffectType effectType) {
+           
+        }];
+        return cell;
+    }
+    else{
+        VWWSettingsParametersTableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsParametersTableViewCell"];
+        cell.key = self.tableKeys[indexPath.row];
+        cell.delegate = self;
+        return cell;
+    }
+    return [[UITableViewCell alloc]init];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *key = self.tableKeys[indexPath.row];
+    if([key isEqualToString:kFrequencyKey]){
+        return 135;
+    }
+    else if([key isEqualToString:kAmplitudeKey]){
+        return 94;
+    }
+    else if([key isEqualToString:kSensitivityKey]){
+        return 94;
+    }
+    else if([key isEqualToString:kWaveformKey]){
+        return 132;
+    }
+    else if([key isEqualToString:kEffectKey]){
+        return 132;
+    }
+    else{
+        return 44;
+    }
 }
 
 

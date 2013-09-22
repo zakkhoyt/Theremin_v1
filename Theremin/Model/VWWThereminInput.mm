@@ -18,6 +18,7 @@ static __attribute ((unused)) NSString* kKeyType = @"type";
 static __attribute ((unused)) NSString* kKeyX = @"x";
 static __attribute ((unused)) NSString* kKeyY = @"y";
 static __attribute ((unused)) NSString* kKeyZ = @"z";
+static __attribute ((unused)) NSString* kKeyMuted = @"muted";
 
 @interface VWWThereminInput ()
 @end
@@ -49,6 +50,7 @@ static __attribute ((unused)) NSString* kKeyZ = @"z";
             _y = [[VWWThereminInputAxis alloc]initWithDictionary:yDict];
             NSDictionary* zDict = dictionary[kKeyZ];
             _z = [[VWWThereminInputAxis alloc]initWithDictionary:zDict];
+            _muted = dictionary[kKeyMuted];
         }
         else{
             // Defaults
@@ -57,6 +59,15 @@ static __attribute ((unused)) NSString* kKeyZ = @"z";
             _x = [[VWWThereminInputAxis alloc]init];
             _y = [[VWWThereminInputAxis alloc]init];
             _z = [[VWWThereminInputAxis alloc]init];
+            
+            // muted
+            if(_inputType == kInputTouch){
+                _muted = NO;
+            }
+            else{
+                _muted = YES;
+            }
+            
 
         }
     }
@@ -69,6 +80,7 @@ static __attribute ((unused)) NSString* kKeyZ = @"z";
     [jsonDict setValue:self.y.jsonRepresentation forKey:kKeyY];
     [jsonDict setValue:self.z.jsonRepresentation forKey:kKeyZ];
     [jsonDict setValue:[self stringForInputType] forKey:kKeyType];
+    [jsonDict setValue:self.muted ? @"1" : @"0" forKey:kKeyMuted];
     return jsonDict;
 }
 

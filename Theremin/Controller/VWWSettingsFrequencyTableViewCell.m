@@ -36,7 +36,7 @@
 #pragma mark Private methods
 -(void)updateControls{
     self.statusLabel.text = [NSString stringWithFormat:@"min:%d max:%d", (NSInteger)self.input.frequencyMin, (NSInteger)self.input.frequencyMax];
-    [VWWThereminInputs saveConfigFile];
+//    [VWWThereminInputs saveConfigFile];
 }
 
 #pragma mark IBActions

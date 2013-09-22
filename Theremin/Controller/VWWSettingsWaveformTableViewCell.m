@@ -49,7 +49,7 @@
         self.autotuneButton.alpha = 0.5;
         self.statusLabel.text = @"Autotune";
     }
-    [VWWThereminInputs saveConfigFile];
+//    [VWWThereminInputs saveConfigFile];
 }
 
 #pragma mark IBActions

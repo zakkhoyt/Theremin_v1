@@ -72,7 +72,7 @@
         self.sawtoothButton.alpha = 0.5;
         self.statusLabel.text = @"Sawtooth";
     }
-    [VWWThereminInputs saveConfigFile];
+//    [VWWThereminInputs saveConfigFile];
 
 }
 

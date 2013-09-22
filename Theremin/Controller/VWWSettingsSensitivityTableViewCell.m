@@ -37,7 +37,7 @@
 #pragma mark Private methods
 -(void)updateControls{
     self.statusLabel.text = [NSString stringWithFormat:@"%f/1.0", self.input.sensitivity];
-    [VWWThereminInputs saveConfigFile];
+//    [VWWThereminInputs saveConfigFile];
 }
 
 #pragma mark IBActions

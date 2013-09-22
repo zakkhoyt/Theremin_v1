@@ -12,12 +12,6 @@
 
 
 
-static NSString* kSegueSettingsToConfigInputAmplitude = @"segueSettingsToConfigInputAmplitude";
-static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
-static NSString* kSegueSettingsToConfigInputWaveform = @"segueSettingsToConfigInputWaveform";
-static NSString* kSegueSettingsToConfigInputSensitivity = @"segueSettingsToConfigInputSensitivity";
-static NSString* kSegueSettingsToConfigInputEffects = @"segueSettingsToConfigInputEffects";
-static NSString* kSegueSettingsToConfigInputKey = @"segueSettingsToConfigInputKey";
 
 static NSString* kSegueSettingsToInput = @"segueSettingsToInput";
 

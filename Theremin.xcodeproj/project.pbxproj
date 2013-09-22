@@ -170,6 +170,7 @@
 		C6AA550517EE71BB004AAC8D /* VWWSettingsParametersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsParametersViewController.m; sourceTree = "<group>"; };
 		C6AA550717EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsParametersTableViewCell.h; sourceTree = "<group>"; };
 		C6AA550817EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsParametersTableViewCell.m; sourceTree = "<group>"; };
+		C6AA550A17EE7ECE004AAC8D /* VWWSettingsKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsKeys.h; sourceTree = "<group>"; };
 		C6B3E961168BFBB100298AF5 /* VWWConfigInputFrequencyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputFrequencyView.h; sourceTree = "<group>"; };
 		C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputFrequencyView.m; sourceTree = "<group>"; };
 		C6C1BC2A169BA4B400AD8244 /* VWWThereminEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminEffectNoteKey.h; sourceTree = "<group>"; };
@@ -563,6 +564,7 @@
 				C606D2AF166AE20C00FA7B70 /* VWWAppDelegate.h */,
 				C606D2B0166AE20C00FA7B70 /* VWWAppDelegate.mm */,
 				C6F7537F15C6313C00911E59 /* InfoPlist.strings */,
+				C6AA550A17EE7ECE004AAC8D /* VWWSettingsKeys.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";

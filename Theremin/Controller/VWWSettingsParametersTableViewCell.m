@@ -7,6 +7,7 @@
 //
 
 #import "VWWSettingsParametersTableViewCell.h"
+#import "VWWSettingsKeys.h"
 
 @interface VWWSettingsParametersTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *parameterLabel;

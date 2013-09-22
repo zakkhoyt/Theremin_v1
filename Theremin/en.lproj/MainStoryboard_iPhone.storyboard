@@ -118,7 +118,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2477" y="-139"/>
+            <point key="canvasLocation" x="4131" y="-131"/>
         </scene>
         <!--Theremin Config Input Sensitivity View Controller-->
         <scene sceneID="NYh-IY-4eX">
@@ -234,7 +234,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3010" y="548"/>
+            <point key="canvasLocation" x="4131" y="573"/>
         </scene>
         <!--Theremin Config Input Effects View Controller-->
         <scene sceneID="V3i-T5-2Tl">
@@ -357,7 +357,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3010" y="1270"/>
+            <point key="canvasLocation" x="4131" y="1260"/>
         </scene>
         <!--Theremin Config Input Key View Controller-->
         <scene sceneID="o3W-fC-R1b">
@@ -613,7 +613,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2477" y="2055"/>
+            <point key="canvasLocation" x="4131" y="1948"/>
         </scene>
         <!--Theremin Config Input Amplitude View Controller-->
         <scene sceneID="a0r-ED-5k0">
@@ -732,7 +732,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2491" y="-1513"/>
+            <point key="canvasLocation" x="4131" y="-1559"/>
         </scene>
         <!--Theremin Config Input Frequency View Controller-->
         <scene sceneID="Znz-92-QgO">
@@ -867,7 +867,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2477" y="-802"/>
+            <point key="canvasLocation" x="4131" y="-830"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="qvM-Dj-PNN">
@@ -893,7 +893,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Touch Screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHH-L2-LZM">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch Screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHH-L2-LZM">
                                                     <rect key="frame" x="8" y="11" width="209" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -911,7 +911,7 @@
                                                     <rect key="frame" x="282" y="7" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="SQd-lP-mBB"/>
+                                                        <constraint firstAttribute="width" constant="30" id="1Jd-ak-YAV"/>
                                                     </constraints>
                                                     <state key="normal" backgroundImage="settings.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -922,13 +922,14 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="68W-gC-O9X" firstAttribute="leading" secondItem="nHH-L2-LZM" secondAttribute="trailing" constant="8" symbolic="YES" id="5lA-0d-3Ww"/>
-                                                <constraint firstAttribute="trailing" secondItem="bQZ-Aq-dbQ" secondAttribute="trailing" constant="8" id="B00-HI-bvx"/>
-                                                <constraint firstItem="bQZ-Aq-dbQ" firstAttribute="bottom" secondItem="68W-gC-O9X" secondAttribute="bottom" id="OXN-C6-llC"/>
-                                                <constraint firstItem="nHH-L2-LZM" firstAttribute="leading" secondItem="1el-fu-N3l" secondAttribute="leading" constant="8" id="ZQq-9Q-HZy"/>
-                                                <constraint firstItem="bQZ-Aq-dbQ" firstAttribute="leading" secondItem="68W-gC-O9X" secondAttribute="trailing" constant="8" symbolic="YES" id="ZoI-CN-7zc"/>
-                                                <constraint firstItem="68W-gC-O9X" firstAttribute="centerY" secondItem="1el-fu-N3l" secondAttribute="centerY" id="avE-Ef-f5d"/>
-                                                <constraint firstItem="nHH-L2-LZM" firstAttribute="centerY" secondItem="68W-gC-O9X" secondAttribute="centerY" id="wZr-vx-D60"/>
+                                                <constraint firstItem="68W-gC-O9X" firstAttribute="leading" secondItem="nHH-L2-LZM" secondAttribute="trailing" constant="8" symbolic="YES" id="1a3-sX-WWN"/>
+                                                <constraint firstItem="nHH-L2-LZM" firstAttribute="leading" secondItem="1el-fu-N3l" secondAttribute="leading" constant="8" id="FwB-JS-b44"/>
+                                                <constraint firstItem="bQZ-Aq-dbQ" firstAttribute="bottom" secondItem="68W-gC-O9X" secondAttribute="bottom" id="ODe-YO-Mw0"/>
+                                                <constraint firstItem="nHH-L2-LZM" firstAttribute="centerY" secondItem="68W-gC-O9X" secondAttribute="centerY" id="aDI-IJ-TZY"/>
+                                                <constraint firstAttribute="trailing" secondItem="bQZ-Aq-dbQ" secondAttribute="trailing" constant="8" id="bIa-Qr-S8i"/>
+                                                <constraint firstItem="bQZ-Aq-dbQ" firstAttribute="leading" secondItem="68W-gC-O9X" secondAttribute="trailing" constant="8" symbolic="YES" id="bue-cz-DTs"/>
+                                                <constraint firstItem="nHH-L2-LZM" firstAttribute="top" secondItem="1el-fu-N3l" secondAttribute="top" constant="11" id="fFO-ql-MTO"/>
+                                                <constraint firstItem="nHH-L2-LZM" firstAttribute="centerY" secondItem="1el-fu-N3l" secondAttribute="centerY" id="lOu-5f-ggf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -980,12 +981,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJe-xf-rkp">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJe-xf-rkp">
                                             <rect key="frame" x="8" y="11" width="209" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="209" id="uc6-5E-7tf"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.021699211209647906" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -993,6 +991,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iL9-FZ-42X">
                                             <rect key="frame" x="282" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="zIA-II-1QY"/>
+                                            </constraints>
                                             <state key="normal" backgroundImage="settings.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -1006,12 +1007,14 @@
                                         </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="1Ya-An-ffU" firstAttribute="bottom" secondItem="iL9-FZ-42X" secondAttribute="bottom" id="MPy-dD-UEP"/>
-                                        <constraint firstAttribute="trailing" secondItem="iL9-FZ-42X" secondAttribute="trailing" constant="8" id="XOg-kS-zYG"/>
-                                        <constraint firstItem="nJe-xf-rkp" firstAttribute="centerY" secondItem="hte-nB-0IM" secondAttribute="centerY" id="b6f-Dk-xk6"/>
-                                        <constraint firstItem="iL9-FZ-42X" firstAttribute="top" secondItem="hte-nB-0IM" secondAttribute="top" constant="7" id="iUa-PH-Koa"/>
-                                        <constraint firstItem="nJe-xf-rkp" firstAttribute="leading" secondItem="hte-nB-0IM" secondAttribute="leading" constant="8" id="oPW-7e-A92"/>
-                                        <constraint firstItem="1Ya-An-ffU" firstAttribute="leading" secondItem="nJe-xf-rkp" secondAttribute="trailing" constant="8" symbolic="YES" id="ryx-9o-tuT"/>
+                                        <constraint firstItem="iL9-FZ-42X" firstAttribute="bottom" secondItem="1Ya-An-ffU" secondAttribute="bottom" id="1uI-TC-UJU"/>
+                                        <constraint firstItem="iL9-FZ-42X" firstAttribute="leading" secondItem="1Ya-An-ffU" secondAttribute="trailing" constant="8" symbolic="YES" id="2eP-5d-lL7"/>
+                                        <constraint firstItem="nJe-xf-rkp" firstAttribute="leading" secondItem="hte-nB-0IM" secondAttribute="leading" constant="8" id="9HL-ry-bKu"/>
+                                        <constraint firstItem="1Ya-An-ffU" firstAttribute="centerY" secondItem="nJe-xf-rkp" secondAttribute="centerY" id="DCZ-0F-3QO"/>
+                                        <constraint firstItem="1Ya-An-ffU" firstAttribute="leading" secondItem="nJe-xf-rkp" secondAttribute="trailing" constant="8" symbolic="YES" id="HPc-rM-1Re"/>
+                                        <constraint firstItem="nJe-xf-rkp" firstAttribute="centerY" secondItem="hte-nB-0IM" secondAttribute="centerY" id="NGe-DE-EDR"/>
+                                        <constraint firstAttribute="trailing" secondItem="iL9-FZ-42X" secondAttribute="trailing" constant="8" id="R2P-so-5Xl"/>
+                                        <constraint firstItem="nJe-xf-rkp" firstAttribute="top" secondItem="hte-nB-0IM" secondAttribute="top" constant="11" id="Y8A-mO-qZJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1558,6 +1561,7 @@
                         <segue destination="gf8-aV-ZWX" kind="modal" identifier="segueSettingsToConfigInputEffects" modalTransitionStyle="crossDissolve" id="CgI-j3-db6"/>
                         <segue destination="VF8-gX-pZ7" kind="modal" identifier="segueSettingsToConfigInputAmplitude" id="Evb-Nz-NbB"/>
                         <segue destination="Ngc-tB-WfE" kind="modal" identifier="segueSettingsToConfigInputKey" id="zjV-N7-ZSb"/>
+                        <segue destination="obn-Hl-YaL" kind="modal" identifier="segueSettingsToConfigInputWaveform" id="yu3-j2-nOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhm-MO-48i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1743,7 +1747,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4E-ou-fsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1958" y="-802"/>
+            <point key="canvasLocation" x="3598" y="-830"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mtG-d7-hBG">
@@ -1761,7 +1765,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M75-fV-quy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="548"/>
+            <point key="canvasLocation" x="3598" y="573"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CBY-VX-NHV">
@@ -1779,7 +1783,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQF-Ll-zFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="1270"/>
+            <point key="canvasLocation" x="3598" y="1260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fp3-rY-TfU">
@@ -1797,7 +1801,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLQ-FX-Aku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965" y="-1513"/>
+            <point key="canvasLocation" x="3598" y="-1559"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fwz-8T-Nj3">
@@ -1815,7 +1819,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAN-t5-3WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="2055"/>
+            <point key="canvasLocation" x="3598" y="1948"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AOP-V0-BN6">
@@ -1924,12 +1928,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Parameter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uz-mv-x1P">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parameter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uz-mv-x1P">
                                             <rect key="frame" x="8" y="11" width="209" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="209" id="oYS-5Z-AwW"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.15977647301665043" green="1" blue="0.10153454992994904" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1937,6 +1938,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfF-w1-UL6">
                                             <rect key="frame" x="282" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="mSr-Uf-kX7"/>
+                                            </constraints>
                                             <state key="normal" backgroundImage="settings.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -1946,10 +1950,12 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="rfF-w1-UL6" secondAttribute="trailing" constant="8" id="Fgu-FJ-xDg"/>
-                                        <constraint firstItem="2uz-mv-x1P" firstAttribute="leading" secondItem="8Yj-66-uyP" secondAttribute="leading" constant="8" id="Fqd-HC-nVE"/>
-                                        <constraint firstItem="2uz-mv-x1P" firstAttribute="centerY" secondItem="8Yj-66-uyP" secondAttribute="centerY" id="cnU-f2-5PX"/>
-                                        <constraint firstItem="rfF-w1-UL6" firstAttribute="top" secondItem="8Yj-66-uyP" secondAttribute="top" constant="7" id="ic9-TZ-hWM"/>
+                                        <constraint firstAttribute="trailing" secondItem="rfF-w1-UL6" secondAttribute="trailing" constant="8" id="0mB-1W-Fty"/>
+                                        <constraint firstItem="2uz-mv-x1P" firstAttribute="centerY" secondItem="8Yj-66-uyP" secondAttribute="centerY" id="905-8a-jxh"/>
+                                        <constraint firstItem="2uz-mv-x1P" firstAttribute="top" secondItem="8Yj-66-uyP" secondAttribute="top" constant="11" id="Hrg-eL-Svd"/>
+                                        <constraint firstItem="2uz-mv-x1P" firstAttribute="leading" secondItem="8Yj-66-uyP" secondAttribute="leading" constant="8" id="bwi-sJ-VBY"/>
+                                        <constraint firstItem="rfF-w1-UL6" firstAttribute="leading" secondItem="2uz-mv-x1P" secondAttribute="trailing" constant="65" id="ev5-hJ-SfW"/>
+                                        <constraint firstItem="rfF-w1-UL6" firstAttribute="top" secondItem="8Yj-66-uyP" secondAttribute="top" constant="7" id="t5i-if-NvU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1967,11 +1973,36 @@
                     <navigationItem key="navigationItem" id="ccV-xG-WC1"/>
                     <connections>
                         <outlet property="tableView" destination="dBp-qK-u26" id="Vgk-r4-VtB"/>
+                        <segue destination="VvZ-jq-Jon" kind="push" identifier="segueSettingsToConfigInputAmplitude" id="WBG-yk-IZz"/>
+                        <segue destination="K44-o3-RJh" kind="push" identifier="segueSettingsToConfigInputFrequency" id="utU-cw-4T3"/>
+                        <segue destination="t6j-yK-gz4" kind="push" identifier="segueSettingsToConfigInputSensitivity" id="8gU-Aj-9W8"/>
+                        <segue destination="Kph-Z2-9Ne" kind="push" identifier="segueSettingsToConfigInputEffects" id="gMh-Lt-g4a"/>
+                        <segue destination="JDa-kc-dQg" kind="push" identifier="segueSettingsToConfigInputKey" id="fk1-8E-e8l"/>
+                        <segue destination="Cmr-2A-XxW" kind="push" identifier="segueSettingsToConfigInputWaveform" id="hXk-C0-mRB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiR-rq-3JS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310" y="-855"/>
+            <point key="canvasLocation" x="1408" y="-847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SNX-Gy-czk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="obn-Hl-YaL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Ziv-mP-2lS"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2y3-Rd-f49">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cmr-2A-XxW" kind="relationship" relationship="rootViewController" id="dEx-13-hqg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rl6-qE-Efk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3598" y="-131"/>
         </scene>
     </scenes>
     <resources>
@@ -2063,4 +2094,12 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="8gU-Aj-9W8"/>
+        <segue reference="dEx-13-hqg"/>
+        <segue reference="fk1-8E-e8l"/>
+        <segue reference="utU-cw-4T3"/>
+        <segue reference="gMh-Lt-g4a"/>
+        <segue reference="WBG-yk-IZz"/>
+    </inferredMetricsTieBreakers>
 </document>

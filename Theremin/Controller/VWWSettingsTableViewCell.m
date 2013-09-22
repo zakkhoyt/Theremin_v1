@@ -7,6 +7,7 @@
 //
 
 #import "VWWSettingsTableViewCell.h"
+#import "VWWSettingsKeys.h"
 
 
 @interface VWWSettingsTableViewCell ()

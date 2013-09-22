@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWWSettingsKeys.h"
 
-
-static NSString *kTouchScreenKey = @"Touch Screen";
-static NSString *kAccelerometerKey = @"Accelerometer";
-static NSString *kMagnetometerKey = @"Magnetometer";
-static NSString *kGyroscopesKey = @"Gyrosscope";
 
 
 @class VWWSettingsTableViewCell;

@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWWSettingsKeys.h"
 
-static NSString *kFrequencyKey = @"Frequency";
-static NSString *kAmplitudeKey = @"Amplitude";
-static NSString *kWaveformKey = @"Waveform";
-static NSString *kSensitivityKey = @"Sensitivity";
-static NSString *kEffectKey = @"Effect";
 
 
 @class VWWSettingsParametersTableViewCell;

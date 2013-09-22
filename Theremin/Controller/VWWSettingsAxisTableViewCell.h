@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VWWSettingsKeys.h"
 
-static NSString *kXAxisKey = @"X Axis";
-static NSString *kYAxisKey = @"Y Axis";
-static NSString *kZAxisKey = @"Z Axis";
 
 @class VWWSettingsAxisTableViewCell;
 

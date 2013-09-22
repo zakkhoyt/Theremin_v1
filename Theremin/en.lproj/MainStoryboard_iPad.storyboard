@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5d1-nQ-cBr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A569" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5d1-nQ-cBr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Theremin Config Input Waveforms View Controller-->
@@ -9,29 +9,29 @@
             <objects>
                 <viewController id="Df7-ab-k2M" customClass="VWWThereminConfigInputWaveformsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zez-kd-LNl">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Ikc-3X-DsJ" customClass="VWWConfigInputWaveformView">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis waveform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4ja-oC-M4E">
-                                        <rect key="frame" x="0.0" y="119" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="133" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis waveform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gu5-mR-Evf">
-                                        <rect key="frame" x="0.0" y="263" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="295" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis waveform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="363-gN-FOs">
-                                        <rect key="frame" x="0.0" y="402" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="450" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,15 +42,15 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="square_256x256.png" id="Mlr-jE-Cmd">
-                                        <rect key="frame" x="440" y="150" width="100" height="100"/>
+                                        <rect key="frame" x="440" y="171" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="triangle_256x256.png" id="FAT-LX-cCF">
-                                        <rect key="frame" x="440" y="300" width="100" height="100"/>
+                                        <rect key="frame" x="440" y="342" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sawtooth_256x256.png" id="Nft-Mk-mdU">
-                                        <rect key="frame" x="440" y="450" width="100" height="100"/>
+                                        <rect key="frame" x="440" y="513" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -66,7 +66,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="configView" destination="Ikc-3X-DsJ" id="6h8-7w-IB9"/>
                         <outlet property="infoView" destination="q62-4U-b8Q" id="rvA-KY-8eC"/>
@@ -121,11 +121,11 @@
             <objects>
                 <viewController id="I39-B2-bC5" customClass="VWWThereminConfigInputSensitivityViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSq-fs-NMm">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Rv2-r0-0iN" customClass="VWWConfigInputSensitivityView">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis sensitivity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s94-7V-0fY">
@@ -136,35 +136,35 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis sensitivity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HDe-Z4-EEW">
-                                        <rect key="frame" x="185" y="219" width="170" height="30"/>
+                                        <rect key="frame" x="185" y="245" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis sensitivity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Mk-08-E5A">
-                                        <rect key="frame" x="185" y="441" width="170" height="30"/>
+                                        <rect key="frame" x="185" y="494" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="qE6-vU-Osu">
-                                        <rect key="frame" x="128" y="58" width="284" height="23"/>
+                                        <rect key="frame" x="128" y="58" width="284" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="xSliderHandler:" destination="I39-B2-bC5" eventType="valueChanged" id="ONB-zD-Adm"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Mnh-7S-Cbv">
-                                        <rect key="frame" x="128" y="257" width="284" height="23"/>
+                                        <rect key="frame" x="128" y="284" width="284" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="ySliderHandler:" destination="I39-B2-bC5" eventType="valueChanged" id="fx0-3H-OaC"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="GPm-93-ZxP">
-                                        <rect key="frame" x="128" y="479" width="284" height="23"/>
+                                        <rect key="frame" x="128" y="533" width="284" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="zSliderHandler:" destination="I39-B2-bC5" eventType="valueChanged" id="cqk-RV-mM6"/>
@@ -183,7 +183,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="configView" destination="Rv2-r0-0iN" id="Hkr-hf-ilC"/>
                         <outlet property="infoView" destination="Cwm-cb-y0q" id="8wH-ta-2GS"/>
@@ -234,36 +234,36 @@
             <objects>
                 <viewController id="Biv-Dg-pp8" customClass="VWWThereminConfigInputEffectsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Prt-A7-16l">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="UJy-99-oKM" customClass="VWWConfigInputEffectsView">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fts-Os-buy">
-                                        <rect key="frame" x="0.0" y="114" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="127" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eCB-8N-kpr">
-                                        <rect key="frame" x="0.0" y="247" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="277" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TvN-3j-uRZ">
-                                        <rect key="frame" x="0.0" y="382" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="428" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="s1H-fK-cmP">
-                                        <rect key="frame" x="460" y="491" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="551" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="Off" backgroundImage="button_background.png">
@@ -301,7 +301,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="autotuneLabel" destination="GLe-uV-AQo" id="xxG-cy-mVJ"/>
                         <outlet property="configView" destination="UJy-99-oKM" id="nwy-hQ-XDH"/>
@@ -354,29 +354,29 @@
             <objects>
                 <viewController id="fWp-eY-ygz" customClass="VWWThereminConfigInputKeyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Xd-Aj-W99">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="82R-pB-MZb" customClass="VWWConfigInputKeyView">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uy6-MP-Z0V">
-                                        <rect key="frame" x="0.0" y="103" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="115" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MLw-Cq-itv">
-                                        <rect key="frame" x="0.0" y="222" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="249" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis effect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vMd-CG-f8O">
-                                        <rect key="frame" x="0.0" y="344" width="55" height="30"/>
+                                        <rect key="frame" x="0.0" y="385" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -396,7 +396,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3z8-OT-lP4">
-                                        <rect key="frame" x="460" y="41" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="46" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="A Minor" backgroundImage="button_background.png">
@@ -409,7 +409,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7HB-rV-rrV">
-                                        <rect key="frame" x="460" y="83" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="93" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="A Major" backgroundImage="button_background.png">
@@ -422,7 +422,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fLo-06-FxL">
-                                        <rect key="frame" x="460" y="126" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="141" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="B Minor" backgroundImage="button_background.png">
@@ -435,7 +435,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="06z-kS-e42">
-                                        <rect key="frame" x="460" y="169" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="189" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="B Major" backgroundImage="button_background.png">
@@ -448,7 +448,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oBu-Pr-DdZ">
-                                        <rect key="frame" x="460" y="213" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="239" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="C Major" backgroundImage="button_background.png">
@@ -461,7 +461,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RAB-yf-m8P">
-                                        <rect key="frame" x="460" y="255" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="286" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="D Minor" backgroundImage="button_background.png">
@@ -474,7 +474,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fiR-75-0H6">
-                                        <rect key="frame" x="460" y="297" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="333" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="D Major" backgroundImage="button_background.png">
@@ -487,7 +487,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wyT-OO-M8r">
-                                        <rect key="frame" x="460" y="342" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="384" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="E Major" backgroundImage="button_background.png">
@@ -500,7 +500,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="21D-WN-W7K">
-                                        <rect key="frame" x="460" y="384" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="431" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="F Minor" backgroundImage="button_background.png">
@@ -513,7 +513,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mfH-MD-g0n">
-                                        <rect key="frame" x="460" y="426" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="478" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="F Major" backgroundImage="button_background.png">
@@ -526,7 +526,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Iew-7c-SNb">
-                                        <rect key="frame" x="460" y="470" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="527" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="G Minor" backgroundImage="button_background.png">
@@ -539,7 +539,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oFe-6m-BaO">
-                                        <rect key="frame" x="460" y="512" width="80" height="36"/>
+                                        <rect key="frame" x="460" y="575" width="80" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <state key="normal" title="G Major" backgroundImage="button_background.png">
@@ -564,7 +564,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAH-YI-1D6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view alpha="0.80000001192092896" contentMode="scaleToFill" id="kbY-kZ-njb" userLabel="View (info layer)">
@@ -607,11 +607,11 @@
             <objects>
                 <viewController id="oVU-rD-QRt" customClass="VWWThereminConfigInputAmplitudeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rdl-m0-Th5">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="qvH-WV-LfX" customClass="VWWConfigInputAmplitudeView">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X axis amplitude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kIz-qZ-Aa6">
@@ -622,35 +622,35 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y axis amplitude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kGD-U6-xC6">
-                                        <rect key="frame" x="185" y="246" width="170" height="30"/>
+                                        <rect key="frame" x="185" y="275" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z axis amplitude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mw1-Sd-Gwf">
-                                        <rect key="frame" x="185" y="470" width="170" height="30"/>
+                                        <rect key="frame" x="185" y="527" width="170" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="3fN-Z4-QiM">
-                                        <rect key="frame" x="128" y="59" width="284" height="23"/>
+                                        <rect key="frame" x="128" y="59" width="284" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="xSliderHandler:" destination="oVU-rD-QRt" eventType="valueChanged" id="Ybt-ka-kJ9"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Gkj-tI-BMt">
-                                        <rect key="frame" x="128" y="284" width="284" height="23"/>
+                                        <rect key="frame" x="128" y="315" width="284" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="ySliderHandler:" destination="oVU-rD-QRt" eventType="valueChanged" id="NEr-dE-f0g"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="ggX-Im-TeL">
-                                        <rect key="frame" x="128" y="508" width="284" height="23"/>
+                                        <rect key="frame" x="128" y="566" width="284" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="zSliderHandler:" destination="oVU-rD-QRt" eventType="valueChanged" id="dUq-Mp-S3r"/>
@@ -669,7 +669,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="infoView" destination="OCu-bq-BhA" id="Sl8-ts-Gnq"/>
                         <outlet property="xSlider" destination="3fN-Z4-QiM" id="XM3-YV-gFw"/>
@@ -719,11 +719,11 @@
             <objects>
                 <viewController id="TAW-g3-oNC" customClass="VWWThereminConfigInputFrequencyViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dZq-VL-7R5">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="SAm-dm-51E" customClass="VWWConfigInputFrequencyView">
-                                <rect key="frame" x="0.0" y="0.0" width="540" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Max Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JfP-5z-wnH">
@@ -734,49 +734,49 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BXd-kj-1fh">
-                                        <rect key="frame" x="0.0" y="25" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="28" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="X Min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMM-BY-XvM">
-                                        <rect key="frame" x="0.0" y="77" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="86" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vlc-lK-xFE">
-                                        <rect key="frame" x="0.0" y="235" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="263" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Y Min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b6n-4G-aHS">
-                                        <rect key="frame" x="0.0" y="287" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="321" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z Max" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YDy-b6-WIS">
-                                        <rect key="frame" x="0.0" y="445" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="499" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Z Min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kPz-nf-9LL">
-                                        <rect key="frame" x="0.0" y="497" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="557" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Min Freq" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PlD-RJ-TS2">
-                                        <rect key="frame" x="480" y="535" width="60" height="21"/>
+                                        <rect key="frame" x="480" y="599" width="60" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -795,7 +795,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="configView" destination="SAm-dm-51E" id="Qdk-X8-PJb"/>
                         <outlet property="frequencyMaxLabel" destination="JfP-5z-wnH" id="kLg-7y-UzE"/>
@@ -851,7 +851,7 @@
             <objects>
                 <viewController id="Ze1-5d-1Sm" customClass="VWWThereminSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8a7-Qr-vu1" customClass="VWWThereminSettingsView">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YFO-kg-X5w">
                                 <rect key="frame" x="350" y="20" width="80" height="50"/>
@@ -1329,7 +1329,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UiT-Kl-kYH">
-                                <rect key="frame" x="11" y="355" width="80" height="50"/>
+                                <rect key="frame" x="11" y="419" width="80" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="Reset" backgroundImage="button_background.png">
@@ -1344,13 +1344,9 @@
                                 </connections>
                             </button>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" id="rqa-df-CJA">
-                                <rect key="frame" x="0.0" y="490" width="540" height="66"/>
+                                <rect key="frame" x="0.0" y="490" width="540" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <requiredContentSizeIdentifiers>
-                                    <string>ADBannerContentSizeLandscape</string>
-                                    <string>ADBannerContentSizePortrait</string>
-                                </requiredContentSizeIdentifiers>
                                 <connections>
                                     <outlet property="delegate" destination="Ze1-5d-1Sm" id="sxr-1W-sFH"/>
                                 </connections>
@@ -1365,7 +1361,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="adBannerView" destination="rqa-df-CJA" id="CkQ-RE-1n8"/>
                         <outlet property="butInputAccelerometer" destination="4Hp-F2-EiS" id="Eed-hV-51n"/>
@@ -1389,7 +1385,7 @@
             <objects>
                 <viewController id="5wa-gq-HhE" customClass="VWWThereminAboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bO7-gs-GWu" customClass="VWWThereminAboutView">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="vww_logo.png" id="lbt-PF-YNb">
@@ -1397,7 +1393,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Source  code available at https://github.com/zakkhoyt/Theremin" id="LEO-u3-Yic">
-                                <rect key="frame" x="60" y="283" width="421" height="268"/>
+                                <rect key="frame" x="60" y="283" width="421" height="332"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="10"/>
@@ -1430,7 +1426,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="aboutLabel" destination="mSl-xF-E9j" id="hTT-er-hb7"/>
                         <outlet property="newsLabel" destination="LEO-u3-Yic" id="prg-SN-XdQ"/>
@@ -1446,7 +1442,7 @@
             <objects>
                 <navigationController id="AI0-IK-2Us" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G9A-3u-Znx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1465,7 +1461,7 @@
             <objects>
                 <navigationController id="H88-I1-qlZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4hq-Fx-eWF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1484,7 +1480,7 @@
             <objects>
                 <glkViewController autoresizesArchivedViewToFullSize="NO" wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" preferredFramesPerSecond="30" id="5d1-nQ-cBr" customClass="VWWThereminViewController" sceneMemberID="viewController">
                     <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9Mf-M3-fnT">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Accelerometer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VqO-tP-ZoO">
@@ -1550,7 +1546,7 @@
                             <outlet property="delegate" destination="5d1-nQ-cBr" id="fWs-iT-xtD"/>
                         </connections>
                     </glkView>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="lblAccelerometer" destination="VqO-tP-ZoO" id="Kom-lA-ggG"/>
                         <outlet property="lblGyros" destination="eKl-8L-bAB" id="DTs-dT-kbl"/>
@@ -1569,7 +1565,7 @@
             <objects>
                 <navigationController id="Lza-oL-yNV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9SH-x0-ems">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1588,7 +1584,7 @@
             <objects>
                 <navigationController id="Eqv-Hg-qQa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ob5-Ih-SAy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1607,7 +1603,7 @@
             <objects>
                 <navigationController id="aRi-wr-grM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAU-GV-1Wh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1626,7 +1622,7 @@
             <objects>
                 <navigationController id="1z4-UQ-kLc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LaH-qI-IpG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1645,7 +1641,7 @@
             <objects>
                 <navigationController id="f2o-et-IjP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6zy-f4-iXr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1664,7 +1660,7 @@
             <objects>
                 <navigationController id="BrJ-mB-ZL6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rzL-V3-e3M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1688,67 +1684,8 @@
         <image name="triangle_256x256.png" width="256" height="256"/>
         <image name="vww_logo.png" width="810" height="810"/>
     </resources>
-    <classes>
-        <class className="VWWConfigInputAmplitudeView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputAmplitudeView.h"/>
-        </class>
-        <class className="VWWConfigInputEffectsView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputEffectsView.h"/>
-        </class>
-        <class className="VWWConfigInputFrequencyView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputFrequencyView.h"/>
-        </class>
-        <class className="VWWConfigInputKeyView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputKeyView.h"/>
-        </class>
-        <class className="VWWConfigInputSensitivityView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputSensitivityView.h"/>
-        </class>
-        <class className="VWWConfigInputWaveformView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWConfigInputWaveformView.h"/>
-        </class>
-        <class className="VWWThereminAboutView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminAboutView.h"/>
-        </class>
-        <class className="VWWThereminAboutViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminAboutViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonHandler:"/>
-                <relationship kind="outlet" name="aboutLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="newsLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="VWWThereminConfigInputAmplitudeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputAmplitudeViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputEffectsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputEffectsViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputFrequencyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputFrequencyViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputKeyViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputKeyViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputSensitivityViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputSensitivityViewController.h"/>
-        </class>
-        <class className="VWWThereminConfigInputWaveformsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminConfigInputWaveformsViewController.h"/>
-        </class>
-        <class className="VWWThereminSettingsView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsView.h"/>
-        </class>
-        <class className="VWWThereminSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminSettingsViewController.h"/>
-        </class>
-        <class className="VWWThereminViewController" superclassName="GLKViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VWWThereminViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>

@@ -1,5 +1,5 @@
 //
-//  VWWSettingsViewController.h
+//  VWWSettingsParameterViewController.h
 //  Theremin
 //
 //  Created by Zakk Hoyt on 9/21/13.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
-
-@interface VWWSettingsViewController : UIViewController
+@interface VWWSettingsParameterViewController : UIViewController
 
 @end

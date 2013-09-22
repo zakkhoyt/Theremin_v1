@@ -7,31 +7,56 @@
 //
 
 #import "VWWSettingsViewController.h"
+#import "VWWSettingsTableViewCell.h"
+#import "VWWSettingsAxisViewController.h"
 
-@interface VWWSettingsViewController ()
 
+
+static NSString* kSegueSettingsToConfigInputAmplitude = @"segueSettingsToConfigInputAmplitude";
+static NSString* kSegueSettingsToConfigInputFrequency = @"segueSettingsToConfigInputFrequency";
+static NSString* kSegueSettingsToConfigInputWaveform = @"segueSettingsToConfigInputWaveform";
+static NSString* kSegueSettingsToConfigInputSensitivity = @"segueSettingsToConfigInputSensitivity";
+static NSString* kSegueSettingsToConfigInputEffects = @"segueSettingsToConfigInputEffects";
+static NSString* kSegueSettingsToConfigInputKey = @"segueSettingsToConfigInputKey";
+
+static NSString* kSegueSettingsToInput = @"segueSettingsToInput";
+
+
+@interface VWWSettingsViewController () <VWWSettingsTableViewCellDelegate>
+@property (nonatomic) BOOL hasLoaded;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *tableKeys;
 @end
 
 @implementation VWWSettingsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.tableKeys = [@[]mutableCopy];
+    [self.tableKeys addObject:kTouchScreenKey];
+    [self.tableKeys addObject:kAccelerometerKey];
+    [self.tableKeys addObject:kGyroscopesKey];
+    [self.tableKeys addObject:kMagnetometerKey];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    
+}
+
+-(void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    if(self.hasLoaded == NO){
+        self.hasLoaded = YES;
+        [self.tableView reloadData];
+        [self setTitle:@"Sensors"];
+    }
+    
+    [self.view layoutSubviews];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +64,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:kSegueSettingsToInput]){
+        VWWSettingsAxisViewController *vc = segue.destinationViewController;
+        vc.deviceKey = sender;
+    }
+}
 
 
 
@@ -50,12 +80,54 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.tableKeys.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [[UITableViewCell alloc]init];
+    VWWSettingsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VWWSettingsTableViewCell"];
+    cell.key = self.tableKeys[indexPath.row];
+    cell.delegate = self;
+    return cell;
 }
+
+
+
+#pragma mark VWWSettingsTableViewCellDelegate
+-(void)settingsTableViewCellSettingsButtonTouchUpInside:(VWWSettingsTableViewCell*)sender{
+    if([sender.key isEqualToString:kTouchScreenKey]){
+        
+    }
+    else if([sender.key isEqualToString:kAccelerometerKey]){
+        
+    }
+    else if([sender.key isEqualToString:kGyroscopesKey]){
+        
+    }
+    else if([sender.key isEqualToString:kMagnetometerKey]){
+        
+    }
+    
+    [self performSegueWithIdentifier:kSegueSettingsToInput sender:sender.key];
+}
+-(void)settingsTableViewCellEnableSwitchValueChanged:(VWWSettingsTableViewCell*)sender{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

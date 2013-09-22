@@ -42,6 +42,11 @@
 		C6A94FD7168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */; };
 		C6AA54F517EE4FB3004AAC8D /* settings~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = C6AA54F317EE4FB3004AAC8D /* settings~iphone.png */; };
 		C6AA54F617EE4FB3004AAC8D /* settings@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C6AA54F417EE4FB3004AAC8D /* settings@2x~iPhone.png */; };
+		C6AA54F917EE662A004AAC8D /* VWWSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA54F817EE662A004AAC8D /* VWWSettingsTableViewCell.m */; };
+		C6AA54FD17EE6A70004AAC8D /* VWWSettingsAxisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA54FC17EE6A70004AAC8D /* VWWSettingsAxisViewController.m */; };
+		C6AA550017EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA54FF17EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m */; };
+		C6AA550617EE71BB004AAC8D /* VWWSettingsParametersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA550517EE71BB004AAC8D /* VWWSettingsParametersViewController.m */; };
+		C6AA550917EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AA550817EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m */; };
 		C6B3E963168BFBB100298AF5 /* VWWConfigInputFrequencyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */; };
 		C6C1BC2C169BA4B400AD8244 /* VWWThereminEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C1BC2B169BA4B400AD8244 /* VWWThereminEffectNoteKey.m */; };
 		C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6CE37AF168EC67C000F2A48 /* VWWThereminInputAxis.mm */; };
@@ -155,6 +160,16 @@
 		C6A94FD6168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputSensitivityView.m; sourceTree = "<group>"; };
 		C6AA54F317EE4FB3004AAC8D /* settings~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings~iphone.png"; path = "images/settings~iphone.png"; sourceTree = "<group>"; };
 		C6AA54F417EE4FB3004AAC8D /* settings@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x~iPhone.png"; path = "images/settings@2x~iPhone.png"; sourceTree = "<group>"; };
+		C6AA54F717EE662A004AAC8D /* VWWSettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsTableViewCell.h; sourceTree = "<group>"; };
+		C6AA54F817EE662A004AAC8D /* VWWSettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsTableViewCell.m; sourceTree = "<group>"; };
+		C6AA54FB17EE6A70004AAC8D /* VWWSettingsAxisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsAxisViewController.h; sourceTree = "<group>"; };
+		C6AA54FC17EE6A70004AAC8D /* VWWSettingsAxisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsAxisViewController.m; sourceTree = "<group>"; };
+		C6AA54FE17EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsAxisTableViewCell.h; sourceTree = "<group>"; };
+		C6AA54FF17EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsAxisTableViewCell.m; sourceTree = "<group>"; };
+		C6AA550417EE71BB004AAC8D /* VWWSettingsParametersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsParametersViewController.h; sourceTree = "<group>"; };
+		C6AA550517EE71BB004AAC8D /* VWWSettingsParametersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsParametersViewController.m; sourceTree = "<group>"; };
+		C6AA550717EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsParametersTableViewCell.h; sourceTree = "<group>"; };
+		C6AA550817EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsParametersTableViewCell.m; sourceTree = "<group>"; };
 		C6B3E961168BFBB100298AF5 /* VWWConfigInputFrequencyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWConfigInputFrequencyView.h; sourceTree = "<group>"; };
 		C6B3E962168BFBB100298AF5 /* VWWConfigInputFrequencyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWConfigInputFrequencyView.m; sourceTree = "<group>"; };
 		C6C1BC2A169BA4B400AD8244 /* VWWThereminEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminEffectNoteKey.h; sourceTree = "<group>"; };
@@ -266,6 +281,7 @@
 		C606D289166AE1E500FA7B70 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C6AA54FA17EE6633004AAC8D /* Cell */,
 				C606D2B8166AE34100FA7B70 /* VWWThereminViewController.h */,
 				C6E34B9C166AE89600D0AB2C /* VWWThereminViewController.mm */,
 				C6EB8888168B975600DD1F3E /* VWWThereminAboutViewController.h */,
@@ -286,6 +302,10 @@
 				C6747F65168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm */,
 				C63660E217EE4D720004C22E /* VWWSettingsViewController.h */,
 				C63660E317EE4D720004C22E /* VWWSettingsViewController.m */,
+				C6AA54FB17EE6A70004AAC8D /* VWWSettingsAxisViewController.h */,
+				C6AA54FC17EE6A70004AAC8D /* VWWSettingsAxisViewController.m */,
+				C6AA550417EE71BB004AAC8D /* VWWSettingsParametersViewController.h */,
+				C6AA550517EE71BB004AAC8D /* VWWSettingsParametersViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -413,6 +433,19 @@
 				C6357CF115C7A5690074E722 /* waveforms.png */,
 			);
 			name = source_folder;
+			sourceTree = "<group>";
+		};
+		C6AA54FA17EE6633004AAC8D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C6AA54F717EE662A004AAC8D /* VWWSettingsTableViewCell.h */,
+				C6AA54F817EE662A004AAC8D /* VWWSettingsTableViewCell.m */,
+				C6AA54FE17EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.h */,
+				C6AA54FF17EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m */,
+				C6AA550717EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.h */,
+				C6AA550817EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		C6C1BC28169BA4A000AD8244 /* Effects */ = {
@@ -723,6 +756,7 @@
 				C6F829BF1628C80B00C79CAA /* CAStreamBasicDescription.cpp in Sources */,
 				C6F829C01628C80B00C79CAA /* CAXException.cpp in Sources */,
 				C606D2A4166AE1E600FA7B70 /* VWWThereminSettingsViewController.mm in Sources */,
+				C6AA54FD17EE6A70004AAC8D /* VWWSettingsAxisViewController.m in Sources */,
 				C606D2A7166AE1E600FA7B70 /* VWWMotionMonitor.m in Sources */,
 				C606D2A8166AE1E600FA7B70 /* VWWThereminNotes.m in Sources */,
 				C606D2A9166AE1E600FA7B70 /* VWWThereminSynthesizer.mm in Sources */,
@@ -737,6 +771,7 @@
 				C6EB88AC168BF2A100DD1F3E /* VWWThereminConfigInputFrequencyViewController.mm in Sources */,
 				C6B3E963168BFBB100298AF5 /* VWWConfigInputFrequencyView.m in Sources */,
 				C6CE37B0168EC67C000F2A48 /* VWWThereminInputAxis.mm in Sources */,
+				C6AA550917EE71D4004AAC8D /* VWWSettingsParametersTableViewCell.m in Sources */,
 				C6CE37B2168EC804000F2A48 /* VWWThereminInput.mm in Sources */,
 				C6CE37B8168ECFC4000F2A48 /* VWWThereminInputs.mm in Sources */,
 				C6CE37BB168ED120000F2A48 /* VWWLine.m in Sources */,
@@ -746,10 +781,13 @@
 				C6A94FD7168FC8C1003F2AFE /* VWWConfigInputSensitivityView.m in Sources */,
 				C6747F66168FEC40007133AD /* VWWThereminConfigInputEffectsViewController.mm in Sources */,
 				C6747F6A168FECDF007133AD /* VWWConfigInputEffectsView.m in Sources */,
+				C6AA550017EE6C41004AAC8D /* VWWSettingsAxisTableViewCell.m in Sources */,
 				C6DAB1DC169112540056E769 /* VWWFileSystem.m in Sources */,
 				C6F23BC9169951B9001C8FA8 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */,
+				C6AA54F917EE662A004AAC8D /* VWWSettingsTableViewCell.m in Sources */,
 				C6F23BCD16995399001C8FA8 /* VWWConfigInputAmplitudeView.m in Sources */,
 				C6F23BD0169A96BD001C8FA8 /* VWWThereminConfigInputKeyViewController.mm in Sources */,
+				C6AA550617EE71BB004AAC8D /* VWWSettingsParametersViewController.m in Sources */,
 				C6F23BD3169A96D6001C8FA8 /* VWWConfigInputKeyView.m in Sources */,
 				C6C1BC2C169BA4B400AD8244 /* VWWThereminEffectNoteKey.m in Sources */,
 				C63EDF29169BC74F0036E49B /* VWWThereminAboutView.m in Sources */,

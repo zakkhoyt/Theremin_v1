@@ -21,6 +21,28 @@
     // Configure inputs from settings file (or create default)
     [VWWThereminInputs sharedInstance];
     
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIFont fontWithName:@"Helvetica" size:14.0f],NSFontAttributeName,
+                                                          nil] forState:UIControlStateNormal];
+
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"Helvetica" size:14.0f]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIFont fontWithName:@"Helvetica" size:14.0f],NSFontAttributeName,
+                                                          nil]];
+    
+//    [[UINavigationBar appearance] setTitleTextAttributes:
+//     [NSDictionary dictionaryWithObjectsAndKeys:
+//      [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0],
+//      UITextAttributeTextColor,
+//      [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8],
+//      UITextAttributeTextShadowColor,
+//      [NSValue valueWithUIOffset:UIOffsetMake(0, -1)],
+//      UITextAttributeTextShadowOffset,
+//      [UIFont fontWithName:@"Arial-Bold" size:0.0],
+//      UITextAttributeFont,
+//      nil]];
     return YES;
 }
 							

@@ -66,20 +66,6 @@
     _key = key;
     
     self.inputLabel.text = self.key;
-//    
-//    if([VWWThereminInputs accelerometerInput].muted == NO)
-////        [self.butInputAccelerometer setBackgroundImage:buttonImage forState:UIControlStateNormal];
-//    
-//    if([VWWThereminInputs gyroscopeInput].muted == NO)
-////        [self.butInputGyros setBackgroundImage:buttonImage forState:UIControlStateNormal];
-//    
-//    if([VWWThereminInputs magnetometerInput].muted == NO)
-////        [self.butInputMagnetometer setBackgroundImage:buttonImage forState:UIControlStateNormal];
-//    
-//    if([VWWThereminInputs touchscreenInput].muted == NO)
-////        [self.butInputTouch setBackgroundImage:buttonImage forState:UIControlStateNormal];
-    
-    
     if([self.key isEqualToString:kTouchScreenKey]){
         self.enabledSwitch.enabled = NO;
         [self.enabledSwitch setOn:YES];
@@ -95,6 +81,9 @@
     else if([self.key isEqualToString:kMagnetometerKey]){
         self.enabledSwitch.enabled = YES;
         [self.enabledSwitch setOn:!([VWWThereminInputs magnetometerInput].muted)];
+    }
+    else if([self.key isEqualToString:kGeneralKey]){
+        self.enabledSwitch.hidden = YES;
     }
     
 }

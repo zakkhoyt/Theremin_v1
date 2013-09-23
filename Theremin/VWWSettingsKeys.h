@@ -17,11 +17,14 @@ typedef void (^VWWThereminSensitivityBlock)(float sensitivity);
 typedef void (^VWWThereminWaveformBlock)(WaveType waveType);
 typedef void (^VWWThereminEffectBlock)(EffectType effectType);
 
+
+static NSString* kConfigFileName = @"theremin.cfg";
+
 static NSString *kTouchScreenKey = @"Touch Screen";
 static NSString *kAccelerometerKey = @"Accelerometer";
 static NSString *kMagnetometerKey = @"Magnetometer";
 static NSString *kGyroscopesKey = @"Gyrosscope";
-
+static NSString *kGeneralKey = @"General Settings";
 
 
 static NSString *kXAxisKey = @"X Axis";

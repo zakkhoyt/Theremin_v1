@@ -18,6 +18,8 @@
 		C606D2CB166AE40F00FA7B70 /* VWWSquareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C606D2C9166AE40F00FA7B70 /* VWWSquareModel.m */; };
 		C60E4FF5169805DD006BD352 /* vww_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C60E4FF4169805DC006BD352 /* vww_logo.png */; };
 		C60E4FF8169807C8006BD352 /* custom.strings in Resources */ = {isa = PBXBuildFile; fileRef = C60E4FF7169807C8006BD352 /* custom.strings */; };
+		C632762317F0A68C008B028F /* VWWSettingsGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C632762217F0A68C008B028F /* VWWSettingsGeneralViewController.m */; };
+		C632762517F0A708008B028F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C632762417F0A708008B028F /* MessageUI.framework */; };
 		C6357CF215C7A5690074E722 /* sawtooth_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CED15C7A5690074E722 /* sawtooth_256x256.png */; };
 		C6357CF315C7A5690074E722 /* sine_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEE15C7A5690074E722 /* sine_256x256.png */; };
 		C6357CF415C7A5690074E722 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6357CEF15C7A5690074E722 /* square_256x256.png */; };
@@ -133,6 +135,9 @@
 		C60E4FF4169805DC006BD352 /* vww_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vww_logo.png; path = images/vww_logo.png; sourceTree = SOURCE_ROOT; };
 		C60E4FF7169807C8006BD352 /* custom.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = custom.strings; sourceTree = "<group>"; };
 		C624E67615C7E3E400A8DD94 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		C632762117F0A68C008B028F /* VWWSettingsGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsGeneralViewController.h; sourceTree = "<group>"; };
+		C632762217F0A68C008B028F /* VWWSettingsGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsGeneralViewController.m; sourceTree = "<group>"; };
+		C632762417F0A708008B028F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C63486411697C76800B5E701 /* VWWThereminMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWThereminMath.h; sourceTree = "<group>"; };
 		C63486421697DC2800B5E701 /* VWWThereminTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWThereminTypes.h; sourceTree = "<group>"; };
 		C6357CED15C7A5690074E722 /* sawtooth_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sawtooth_256x256.png; path = images/sawtooth_256x256.png; sourceTree = "<group>"; };
@@ -260,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C632762517F0A708008B028F /* MessageUI.framework in Frameworks */,
 				C68DE758169E26DA001C54DB /* iAd.framework in Frameworks */,
 				C6E34B80166AE52800D0AB2C /* GLKit.framework in Frameworks */,
 				C6E34B81166AE52800D0AB2C /* OpenGLES.framework in Frameworks */,
@@ -322,6 +328,8 @@
 				C6AA54FC17EE6A70004AAC8D /* VWWSettingsAxisViewController.m */,
 				C6AA550417EE71BB004AAC8D /* VWWSettingsParametersViewController.h */,
 				C6AA550517EE71BB004AAC8D /* VWWSettingsParametersViewController.m */,
+				C632762117F0A68C008B028F /* VWWSettingsGeneralViewController.h */,
+				C632762217F0A68C008B028F /* VWWSettingsGeneralViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,6 +559,7 @@
 		C6F7537515C6313C00911E59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C632762417F0A708008B028F /* MessageUI.framework */,
 				C68DE757169E26DA001C54DB /* iAd.framework */,
 				C6E34B7E166AE52700D0AB2C /* GLKit.framework */,
 				C6E34B7F166AE52700D0AB2C /* OpenGLES.framework */,
@@ -792,6 +801,7 @@
 				C606D2C0166AE3A200FA7B70 /* VWWCubeScene.m in Sources */,
 				C606D2C1166AE3A200FA7B70 /* VWWScene.m in Sources */,
 				C63660E417EE4D720004C22E /* VWWSettingsViewController.m in Sources */,
+				C632762317F0A68C008B028F /* VWWSettingsGeneralViewController.m in Sources */,
 				C6AA551017EE8BE4004AAC8D /* VWWSettingsAmplitudeTableViewCell.m in Sources */,
 				C606D2CB166AE40F00FA7B70 /* VWWSquareModel.m in Sources */,
 				C6E34B9D166AE89600D0AB2C /* VWWThereminViewController.mm in Sources */,

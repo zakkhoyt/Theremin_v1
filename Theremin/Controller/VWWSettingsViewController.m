@@ -9,11 +9,12 @@
 #import "VWWSettingsViewController.h"
 #import "VWWSettingsTableViewCell.h"
 #import "VWWSettingsAxisViewController.h"
-
+#import "VWWThereminInputs.h"
 
 
 
 static NSString* kSegueSettingsToInput = @"segueSettingsToInput";
+static NSString* kSegueSettingsToGeneralSettings = @"segueSettingsToGeneralSettings";
 
 
 @interface VWWSettingsViewController () <VWWSettingsTableViewCellDelegate>
@@ -33,13 +34,16 @@ static NSString* kSegueSettingsToInput = @"segueSettingsToInput";
     [self.tableKeys addObject:kAccelerometerKey];
     [self.tableKeys addObject:kGyroscopesKey];
     [self.tableKeys addObject:kMagnetometerKey];
+    [self.tableKeys addObject:kGeneralKey];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    
+    [VWWThereminInputs saveConfigFile];
 }
+
+
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -88,6 +92,13 @@ static NSString* kSegueSettingsToInput = @"segueSettingsToInput";
 
 #pragma mark VWWSettingsTableViewCellDelegate
 -(void)settingsTableViewCellSettingsButtonTouchUpInside:(VWWSettingsTableViewCell*)sender{
+    if([sender.key isEqualToString:kGeneralKey]){
+        [self performSegueWithIdentifier:kSegueSettingsToGeneralSettings sender:self];
+    }
+    else{
+        [self performSegueWithIdentifier:kSegueSettingsToInput sender:sender.key];
+    }
+    
     if([sender.key isEqualToString:kTouchScreenKey]){
         
     }
@@ -101,7 +112,7 @@ static NSString* kSegueSettingsToInput = @"segueSettingsToInput";
         
     }
     
-    [self performSegueWithIdentifier:kSegueSettingsToInput sender:sender.key];
+
 }
 -(void)settingsTableViewCellEnableSwitchValueChanged:(VWWSettingsTableViewCell*)sender{
     

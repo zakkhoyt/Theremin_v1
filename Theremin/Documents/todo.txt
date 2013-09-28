@@ -12,3 +12,10 @@ Bug fixes
 
 
 
+
+
+This theremin app uses the motion sensors and touchscreen (instead of a human's capacitance) to adjust the frequency waveform. Inputs include touchscreen (x,y), accelerometers (x,y,z), gyroscopes (x,y,z), and the magnetometers (x,y,z). For each individual axis you can adjust max/min frequency, sensitivity, waveform, and effect.
+
+Written by: Zakk Hoyt.
+See other apps and more at http://vaporwarewolf.com.
+Source code available: https://github.com/zakkhoyt/Theremin.

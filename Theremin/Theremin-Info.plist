@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -11,20 +9,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>Icon_57x57.png</string>
-				<string>Icon_114x114.png</string>
-				<string>Icon_72x72.png</string>
-				<string>Icon_144x144.png</string>
-			</array>
-			<key>UIPrerenderedIcon</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.vaporwarewolf.theremin</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -61,5 +48,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
